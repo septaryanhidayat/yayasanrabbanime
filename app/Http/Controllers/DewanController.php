@@ -16,7 +16,7 @@ class DewanController extends Controller
     {
         $unit = $unit ?? $request->query('unit', 'all');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unit, ['tk', 'sd', 'smp', 'yayasan']) ? $unit : 'all';
+        $currentUnitKey = in_array($unit, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unit : 'all';
         $currentUnit = ($currentUnitKey !== 'all') ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $dbDewan = AnggotaDewan::orderBy('order', 'asc')->get();
@@ -33,6 +33,7 @@ class DewanController extends Controller
                     'fraction' => $d->fraction ?? 'Guru Bidang Studi',
                 ])->toArray()
                 : (SchoolUnitService::getUnit('smp')['gurus'] ?? []),
+            'sma' => SchoolUnitService::getUnit('sma')['gurus'] ?? [],
         ];
 
         return view('frontend.dewan.index', compact('dbDewan', 'unitGurus', 'units', 'currentUnitKey', 'currentUnit'));

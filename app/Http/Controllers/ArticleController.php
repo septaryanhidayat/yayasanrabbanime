@@ -14,7 +14,7 @@ class ArticleController extends Controller
     {
         $unitKey = $unit ?? $request->route('unit') ?? $request->query('unit');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : null;
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : null;
         $currentUnit = $currentUnitKey ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $query = Post::posts()->published()->with(['categories', 'author']);
@@ -38,6 +38,11 @@ class ArticleController extends Controller
                 $q->whereHas('categories', fn ($c) => $c->where('slug', 'berita-smp'))
                     ->orWhere('title', 'like', '%SMPS IT%')
                     ->orWhere('title', 'like', '%SMP IT%');
+            });
+        } elseif ($currentUnitKey === 'sma') {
+            $query->where(function ($q) {
+                $q->whereHas('categories', fn ($c) => $c->where('slug', 'berita-sma'))
+                    ->orWhere('title', 'like', '%SMA IT%');
             });
         }
 
@@ -94,6 +99,13 @@ class ArticleController extends Controller
                 ->where(function ($q) {
                     $q->whereHas('categories', fn ($c) => $c->where('slug', 'berita-smp'))
                         ->orWhere('title', 'like', '%SMPS IT%');
+                })
+                ->orderBy('published_at', 'desc')->take(5)->get();
+        } elseif ($currentUnitKey === 'sma') {
+            $recentPosts = Post::posts()->published()
+                ->where(function ($q) {
+                    $q->whereHas('categories', fn ($c) => $c->where('slug', 'berita-sma'))
+                        ->orWhere('title', 'like', '%SMA IT%');
                 })
                 ->orderBy('published_at', 'desc')->take(5)->get();
         } else {

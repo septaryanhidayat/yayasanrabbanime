@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrator - SIT Madani Kayuagung</title>
-    <meta name="description" content="Portal Login Administrator Terpadu Yayasan Agung Madani & Seluruh Unit Pendidikan SIT Madani (TKS IT • SDS IT • SMPS IT Madani).">
+    <title>Login Administrator - SIT Rabbani Muara Enim</title>
+    <meta name="description" content="Portal Login Administrator Terpadu Yayasan Generasi Rabbani & Seluruh Unit Pendidikan SIT Rabbani (TKS IT • SDS IT • SMPS IT Rabbani).">
 
     {{-- Open Graph / WhatsApp / Facebook --}}
     <meta property="og:locale" content="id_ID">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Yayasan Agung Madani Kayuagung">
+    <meta property="og:site_name" content="Yayasan Generasi Rabbani Muara Enim">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="Login Administrator - SIT Madani Kayuagung">
-    <meta property="og:description" content="Portal Login Administrator Terpadu Yayasan Agung Madani & Seluruh Unit Pendidikan SIT Madani (TKS IT • SDS IT • SMPS IT Madani).">
-    <meta property="og:image" content="{{ url('/uploads/logo-madani-share.jpg') }}">
-    <meta property="og:image:secure_url" content="{{ url('/uploads/logo-madani-share.jpg') }}">
+    <meta property="og:title" content="Login Administrator - SIT Rabbani Muara Enim">
+    <meta property="og:description" content="Portal Login Administrator Terpadu Yayasan Generasi Rabbani & Seluruh Unit Pendidikan SIT Rabbani (TK • SD • SMP • SMA IT Rabbani).">
+    <meta property="og:image" content="{{ url('/uploads/og-image.jpg') }}">
+    <meta property="og:image:secure_url" content="{{ url('/uploads/og-image.jpg') }}">
     <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="600">
-    <meta property="og:image:height" content="600">
-    <meta property="og:image:alt" content="Logo SIT Madani Kayuagung">
-    <link rel="image_src" href="{{ url('/uploads/logo-madani-share.jpg') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logo SIT Rabbani Muara Enim">
+    <link rel="image_src" href="{{ url('/uploads/og-image.jpg') }}">
 
     {{-- Twitter Cards --}}
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Login Administrator - SIT Madani Kayuagung">
-    <meta name="twitter:description" content="Portal Login Administrator Terpadu Yayasan Agung Madani & Seluruh Unit Pendidikan SIT Madani (TKS IT • SDS IT • SMPS IT Madani).">
-    <meta name="twitter:image" content="{{ url('/uploads/logo-madani-share.jpg') }}">
-    <link rel="icon" type="image/png" href="/uploads/logo-madani-share.png">
+    <meta name="twitter:title" content="Login Administrator - SIT Rabbani Muara Enim">
+    <meta name="twitter:description" content="Portal Login Administrator Terpadu Yayasan Generasi Rabbani & Seluruh Unit Pendidikan SIT Rabbani (TK • SD • SMP • SMA IT Rabbani).">
+    <meta name="twitter:image" content="{{ url('/uploads/og-image.jpg') }}">
+    <link rel="icon" type="image/png" href="/uploads/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,11 +40,11 @@
         <div class="text-center mb-8">
             <a href="{{ route('home') }}" class="inline-block group">
                 <div class="w-24 h-24 mx-auto p-2 bg-white rounded-2xl border border-indigo-100 flex items-center justify-center shadow-md group-hover:scale-105 transition duration-300">
-                    <img src="/uploads/logo-madani-square.png" alt="Logo SIT Madani Kayuagung" class="max-h-full max-w-full object-contain">
+                    <img src="/uploads/logo-rabbani.png" alt="Logo SIT Rabbani Muara Enim" class="max-h-full max-w-full object-contain">
                 </div>
             </a>
             <h1 class="text-2xl font-extrabold text-gray-900 mt-4 tracking-tight">Panel Administrator</h1>
-            <p class="text-xs text-gray-500 mt-1">Portal Administrasi Terpadu Yayasan & SIT Madani (TK • SD • SMP)</p>
+            <p class="text-xs text-gray-500 mt-1">Portal Administrasi Terpadu Yayasan & SIT Rabbani (TK • SD • SMP • SMA)</p>
         </div>
 
         {{-- Error Alert --}}
@@ -64,7 +64,7 @@
             <div>
                 <label for="email" class="block text-xs font-semibold text-gray-700 mb-1.5">Masukkan Email Administrator</label>
                 <div class="relative">
-                    <input type="email" name="email" id="email" required value="{{ old('email') }}" placeholder="admin@madani.sch.id" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl pl-10 pr-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
+                    <input type="email" name="email" id="email" required value="{{ old('email') }}" placeholder="admin@rabbanime.sch.id" class="w-full bg-gray-50 text-xs text-gray-800 rounded-xl pl-10 pr-4 py-3.5 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-600 transition">
                     <i class="fa-solid fa-envelope absolute left-3.5 top-4 text-gray-400 text-xs"></i>
                 </div>
             </div>

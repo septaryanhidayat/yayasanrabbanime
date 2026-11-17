@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Formulir Pendaftaran SPMB ' . ($formSettings['year'] ?? '2026/2027') . ' - Sekolah Islam Terpadu Madani')
-@section('meta_description', 'Formulir Pendaftaran Peserta Didik Baru (SPMB Online) SIT Madani Kayuagung (TK, SD, SMP) Tahun Pelajaran ' . ($formSettings['year'] ?? '2026/2027') . '.')
+@section('title', 'Formulir Pendaftaran SPMB ' . ($formSettings['year'] ?? '2026/2027') . ' - Sekolah Islam Terpadu Rabbani')
+@section('meta_description', 'Formulir Pendaftaran Peserta Didik Baru (SPMB Online) SIT Rabbani Muara Enim (TK, SD, SMP) Tahun Pelajaran ' . ($formSettings['year'] ?? '2026/2027') . '.')
 
 @section('content')
 <div class="bg-gray-50 py-10 sm:py-14 font-['Poppins',sans-serif]">
@@ -32,7 +32,7 @@
                     }
                 @endphp
                 <div class="pt-4 flex flex-wrap items-center justify-center gap-3">
-                    <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia SPMB SMPS IT Madani, saya ingin menanyakan jadwal pendaftaran/kuota siswa baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-black transition shadow-lg shadow-indigo-600/25">
+                    <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia SPMB SMPS IT Rabbani, saya ingin menanyakan jadwal pendaftaran/kuota siswa baru.') }}" target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-7 py-3.5 rounded-2xl text-xs sm:text-sm font-black transition shadow-lg shadow-indigo-600/25">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
                         <span>Hubungi Panitia via WhatsApp</span>
                     </a>
@@ -51,13 +51,13 @@
             {{-- HEADER LOGO & JUDUL --}}
             <div class="text-center space-y-4">
                 <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto p-1 rounded-2xl flex items-center justify-center">
-                    <img src="/uploads/logo-madani-square.webp" alt="Logo SMPS IT Madani" class="h-full w-auto object-contain">
+                    <img src="/uploads/logo-rabbani-square.webp" alt="Logo SMPS IT Rabbani" class="h-full w-auto object-contain">
                 </div>
 
                 <div class="space-y-1">
                     <h1 class="text-lg sm:text-xl md:text-2xl font-black text-indigo-600 tracking-tight leading-snug">
                         Formulir Pendaftaran Peserta Didik Baru<br>
-                        Sekolah Islam Terpadu Madani Kayuagung
+                        Sekolah Islam Terpadu Rabbani Muara Enim
                     </h1>
                     <p class="text-xs text-slate-500 max-w-md mx-auto">
                         Isi formulir dengan data yang sah dan lengkap. Tanda bintang (<span class="text-red-500 font-bold">*</span>) wajib diisi.
@@ -118,27 +118,27 @@
                 {{-- PILIHAN UNIT SEKOLAH (TK, SD, SMP) --}}
                 <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
                     <label class="block text-xs font-bold text-slate-800">
-                        Pilihan Jenjang / Unit Sekolah SIT Madani <span class="text-red-500">*</span>
+                        Pilihan Jenjang / Unit Sekolah SIT Rabbani <span class="text-red-500">*</span>
                     </label>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                         <label class="cursor-pointer border p-3 rounded-xl flex items-center space-x-2.5 bg-white hover:border-amber-400 has-[:checked]:border-amber-500 has-[:checked]:bg-amber-50/60 transition">
-                            <input type="radio" name="unit_school" value="TKS IT Madani" class="text-amber-500 focus:ring-amber-400" {{ (old('unit_school') === 'TKS IT Madani' || ($currentUnitKey === 'tk')) ? 'checked' : '' }} required>
+                            <input type="radio" name="unit_school" value="TKS IT Rabbani" class="text-amber-500 focus:ring-amber-400" {{ (old('unit_school') === 'TKS IT Rabbani' || ($currentUnitKey === 'tk')) ? 'checked' : '' }} required>
                             <div class="text-xs">
-                                <span class="font-bold text-slate-900 block">TKS IT Madani</span>
+                                <span class="font-bold text-slate-900 block">TKS IT Rabbani</span>
                                 <span class="text-[10px] text-slate-500">PAUD / TK Islam Terpadu</span>
                             </div>
                         </label>
                         <label class="cursor-pointer border p-3 rounded-xl flex items-center space-x-2.5 bg-white hover:border-emerald-400 has-[:checked]:border-emerald-500 has-[:checked]:bg-emerald-50/60 transition">
-                            <input type="radio" name="unit_school" value="SDS IT Madani" class="text-emerald-600 focus:ring-emerald-500" {{ (old('unit_school') === 'SDS IT Madani' || ($currentUnitKey === 'sd')) ? 'checked' : '' }} required>
+                            <input type="radio" name="unit_school" value="SDS IT Rabbani" class="text-emerald-600 focus:ring-emerald-500" {{ (old('unit_school') === 'SDS IT Rabbani' || ($currentUnitKey === 'sd')) ? 'checked' : '' }} required>
                             <div class="text-xs">
-                                <span class="font-bold text-slate-900 block">SDS IT Madani</span>
+                                <span class="font-bold text-slate-900 block">SDS IT Rabbani</span>
                                 <span class="text-[10px] text-slate-500">SD Islam Terpadu (13 Rombel)</span>
                             </div>
                         </label>
                         <label class="cursor-pointer border p-3 rounded-xl flex items-center space-x-2.5 bg-white hover:border-blue-400 has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50/60 transition">
-                            <input type="radio" name="unit_school" value="SMPS IT Madani" class="text-blue-600 focus:ring-blue-500" {{ (old('unit_school') === 'SMPS IT Madani' || ($currentUnitKey === 'smp' || empty($currentUnitKey))) ? 'checked' : '' }} required>
+                            <input type="radio" name="unit_school" value="SMPS IT Rabbani" class="text-blue-600 focus:ring-blue-500" {{ (old('unit_school') === 'SMPS IT Rabbani' || ($currentUnitKey === 'smp' || empty($currentUnitKey))) ? 'checked' : '' }} required>
                             <div class="text-xs">
-                                <span class="font-bold text-slate-900 block">SMPS IT Madani</span>
+                                <span class="font-bold text-slate-900 block">SMPS IT Rabbani</span>
                                 <span class="text-[10px] text-slate-500">SMP Islam Terpadu (Full Day)</span>
                             </div>
                         </label>
@@ -208,7 +208,7 @@
             {{-- FOOTER --}}
             <div class="pt-8 text-center border-t border-slate-100">
                 <div class="flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400 gap-2 text-center sm:text-left">
-                    <span>SPMB SIT Madani Kayuagung (TK • SD • SMP)</span>
+                    <span>SPMB SIT Rabbani Muara Enim (TK • SD • SMP)</span>
                     <span>Hak Cipta Dilindungi Undang-Undang</span>
                 </div>
             </div>

@@ -14,7 +14,7 @@ class ContactController extends Controller
     {
         $unitKey = $unit ?? $request->route('unit') ?? $request->query('unit');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : null;
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : null;
         $currentUnit = $currentUnitKey ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $page = Post::pages()->where('slug', 'hubungi')->first();
@@ -62,7 +62,7 @@ class ContactController extends Controller
             'status' => 'unread',
         ]);
 
-        return redirect()->route('hubungi')->with('success', 'Terima kasih! Pesan dan formulir konsultasi Anda telah berhasil dikirimkan kepada SMPS IT Madani.');
+        return redirect()->route('hubungi')->with('success', 'Terima kasih! Pesan dan formulir konsultasi Anda telah berhasil dikirimkan kepada SMPS IT Rabbani.');
     }
 
     public function donasi()

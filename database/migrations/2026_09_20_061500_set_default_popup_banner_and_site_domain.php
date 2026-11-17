@@ -15,7 +15,7 @@ return new class extends Migration
             'popup_active' => ['value' => '1', 'group' => 'popup'],
             'popup_image' => ['value' => '/uploads/flyer-spmb-sit-madani.webp', 'group' => 'popup'],
             'popup_title' => ['value' => 'Telah Dibuka SPMB 3T (TP 2027/2028)', 'group' => 'popup'],
-            'popup_subtitle' => ['value' => 'Sistem Penerimaan Murid Baru SMPS IT Madani Kayuagung', 'group' => 'popup'],
+            'popup_subtitle' => ['value' => 'Sistem Penerimaan Murid Baru SMPS IT Rabbani Muara Enim', 'group' => 'popup'],
             'popup_link' => ['value' => '/ppdb', 'group' => 'popup'],
             'popup_button_text' => ['value' => 'Info & Syarat SPMB', 'group' => 'popup'],
             'popup_target' => ['value' => '_self', 'group' => 'popup'],

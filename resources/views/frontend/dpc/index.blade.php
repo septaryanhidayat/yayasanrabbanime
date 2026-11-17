@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Program Unggulan Sekolah - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Program unggulan SMPS IT Madani Kayuagung: Tahfidz Qur\'an Mutqin, Sains & Robotika, Islamic Boarding, Bilingual Camp, dan Sukses Masuk PTN.')
+@section('title', 'Program Unggulan Sekolah - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Program unggulan SMPS IT Rabbani Muara Enim: Tahfidz Qur\'an Mutqin, Sains & Robotika, Islamic Boarding, Bilingual Camp, dan Sukses Masuk PTN.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -38,7 +38,7 @@
                 <div>
                     {{-- FOTO DOKUMENTASI PROGRAM --}}
                     <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
-                        <img src="{{ $dpc->thumbnail_url }}" alt="{{ $dpc->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/tahfidz-sit-madani.webp'">
+                        <img src="{{ $dpc->thumbnail_url }}" alt="{{ $dpc->name }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/tahfidz-sit-rabbani.webp'">
                         <span class="absolute top-3.5 left-3.5 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
                             {{ $dpc->address ?: 'Program Unggulan' }}
                         </span>
@@ -69,7 +69,7 @@
                         <i class="fa-solid fa-star text-amber-400 text-xs"></i>
                         <span>Unggulan Terpadu</span>
                     </span>
-                    <span class="text-[11px] text-gray-400 font-medium">SMPS IT Madani</span>
+                    <span class="text-[11px] text-gray-400 font-medium">SMPS IT Rabbani</span>
                 </div>
             </div>
         @empty

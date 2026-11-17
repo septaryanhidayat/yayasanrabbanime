@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 
 @php
-    $unitTitle = $currentUnit ? $currentUnit['short_name'] : 'SIT Madani Kayuagung';
-    $unitFullName = $currentUnit ? $currentUnit['name'] : 'Sekolah Islam Terpadu Madani Kayuagung';
+    $unitTitle = $currentUnit ? $currentUnit['short_name'] : 'SIT Rabbani Muara Enim';
+    $unitFullName = $currentUnit ? $currentUnit['name'] : 'Sekolah Islam Terpadu Rabbani Muara Enim';
     $unitRoute = $currentUnitKey ? route('unit.artikel', $currentUnitKey) : route('artikel.index');
 @endphp
 
@@ -84,9 +84,9 @@
                     <article class="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ $idx % 4 }}">
                         <a href="{{ route('artikel.show', $post->slug) }}" class="block relative h-48 overflow-hidden bg-gray-100">
                             @if($post->featured_image)
-                                <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                <img src="{{ $post->featured_image }}" alt="{{ $post->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             @else
-                                <img src="/uploads/campus-sit-madani.webp" alt="{{ $post->title }}" class="absolute inset-0 w-full h-full object-cover">
+                                <img src="/uploads/campus-sit-rabbani.webp" alt="{{ $post->title }}" class="absolute inset-0 w-full h-full object-cover">
                             @endif
                             @if($post->categories->isNotEmpty())
                                 <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-sm">
@@ -187,7 +187,7 @@
                     @forelse($recentPosts as $rp)
                         <a href="{{ route('artikel.show', $rp->slug) }}" class="flex items-center space-x-3 group">
                             <div class="w-14 h-14 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 relative">
-                                <img src="{{ $rp->featured_image_url }}" alt="{{ $rp->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                <img src="{{ $rp->featured_image_url }}" alt="{{ $rp->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs font-semibold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">

@@ -15,12 +15,12 @@
                 @php
                     $userUnit = auth()->user()->unit ?? 'yayasan';
                     $unitData = \App\Services\SchoolUnitService::getUnit($userUnit);
-                    $unitName = $unitData['name'] ?? 'Yayasan Agung Madani';
+                    $unitName = $unitData['name'] ?? 'Yayasan Generasi Rabbani';
                     $unitRoleLabel = match($userUnit) {
-                        'tk' => 'Dashboard Administrasi TKS IT Madani (PAUD / TK)',
-                        'sd' => 'Dashboard Administrasi SDS IT Madani (Sekolah Dasar)',
-                        'smp' => 'Dashboard Administrasi SMPS IT Madani (Sekolah Menengah Pertama)',
-                        default => 'Dashboard Terpadu Yayasan Agung Madani (Menaungi TK, SD & SMP)',
+                        'tk' => 'Dashboard Administrasi TKS IT Rabbani (PAUD / TK)',
+                        'sd' => 'Dashboard Administrasi SDS IT Rabbani (Sekolah Dasar)',
+                        'smp' => 'Dashboard Administrasi SMPS IT Rabbani (Sekolah Menengah Pertama)',
+                        default => 'Dashboard Terpadu Yayasan Generasi Rabbani (Menaungi TK, SD & SMP)',
                     };
                 @endphp
                 <div class="inline-flex items-center space-x-2 {{ $userUnit === 'tk' ? 'bg-amber-950/80 border-amber-600/80 text-amber-300' : ($userUnit === 'sd' ? 'bg-emerald-950/80 border-emerald-600/80 text-emerald-300' : ($userUnit === 'smp' ? 'bg-blue-950/80 border-blue-600/80 text-blue-300' : 'bg-slate-800/80 border-slate-700/80 text-amber-400')) }} px-3 py-1 rounded-full text-xs font-bold border">
@@ -34,7 +34,7 @@
                     @if($userUnit !== 'yayasan')
                         Panel kendali khusus <strong>{{ $unitName }}</strong>. Anda dapat mengelola hero banner, informasi, dewan guru, dan memantau pendaftaran SPMB online khusus unit Anda.
                     @else
-                        Pusat kendali terpadu Yayasan Agung Madani Kayuagung. Anda memiliki hak akses penuh untuk mengelola portal yayasan serta memantau dan mengonfigurasi seluruh unit pendidikan (TKS IT, SDS IT, SMPS IT).
+                        Pusat kendali terpadu Yayasan Generasi Rabbani Muara Enim. Anda memiliki hak akses penuh untuk mengelola portal yayasan serta memantau dan mengonfigurasi seluruh unit pendidikan (TKS IT, SDS IT, SMPS IT).
                     @endif
                 </p>
             </div>
@@ -313,7 +313,7 @@
                     <div class="py-3.5 flex items-center justify-between gap-4">
                         <div class="flex items-center space-x-3 min-w-0">
                             <div class="w-12 h-12 rounded-xl bg-slate-100 overflow-hidden flex-shrink-0 border border-slate-200">
-                                <img src="{{ $post->featured_image ?? '/uploads/logo-madani-square.webp' }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
+                                <img src="{{ $post->featured_image ?? '/uploads/logo-rabbani-square.webp' }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
                             </div>
                             <div class="min-w-0">
                                 <a href="{{ route('admin.posts.edit', $post) }}" class="font-bold text-xs sm:text-sm text-slate-800 hover:text-indigo-600 truncate block">

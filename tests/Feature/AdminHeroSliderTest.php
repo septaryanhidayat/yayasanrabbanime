@@ -11,7 +11,7 @@ test('unauthenticated users cannot access admin hero slider page', function () {
 
 test('admin can view hero slider settings page', function () {
     $admin = User::firstOrCreate(
-        ['email' => 'admin_hero_test@sitmadani.sch.id'],
+        ['email' => 'admin_hero_test@rabbanime.sch.id'],
         [
             'name' => 'Admin Hero Test',
             'password' => Hash::make('password123'),
@@ -29,7 +29,7 @@ test('admin can view hero slider settings page', function () {
 
 test('admin can update hero slider text, image, and buttons successfully', function () {
     $admin = User::firstOrCreate(
-        ['email' => 'admin_hero_test@sitmadani.sch.id'],
+        ['email' => 'admin_hero_test@rabbanime.sch.id'],
         [
             'name' => 'Admin Hero Test',
             'password' => Hash::make('password123'),

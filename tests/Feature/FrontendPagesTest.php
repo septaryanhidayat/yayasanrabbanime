@@ -129,9 +129,9 @@ test('dewan, bidang, agenda, and pengumuman pages render successfully', function
 
 test('agenda and pengumuman pages display cards with photo banner and badges like program unggulan', function () {
     Agenda::create([
-        'title' => 'Karnaval Akbar HUT Kayuagung',
-        'slug' => 'karnaval-akbar-hut-kayuagung',
-        'content' => 'Kegiatan parade siswa SMPS IT Madani di jalan protokol kota.',
+        'title' => 'Karnaval Akbar HUT Muara Enim',
+        'slug' => 'karnaval-akbar-hut-muara enim',
+        'content' => 'Kegiatan parade siswa SMPS IT Rabbani di jalan protokol kota.',
         'location' => 'Jalan Jendral Sudirman',
         'event_date' => now()->addDays(5),
         'status' => 'upcoming',
@@ -148,7 +148,7 @@ test('agenda and pengumuman pages display cards with photo banner and badges lik
 
     $agendaResponse = $this->get(route('agenda.index'));
     $agendaResponse->assertOk()
-        ->assertSee('Karnaval Akbar HUT Kayuagung')
+        ->assertSee('Karnaval Akbar HUT Muara Enim')
         ->assertSee('/uploads/agenda/karnaval-test.webp')
         ->assertSee('Akan Datang')
         ->assertSee('Jalan Jendral Sudirman');
@@ -167,7 +167,7 @@ test('feedback form submission works', function () {
         'nama' => 'Ahmad Calon Siswa',
         'email' => 'ahmad@example.com',
         'whatsapp' => '081234567890',
-        'saran_kritik' => 'Mohon informasi jadwal tes masuk SPMB SMPS IT Madani Kayuagung.',
+        'saran_kritik' => 'Mohon informasi jadwal tes masuk SPMB SMPS IT Rabbani Muara Enim.',
     ]);
 
     $response->assertRedirect('/hubungi');
@@ -204,8 +204,8 @@ test('footer has visitor counter with data-target and responsive mobile center a
 
 test('site settings update dynamically reflects across header, footer, and contact page', function () {
     Setting::updateOrCreate(['key' => 'contact_phone'], ['value' => '0821-7788-9900', 'group' => 'general']);
-    Setting::updateOrCreate(['key' => 'contact_email'], ['value' => 'info@sitmadani.sch.id', 'group' => 'general']);
-    Setting::updateOrCreate(['key' => 'contact_address'], ['value' => 'Kampus Terpadu SMPS IT Madani Kayuagung', 'group' => 'general']);
+    Setting::updateOrCreate(['key' => 'contact_email'], ['value' => 'info@rabbanime.sch.id', 'group' => 'general']);
+    Setting::updateOrCreate(['key' => 'contact_address'], ['value' => 'Kampus Terpadu SMPS IT Rabbani Muara Enim', 'group' => 'general']);
 
     // Re-share to simulate fresh request
     $settings = Setting::all()->pluck('value', 'key')->toArray();
@@ -213,13 +213,13 @@ test('site settings update dynamically reflects across header, footer, and conta
 
     $home = $this->get('/');
     $home->assertSee('0821-7788-9900');
-    $home->assertSee('info@sitmadani.sch.id');
-    $home->assertSee('Kampus Terpadu SMPS IT Madani Kayuagung');
+    $home->assertSee('info@rabbanime.sch.id');
+    $home->assertSee('Kampus Terpadu SMPS IT Rabbani Muara Enim');
 
     $contact = $this->get('/hubungi');
     $contact->assertSee('0821-7788-9900');
-    $contact->assertSee('info@sitmadani.sch.id');
-    $contact->assertSee('Kampus Terpadu SMPS IT Madani Kayuagung');
+    $contact->assertSee('info@rabbanime.sch.id');
+    $contact->assertSee('Kampus Terpadu SMPS IT Rabbani Muara Enim');
 });
 
 test('sambutan page renders dynamic content from database', function () {
@@ -274,7 +274,7 @@ test('home page renders dual-row gallery slider with madani photos', function ()
 
     $response->assertStatus(200);
     $response->assertSee('Galeri');
-    $response->assertSee('Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Sekolah SMPS IT Madani', false);
+    $response->assertSee('Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Sekolah', false);
     $response->assertSee(route('galeri.index'));
     $response->assertSee('Lihat Semua Dokumentasi');
 });
@@ -304,7 +304,7 @@ test('visi dan misi page dynamically reflects updated content from database', fu
     $page = Post::where('slug', 'visi-dan-misi')->first();
     if (! $page) {
         $page = Post::create([
-            'title' => 'Visi dan Misi SMPS IT Madani',
+            'title' => 'Visi dan Misi SMPS IT Rabbani',
             'slug' => 'visi-dan-misi',
             'content' => '<p>Konten Visi Misi Awal</p>',
             'status' => 'publish',
@@ -327,7 +327,7 @@ test('tentang kami page dynamically reflects updated content from database', fun
     $page = Post::where('slug', 'tentang-kami')->first();
     if (! $page) {
         $page = Post::create([
-            'title' => 'Profil SMPS IT Madani',
+            'title' => 'Profil SMPS IT Rabbani',
             'slug' => 'tentang-kami',
             'content' => '<p>Profil Sekolah Awal</p>',
             'status' => 'publish',
@@ -336,21 +336,21 @@ test('tentang kami page dynamically reflects updated content from database', fun
     }
 
     $page->update([
-        'title' => 'Profil Lengkap SMPS IT Madani 2026',
-        'content' => '<p>Sekolah pelopor adab dan digitalisasi di Kayuagung.</p>',
+        'title' => 'Profil Lengkap SMPS IT Rabbani 2026',
+        'content' => '<p>Sekolah pelopor adab dan digitalisasi di Muara Enim.</p>',
     ]);
 
     $response = $this->get('/tentang-kami');
     $response->assertStatus(200);
-    $response->assertSee('Profil Lengkap SMPS IT Madani 2026');
-    $response->assertSee('Sekolah pelopor adab dan digitalisasi di Kayuagung.', false);
+    $response->assertSee('Profil Lengkap SMPS IT Rabbani 2026');
+    $response->assertSee('Sekolah pelopor adab dan digitalisasi di Muara Enim.', false);
 });
 
 test('privacy policy page renders dynamic content from database', function () {
     $page = Post::where('slug', 'privacy-policy')->first();
     if (! $page) {
         $page = Post::create([
-            'title' => 'Kebijakan Privasi SMPS IT Madani Kayuagung',
+            'title' => 'Kebijakan Privasi SMPS IT Rabbani Muara Enim',
             'slug' => 'privacy-policy',
             'content' => '<p>Komitmen kami menjaga kerahasiaan data siswa dan wali murid.</p>',
             'status' => 'publish',
@@ -360,15 +360,15 @@ test('privacy policy page renders dynamic content from database', function () {
 
     $response = $this->get('/privacy-policy');
     $response->assertStatus(200);
-    $response->assertSee('Kebijakan Privasi SMPS IT Madani Kayuagung');
+    $response->assertSee('Kebijakan Privasi SMPS IT Rabbani Muara Enim');
 });
 
 test('prestasi created in admin displays on homepage and dedicated prestasi page', function () {
     $category = Category::firstOrCreate(['slug' => 'prestasi-siswa'], ['name' => 'Prestasi Siswa']);
 
     $prestasi = Post::create([
-        'title' => 'Arumi Juara 2 Tahfidz Kayuagung, Kab. OKI',
-        'slug' => 'arumi-juara-2-tahfidz-kota-kayuagung',
+        'title' => 'Arumi Juara 2 Tahfidz Muara Enim, Kab. OKI',
+        'slug' => 'arumi-juara-2-tahfidz-kota-muara enim',
         'content' => '<p>Selamat atas keberhasilan ananda Arumi meraih juara 2.</p>',
         'excerpt' => 'Arumi juara 2 lomba tahfidz tingkat kota.',
         'status' => 'publish',
@@ -380,14 +380,14 @@ test('prestasi created in admin displays on homepage and dedicated prestasi page
     // 1. Check Unit Homepage (SMP)
     $homeResponse = $this->get('/smp');
     $homeResponse->assertStatus(200);
-    $homeResponse->assertSee('Arumi Juara 2 Tahfidz Kayuagung, Kab. OKI');
-    $homeResponse->assertSee(route('prestasi.show', 'arumi-juara-2-tahfidz-kota-kayuagung'));
+    $homeResponse->assertSee('Arumi Juara 2 Tahfidz Muara Enim, Kab. OKI');
+    $homeResponse->assertSee(route('prestasi.show', 'arumi-juara-2-tahfidz-kota-muara enim'));
     $homeResponse->assertSee(route('prestasi.index'));
 
     // 2. Check /prestasi index page
     $prestasiIndex = $this->get('/prestasi');
     $prestasiIndex->assertStatus(200);
-    $prestasiIndex->assertSee('Arumi Juara 2 Tahfidz Kayuagung, Kab. OKI');
+    $prestasiIndex->assertSee('Arumi Juara 2 Tahfidz Muara Enim, Kab. OKI');
     $prestasiIndex->assertSee('Prestasi Siswa');
 
     // 3. Check Navbar has Prestasi Siswa

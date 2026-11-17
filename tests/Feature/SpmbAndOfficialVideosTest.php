@@ -13,23 +13,23 @@ test('halaman spmb dan formulir spmb dapat diakses secara publik', function () {
     $responseForm->assertSee('Formulir Pendaftaran SPMB');
 });
 
-test('halaman video menampilkan video resmi dari channel sit madani kayuagung', function () {
+test('halaman video menampilkan video resmi dari channel sit rabbani muara enim', function () {
     $this->seed(DatabaseSeeder::class);
 
     $response = $this->get(route('video.index'));
     $response->assertStatus(200);
-    $response->assertSee('HAFLAH AKHIRUSSANAH');
-    $response->assertSee('SDIT Madani Kayuagung');
+    $response->assertSee('ULMekhqxvqU');
+    $response->assertSee('Profil Yayasan Generasi Rabbani Muara Enim');
 });
 
 test('tidak ada lagi nama anita carlyna di halaman sambutan dan profil publik', function () {
     $responseSambutan = $this->get(route('page.sambutan'));
     $responseSambutan->assertStatus(200);
     $responseSambutan->assertDontSee('Anita Carlyna');
-    $responseSambutan->assertSee('Ribang Imam Satria');
+    $responseSambutan->assertSee('Basuki Wiwoho');
 
     $responseYayasan = $this->get(route('home'));
     $responseYayasan->assertStatus(200);
     $responseYayasan->assertDontSee('Anita Carlyna');
-    $responseYayasan->assertSee('Legianto');
+    $responseYayasan->assertSee('Basuki Wiwoho');
 });

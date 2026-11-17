@@ -90,7 +90,7 @@ test('footer memuat live counter pengunjung dan copyright sekolah', function () 
     $response = $this->get(route('home'));
 
     $response->assertStatus(200);
-    $response->assertSee('SMPS IT Madani Kayuagung');
+    $response->assertSee('SMPS IT Rabbani Muara Enim');
     $response->assertSee('Pengunjung');
     $response->assertSee('Galeri');
     $response->assertSee('Kabar Sekolah');
@@ -101,37 +101,37 @@ test('dewan guru menampilkan ustadz fulan dan ustadzah fulanah dengan avatar abu
     $response = $this->get(route('dewan.index'));
 
     $response->assertStatus(200);
-    $response->assertSee('Ribang Imam Satria');
+    $response->assertSee('Drs. H. Basuki Wiwoho');
     $response->assertSee('Helen Lestari');
     $response->assertSee('Yushamdalah');
     $response->assertSee('avatar-default.svg');
 });
 
-test('galeri video dan beranda menampilkan video resmi youtube smp it madani', function () {
+test('galeri video dan beranda menampilkan video resmi youtube smp it rabbani', function () {
     $this->seed(DatabaseSeeder::class);
 
     // Fallback saat video baru dibersihkan
     $responseEmpty = $this->get(route('video.index'));
     $responseEmpty->assertStatus(200);
-    $responseEmpty->assertSee('https://www.youtube.com/@sitmadani');
+    $responseEmpty->assertSee('https://www.youtube.com/@rabbanimuaraenim');
 
-    // Buat data video resmi SIT Madani
+    // Buat data video resmi SIT Rabbani
     Video::create([
-        'title' => 'Profil dan Visi Misi SIT Madani',
+        'title' => 'Profil dan Visi Misi SIT Rabbani',
         'slug' => 'profil-dan-visi-misi-sit-madani',
         'youtube_url' => 'https://www.youtube.com/watch?v=madani12345',
         'youtube_id' => 'madani12345',
-        'description' => 'Video dokumentasi resmi SIT Madani Kayuagung',
+        'description' => 'Video dokumentasi resmi SIT Rabbani Muara Enim',
     ]);
 
     $responseVideo = $this->get(route('video.index'));
     $responseVideo->assertStatus(200);
     $responseVideo->assertSee('madani12345');
-    $responseVideo->assertSee('Profil dan Visi Misi SIT Madani');
-    $responseVideo->assertSee('https://www.youtube.com/@sitmadani');
+    $responseVideo->assertSee('Profil dan Visi Misi SIT Rabbani');
+    $responseVideo->assertSee('https://www.youtube.com/@rabbanimuaraenim');
 
     $responseHome = $this->get('/smp');
     $responseHome->assertStatus(200);
-    $responseHome->assertSee('Galeri Video Resmi YouTube');
+    $responseHome->assertSee('Galeri Video');
     $responseHome->assertSee('madani12345');
 });

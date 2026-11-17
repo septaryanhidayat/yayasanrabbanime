@@ -64,7 +64,7 @@
             @forelse($photos as $photo)
                 <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-xs hover:shadow-md transition flex flex-col justify-between">
                     <div class="relative aspect-square w-full bg-slate-100 overflow-hidden">
-                        <img src="{{ $photo->featured_image }}" alt="{{ $photo->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                        <img src="{{ $photo->featured_image }}" alt="{{ $photo->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition p-2.5 flex items-start justify-end gap-1.5">
                             {{-- Tombol Edit --}}
                             <button type="button" 
@@ -111,7 +111,7 @@
                         {{ $videos->total() }} Video
                     </span>
                 </div>
-                <p class="text-xs text-slate-600 mt-1">Tambah tayangan video resmi dari channel YouTube SMPS IT Madani Kayuagung. Mendukung link youtube.com, youtu.be, shorts, live, maupun embed.</p>
+                <p class="text-xs text-slate-600 mt-1">Tambah tayangan video resmi dari channel YouTube SMPS IT Rabbani Muara Enim. Mendukung link youtube.com, youtu.be, shorts, live, maupun embed.</p>
             </div>
         </div>
 
@@ -170,7 +170,7 @@
                                     <img src="{{ $video->thumbnail_url }}" 
                                          alt="{{ $video->title }}" 
                                          class="w-full h-full object-cover transition duration-300 group-hover/vid:scale-105"
-                                         onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp';">
+                                         onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp';">
                                     <div class="absolute inset-0 bg-black/40 group-hover/vid:bg-black/20 transition flex items-center justify-center">
                                         <button type="button" 
                                                 onclick="playAdminVideo('admin_video_box_{{ $video->id }}', '{{ $video->youtube_id }}', {{ json_encode($video->title) }})" 

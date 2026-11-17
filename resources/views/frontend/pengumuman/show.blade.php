@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', $announcement->title . ' - Pengumuman SMPS IT Madani Kayuagung')
+@section('title', $announcement->title . ' - Pengumuman SMPS IT Rabbani Muara Enim')
 
 @section('content')
 <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
@@ -21,12 +21,12 @@
         <div class="lg:col-span-2 bg-white p-6 sm:p-10 rounded-3xl shadow-sm border border-gray-100 space-y-6">
             <div class="flex items-center space-x-3 text-xs text-indigo-600 font-bold">
                 <i class="fa-solid fa-bullhorn text-base text-orange-500"></i>
-                <span>Pengumuman Resmi SMPS IT Madani Kayuagung</span>
+                <span>Pengumuman Resmi SMPS IT Rabbani Muara Enim</span>
             </div>
 
             @if($announcement->featured_image)
                 <div class="rounded-2xl overflow-hidden shadow-md">
-                    <img src="{{ $announcement->featured_image_url }}" alt="{{ $announcement->title }}" class="w-full h-auto" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                    <img src="{{ $announcement->featured_image_url }}" alt="{{ $announcement->title }}" class="w-full h-auto" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                 </div>
             @endif
 
@@ -59,7 +59,7 @@
                     @foreach($otherAnnouncements as $oAnn)
                         <a href="{{ route('pengumuman.show', $oAnn->slug) }}" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-indigo-50/60 transition border border-gray-50 group">
                             <div class="w-14 h-14 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
-                                <img src="{{ $oAnn->featured_image_url }}" alt="{{ $oAnn->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                <img src="{{ $oAnn->featured_image_url }}" alt="{{ $oAnn->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <span class="text-[10px] text-orange-600 font-bold block mb-1">Pengumuman</span>

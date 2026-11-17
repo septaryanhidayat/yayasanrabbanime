@@ -1,51 +1,60 @@
 @php
-    $activeUnit = $currentUnitKey ?? (request()->route()?->parameter('unit') ?? (request()->is('tk*') ? 'tk' : (request()->is('sd*') ? 'sd' : (request()->is('smp*') ? 'smp' : 'yayasan'))));
-    if (!in_array($activeUnit, ['yayasan', 'tk', 'sd', 'smp'])) {
+    $activeUnit = $currentUnitKey ?? (request()->route()?->parameter('unit') ?? (request()->is('tk*') ? 'tk' : (request()->is('sd*') ? 'sd' : (request()->is('smp*') ? 'smp' : (request()->is('sma*') ? 'sma' : 'yayasan')))));
+    if (!in_array($activeUnit, ['yayasan', 'tk', 'sd', 'smp', 'sma'])) {
         $activeUnit = 'yayasan';
     }
 
     $unitBrands = [
         'yayasan' => [
-            'title' => 'YAYASAN AGUNG MADANI',
-            'subtitle' => 'SEKOLAH ISLAM TERPADU MADANI',
-            'badge' => 'TK • SD • SMP ISLAM TERPADU KAYUAGUNG',
+            'title' => 'YAYASAN GENERASI RABBANI',
+            'subtitle' => 'SEKOLAH ISLAM TERPADU RABBANI',
+            'badge' => 'TK • SD • SMP • SMA IT RABBANI MUARA ENIM',
             'home' => route('home'),
             'spmb' => route('ppdb.index'),
-            'phone' => $siteSettings['contact_phone'] ?? '0858-3817-3417',
-            'email' => $siteSettings['contact_email'] ?? 'smpsislamterpadumadani@gmail.com',
+            'phone' => $siteSettings['contact_phone'] ?? '0851-5929-3554',
+            'email' => $siteSettings['contact_email'] ?? 'yayasangerabbani@gmail.com',
         ],
         'tk' => [
-            'title' => 'TKS IT MADANI',
-            'subtitle' => 'YAYASAN AGUNG MADANI KAYUAGUNG',
-            'badge' => 'NPSN 69915461 • TERAKREDITASI B',
+            'title' => 'TKS IT RABBANI',
+            'subtitle' => 'YAYASAN GENERASI RABBANI MUARA ENIM',
+            'badge' => 'NPSN 10647514 • TERAKREDITASI B',
             'home' => route('unit.tk'),
             'spmb' => route('unit.ppdb', 'tk'),
-            'phone' => '0821-7936-9298',
-            'email' => 'sitmadani@gmail.com',
+            'phone' => '0851-5929-3554',
+            'email' => 'yayasangerabbani@gmail.com',
         ],
         'sd' => [
-            'title' => 'SDS IT MADANI',
-            'subtitle' => 'YAYASAN AGUNG MADANI KAYUAGUNG',
-            'badge' => 'NPSN 69881529 • TERAKREDITASI B',
+            'title' => 'SDS IT RABBANI',
+            'subtitle' => 'YAYASAN GENERASI RABBANI MUARA ENIM',
+            'badge' => 'NPSN 10648045 • TERAKREDITASI B',
             'home' => route('unit.sd'),
             'spmb' => route('unit.ppdb', 'sd'),
-            'phone' => '0811-7871-1313',
-            'email' => 'sitmadani@gmail.com',
+            'phone' => '0851-5929-3554',
+            'email' => 'yayasangerabbani@gmail.com',
         ],
         'smp' => [
-            'title' => 'SMPS IT MADANI',
-            'subtitle' => 'YAYASAN AGUNG MADANI KAYUAGUNG',
-            'badge' => 'NPSN 70034917 • TERAKREDITASI B',
+            'title' => 'SMPS IT RABBANI',
+            'subtitle' => 'YAYASAN GENERASI RABBANI MUARA ENIM',
+            'badge' => 'NPSN 69920340 • TERAKREDITASI B • FULL DAY',
             'home' => route('unit.smp'),
             'spmb' => route('unit.ppdb', 'smp'),
-            'phone' => '0858-3817-3417',
-            'email' => 'smpsislamterpadumadani@gmail.com',
+            'phone' => '0851-5929-3554',
+            'email' => 'yayasangerabbani@gmail.com',
+        ],
+        'sma' => [
+            'title' => 'SMA IT RABBANI',
+            'subtitle' => 'YAYASAN GENERASI RABBANI MUARA ENIM',
+            'badge' => 'NPSN 70010515 • TERAKREDITASI B • BOARDING & FULL DAY',
+            'home' => route('unit.sma'),
+            'spmb' => route('unit.ppdb', 'sma'),
+            'phone' => '0851-5929-3554',
+            'email' => 'yayasangerabbani@gmail.com',
         ],
     ];
     $curBrand = $unitBrands[$activeUnit] ?? $unitBrands['yayasan'];
 @endphp
 
-{{-- 1. TOPBAR UNIT SWITCHER (Pilihan Akses Portal Yayasan & 3 Unit Sekolah SIT Madani) --}}
+{{-- 1. TOPBAR UNIT SWITCHER (Pilihan Akses Portal Yayasan & 3 Unit Sekolah SIT Rabbani) --}}
 <div class="w-full max-w-full bg-[#080d1a] text-slate-200 text-xs py-1.5 border-b border-indigo-950/80 overflow-hidden box-border">
     <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
         
@@ -54,21 +63,25 @@
             <span class="text-amber-400 font-extrabold uppercase text-[10px] tracking-wider mr-1 hidden lg:inline-flex items-center">
                 <i class="fa-solid fa-layer-group mr-1"></i> Unit:
             </span>
-            <a href="{{ route('home') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'yayasan' ? 'bg-indigo-600 text-white shadow ring-1 ring-indigo-400' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kembali ke Portal Yayasan Agung Madani">
+            <a href="{{ route('home') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'yayasan' ? 'bg-indigo-600 text-white shadow ring-1 ring-indigo-400' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kembali ke Portal Yayasan Generasi Rabbani">
                 <i class="fa-solid fa-landmark text-amber-400 text-[10px]"></i>
                 <span>Yayasan</span>
             </a>
-            <a href="{{ route('unit.tk') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow ring-1 ring-amber-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website TKS IT Madani">
+            <a href="{{ route('unit.tk') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow ring-1 ring-amber-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website TKS IT Rabbani">
                 <i class="fa-solid fa-shapes {{ $activeUnit === 'tk' ? 'text-slate-950' : 'text-amber-400' }} text-[10px]"></i>
                 <span>TKS IT</span>
             </a>
-            <a href="{{ route('unit.sd') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'sd' ? 'bg-emerald-600 text-white font-black shadow ring-1 ring-emerald-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website SDS IT Madani">
+            <a href="{{ route('unit.sd') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'sd' ? 'bg-emerald-600 text-white font-black shadow ring-1 ring-emerald-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website SDS IT Rabbani">
                 <i class="fa-solid fa-book-open-reader {{ $activeUnit === 'sd' ? 'text-white' : 'text-emerald-400' }} text-[10px]"></i>
                 <span>SDS IT</span>
             </a>
-            <a href="{{ route('unit.smp') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'smp' ? 'bg-blue-600 text-white font-black shadow ring-1 ring-blue-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website SMPS IT Madani">
+            <a href="{{ route('unit.smp') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'smp' ? 'bg-blue-600 text-white font-black shadow ring-1 ring-blue-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website SMPS IT Rabbani">
                 <i class="fa-solid fa-graduation-cap {{ $activeUnit === 'smp' ? 'text-white' : 'text-blue-400' }} text-[10px]"></i>
                 <span>SMPS IT</span>
+            </a>
+            <a href="{{ route('unit.sma') }}" class="px-2.5 py-1 rounded-lg text-[11px] font-bold transition flex items-center space-x-1.5 {{ $activeUnit === 'sma' ? 'bg-purple-600 text-white font-black shadow ring-1 ring-purple-300' : 'bg-slate-900/90 text-slate-300 hover:bg-indigo-950 hover:text-white' }}" title="Kunjungi Website SMA IT Rabbani">
+                <i class="fa-solid fa-building-columns {{ $activeUnit === 'sma' ? 'text-white' : 'text-purple-400' }} text-[10px]"></i>
+                <span>SMA IT</span>
             </a>
         </div>
 
@@ -96,10 +109,10 @@
     <div class="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 box-border">
         <div class="flex justify-between items-center h-16 sm:h-20 w-full max-w-full">
             
-            {{-- LOGO RESMI SEKOLAH ISLAM TERPADU MADANI --}}
+            {{-- LOGO RESMI SEKOLAH ISLAM TERPADU RABBANI --}}
             <a href="{{ $curBrand['home'] }}" class="flex items-center space-x-2 sm:space-x-3 group shrink-0 flex-shrink-0 mr-2 lg:mr-3 select-none whitespace-nowrap" aria-label="Beranda {{ $curBrand['title'] }}">
                 <div class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 shrink-0 flex items-center justify-center overflow-hidden">
-                    <img src="/uploads/logo-madani-square.webp" alt="Logo SIT Madani Kayuagung" width="48" height="48" fetchpriority="high" decoding="async" class="w-full h-full object-contain pointer-events-none select-none transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='/uploads/logo-madani.png'">
+                    <img src="/uploads/logo-rabbani-square.webp" alt="Logo SIT Rabbani Muara Enim" width="48" height="48" fetchpriority="high" decoding="async" class="w-full h-full object-contain pointer-events-none select-none transition duration-300 group-hover:scale-105" onerror="this.onerror=null; this.src='/uploads/logo-rabbani.png'">
                 </div>
                 <div class="flex flex-col shrink-0 justify-center leading-none space-y-0.5 whitespace-nowrap">
                     <span class="text-[9px] sm:text-[10px] md:text-[11px] font-extrabold uppercase tracking-wider text-amber-400 leading-tight block">{{ $curBrand['subtitle'] }}</span>
@@ -144,21 +157,21 @@
                         </div>
                     </div>
 
-                    {{-- Dropdown Unit Pendidikan SIT Madani --}}
+                    {{-- Dropdown Unit Pendidikan SIT Rabbani --}}
                     <div class="relative group py-2" id="nav-dropdown-unit">
-                        <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Unit Sekolah" class="px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('tk*', 'sd*', 'smp*', 'unit*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Buka Menu Unit Sekolah" class="px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-xl whitespace-nowrap inline-flex items-center hover:bg-white/15 transition {{ request()->is('tk*', 'sd*', 'smp*', 'sma*', 'unit*') ? 'bg-white/20 text-white shadow-inner' : '' }}">
                             <i class="fa-solid fa-layer-group text-amber-400 text-xs mr-1"></i>
                             <span>Unit Sekolah</span>
                             <i class="fa-solid fa-chevron-down text-[10px] ml-1 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true"></i>
                         </button>
-                        <div class="absolute left-0 top-full pt-1 w-60 hidden group-hover:block transition-all duration-150 z-50">
+                        <div class="absolute left-0 top-full pt-1 w-64 hidden group-hover:block transition-all duration-150 z-50">
                             <div class="bg-white rounded-2xl shadow-2xl border border-indigo-100 py-2 text-gray-800 animate-fadeIn">
                                 <a href="{{ route('unit.tk') }}" class="block px-3.5 py-2.5 text-xs font-bold text-gray-800 hover:bg-amber-50 hover:text-amber-800 transition flex items-center space-x-2.5">
                                     <span class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs">
                                         <i class="fa-solid fa-shapes"></i>
                                     </span>
                                     <div>
-                                        <span class="block text-xs font-bold">TKS IT Madani</span>
+                                        <span class="block text-xs font-bold">TKS IT Rabbani</span>
                                         <span class="text-[10px] font-normal text-gray-500">PAUD / TK Islam Terpadu</span>
                                     </div>
                                 </a>
@@ -167,7 +180,7 @@
                                         <i class="fa-solid fa-book-open-reader"></i>
                                     </span>
                                     <div>
-                                        <span class="block text-xs font-bold">SDS IT Madani</span>
+                                        <span class="block text-xs font-bold">SDS IT Rabbani</span>
                                         <span class="text-[10px] font-normal text-gray-500">Sekolah Dasar Islam Terpadu</span>
                                     </div>
                                 </a>
@@ -176,8 +189,17 @@
                                         <i class="fa-solid fa-graduation-cap"></i>
                                     </span>
                                     <div>
-                                        <span class="block text-xs font-bold">SMPS IT Madani</span>
+                                        <span class="block text-xs font-bold">SMPS IT Rabbani</span>
                                         <span class="text-[10px] font-normal text-gray-500">Sekolah Menengah Pertama IT</span>
+                                    </div>
+                                </a>
+                                <a href="{{ route('unit.sma') }}" class="block px-3.5 py-2.5 text-xs font-bold text-gray-800 hover:bg-purple-50 hover:text-purple-800 transition flex items-center space-x-2.5">
+                                    <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 text-xs">
+                                        <i class="fa-solid fa-building-columns"></i>
+                                    </span>
+                                    <div>
+                                        <span class="block text-xs font-bold">SMA IT Rabbani</span>
+                                        <span class="text-[10px] font-normal text-gray-500">Boarding &amp; Full Day School</span>
                                     </div>
                                 </a>
                             </div>
@@ -274,7 +296,7 @@
                                 <a href="{{ route('unit.fasilitas', $activeUnit) }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
                                     <i class="fa-solid fa-layer-group w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Fasilitas Unit
                                 </a>
-                                @if($activeUnit === 'smp')
+                                @if($activeUnit === 'smp' || $activeUnit === 'sma')
                                 <div class="border-t border-gray-100 my-1"></div>
                                 <a href="{{ route('dpc.index') }}" class="block px-3.5 py-2 text-xs font-semibold text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition flex items-center whitespace-nowrap">
                                     <i class="fa-solid fa-award w-4 text-indigo-600 mr-2 text-xs" aria-hidden="true"></i> Program Unggulan
@@ -322,7 +344,7 @@
                     </a>
 
                     {{-- Tombol Kembali ke Portal Yayasan --}}
-                    <a href="{{ route('home') }}" class="px-2.5 py-1 rounded-full bg-slate-900/90 hover:bg-indigo-900 text-amber-300 hover:text-white border border-amber-400/40 text-[11px] font-bold transition flex items-center space-x-1 whitespace-nowrap shadow-xs ml-1" title="Kembali ke Portal Yayasan Agung Madani">
+                    <a href="{{ route('home') }}" class="px-2.5 py-1 rounded-full bg-slate-900/90 hover:bg-indigo-900 text-amber-300 hover:text-white border border-amber-400/40 text-[11px] font-bold transition flex items-center space-x-1 whitespace-nowrap shadow-xs ml-1" title="Kembali ke Portal Yayasan Generasi Rabbani">
                         <i class="fa-solid fa-arrow-left text-[9px]"></i>
                         <span>Yayasan</span>
                     </a>
@@ -359,7 +381,7 @@
         {{-- Mobile Unit Quick Switcher --}}
         <div class="bg-slate-100 p-2.5 rounded-2xl mb-2">
             <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-900 block mb-1.5 text-center">Pilih Portal &amp; Unit Sekolah:</span>
-            <div class="grid grid-cols-2 gap-1.5">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
                 <a href="{{ route('home') }}" class="px-2 py-1.5 rounded-xl text-center text-xs font-bold transition {{ $activeUnit === 'yayasan' ? 'bg-indigo-600 text-white shadow' : 'bg-white text-gray-800 hover:bg-indigo-50' }}">
                     <i class="fa-solid fa-landmark text-amber-500 text-[10px] mr-1"></i> Yayasan
                 </a>
@@ -371,6 +393,9 @@
                 </a>
                 <a href="{{ route('unit.smp') }}" class="px-2 py-1.5 rounded-xl text-center text-xs font-bold transition {{ $activeUnit === 'smp' ? 'bg-blue-600 text-white font-black shadow' : 'bg-white text-gray-800 hover:bg-blue-50' }}">
                     <i class="fa-solid fa-graduation-cap text-blue-600 text-[10px] mr-1"></i> SMPS IT
+                </a>
+                <a href="{{ route('unit.sma') }}" class="px-2 py-1.5 rounded-xl text-center text-xs font-bold transition col-span-2 sm:col-span-1 {{ $activeUnit === 'sma' ? 'bg-purple-600 text-white font-black shadow' : 'bg-white text-gray-800 hover:bg-purple-50' }}">
+                    <i class="fa-solid fa-building-columns text-purple-600 text-[10px] mr-1"></i> SMA IT
                 </a>
             </div>
         </div>
@@ -388,7 +413,7 @@
         @if($activeUnit === 'yayasan')
             <div class="border-t border-gray-100 pt-2">
                 <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
-                    <i class="fa-solid fa-landmark mr-2 text-amber-500"></i> Profil Yayasan Agung Madani
+                    <i class="fa-solid fa-landmark mr-2 text-amber-500"></i> Profil Yayasan Generasi Rabbani
                 </div>
                 <a href="{{ route('page.sambutan.yayasan') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Sambutan Ketua Yayasan</a>
                 <a href="{{ route('page.tentang.yayasan') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Profil Singkat Yayasan</a>
@@ -399,16 +424,19 @@
 
             <div class="border-t border-gray-100 pt-2">
                 <div class="font-extrabold text-xs text-indigo-900 uppercase tracking-wider px-3 mb-1 flex items-center">
-                    <i class="fa-solid fa-layer-group mr-2 text-amber-500"></i> Unit Pendidikan SIT Madani
+                    <i class="fa-solid fa-layer-group mr-2 text-amber-500"></i> Unit Pendidikan SIT Rabbani
                 </div>
                 <a href="{{ route('unit.tk') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-amber-600 font-semibold flex items-center">
-                    <i class="fa-solid fa-shapes mr-2 text-amber-500 w-4"></i> TKS IT Madani (PAUD/TK)
+                    <i class="fa-solid fa-shapes mr-2 text-amber-500 w-4"></i> TKS IT Rabbani (PAUD/TK)
                 </a>
                 <a href="{{ route('unit.sd') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-emerald-600 font-semibold flex items-center">
-                    <i class="fa-solid fa-book-open-reader mr-2 text-emerald-600 w-4"></i> SDS IT Madani (SD)
+                    <i class="fa-solid fa-book-open-reader mr-2 text-emerald-600 w-4"></i> SDS IT Rabbani (SD)
                 </a>
                 <a href="{{ route('unit.smp') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-blue-600 font-semibold flex items-center">
-                    <i class="fa-solid fa-graduation-cap mr-2 text-blue-600 w-4"></i> SMPS IT Madani (SMP)
+                    <i class="fa-solid fa-graduation-cap mr-2 text-blue-600 w-4"></i> SMPS IT Rabbani (SMP)
+                </a>
+                <a href="{{ route('unit.sma') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-purple-600 font-semibold flex items-center">
+                    <i class="fa-solid fa-building-columns mr-2 text-purple-600 w-4"></i> SMA IT Rabbani (SMA/Boarding)
                 </a>
             </div>
         @else
@@ -422,7 +450,7 @@
                 <a href="{{ route('unit.dewan', $activeUnit) }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Dewan Guru &amp; GTK</a>
                 <a href="{{ route('unit.struktur', $activeUnit) }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Struktur Organisasi</a>
                 <a href="{{ route('unit.fasilitas', $activeUnit) }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Fasilitas</a>
-                @if($activeUnit === 'smp')
+                @if($activeUnit === 'smp' || $activeUnit === 'sma')
                 <a href="{{ route('dpc.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Program Unggulan</a>
                 <a href="{{ route('ekskul.index') }}" class="block px-4 py-1.5 text-xs text-gray-700 hover:text-indigo-700">Ekstrakurikuler</a>
                 @endif
@@ -471,7 +499,7 @@
                     <i class="fa-solid fa-phone mr-2 text-indigo-600"></i> Hubungi Yayasan
                 </a>
                 <a href="{{ route('donasi') }}" class="block px-3 py-2 rounded-lg font-extrabold text-indigo-700 hover:bg-indigo-50">
-                    <i class="fa-solid fa-hand-holding-heart mr-2 text-amber-500"></i> Infaq Madani
+                    <i class="fa-solid fa-hand-holding-heart mr-2 text-amber-500"></i> Infaq Rabbani
                 </a>
             </div>
         @else

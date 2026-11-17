@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'SPMB Online TP ' . ($settings['year'] ?? '2026/2027') . ' - SIT Madani Kayuagung')
-@section('meta_description', 'Sistem Penerimaan Murid Baru (SPMB) SIT Madani Kayuagung (TK, SD, SMP) Tahun Pelajaran ' . ($settings['year'] ?? '2026/2027') . '. Informasi lengkap jalur pendaftaran, syarat berkas, alur, jadwal, biaya formulir, rekening resmi BSI, dan formulir pendaftaran online.')
+@section('title', 'SPMB Online TP ' . ($settings['year'] ?? '2026/2027') . ' - SIT Rabbani Muara Enim')
+@section('meta_description', 'Sistem Penerimaan Murid Baru (SPMB) SIT Rabbani Muara Enim (TK, SD, SMP) Tahun Pelajaran ' . ($settings['year'] ?? '2026/2027') . '. Informasi lengkap jalur pendaftaran, syarat berkas, alur, jadwal, biaya formulir, rekening resmi BSI, dan formulir pendaftaran online.')
 
 @section('content')
 @php
@@ -29,7 +29,7 @@
             {{-- Logo & Accreditation Pill --}}
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
                 <div class="w-16 h-16 sm:w-20 sm:h-20 p-2 bg-white/95 rounded-2xl shadow-lg flex items-center justify-center border border-white/20">
-                    <img src="/uploads/logo-madani-square.webp" alt="Logo SMPS IT Madani" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.src='/uploads/logo.png'">
+                    <img src="/uploads/logo-rabbani-square.webp" alt="Logo SMPS IT Rabbani" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.src='/uploads/logo.png'">
                 </div>
                 <div class="inline-flex items-center space-x-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 px-3.5 py-1.5 rounded-full text-xs font-bold backdrop-blur-sm">
                     <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -41,10 +41,10 @@
             @php
                 $ppdbUnit = $currentUnitKey ?? request()->query('unit', 'all');
                 $unitTitles = [
-                    'all' => ['title' => 'SPMB TERPADU SIT MADANI', 'sub' => 'TK • SD • SMP ISLAM TERPADU KAYUAGUNG'],
-                    'tk' => ['title' => 'SPMB TKS IT MADANI', 'sub' => 'PAUD / TK ISLAM TERPADU KAYUAGUNG (NPSN 69915461)'],
-                    'sd' => ['title' => 'SPMB SDS IT MADANI', 'sub' => 'SEKOLAH DASAR ISLAM TERPADU KAYUAGUNG (NPSN 69881529)'],
-                    'smp' => ['title' => 'SPMB SMPS IT MADANI', 'sub' => 'SEKOLAH MENENGAH PERTAMA IT KAYUAGUNG (NPSN 70034917)'],
+                    'all' => ['title' => 'SPMB TERPADU SIT RABBANI', 'sub' => 'TK • SD • SMP ISLAM TERPADU MUARA ENIM'],
+                    'tk' => ['title' => 'SPMB TKS IT RABBANI', 'sub' => 'PAUD / TK ISLAM TERPADU MUARA ENIM (NPSN 69915461)'],
+                    'sd' => ['title' => 'SPMB SDS IT RABBANI', 'sub' => 'SEKOLAH DASAR ISLAM TERPADU MUARA ENIM (NPSN 69881529)'],
+                    'smp' => ['title' => 'SPMB SMPS IT RABBANI', 'sub' => 'SEKOLAH MENENGAH PERTAMA IT MUARA ENIM (NPSN 70034917)'],
                 ];
                 $activePpdbInfo = $unitTitles[$ppdbUnit] ?? $unitTitles['all'];
             @endphp
@@ -54,13 +54,13 @@
                     <i class="fa-solid fa-layer-group text-amber-400 mr-1"></i> Semua Unit
                 </a>
                 <a href="{{ route('unit.ppdb', 'tk') }}" class="px-3 py-1.5 rounded-xl text-xs font-bold transition {{ $ppdbUnit === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow ring-1 ring-amber-300' : 'bg-white/10 text-slate-200 hover:bg-white/20' }}">
-                    <i class="fa-solid fa-shapes text-amber-400 mr-1"></i> TKS IT Madani
+                    <i class="fa-solid fa-shapes text-amber-400 mr-1"></i> TKS IT Rabbani
                 </a>
                 <a href="{{ route('unit.ppdb', 'sd') }}" class="px-3 py-1.5 rounded-xl text-xs font-bold transition {{ $ppdbUnit === 'sd' ? 'bg-emerald-600 text-white font-black shadow ring-1 ring-emerald-300' : 'bg-white/10 text-slate-200 hover:bg-white/20' }}">
-                    <i class="fa-solid fa-book-open-reader text-emerald-400 mr-1"></i> SDS IT Madani
+                    <i class="fa-solid fa-book-open-reader text-emerald-400 mr-1"></i> SDS IT Rabbani
                 </a>
                 <a href="{{ route('unit.ppdb', 'smp') }}" class="px-3 py-1.5 rounded-xl text-xs font-bold transition {{ $ppdbUnit === 'smp' ? 'bg-blue-600 text-white font-black shadow ring-1 ring-blue-300' : 'bg-white/10 text-slate-200 hover:bg-white/20' }}">
-                    <i class="fa-solid fa-graduation-cap text-blue-400 mr-1"></i> SMPS IT Madani
+                    <i class="fa-solid fa-graduation-cap text-blue-400 mr-1"></i> SMPS IT Rabbani
                 </a>
             </div>
 
@@ -98,7 +98,7 @@
                     <span>Isi Formulir Online Sekarang</span>
                 </a>
 
-                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia SPMB SIT Madani Kayuagung, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/20 transition transform hover:scale-102">
+                <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia SPMB SIT Rabbani Muara Enim, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold shadow-md shadow-emerald-600/20 transition transform hover:scale-102">
                     <i class="fa-brands fa-whatsapp text-base"></i>
                     <span>Tanya Panitia via WhatsApp</span>
                 </a>
@@ -157,7 +157,7 @@
                 <div>
                     <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Layanan Konsultasi</span>
                     <a href="https://wa.me/{{ $cleanHotline }}" target="_blank" class="text-xs sm:text-sm font-black text-slate-900 hover:text-[#059669] transition">
-                        {{ $settings['hotline_phone'] ?? '0858-3817-3417' }}
+                        {{ $settings['hotline_phone'] ?? '0851-5929-3554' }}
                     </a>
                 </div>
             </div>
@@ -242,9 +242,9 @@
                             ['title' => 'Jalur First Brive', 'quota' => '10%', 'badge' => 'Cashback & Prioritas', 'desc' => 'Jalur pendaftaran gelombang perdana dengan diskon dan kuota khusus untuk pendaftar awal.'],
                             ['title' => 'Jalur Mutasi Kerja', 'quota' => '5%', 'badge' => 'Keringanan Khusus Mutasi', 'desc' => 'Jalur bagi calon siswa pindahan atau orang tua/wali yang mengalami mutasi tugas kerja.'],
                             ['title' => 'Jalur Tahfidz Al-Qur\'an', 'quota' => '5%', 'badge' => 'Cashback s/d Rp 1.000.000', 'desc' => $settings['tahfidz'] ?? 'Jalur khusus penghafal Al-Qur\'an minimal 4-5 Juz dengan kuota terbatas.'],
-                            ['title' => 'Jalur Alumni SDIT Madani', 'quota' => '25%', 'badge' => 'Potongan Biaya Rp 1.000.000', 'desc' => $settings['alumni'] ?? 'Keringanan istimewa bagi lulusan SD IT Madani 1 & 2 Kayuagung.'],
+                            ['title' => 'Jalur Alumni SDIT Rabbani', 'quota' => '25%', 'badge' => 'Potongan Biaya Rp 1.000.000', 'desc' => $settings['alumni'] ?? 'Keringanan istimewa bagi lulusan SD IT Rabbani 1 & 2 Muara Enim.'],
                             ['title' => 'Jalur Prestasi', 'quota' => '30%', 'badge' => 'Keringanan & Bebas Tes Tertentu', 'desc' => $settings['prestasi'] ?? 'Jalur prestasi akademik (Peringkat 1-3) dan non-akademik (Sains, Olahraga, Seni) min. tingkat kota.'],
-                            ['title' => 'Jalur Reguler / Mandiri', 'quota' => '25%', 'badge' => 'Biaya Standar SPMB', 'desc' => $settings['mandiri'] ?? 'Jalur seleksi tes mandiri masuk SMP IT Madani (TPA, Tahsin & Wawancara).'],
+                            ['title' => 'Jalur Reguler / Mandiri', 'quota' => '25%', 'badge' => 'Biaya Standar SPMB', 'desc' => $settings['mandiri'] ?? 'Jalur seleksi tes mandiri masuk SMP IT Rabbani (TPA, Tahsin & Wawancara).'],
                         ];
                     @endphp
                     @foreach($fallbackTracks as $index => $ft)
@@ -487,7 +487,7 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <i class="fa-solid fa-location-dot text-[#059669] mt-0.5 shrink-0"></i>
-                            <span>{{ $settings['secretariat'] ?? 'Kompleks SMPS IT Madani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Kayuagung, Kayuagung' }}</span>
+                            <span>{{ $settings['secretariat'] ?? 'Kompleks SMPS IT Rabbani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Muara Enim, Muara Enim' }}</span>
                         </li>
                     </ul>
                 </div>
@@ -495,7 +495,7 @@
                 <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
                     <div>
                         <span class="text-[10px] text-slate-400 font-bold block uppercase">Hotline SPMB</span>
-                        <span class="text-xs font-black text-slate-800">{{ $settings['hotline_phone'] ?? '0858-3817-3417' }}</span>
+                        <span class="text-xs font-black text-slate-800">{{ $settings['hotline_phone'] ?? '0851-5929-3554' }}</span>
                     </div>
                     <a href="https://wa.me/{{ $cleanHotline }}" target="_blank" class="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold rounded-xl transition inline-flex items-center gap-1.5">
                         <i class="fa-brands fa-whatsapp"></i> Chat WA
@@ -506,7 +506,7 @@
         </section>
 
         {{-- ========================================================
-             6. SISTEM PEMBELAJARAN FULL DAY SCHOOL SIT MADANI
+             6. SISTEM PEMBELAJARAN FULL DAY SCHOOL SIT RABBANI
              ======================================================== --}}
         <section class="space-y-6">
             <div class="text-center max-w-2xl mx-auto">
@@ -514,15 +514,15 @@
                     Sistem Pembelajaran Terpadu
                 </span>
                 <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">
-                    Jenjang Satuan Pendidikan SIT Madani
+                    Jenjang Satuan Pendidikan SIT Rabbani
                 </h2>
                 <p class="text-xs text-slate-500">
-                    Seluruh unit sekolah SIT Madani menerapkan sistem Full Day School yang memadukan kurikulum nasional dan kekhasan JSIT Indonesia.
+                    Seluruh unit sekolah SIT Rabbani menerapkan sistem Full Day School yang memadukan kurikulum nasional dan kekhasan JSIT Indonesia.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-                {{-- Card 1: TKS IT Madani --}}
+                {{-- Card 1: TKS IT Rabbani --}}
                 <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-xs border-2 border-amber-200 hover:border-amber-400 transition flex flex-col justify-between space-y-4">
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
@@ -532,7 +532,7 @@
                             <i class="fa-solid fa-shapes text-xl text-amber-500"></i>
                         </div>
                         <h3 class="text-base sm:text-lg font-black text-slate-900">
-                            TKS IT Madani Kayuagung
+                            TKS IT Rabbani Muara Enim
                         </h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Pendekatan Deep Learning yang bermakna dan menggembirakan di sentra bermain terpadu.
@@ -550,7 +550,7 @@
                     </div>
                 </div>
 
-                {{-- Card 2: SDS IT Madani --}}
+                {{-- Card 2: SDS IT Rabbani --}}
                 <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-xs border-2 border-emerald-200 hover:border-emerald-400 transition flex flex-col justify-between space-y-4">
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
@@ -560,7 +560,7 @@
                             <i class="fa-solid fa-book-open-reader text-xl text-emerald-600"></i>
                         </div>
                         <h3 class="text-base sm:text-lg font-black text-slate-900">
-                            SDS IT Madani Kayuagung
+                            SDS IT Rabbani Muara Enim
                         </h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Full Day School dengan kurikulum nasional terintegrasi nilai-nilai Al-Qur'an dan Sunnah.
@@ -578,7 +578,7 @@
                     </div>
                 </div>
 
-                {{-- Card 3: SMPS IT Madani --}}
+                {{-- Card 3: SMPS IT Rabbani --}}
                 <div class="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-xs border-2 border-indigo-200 hover:border-indigo-400 transition flex flex-col justify-between space-y-4">
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
@@ -588,7 +588,7 @@
                             <i class="fa-solid fa-graduation-cap text-xl text-indigo-600"></i>
                         </div>
                         <h3 class="text-base sm:text-lg font-black text-slate-900">
-                            SMPS IT Madani Kayuagung
+                            SMPS IT Rabbani Muara Enim
                         </h3>
                         <p class="text-xs text-slate-600 font-normal leading-relaxed">
                             Full Day School jenjang menengah pertama yang memadukan imtak, sains modern, dan bahasa asing.
@@ -628,7 +628,7 @@
                 <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 group">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <img src="{{ $settings['image_1'] }}" 
-                             alt="Gedung Utama SMPS IT Madani" 
+                             alt="Gedung Utama SMPS IT Rabbani" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                              onerror="this.onerror=null; this.src='/uploads/fasilitas/fasilitas-gedung-utama.webp'">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
@@ -642,7 +642,7 @@
                 <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 group">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <img src="{{ $settings['image_2'] }}" 
-                             alt="Ruang Kelas SMPS IT Madani" 
+                             alt="Ruang Kelas SMPS IT Rabbani" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                              onerror="this.onerror=null; this.src='/uploads/fasilitas/fasilitas-ruang-kelas.webp'">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
@@ -656,7 +656,7 @@
                 <div class="rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 group">
                     <div class="relative aspect-[16/10] overflow-hidden">
                         <img src="{{ $settings['image_3'] }}" 
-                             alt="Laboratorium SMPS IT Madani" 
+                             alt="Laboratorium SMPS IT Rabbani" 
                              class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
                              onerror="this.onerror=null; this.src='/uploads/fasilitas/fasilitas-lab-ipa.webp'">
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
@@ -674,7 +674,7 @@
                     <div class="text-center max-w-lg mx-auto mb-3">
                         <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 block">Video Profil Sekolah</span>
                         <h3 class="text-sm sm:text-base font-black text-slate-900">
-                            {{ $settings['video_title'] ?? 'Mengenal Lebih Dekat SMPS IT Madani' }}
+                            {{ $settings['video_title'] ?? 'Mengenal Lebih Dekat SMPS IT Rabbani' }}
                         </h3>
                     </div>
 
@@ -682,7 +682,7 @@
                         <div style="position: relative; width: 100%; padding-top: 56.25%;">
                             <iframe 
                                 src="https://www.youtube.com/embed/{{ $settings['youtube_id'] }}?rel=0" 
-                                title="{{ $settings['video_title'] ?? 'Video Profil SMPS IT Madani Kayuagung' }}" 
+                                title="{{ $settings['video_title'] ?? 'Video Profil SMPS IT Rabbani Muara Enim' }}" 
                                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowfullscreen>
@@ -719,7 +719,7 @@
             </a>
 
             {{-- Tombol Konsultasi WhatsApp --}}
-            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia SPMB SIT Madani Kayuagung, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-br from-emerald-600 to-teal-700 text-white p-5 sm:p-7 rounded-2xl sm:rounded-3xl shadow-md hover:shadow-xl transition flex flex-col justify-between">
+            <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Halo Panitia SPMB SIT Rabbani Muara Enim, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" rel="noopener noreferrer" class="group bg-gradient-to-br from-emerald-600 to-teal-700 text-white p-5 sm:p-7 rounded-2xl sm:rounded-3xl shadow-md hover:shadow-xl transition flex flex-col justify-between">
                 <div class="space-y-2">
                     <div class="w-11 h-11 rounded-xl bg-white/20 text-white flex items-center justify-center text-xl">
                         <i class="fa-brands fa-whatsapp"></i>
@@ -728,7 +728,7 @@
                         Konsultasi & Konfirmasi WhatsApp
                     </h3>
                     <p class="text-xs text-emerald-100 leading-relaxed font-normal">
-                        Hubungi panitia penerimaan siswa baru untuk informasi syarat pendaftaran, program sekolah, atau pengiriman bukti transfer: <strong>{{ $settings['hotline_phone'] ?? '0858-3817-3417' }}</strong>
+                        Hubungi panitia penerimaan siswa baru untuk informasi syarat pendaftaran, program sekolah, atau pengiriman bukti transfer: <strong>{{ $settings['hotline_phone'] ?? '0851-5929-3554' }}</strong>
                     </p>
                 </div>
                 <div class="pt-4 mt-3 border-t border-white/20">
@@ -745,13 +745,13 @@
              ======================================================== --}}
         <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-2xs border border-slate-200/80 text-center space-y-2">
             <h3 class="text-base sm:text-lg font-black text-[#059669]">
-                {{ $settings['closing_title'] ?? 'Terima Kasih Sudah Mendaftar di SMPS IT Madani Kayuagung' }}
+                {{ $settings['closing_title'] ?? 'Terima Kasih Sudah Mendaftar di SMPS IT Rabbani Muara Enim' }}
             </h3>
             <p class="text-xs text-slate-600 max-w-xl mx-auto leading-relaxed">
                 {{ $settings['closing_desc'] ?? 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin' }}
             </p>
             <div class="pt-3 border-t border-slate-100 text-[11px] font-bold text-indigo-700 uppercase tracking-wider">
-                SMPS IT Madani Kayuagung &bull; Anggota JSIT Indonesia
+                SMPS IT Rabbani Muara Enim &bull; Anggota JSIT Indonesia
             </div>
         </div>
 
@@ -761,7 +761,7 @@
          10. MOBILE BOTTOM STICKY ACTION BAR (Sangat Ramah Pengguna HP)
          ======================================================== --}}
     <div class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 px-4 flex items-center gap-2 shadow-2xl">
-        <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia SPMB SIT Madani Kayuagung, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-emerald-600 text-white py-2.5 px-3 rounded-xl text-xs font-bold shadow-xs">
+        <a href="https://wa.me/{{ $cleanHotline }}?text={{ urlencode('Assalamu\'alaikum Panitia SPMB SIT Rabbani Muara Enim, saya ingin konsultasi pendaftaran siswa baru.') }}" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 bg-emerald-600 text-white py-2.5 px-3 rounded-xl text-xs font-bold shadow-xs">
             <i class="fa-brands fa-whatsapp text-sm"></i>
             <span>Tanya WA</span>
         </a>

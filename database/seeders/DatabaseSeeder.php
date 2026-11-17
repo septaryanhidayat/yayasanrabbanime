@@ -15,36 +15,41 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
         $adminUsers = [
             [
-                'email' => 'admin@sitmadani.sch.id',
-                'name' => 'Administrator Yayasan Agung Madani',
-                'password' => bcrypt('Madani2026!'),
+                'email' => 'admin@rabbanime.sch.id',
+                'name' => 'Administrator Yayasan Generasi Rabbani',
+                'password' => bcrypt('Rabbani2026!'),
                 'role' => 'super_admin',
                 'unit' => 'yayasan',
             ],
             [
-                'email' => 'admin_tk@sitmadani.sch.id',
-                'name' => 'Admin TKS IT Madani Kayuagung',
-                'password' => bcrypt('Madani2026!'),
+                'email' => 'admin_tk@rabbanime.sch.id',
+                'name' => 'Admin TKS IT Rabbani Muara Enim',
+                'password' => bcrypt('Rabbani2026!'),
                 'role' => 'admin',
                 'unit' => 'tk',
             ],
             [
-                'email' => 'admin_sd@sitmadani.sch.id',
-                'name' => 'Admin SDS IT Madani Kayuagung',
-                'password' => bcrypt('Madani2026!'),
+                'email' => 'admin_sd@rabbanime.sch.id',
+                'name' => 'Admin SDS IT Rabbani Muara Enim',
+                'password' => bcrypt('Rabbani2026!'),
                 'role' => 'admin',
                 'unit' => 'sd',
             ],
             [
-                'email' => 'admin_smp@sitmadani.sch.id',
-                'name' => 'Admin SMPS IT Madani Kayuagung',
-                'password' => bcrypt('Madani2026!'),
+                'email' => 'admin_smp@rabbanime.sch.id',
+                'name' => 'Admin SMPS IT Rabbani Muara Enim',
+                'password' => bcrypt('Rabbani2026!'),
                 'role' => 'admin',
                 'unit' => 'smp',
+            ],
+            [
+                'email' => 'admin_sma@rabbanime.sch.id',
+                'name' => 'Admin SMA IT Rabbani Muara Enim',
+                'password' => bcrypt('Rabbani2026!'),
+                'role' => 'admin',
+                'unit' => 'sma',
             ],
         ];
 
@@ -57,7 +62,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             SchoolDataSeeder::class,
+            UnitNewsPrestasiSeeder::class,
             EkstrakurikulerSeeder::class,
+            DownloadSeeder::class,
         ]);
     }
 }

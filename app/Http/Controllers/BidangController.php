@@ -12,7 +12,7 @@ class BidangController extends Controller
     {
         $unitKey = $unit ?? $request->query('unit', 'all');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : 'all';
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : 'all';
         $currentUnit = ($currentUnitKey !== 'all') ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $bidangs = Bidang::orderBy('order', 'asc')->get();

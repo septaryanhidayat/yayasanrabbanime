@@ -1,33 +1,38 @@
 @extends('layouts.frontend')
 
 @php
-    $activeKey = in_array($currentUnitKey, ['yayasan', 'tk', 'sd', 'smp']) ? $currentUnitKey : 'yayasan';
+    $activeKey = in_array($currentUnitKey, ['yayasan', 'tk', 'sd', 'smp', 'sma']) ? $currentUnitKey : 'yayasan';
     $titles = [
         'yayasan' => [
-            'title' => 'Struktur Kepengurusan Yayasan Agung Madani Kayuagung',
-            'sub' => 'Susunan formatur Dewan Pembina, Pengawas, Pengurus Harian, dan Direktorat Yayasan Agung Madani.',
+            'title' => 'Struktur Kepengurusan Yayasan Generasi Rabbani Muara Enim',
+            'sub' => 'Susunan formatur Dewan Pembina, Pengawas, Pengurus Harian, dan Direktorat Yayasan Generasi Rabbani.',
             'badge' => 'TATA KELOLA YAYASAN',
         ],
         'tk' => [
-            'title' => 'Struktur Organisasi TKS Islam Terpadu Madani Kayuagung',
-            'sub' => 'Bagan resmi kepemimpinan, komite FOMG, tata usaha, dan tim pendidik sentra PAUD/TK IT Madani.',
+            'title' => 'Struktur Organisasi TKS Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'Bagan resmi kepemimpinan, komite FOMG, tata usaha, dan tim pendidik sentra PAUD/TK IT Rabbani.',
             'badge' => 'STRUKTUR TKS IT',
         ],
         'sd' => [
-            'title' => 'Struktur Organisasi SDS Islam Terpadu Madani Kayuagung',
-            'sub' => 'Bagan manajemen sekolah dasar, kepala sekolah, komite, waka bidang, dan dewan guru SDS IT Madani.',
+            'title' => 'Struktur Organisasi SDS Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'Bagan manajemen sekolah dasar, kepala sekolah, komite, waka bidang, dan dewan guru SDS IT Rabbani.',
             'badge' => 'STRUKTUR SDS IT',
         ],
         'smp' => [
-            'title' => 'Struktur Manajemen SMPS Islam Terpadu Madani Kayuagung',
+            'title' => 'Struktur Manajemen SMPS Islam Terpadu Rabbani Muara Enim',
             'sub' => 'Bagan pimpinan sekolah menengah pertama, waka kurikulum, waka kesiswaan, waka sarpras, dan tim pendidik.',
             'badge' => 'STRUKTUR SMPS IT',
+        ],
+        'sma' => [
+            'title' => 'Struktur Manajemen SMA Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'Bagan pimpinan sekolah menengah atas & asrama boarding school, waka bidang, serta tim pendidik.',
+            'badge' => 'STRUKTUR SMA IT',
         ],
     ];
     $headerInfo = $titles[$activeKey] ?? $titles['yayasan'];
 @endphp
 
-@section('title', $headerInfo['title'] . ' - SIT Madani')
+@section('title', $headerInfo['title'] . ' - SIT Rabbani')
 @section('meta_description', $headerInfo['sub'])
 
 @section('content')
@@ -53,29 +58,36 @@
     {{-- UNIT SWITCHER TABS --}}
     <div class="flex flex-wrap items-center justify-center gap-2 bg-white p-2 sm:p-3 rounded-2xl shadow-sm border border-gray-100">
         <a href="{{ route('page.struktur.yayasan') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'yayasan' ? 'bg-indigo-600 text-white shadow' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
-            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Yayasan Agung Madani
+            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Yayasan Generasi Rabbani
         </a>
         <a href="{{ route('unit.struktur', 'tk') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-amber-50' }}">
-            <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> TKS IT Madani
+            <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> TKS IT Rabbani
         </a>
         <a href="{{ route('unit.struktur', 'sd') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'sd' ? 'bg-emerald-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-emerald-50' }}">
-            <i class="fa-solid fa-book-open-reader text-emerald-500 mr-1.5"></i> SDS IT Madani
+            <i class="fa-solid fa-book-open-reader text-emerald-500 mr-1.5"></i> SDS IT Rabbani
         </a>
         <a href="{{ route('unit.struktur', 'smp') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'smp' ? 'bg-blue-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-blue-50' }}">
-            <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Madani
+            <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Rabbani
+        </a>
+        <a href="{{ route('unit.struktur', 'sma') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'sma' ? 'bg-purple-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-purple-50' }}">
+            <i class="fa-solid fa-user-graduate text-purple-500 mr-1.5"></i> SMA IT Rabbani
         </a>
     </div>
 
     {{-- KONTEN STRUKTUR SPESIFIK UNIT (TIDAK CAMPUR ADUK) --}}
     @if($activeKey === 'yayasan')
-        {{-- STRUKTUR RESMI YAYASAN AGUNG MADANI --}}
+        {{-- STRUKTUR RESMI YAYASAN GENERASI RABBANI --}}
         <section class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 space-y-8 reveal-fade-up">
             <div class="text-center max-w-2xl mx-auto">
                 <span class="text-xs font-bold text-amber-500 uppercase tracking-wider block">Pusat Tata Kelola Lembaga</span>
                 <h2 class="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight mt-1">
-                    Bagan Kepengurusan Yayasan Agung Madani
+                    Bagan Kepengurusan Yayasan Generasi Rabbani
                 </h2>
                 <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-slate-50">
+                <img src="/uploads/struktur-yayasan-rabbani.webp" alt="Pimpinan &amp; Pengurus Yayasan Generasi Rabbani Muara Enim" class="w-full h-auto object-cover mx-auto block hover:scale-[1.01] transition duration-300" loading="lazy">
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
@@ -116,7 +128,7 @@
                         <div class="space-y-3 text-xs">
                             <div class="bg-white/10 p-2.5 rounded-xl">
                                 <span class="text-[10px] uppercase text-amber-300 font-bold block">Ketua Yayasan</span>
-                                <span class="font-black text-sm">Drs. H. Legianto, M.E.E.</span>
+                                <span class="font-black text-sm">Drs. H. Basuki Wiwoho</span>
                             </div>
                             <div class="bg-white/10 p-2.5 rounded-xl">
                                 <span class="text-[10px] uppercase text-amber-300 font-bold block">Sekretaris Yayasan</span>
@@ -155,13 +167,13 @@
         </section>
 
     @elseif($activeKey === 'tk')
-        {{-- STRUKTUR ORGANISASI KHUSUS TKS IT MADANI --}}
+        {{-- STRUKTUR ORGANISASI KHUSUS TKS IT RABBANI --}}
         <section class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 space-y-6 reveal-fade-up">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-gray-100 pb-4 text-center sm:text-left">
                 <div>
                     <span class="text-xs font-bold text-amber-500 uppercase tracking-wider block">Bagan Resmi PAUD / TK</span>
                     <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center justify-center sm:justify-start">
-                        <i class="fa-solid fa-shapes text-amber-500 mr-2"></i> Struktur Organisasi TKS IT Madani Kayuagung
+                        <i class="fa-solid fa-shapes text-amber-500 mr-2"></i> Struktur Organisasi TKS IT Rabbani Muara Enim
                     </h2>
                     <p class="text-xs text-gray-500 mt-1">Kepala Sekolah: Ayu Rahmayani, S.Pd.Gr. (Bunda Ayu) &bull; Ketua FOMG: Tesi Yurike, SH.</p>
                 </div>
@@ -169,10 +181,6 @@
                     <i class="fa-solid fa-chalkboard-user text-xs"></i>
                     <span>Dewan Guru TK</span>
                 </a>
-            </div>
-
-            <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-slate-50">
-                <img src="/uploads/dewan/struktur-tks-it-madani.webp" alt="Bagan Struktur Organisasi TKS IT Madani Kayuagung" class="w-full h-auto object-contain mx-auto block hover:scale-[1.01] transition duration-300" loading="lazy">
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
@@ -200,13 +208,13 @@
         </section>
 
     @elseif($activeKey === 'sd')
-        {{-- STRUKTUR ORGANISASI KHUSUS SDS IT MADANI --}}
+        {{-- STRUKTUR ORGANISASI KHUSUS SDS IT RABBANI --}}
         <section class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 space-y-6 reveal-fade-up">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-gray-100 pb-4 text-center sm:text-left">
                 <div>
                     <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Bagan Resmi Sekolah Dasar</span>
                     <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center justify-center sm:justify-start">
-                        <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> Struktur Organisasi SDS IT Madani Kayuagung
+                        <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> Struktur Organisasi SDS IT Rabbani Muara Enim
                     </h2>
                     <p class="text-xs text-gray-500 mt-1">Kepala Sekolah: Yudhi Arsyandi, S.Pd., Gr. &bull; Ketua Komite: Andi Kumaini, M.Pd.</p>
                 </div>
@@ -214,10 +222,6 @@
                     <i class="fa-solid fa-chalkboard-user text-xs"></i>
                     <span>Dewan Guru SD</span>
                 </a>
-            </div>
-
-            <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-md bg-slate-50">
-                <img src="/uploads/dewan/struktur-sds-it-madani.webp" alt="Bagan Struktur Organisasi SDS IT Madani Kayuagung" class="w-full h-auto object-contain mx-auto block hover:scale-[1.01] transition duration-300" loading="lazy">
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
@@ -245,15 +249,15 @@
         </section>
 
     @elseif($activeKey === 'smp')
-        {{-- STRUKTUR ORGANISASI KHUSUS SMPS IT MADANI --}}
+        {{-- STRUKTUR ORGANISASI KHUSUS SMPS IT RABBANI --}}
         <section class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 space-y-6 reveal-fade-up">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-gray-100 pb-4 text-center sm:text-left">
                 <div>
                     <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block">Bagan Manajemen Sekolah Menengah</span>
                     <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center justify-center sm:justify-start">
-                        <i class="fa-solid fa-graduation-cap text-blue-600 mr-2"></i> Susunan Manajemen SMPS IT Madani Kayuagung
+                        <i class="fa-solid fa-graduation-cap text-blue-600 mr-2"></i> Susunan Manajemen SMPS IT Rabbani Muara Enim
                     </h2>
-                    <p class="text-xs text-gray-500 mt-1">Kepala Sekolah: Ribang Imam Satria, S.Pi., Gr. &bull; Terakreditasi B BAN-SM</p>
+                    <p class="text-xs text-gray-500 mt-1">Kepala Sekolah: Drs. H. Basuki Wiwoho &bull; Terakreditasi B BAN-SM</p>
                 </div>
                 <a href="{{ route('unit.dewan', 'smp') }}" class="px-4 py-2 bg-blue-600 text-white rounded-xl text-xs font-bold hover:bg-blue-700 transition flex items-center space-x-1.5 flex-shrink-0">
                     <i class="fa-solid fa-chalkboard-user text-xs"></i>
@@ -264,7 +268,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
                 <div class="bg-blue-50/70 p-4 rounded-2xl border border-blue-100">
                     <span class="text-[10px] font-bold text-blue-800 uppercase block">Kepala Sekolah</span>
-                    <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Ribang Imam Satria, S.Pi., Gr.</h4>
+                    <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Drs. H. Basuki Wiwoho</h4>
                     <p class="text-[11px] text-gray-600 mt-1">Pimpinan lembaga &amp; pembina karakter Qur'ani.</p>
                 </div>
                 <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
@@ -281,6 +285,47 @@
                     <span class="text-[10px] font-bold text-gray-600 uppercase block">Waka Sarana &amp; Prasarana</span>
                     <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Rudini, S.Pd., Gr.</h4>
                     <p class="text-[11px] text-gray-600 mt-1">Pengelolaan sarpras &amp; laboratorium siswa.</p>
+                </div>
+            </div>
+        </section>
+
+    @elseif($activeKey === 'sma')
+        {{-- STRUKTUR ORGANISASI KHUSUS SMA IT RABBANI --}}
+        <section class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-gray-100 space-y-6 reveal-fade-up">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-gray-100 pb-4 text-center sm:text-left">
+                <div>
+                    <span class="text-xs font-bold text-purple-600 uppercase tracking-wider block">Bagan Manajemen SMA &amp; Boarding</span>
+                    <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center justify-center sm:justify-start">
+                        <i class="fa-solid fa-user-graduate text-purple-600 mr-2"></i> Susunan Manajemen SMA IT Rabbani Muara Enim
+                    </h2>
+                    <p class="text-xs text-gray-500 mt-1">NPSN: 70010515 &bull; Terakreditasi B &bull; Program Boarding School &amp; Full Day</p>
+                </div>
+                <a href="{{ route('unit.dewan', 'sma') }}" class="px-4 py-2 bg-purple-600 text-white rounded-xl text-xs font-bold hover:bg-purple-700 transition flex items-center space-x-1.5 flex-shrink-0">
+                    <i class="fa-solid fa-chalkboard-user text-xs"></i>
+                    <span>Dewan Guru SMA</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+                <div class="bg-purple-50/70 p-4 rounded-2xl border border-purple-100">
+                    <span class="text-[10px] font-bold text-purple-800 uppercase block">Kepala Sekolah</span>
+                    <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Kepala SMA IT Rabbani</h4>
+                    <p class="text-[11px] text-gray-600 mt-1">Pimpinan lembaga &amp; pembina boarding school.</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <span class="text-[10px] font-bold text-gray-600 uppercase block">Waka Kurikulum</span>
+                    <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Tim Kurikulum SMA</h4>
+                    <p class="text-[11px] text-gray-600 mt-1">Kurikulum Merdeka &amp; Bimbingan SNBT Gratis.</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <span class="text-[10px] font-bold text-gray-600 uppercase block">Waka Kesiswaan &amp; Asrama</span>
+                    <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Tim Kesiswaan &amp; Boarding</h4>
+                    <p class="text-[11px] text-gray-600 mt-1">Pengasuhan santri asrama &amp; 8 ekskul unggulan.</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                    <span class="text-[10px] font-bold text-gray-600 uppercase block">Waka Sarpras &amp; Humas</span>
+                    <h4 class="font-extrabold text-sm text-gray-900 mt-0.5">Tim Sarpras &amp; Kemitraan</h4>
+                    <p class="text-[11px] text-gray-600 mt-1">Fasilitas asrama, lab komputer, &amp; jejaring PTN.</p>
                 </div>
             </div>
         </section>

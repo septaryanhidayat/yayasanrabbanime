@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', $page->title . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
+@section('title', $page->title . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
 
 @section('content')
 <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">

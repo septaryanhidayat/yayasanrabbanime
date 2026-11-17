@@ -18,12 +18,12 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Web Utama / Portal Yayasan Agung Madani Kayuagung.
-     * Menampilkan profil Yayasan dan 3 Showcase Cards akses ke TKS, SDS, dan SMPS IT Madani.
+     * Web Utama / Portal Yayasan Agung Madani Muara Enim.
+     * Menampilkan profil Yayasan dan 3 Showcase Cards akses ke TKS, SDS, dan SMPS IT Rabbani.
      */
     public function index(Request $request)
     {
-        if ($request->has('unit') && in_array($request->query('unit'), ['tk', 'sd', 'smp'])) {
+        if ($request->has('unit') && in_array($request->query('unit'), ['tk', 'sd', 'smp', 'sma'])) {
             return $this->unit($request, $request->query('unit'));
         }
 
@@ -63,7 +63,7 @@ class HomeController extends Controller
             $heroSlides = [
                 [
                     'active' => true,
-                    'badge' => 'YAYASAN AGUNG MADANI KAYUAGUNG • KAB. OKI',
+                    'badge' => 'YAYASAN GENERASI RABBANI MUARA ENIM',
                     'title' => 'Mewujudkan Generasi Robbani yang Cerdas, Mandiri & Berakhlak Mulia',
                     'subtitle' => 'Pendidikan Islam Terpadu Satu Atap Berbasis Al-Qur\'an, As-Sunnah, Sains dan Teknologi Modern di Bawah Naungan JSIT Indonesia.',
                     'image' => '/uploads/hero-slide-yayasan-1.webp',
@@ -79,7 +79,7 @@ class HomeController extends Controller
                     'active' => true,
                     'badge' => 'TAHFIDZ QUR\'AN MUTQIN & ADAB NABAWI',
                     'title' => 'Pembinaan Karakter & Hafalan Al-Qur\'an Berkesinambungan',
-                    'subtitle' => 'Mulai dari tahfidz cilik PAUD/TKS IT, target 2 juz mutqin di SDS IT, hingga penguatan karakter & tahfidz bersanad di SMPS IT Madani.',
+                    'subtitle' => 'Mulai dari tahfidz cilik PAUD/TKS IT, target mutqin di SDS IT, hingga penguatan karakter & tahfidz bersanad di SMPS & SMA IT Rabbani.',
                     'image' => '/uploads/hero-slide-yayasan-2.webp',
                     'btn_text' => 'Profil Singkat Yayasan',
                     'btn_link' => route('page.tentang.yayasan'),
@@ -95,11 +95,11 @@ class HomeController extends Controller
                     'title' => 'Integrasi Keunggulan Imtak dan Iptek Masa Depan',
                     'subtitle' => 'Laboratorium komputer modern, pembekalan literasi digital, bimbingan olimpiade sains, serta pembiasaan Bahasa Arab dan Inggris.',
                     'image' => '/uploads/hero-slide-yayasan-3.webp',
-                    'btn_text' => 'Kunjungi SMPS IT Madani',
+                    'btn_text' => 'Kunjungi SMPS IT Rabbani',
                     'btn_link' => route('unit.smp'),
                     'btn_target' => '_self',
                     'btn2_active' => true,
-                    'btn2_text' => 'Kunjungi SDS IT Madani',
+                    'btn2_text' => 'Kunjungi SDS IT Rabbani',
                     'btn2_link' => route('unit.sd'),
                     'btn2_target' => '_self',
                 ],
@@ -109,11 +109,11 @@ class HomeController extends Controller
         // Sambutan Ketua Yayasan (Dinamis dari Halaman Profil atau Setting)
         $sambutanPost = Post::pages()->where('slug', 'sambutan-ketua-yayasan')->first();
         $sambutanYayasan = [
-            'name' => Setting::get('yayasan_ketua_name', 'Drs. H. Legianto, M.E.E.'),
-            'title' => Setting::get('yayasan_ketua_title', 'Ketua Yayasan Agung Madani Kayuagung'),
-            'photo' => Setting::get('yayasan_ketua_photo', '/uploads/dewan/ust-legianto.webp'),
-            'heading' => $sambutanPost ? $sambutanPost->title : Setting::get('yayasan_sambutan_heading', 'Mewujudkan Ekosistem Pendidikan Islam Terpadu Satu Atap di Kabupaten OKI'),
-            'text' => $sambutanPost ? strip_tags($sambutanPost->content) : 'Bismillahirrohmanirrohim. Alhamdulillahi Rabbil \'Alamin, puji dan syukur kami panjatkan ke hadirat Allah SWT. Yayasan Agung Madani Kayuagung hadir dengan komitmen kokoh menyelenggarakan pendidikan Islam terpadu satu atap yang berkesinambungan mulai dari TKS IT Madani, SDS IT Madani, hingga SMPS IT Madani. Kami memadukan nilai keluhuran Al-Qur\'an dan as-Sunnah dengan keunggulan sains, teknologi, dan bahasa global untuk melahirkan generasi robbani yang cerdas, mandiri, dan berakhlak karimah.',
+            'name' => Setting::get('yayasan_ketua_name', 'Drs. H. Basuki Wiwoho'),
+            'title' => Setting::get('yayasan_ketua_title', 'Ketua Yayasan Generasi Rabbani Muara Enim'),
+            'photo' => Setting::get('yayasan_ketua_photo', '/uploads/dewan/ust-basuki-wiwoho.webp'),
+            'heading' => $sambutanPost ? $sambutanPost->title : Setting::get('yayasan_sambutan_heading', 'Mewujudkan Ekosistem Pendidikan Islam Terpadu Satu Atap di Kabupaten Muara Enim'),
+            'text' => $sambutanPost ? strip_tags($sambutanPost->content) : 'Bismillahirrohmanirrohim. Alhamdulillahi Rabbil \'Alamin, puji dan syukur kami panjatkan ke hadirat Allah SWT. Yayasan Generasi Rabbani Muara Enim hadir dengan komitmen kokoh menyelenggarakan pendidikan Islam terpadu satu atap yang berkesinambungan mulai dari TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, hingga SMA IT Rabbani. Kami memadukan nilai keluhuran Al-Qur\'an dan as-Sunnah dengan keunggulan sains, teknologi, dan bahasa global untuk melahirkan generasi robbani yang cerdas, mandiri, dan berakhlak karimah.',
             'content_html' => $sambutanPost ? $sambutanPost->content : null,
         ];
 
@@ -127,8 +127,8 @@ class HomeController extends Controller
         $popupSettings = [
             'active' => Setting::get('popup_active', '1'),
             'image' => Setting::get('popup_image', '/uploads/flyer-spmb-sit-madani.webp'),
-            'title' => Setting::get('popup_title', 'Telah Dibuka SPMB SIT Madani (TP 2026/2027)'),
-            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SIT Madani Kayuagung (TK • SD • SMP)'),
+            'title' => Setting::get('popup_title', 'Telah Dibuka SPMB SIT Rabbani (TP 2026/2027)'),
+            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SIT Rabbani Muara Enim (TK • SD • SMP)'),
             'link' => Setting::get('popup_link', '/ppdb'),
             'target' => Setting::get('popup_target', '_self'),
             'button_text' => Setting::get('popup_button_text', 'Info & Daftar SPMB Online'),
@@ -162,12 +162,12 @@ class HomeController extends Controller
     }
 
     /**
-     * Tampilan Website Masing-Masing Unit Sekolah (TK, SD, SMP SIT Madani).
+     * Tampilan Website Masing-Masing Unit Sekolah (TK, SD, SMP SIT Rabbani).
      * Disesuaikan dengan data dan identitas unit masing-masing.
      */
     public function unit(Request $request, string $unit)
     {
-        if (! in_array($unit, ['tk', 'sd', 'smp'])) {
+        if (! in_array($unit, ['tk', 'sd', 'smp', 'sma'])) {
             return redirect()->route('home');
         }
 
@@ -211,7 +211,7 @@ class HomeController extends Controller
         $sambutan = (object) [
             'title' => 'Sambutan Kepala '.$currentUnit['short_name'],
             'excerpt' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh. Selamat datang di portal resmi '.$currentUnit['name'].'. Kami berikhtiar mendidik dengan sepenuh hati dan cinta.',
-            'content' => '<p><strong>Assalamu\'alaikum Warahmatullahi Wabarakatuh.</strong></p><p>Puji syukur kita panjatkan ke hadirat Allah Subhanahu Wa Ta\'ala atas limpahan rahmat dan karunia-Nya. Selamat datang di laman resmi <strong>'.$currentUnit['name'].'</strong> di bawah naungan Yayasan Agung Madani Kayuagung.</p><p>Visi kami adalah <em>"'.$currentUnit['visi'].'"</em>. Dengan bimbingan tenaga pendidik yang kompeten dan berdedikasi, kami menanamkan kecintaan pada Al-Qur\'an, pembiasaan adab islami, serta pembelajaran bermakna dan menggembirakan.</p><p>Wassalamu\'alaikum Warahmatullahi Wabarakatuh.</p>',
+            'content' => '<p><strong>Assalamu\'alaikum Warahmatullahi Wabarakatuh.</strong></p><p>Puji syukur kita panjatkan ke hadirat Allah Subhanahu Wa Ta\'ala atas limpahan rahmat dan karunia-Nya. Selamat datang di laman resmi <strong>'.$currentUnit['name'].'</strong> di bawah naungan Yayasan Agung Madani Muara Enim.</p><p>Visi kami adalah <em>"'.$currentUnit['visi'].'"</em>. Dengan bimbingan tenaga pendidik yang kompeten dan berdedikasi, kami menanamkan kecintaan pada Al-Qur\'an, pembiasaan adab islami, serta pembelajaran bermakna dan menggembirakan.</p><p>Wassalamu\'alaikum Warahmatullahi Wabarakatuh.</p>',
             'featured_image' => $currentUnit['leader_photo'],
             'author_name' => $currentUnit['leader_name'],
         ];
@@ -311,7 +311,7 @@ class HomeController extends Controller
         $fallbackRow1 = [
             ['url' => '/uploads/campus-sit-madani.webp', 'title' => 'Gedung Sekolah '.$currentUnit['short_name']],
             ['url' => '/uploads/activities-sit-madani.webp', 'title' => 'Aktivitas Belajar & Karakter Terpadu'],
-            ['url' => '/uploads/logo-madani.webp', 'title' => 'Kompleks Kampus SIT Madani Kayuagung'],
+            ['url' => '/uploads/logo-madani.webp', 'title' => 'Kompleks Kampus SIT Rabbani Muara Enim'],
             ['url' => '/uploads/tahfidz-sit-madani.webp', 'title' => 'Pembinaan Tahfidz & Tartil Qur\'an'],
         ];
         $fallbackRow2 = [
@@ -364,7 +364,7 @@ class HomeController extends Controller
         // 15. Popup Settings (Dinamis dari Setting Admin)
         $popupSettings = [
             'active' => Setting::get('popup_active', '1'),
-            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-sit-madani.webp'),
+            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-smait-rabbani.webp'),
             'title' => Setting::get('popup_title', 'SPMB '.$currentUnit['short_name'].' Telah Dibuka'),
             'subtitle' => Setting::get('popup_subtitle', 'Tahun Pelajaran 2026/2027 • Segera Daftarkan Putra-Putri Anda'),
             'link' => route('unit.ppdb', $unit),
@@ -388,7 +388,7 @@ class HomeController extends Controller
             'card3_title' => Setting::get('spmb_banner_card3_title', 'KUOTA KELAS'),
             'card3_desc' => Setting::get('spmb_banner_card3_desc', 'Terbatas & Selektif'),
             'card3_color' => Setting::get('spmb_banner_card3_color', '#fde047'),
-            'flyer_image' => Setting::get('spmb_banner_flyer_image', '/uploads/logo-madani-square.webp'),
+            'flyer_image' => Setting::get('spmb_banner_flyer_image', '/uploads/logo-rabbani-square.webp'),
             'flyer_label' => Setting::get('spmb_banner_flyer_label', 'Brosur Resmi SPMB'),
             'btn_text' => Setting::get('spmb_banner_btn_text', 'Daftar SPMB '.$currentUnit['short_name']),
             'btn_url' => Setting::get('spmb_banner_btn_url', route('unit.ppdb', $unit)),

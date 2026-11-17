@@ -9,9 +9,9 @@ test('admin dapat mengakses halaman kelola showcase unit', function () {
     $response = $this->actingAs($admin)->get(route('admin.showcase.index'));
     $response->assertStatus(200);
     $response->assertSee('Showcase Beranda Yayasan');
-    $response->assertSee('TKS IT Madani');
-    $response->assertSee('SDS IT Madani');
-    $response->assertSee('SMPS IT Madani');
+    $response->assertSee('TKS IT Rabbani');
+    $response->assertSee('SDS IT Rabbani');
+    $response->assertSee('SMPS IT Rabbani');
 });
 
 test('admin dapat memperbarui 3 kartu showcase unit', function () {
@@ -20,11 +20,11 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
     $payload = [
         'cards' => [
             'tk' => [
-                'title' => 'TKS Islam Terpadu Madani Kayuagung',
+                'title' => 'TKS Islam Terpadu Madani Muara Enim',
                 'level_badge' => 'PAUD / TK ISLAM TERPADU',
                 'accreditation' => 'AKREDITASI B',
                 'info_badge' => 'Karakter Rabbani',
-                'subtitle' => 'Kayuagung, Kab. OKI',
+                'subtitle' => 'Muara Enim, Kab. OKI',
                 'leader_title' => 'Kepala Sekolah',
                 'leader_name' => 'Bunda Ayu Rahmayani',
                 'leader_sub' => 'NIY 01012021',
@@ -38,11 +38,11 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
                 'btn_spmb_url' => '/tk/ppdb',
             ],
             'sd' => [
-                'title' => 'SDS Islam Terpadu Madani Kayuagung',
+                'title' => 'SDS Islam Terpadu Madani Muara Enim',
                 'level_badge' => 'SEKOLAH DASAR ISLAM TERPADU',
                 'accreditation' => 'AKREDITASI B',
                 'info_badge' => '13 Rombel',
-                'subtitle' => 'Kayuagung, Kab. OKI',
+                'subtitle' => 'Muara Enim, Kab. OKI',
                 'leader_title' => 'Pimpinan & Komite',
                 'leader_name' => 'Yudhi Arsyandi, S.Pd., Gr.',
                 'leader_sub' => 'Komite: Ust Andi',
@@ -56,11 +56,11 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
                 'btn_spmb_url' => '/sd/ppdb',
             ],
             'smp' => [
-                'title' => 'SMPS Islam Terpadu Madani Kayuagung',
+                'title' => 'SMPS Islam Terpadu Madani Muara Enim',
                 'level_badge' => 'SEKOLAH MENENGAH PERTAMA IT',
                 'accreditation' => 'AKREDITASI B',
                 'info_badge' => 'Full Day School',
-                'subtitle' => 'Kayuagung, Kab. OKI',
+                'subtitle' => 'Muara Enim, Kab. OKI',
                 'leader_title' => 'Kepala Sekolah',
                 'leader_name' => 'Ribang Imam Satria, S.Pi., Gr.',
                 'leader_sub' => 'Ust. Ribang',
@@ -83,7 +83,7 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
     // Cek di beranda yayasan tampil
     $homeResponse = $this->get(route('home'));
     $homeResponse->assertStatus(200);
-    $homeResponse->assertSee('TKS Islam Terpadu Madani Kayuagung');
+    $homeResponse->assertSee('TKS Islam Terpadu Madani Muara Enim');
     $homeResponse->assertSee('Membentuk Generasi Ceria &amp; Mandiri', false);
 });
 

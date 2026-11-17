@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', ($page?->meta_title ?: ($page?->title ?: 'Kebijakan Privasi')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
-@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kebijakan Privasi resmi Website SMPS IT Madani Kayuagung yang menjelaskan pengelolaan dan perlindungan data pengunjung, siswa, dan orang tua.'))
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Kebijakan Privasi')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kebijakan Privasi resmi Website SMPS IT Rabbani Muara Enim yang menjelaskan pengelolaan dan perlindungan data pengunjung, siswa, dan orang tua.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,7 +14,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Kebijakan Privasi (Privacy Policy)' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            {{ $page?->excerpt ?: 'Komitmen transparansi dan perlindungan privasi data setiap pengunjung situs resmi SMPS IT Madani Kayuagung.' }}
+            {{ $page?->excerpt ?: 'Komitmen transparansi dan perlindungan privasi data setiap pengunjung situs resmi SMPS IT Rabbani Muara Enim.' }}
         </p>
     </div>
 </div>
@@ -29,7 +29,7 @@
                 <h2 class="text-xl sm:text-2xl font-extrabold text-gray-900 mt-1">
                     {{ $page?->title ?? 'Kebijakan Privasi Website' }}
                 </h2>
-                <p class="text-xs text-gray-500 mt-1">Website Resmi SMPS IT Madani Kayuagung</p>
+                <p class="text-xs text-gray-500 mt-1">Website Resmi SMPS IT Rabbani Muara Enim</p>
             </div>
             <div class="bg-indigo-50/60 text-indigo-600 px-4 py-2 rounded-xl text-xs font-bold border border-indigo-200">
                 Terbit: 2026
@@ -47,7 +47,7 @@
                         <span>Pendahuluan</span>
                     </h3>
                     <p>
-                        SMPS IT Madani Kayuagung menghargai privasi setiap pengunjung website resmi kami. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat mengakses dan menggunakan layanan di website kami.
+                        SMPS IT Rabbani Muara Enim menghargai privasi setiap pengunjung website resmi kami. Kebijakan privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat mengakses dan menggunakan layanan di website kami.
                     </p>
                     <p>
                         Dengan mengunjungi website ini, Anda menyetujui praktik yang dijelaskan dalam Kebijakan Privasi ini.
@@ -106,7 +106,7 @@
                         <span>Tautan ke Situs Pihak Ketiga</span>
                     </h3>
                     <p>
-                        Website kami dapat memuat tautan ke situs eksternal yang tidak dikelola langsung oleh SMPS IT Madani Kayuagung. Kami tidak bertanggung jawab atas isi maupun kebijakan privasi dari situs-situs pihak ketiga tersebut.
+                        Website kami dapat memuat tautan ke situs eksternal yang tidak dikelola langsung oleh SMPS IT Rabbani Muara Enim. Kami tidak bertanggung jawab atas isi maupun kebijakan privasi dari situs-situs pihak ketiga tersebut.
                     </p>
                 </section>
 
@@ -126,7 +126,7 @@
                         <span>Perubahan Kebijakan Privasi</span>
                     </h3>
                     <p>
-                        SMPS IT Madani Kayuagung berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Setiap perubahan akan langsung dipublikasikan di halaman ini dengan tanggal pembaruan yang jelas.
+                        SMPS IT Rabbani Muara Enim berhak memperbarui Kebijakan Privasi ini sewaktu-waktu. Setiap perubahan akan langsung dipublikasikan di halaman ini dengan tanggal pembaruan yang jelas.
                     </p>
                 </section>
 
@@ -137,9 +137,9 @@
                     </h3>
                     <p>Jika Anda memiliki pertanyaan mengenai Kebijakan Privasi ini, silakan hubungi kami:</p>
                     <div class="text-xs sm:text-sm space-y-1 text-gray-600 mt-2">
-                        <p>📧 Email: <strong>{{ $siteSettings['contact_email'] ?? 'smpsislamterpadumadani@gmail.com' }}</strong></p>
-                        <p>📞 Telepon: <strong>{{ $siteSettings['contact_phone'] ?? '0858-3817-3417' }}</strong></p>
-                        <p>📍 Alamat: {{ $siteSettings['contact_address'] ?? 'Jl. Lintas Timur Palembang-Kayuagung KM 35, Kayuagung, Sumatera Selatan' }}</p>
+                        <p>📧 Email: <strong>{{ $siteSettings['contact_email'] ?? 'yayasangerabbani@gmail.com' }}</strong></p>
+                        <p>📞 Telepon: <strong>{{ $siteSettings['contact_phone'] ?? '0851-5929-3554' }}</strong></p>
+                        <p>📍 Alamat: {{ $siteSettings['contact_address'] ?? 'Jl. Lintas Timur Palembang-Muara Enim KM 35, Muara Enim, Sumatera Selatan' }}</p>
                     </div>
                 </section>
             @endif

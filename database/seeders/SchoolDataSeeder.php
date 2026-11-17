@@ -6,7 +6,6 @@ use App\Models\Agenda;
 use App\Models\AnggotaDewan;
 use App\Models\Bidang;
 use App\Models\Category;
-use App\Models\Download;
 use App\Models\Dpc;
 use App\Models\Pengumuman;
 use App\Models\Post;
@@ -24,84 +23,84 @@ class SchoolDataSeeder extends Seeder
 {
     public function run(): void
     {
-        $dataFile = __DIR__.'/data/madani_data.json';
+        $dataFile = __DIR__.'/data/rabbani_data.json';
         $data = file_exists($dataFile) ? json_decode(file_get_contents($dataFile), true) : [];
 
-        // 1. Settings SMPS IT Madani Kayuagung
+        // 1. Settings Yayasan Generasi Rabbani Muara Enim & SIT Rabbani
         $settings = [
-            'site_name' => 'SMPS IT Madani Kayuagung',
-            'site_tagline' => 'Membina Generasi Qur\'ani, Cerdas, Berakhlak Mulia & Berprestasi Global',
-            'site_description' => 'Official Website SMPS IT Madani Kayuagung (SIT Madani). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kayuagung, Kab. OKI dengan kurikulum terpadu nasional dan pembinaan karakter Qur\'ani.',
-            'contact_email' => 'smpsislamterpadumadani@gmail.com',
-            'contact_phone' => '0858-3817-3417',
-            'contact_whatsapp' => '0858-3817-3417',
-            'contact_phone_alt' => '0858-3817-3417',
-            'contact_address' => 'Jalan SMA Negeri 4, RT 02 LK III, Kelurahan Tanjung Rancing, Kecamatan Kayuagung, Kabupaten Ogan Komering Ilir, Sumatera Selatan 30618',
-            'social_facebook' => 'https://www.facebook.com/sitmadani',
-            'social_instagram' => 'https://www.instagram.com/sitmadani/',
-            'social_youtube' => 'https://www.youtube.com/@sitmadani',
-            'social_tiktok' => 'https://www.tiktok.com/@sitmadani',
-            'google_maps_url' => 'https://maps.app.goo.gl/oN2gtn7TuTGELXJ86',
+            'site_name' => 'Yayasan Generasi Rabbani Muara Enim',
+            'site_tagline' => 'Membina Generasi Qur\'ani, Mandiri, Berakhlak Mulia & Berprestasi Global',
+            'site_description' => 'Official Website Yayasan Generasi Rabbani Muara Enim & Sekolah Islam Terpadu (SIT) Rabbani: TKS IT, SDS IT, SMPS IT, dan SMA IT Boarding School di Muara Enim, Sumatera Selatan.',
+            'contact_email' => 'yayasangerabbani@gmail.com',
+            'contact_phone' => '0851-5929-3554',
+            'contact_whatsapp' => '0851-5929-3554',
+            'contact_phone_alt' => '0851-5929-3554',
+            'contact_address' => 'Jl. Proklamasi No. 80, Kelurahan Air Lintang, Kecamatan Muara Enim, Kabupaten Muara Enim, Sumatera Selatan 31311',
+            'social_facebook' => 'https://web.facebook.com/YayasanGenerasiRabbaniMuaraEnim',
+            'social_instagram' => 'https://www.instagram.com/smaitrabbanime/',
+            'social_youtube' => 'https://www.youtube.com/@rabbanimuaraenim',
+            'social_tiktok' => 'https://www.tiktok.com/@rabbanime',
+            'google_maps_url' => 'https://maps.google.com/?q=Rabbani+Muara+Enim',
             'banner_daftar_url' => '/spmb',
             'banner_donasi_url' => '/donasi',
-            'site_logo' => '/uploads/logo-madani.png',
-            'site_logo_square' => '/uploads/logo-madani-square.webp',
-            'og_title' => 'SMPS IT Madani Kayuagung',
-            'og_description' => 'Official Website SMPS IT Madani Kayuagung: Informasi SPMB Gelombang Exclusive, Berita & Prestasi, Profil Guru, Fasilitas, dan Program Tahfidz.',
-            'og_image' => '/uploads/logo-madani-square.webp',
-            'meta_keywords' => 'smps it madani kayuagung, smp it madani, sekolah islam terpadu kayuagung, spmb smp it madani, tahfidz kayuagung, jsit kayuagung',
-            'npsn' => '70034917',
+            'site_logo' => '/uploads/logo-rabbani.png',
+            'site_logo_square' => '/uploads/logo-rabbani-square.webp',
+            'og_title' => 'Yayasan Generasi Rabbani Muara Enim',
+            'og_description' => 'Official Website Yayasan Generasi Rabbani Muara Enim & SIT Rabbani: TKS IT, SDS IT, SMPS IT, & SMA IT Rabbani. Informasi SPMB, Tahfidz, Prestasi, dan Profil Kampus.',
+            'og_image' => '/uploads/banner-yayasan-rabbani.webp',
+            'meta_keywords' => 'yayasan generasi rabbani muara enim, sit rabbani muara enim, tk it rabbani, sd it rabbani, smp it rabbani, sma it rabbani, boarding school muara enim, tahfidz muara enim, jsit muara enim',
+            'npsn' => '70010515',
             'akreditasi' => 'B (Terakreditasi BAN-SM)',
-            'no_sk_akreditasi' => '202110234917',
-            'sk_pendirian' => '04 November 2019',
-            'sk_izin' => '002/DPMPTSP/IPS-SMP/X/2022',
-            'kepala_sekolah' => 'Ribang Imam Satria, S.Pi., Gr.',
-            'spmb_promo_title' => 'SPMB Gelombang Exclusive',
-            'spmb_promo_cashback' => 'Cash Back 1 Juta',
-            'spmb_promo_quota' => '24 Siswa per Kelas',
-            'spmb_promo_note' => '*Khusus Alumni SDS IT Madani',
-            'spmb_banner_badge' => 'PENERIMAAN SISWA BARU GELOMBANG EXCLUSIVE',
-            'spmb_banner_title' => 'SPMB Gelombang Exclusive & Class Meeting Semester Genap',
-            'spmb_banner_year' => '2027-2028',
-            'spmb_banner_description' => 'Bergabunglah bersama keluarga besar SMPS IT Madani Kayuagung. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.',
-            'spmb_banner_card1_title' => 'KUOTA TERBATAS',
-            'spmb_banner_card1_desc' => 'Hanya 24 Siswa',
-            'spmb_banner_card2_title' => 'CASH BACK 1 JUTA',
-            'spmb_banner_card2_desc' => 'Alumni SDS IT Madani',
-            'spmb_banner_card3_title' => 'CLASS MEETING',
-            'spmb_banner_card3_desc' => 'Mulai Rabu, 17 Juni',
-            'spmb_banner_flyer_image' => '/uploads/flyer-spmb-sit-madani.webp',
-            'spmb_banner_flyer_label' => 'Pengumuman Resmi Sekolah',
+            'no_sk_akreditasi' => 'BAN-SM/ME/2023',
+            'sk_pendirian' => 'Yayasan Generasi Rabbani',
+            'sk_izin' => 'Dinas Pendidikan & Kebudayaan Kab. Muara Enim',
+            'kepala_sekolah' => 'Drs. H. Basuki Wiwoho',
+            'spmb_promo_title' => 'SPMB TP 2025/2026 Gelombang 1',
+            'spmb_promo_cashback' => 'Diskon Khusus Gelombang 1',
+            'spmb_promo_quota' => 'Boarding & Full Day School',
+            'spmb_promo_note' => '*Free Uang Pembangunan, Free Uang Kegiatan, Free Buku untuk 20 Orang Pertama',
+            'spmb_banner_badge' => 'PENERIMAAN PESERTA DIDIK BARU SIT RABBANI MUARA ENIM',
+            'spmb_banner_title' => 'SPMB TP 2025/2026 TKS IT, SDS IT, SMPS IT & SMA IT RABBANI',
+            'spmb_banner_year' => '2025/2026',
+            'spmb_banner_description' => 'Bergabunglah bersama keluarga besar SIT Rabbani Muara Enim. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target tahfidz mutqin, serta bimbingan SNBT PTN Gratis.',
+            'spmb_banner_card1_title' => 'SPP BULANAN',
+            'spmb_banner_card1_desc' => 'Hanya Rp 200.000',
+            'spmb_banner_card2_title' => 'REGISTRASI ULANG',
+            'spmb_banner_card2_desc' => 'Rp 1.000.000 (Include Seragam)',
+            'spmb_banner_card3_title' => 'BENEFIT KHUSUS',
+            'spmb_banner_card3_desc' => 'Free Pembangunan & Kegiatan',
+            'spmb_banner_flyer_image' => '/uploads/flyer-spmb-smait-rabbani.webp',
+            'spmb_banner_flyer_label' => 'Brosur Resmi SPMB SMA IT Rabbani',
             'spmb_banner_btn_text' => 'Daftar SPMB Online',
             'spmb_banner_btn_url' => '/ppdb',
-            'spmb_banner_contact_text' => 'Narahubung: 0858-3817-3417',
-            'spmb_banner_contact_phone' => '0858-3817-3417',
-            'ppdb_image_1' => '/uploads/madani/fasilitas_1377_IMG-20240528-WA0094-scaled.webp',
-            'ppdb_image_2' => '/uploads/madani/fasilitas_3427_IMG-20240528-WA0106-scaled.webp',
-            'ppdb_image_3' => '/uploads/madani/fasilitas_1278_HALL-SIT-Madani_.webp',
+            'spmb_banner_contact_text' => 'Hotline SPMB: 0851-5929-3554',
+            'spmb_banner_contact_phone' => '0851-5929-3554',
+            'ppdb_image_1' => '/uploads/campus-sit-rabbani.webp',
+            'ppdb_image_2' => '/uploads/tahfidz-sit-rabbani.webp',
+            'ppdb_image_3' => '/uploads/kegiatan-pramuka-rabbani.webp',
             'donation_bank_1_name' => 'Bank Syariah Indonesia (BSI)',
             'donation_bank_1_code' => '451',
             'donation_bank_1_rekening' => '718-293-8401',
-            'donation_bank_1_holder' => 'YAYASAN AGUNG MADANI KAYUAGUNG',
+            'donation_bank_1_holder' => 'YAYASAN GENERASI RABBANI MUARA ENIM',
             'donation_bank_2_name' => 'Bank Sumsel Babel Syariah',
             'donation_bank_2_code' => '120',
             'donation_bank_2_rekening' => '801-09-00123',
-            'donation_bank_2_holder' => 'SMP IT MADANI KAYUAGUNG',
-            'donation_confirm_phone' => '0858-3817-3417',
-            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMPS IT Madani, saya telah menyalurkan infaq pembangunan.",
-            'donation_intro_text' => 'Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur\'an, dan pengembangan kampus SMPS IT Madani Kayuagung.',
+            'donation_bank_2_holder' => 'SIT RABBANI MUARA ENIM',
+            'donation_confirm_phone' => '0851-5929-3554',
+            'donation_confirm_text' => "Assalamu'alaikum Bendahara Yayasan Generasi Rabbani, saya telah menyalurkan infaq pembangunan.",
+            'donation_intro_text' => 'Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Al-Qur\'an, dan pengembangan kampus SIT Rabbani Muara Enim.',
             'hero_slides_yayasan' => json_encode([
                 [
                     'active' => true,
-                    'badge' => 'YAYASAN AGUNG MADANI KAYUAGUNG • KAB. OKI',
+                    'badge' => 'YAYASAN GENERASI RABBANI MUARA ENIM • SUMATERA SELATAN',
                     'title' => 'Mewujudkan Generasi Robbani yang Cerdas, Mandiri & Berakhlak Mulia',
-                    'subtitle' => "Pendidikan Islam Terpadu Satu Atap Berbasis Al-Qur'an, As-Sunnah, Sains dan Teknologi Modern.",
+                    'subtitle' => "Pendidikan Islam Terpadu Satu Atap Berbasis Al-Qur'an, As-Sunnah, Sains, dan Teknologi Modern (TK, SD, SMP, SMA).",
                     'image' => '/uploads/hero-slide-yayasan-1.webp',
                     'btn_text' => 'Pilih Unit Sekolah',
                     'btn_link' => '#unit-sekolah',
                     'btn_target' => '_self',
                     'btn2_active' => true,
-                    'btn2_text' => 'Daftar SPMB Terpadu',
+                    'btn2_text' => 'Daftar SPMB Online',
                     'btn2_link' => '/ppdb',
                     'btn2_target' => '_self',
                 ],
@@ -109,7 +108,7 @@ class SchoolDataSeeder extends Seeder
                     'active' => true,
                     'badge' => "TAHFIDZ QUR'AN MUTQIN & ADAB NABAWI",
                     'title' => "Pembinaan Karakter & Hafalan Al-Qur'an Berkesinambungan",
-                    'subtitle' => 'Mulai dari tahfidz cilik PAUD/TKS IT, target 2 juz mutqin di SDS IT, hingga program Asrama Tahfidz di SMPS IT Madani.',
+                    'subtitle' => 'Mulai dari tahfidz usia dini TKS IT, target juz mutqin di SDS IT, SMPS IT, hingga program Boarding School di SMA IT Rabbani.',
                     'image' => '/uploads/hero-slide-yayasan-2.webp',
                     'btn_text' => 'Profil Singkat Yayasan',
                     'btn_link' => '/yayasan/tentang-kami',
@@ -121,70 +120,56 @@ class SchoolDataSeeder extends Seeder
                 ],
                 [
                     'active' => true,
-                    'badge' => 'SAINS, TEKNOLOGI & BAHASA INTERNASIONAL',
-                    'title' => 'Integrasi Keunggulan Imtak dan Iptek Masa Depan',
-                    'subtitle' => 'Laboratorium komputer modern, pembekalan literasi digital, bimbingan olimpiade sains, serta pembiasaan Bahasa Arab dan Inggris.',
+                    'badge' => 'SUKSES TEMBUS PTN & BERDAYA SAING GLOBAL',
+                    'title' => '88% Lulusan SMA IT Rabbani Hafal Qur\'an & Masuk PTN Favorit',
+                    'subtitle' => 'Didukung program Bimbingan SNBT Gratis, Laboratorium Komputer Modern, Bahasa Asing, dan 8 Ekstrakurikuler Pilihan.',
                     'image' => '/uploads/hero-slide-yayasan-3.webp',
-                    'btn_text' => 'Kunjungi SMPS IT Madani',
-                    'btn_link' => '/smp',
+                    'btn_text' => 'Kunjungi SMA IT Rabbani',
+                    'btn_link' => '/sma',
                     'btn_target' => '_self',
                     'btn2_active' => true,
-                    'btn2_text' => 'Kunjungi SDS IT Madani',
-                    'btn2_link' => '/sd',
+                    'btn2_text' => 'Kunjungi SMPS IT Rabbani',
+                    'btn2_link' => '/smp',
                     'btn2_target' => '_self',
                 ],
             ]),
             'hero_slides' => json_encode([
                 [
                     'active' => true,
-                    'badge' => 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B',
+                    'badge' => 'SMPS IT RABBANI MUARA ENIM • TERAKREDITASI B',
                     'title' => 'Selamat Datang di Website Resmi',
-                    'subtitle' => 'SMPS IT Madani Kayuagung',
-                    'image' => '/uploads/campus-smpit-madani.webp',
+                    'subtitle' => 'SMPS IT Rabbani Muara Enim',
+                    'image' => '/uploads/campus-smpit-rabbani.webp',
                     'btn_text' => 'Sambutan Kepala Sekolah',
-                    'btn_link' => '/sambutan-kepala-sekolah',
+                    'btn_link' => '/smp/sambutan',
                     'btn_target' => '_self',
                     'btn2_active' => true,
                     'btn2_text' => 'Info SPMB',
-                    'btn2_link' => '/ppdb',
+                    'btn2_link' => '/smp/ppdb',
                     'btn2_target' => '_self',
                 ],
                 [
                     'active' => true,
-                    'badge' => 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B',
+                    'badge' => 'SMPS IT RABBANI MUARA ENIM • FULL DAY SCHOOL',
                     'title' => "Membina Generasi Qur'ani, Cerdas & Berakhlak Mulia",
-                    'subtitle' => "Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kayuagung, Kab. OKI dengan Kurikulum Terpadu & Tahfidz Al-Qur'an.",
-                    'image' => '/uploads/activities-sit-madani.webp',
-                    'btn_text' => 'Profil Singkat Sekolah',
-                    'btn_link' => '/tentang-kami',
+                    'subtitle' => "Sekolah Menengah Pertama Islam Terpadu di Muara Enim dengan Kurikulum Terpadu JSIT, Tahfidz Al-Qur'an, dan Bina Pribadi Islam.",
+                    'image' => '/uploads/kegiatan-pramuka-rabbani.webp',
+                    'btn_text' => 'Profil Singkat',
+                    'btn_link' => '/smp/tentang-kami',
                     'btn_target' => '_self',
                     'btn2_active' => true,
-                    'btn2_text' => 'Info SPMB',
-                    'btn2_link' => '/ppdb',
-                    'btn2_target' => '_self',
-                ],
-                [
-                    'active' => true,
-                    'badge' => 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B',
-                    'title' => 'SPMB Gelombang Exclusive TP Baru',
-                    'subtitle' => 'Kuota Terbatas Hanya 24 Orang & Promo Cash Back 1 Juta Alumni SDS IT Madani.',
-                    'image' => '/uploads/tahfidz-sit-madani.webp',
-                    'btn_text' => 'Daftar SPMB Online',
-                    'btn_link' => '/ppdb',
-                    'btn_target' => '_self',
-                    'btn2_active' => true,
-                    'btn2_text' => 'Info SPMB',
-                    'btn2_link' => '/ppdb',
+                    'btn2_text' => 'Daftar SPMB',
+                    'btn2_link' => '/smp/ppdb',
                     'btn2_target' => '_self',
                 ],
             ]),
             'hero_slides_tk' => json_encode([
                 [
                     'active' => true,
-                    'badge' => 'TKS IT MADANI KAYUAGUNG • TERAKREDITASI B',
-                    'title' => 'Membentuk Generasi Rabbani yang Kreatif, Cerdas, dan Mandiri',
-                    'subtitle' => 'Pendidikan Anak Usia Dini berbasis fitrah, adab islami, tahfidz juz 30 cilik, dan pembelajaran sentra bermakna.',
-                    'image' => '/uploads/madani/kegiatan-madani-03.webp',
+                    'badge' => 'TKS IT RABBANI MUARA ENIM • TERAKREDITASI B',
+                    'title' => 'Membentuk Generasi Cilik Qur\'ani yang Kreatif, Cerdas, dan Mandiri',
+                    'subtitle' => 'Pendidikan Anak Usia Dini berbasis fitrah keimanan, adab islami, tahfidz juz 30 cilik, dan pembelajaran sentra bermakna.',
+                    'image' => '/uploads/campus-sit-rabbani.webp',
                     'btn_text' => 'Profil TKS IT',
                     'btn_link' => '/tk/tentang-kami',
                     'btn_target' => '_self',
@@ -197,16 +182,32 @@ class SchoolDataSeeder extends Seeder
             'hero_slides_sd' => json_encode([
                 [
                     'active' => true,
-                    'badge' => 'SDS IT MADANI KAYUAGUNG • TERAKREDITASI B',
-                    'title' => 'Membentuk Generasi Berprestasi, Sholeh, Inovatif & Mandiri',
-                    'subtitle' => 'Sekolah Dasar Islam Terpadu unggulan dengan target tahfidz 2 juz mutqin, kurikulum terpadu JSIT, dan pembinaan akhlak mulia.',
-                    'image' => '/uploads/madani/kegiatan-madani-06.webp',
+                    'badge' => 'SDS IT RABBANI MUARA ENIM • TERAKREDITASI B',
+                    'title' => 'Membentuk Generasi Berprestasi, Sholeh, Inovatif & Berakhlak Mulia',
+                    'subtitle' => 'Sekolah Dasar Islam Terpadu unggulan di Muara Enim dengan target tahfidz mutqin, kurikulum terpadu JSIT, dan penguatan literasi numerasi.',
+                    'image' => '/uploads/prestasi-sit-rabbani.webp',
                     'btn_text' => 'Profil SDS IT',
                     'btn_link' => '/sd/tentang-kami',
                     'btn_target' => '_self',
                     'btn2_active' => true,
                     'btn2_text' => 'SPMB SDS IT',
                     'btn2_link' => '/sd/ppdb',
+                    'btn2_target' => '_self',
+                ],
+            ]),
+            'hero_slides_sma' => json_encode([
+                [
+                    'active' => true,
+                    'badge' => 'SMA IT RABBANI MUARA ENIM • BOARDING & FULL DAY',
+                    'title' => 'Mencetak Pemimpin Masa Depan Berkarakter Qur\'ani & Berprestasi',
+                    'subtitle' => '88% Lulusan Hafal Al-Qur\'an Minimal 1 Juz, 88% Lulusan Masuk PTN, dan Fasilitas Bimbingan SNBT Gratis.',
+                    'image' => '/uploads/campus-smait-rabbani.webp',
+                    'btn_text' => 'Profil SMA IT',
+                    'btn_link' => '/sma/tentang-kami',
+                    'btn_target' => '_self',
+                    'btn2_active' => true,
+                    'btn2_text' => 'Daftar SPMB SMA',
+                    'btn2_link' => '/sma/ppdb',
                     'btn2_target' => '_self',
                 ],
             ]),
@@ -235,19 +236,7 @@ class SchoolDataSeeder extends Seeder
 
         // 3. Dewan Guru & GTK
         AnggotaDewan::truncate();
-        $gurus = $data['gurus'] ?? [
-            [
-                'name' => 'Ribang Imam Satria, S.Pi., Gr.',
-                'slug' => 'ribang-imam-satria-spi-gr',
-                'position' => 'Kepala Sekolah',
-                'fraction' => 'Pimpinan Sekolah',
-                'photo' => '/uploads/dewan/kepala-sekolah.webp',
-                'profile_summary' => 'Kepala SMPS IT Madani Kayuagung. Berkomitmen mendidik generasi Qur\'ani yang cerdas, berakhlak mulia, dan berprestasi global.',
-                'education' => 'S1 Ilmu Administrasi Negara, S2 Manajemen Pendidikan, Gr',
-                'order' => 1,
-            ],
-        ];
-
+        $gurus = $data['gurus'] ?? [];
         foreach ($gurus as $g) {
             AnggotaDewan::create($g);
         }
@@ -257,54 +246,54 @@ class SchoolDataSeeder extends Seeder
         $facilities = $data['facilities'] ?? [];
         foreach ($facilities as $fac) {
             Bidang::create(array_merge($fac, [
-                'address' => 'Kampus SMPS IT Madani Kayuagung',
-                'phone' => '0858-3817-3417',
-                'email' => 'smpsislamterpadumadani@gmail.com',
+                'address' => 'Kampus SIT Rabbani Muara Enim, Jl. Proklamasi No. 80 Air Lintang',
+                'phone' => '0851-5929-3554',
+                'email' => 'yayasangerabbani@gmail.com',
             ]));
         }
 
         // 5. Program Unggulan (Dpcs)
         $programs = [
             [
-                'name' => 'Program Tahfidz 2 Juz Mutqin & Hadits',
-                'slug' => 'program-tahfidz-2-juz-mutqin',
+                'name' => 'Program Tahfidzul Qur\'an Mutqin & Bersanad',
+                'slug' => 'program-tahfidz-quran-mutqin',
                 'address' => 'Kurikulum Khusus Keislaman',
-                'description' => 'Bimbingan intensif membaca Al-Qur\'an dengan tartil, tahsin bersanad, dan hafalan mutqin minimal 2 juz serta 12 hadits pilihan.',
+                'description' => 'Bimbingan intensif membaca Al-Qur\'an dengan tartil, tahsin bersanad, dan hafalan mutqin berkesinambungan dari jenjang TK hingga SMA IT.',
                 'order' => 1,
             ],
             [
-                'name' => 'Bina Pribadi Islam (BPI) & Karakter Islami',
-                'slug' => 'bina-pribadi-islam-bpi',
-                'address' => 'Pembinaan Karakter Siswa',
-                'description' => 'Halaqah pekanan pembinaan adab, pembiasaan ibadah yaumiyah, dzikir ma\'tsurat, serta penanaman akhlaqul karimah.',
+                'name' => 'Boarding School (Asrama Pesantren) SMA IT',
+                'slug' => 'boarding-school-asrama-sma-it',
+                'address' => 'Pembinaan Intensif 24 Jam',
+                'description' => 'Asrama putra dan putri dengan pendampingan musyrif/ah 24 jam untuk pembiasaan sholat tahajud, halaqah Qur\'an, kajian kitab, dan kemandirian.',
                 'order' => 2,
             ],
             [
-                'name' => 'Kurikulum Terpadu JSIT & Kurikulum Merdeka',
-                'slug' => 'kurikulum-terpadu-jsit-merdeka',
-                'address' => 'Integrasi Nilai Islam & Sains',
-                'description' => 'Memadukan standar capaian Kurikulum Merdeka Nasional dengan nilai-nilai Islam Terpadu berstandar JSIT Indonesia.',
+                'name' => 'Bimbingan SNBT Masuk PTN Gratis',
+                'slug' => 'bimbingan-snbt-ptn-gratis',
+                'address' => 'Sukses Karir Masa Depan',
+                'description' => 'Program pendampingan akademik intensif untuk persiapan seleksi nasional berbasis tes (SNBT), terbukti mengantarkan 88% lulusan masuk PTN.',
                 'order' => 3,
             ],
             [
-                'name' => 'Program Belajar Bersama Maestro & Riset Sains',
-                'slug' => 'belajar-bersama-maestro-riset',
-                'address' => 'Pengembangan Akademik & Potensi',
-                'description' => 'Eksplorasi bakat seni, budaya, sains dan teknologi langsung bersama tokoh dan pakar di bidangnya.',
+                'name' => 'Bina Pribadi Islam (BPI) & 10 Muwashofat JSIT',
+                'slug' => 'bina-pribadi-islam-dan-karakter-jsit',
+                'address' => 'Pembinaan Karakter Islami',
+                'description' => 'Halaqah pekanan pembinaan akidah yang lurus, ibadah yang benar, dan akhlaqul karimah berstandar Jaringan Sekolah Islam Terpadu.',
                 'order' => 4,
             ],
             [
-                'name' => 'Madani Safar & Outing Class Edukatif',
-                'slug' => 'madani-safar-outing-class',
-                'address' => 'Outdoor Learning & Wawasan',
-                'description' => 'Pembelajaran luar kelas berbasis observasi alam, rihlah edukatif, studi lingkungan, dan pengembangan wawasan santri SIT Madani di Kabupaten Ogan Komering Ilir.',
+                'name' => 'Sains Terpadu & Literasi Digital Abad 21',
+                'slug' => 'sains-terpadu-literasi-digital',
+                'address' => 'Pengembangan Nalar & Teknologi',
+                'description' => 'Laboratorium komputer modern, bimbingan olimpiade sains (OSN), riset praktikum IPA, dan penguasaan bahasa asing (Arab & Inggris).',
                 'order' => 5,
             ],
             [
-                'name' => 'Madani Peduli (Bakti Sosial Masyarakat)',
-                'slug' => 'madani-peduli-bakti-sosial',
-                'address' => 'Kepedulian Sosial & Dakwah',
-                'description' => 'Kiprah nyata santri SIT Madani dalam melayani, menebar kebaikan, dan memberikan kontribusi positif bagi masyarakat di Kayuagung, Kab. OKI.',
+                'name' => 'Kepanduan Pramuka SIT & Bela Diri Tapak Suci',
+                'slug' => 'pramuka-sit-tapak-suci',
+                'address' => 'Ketangkasan & Fisik Kuat (Qowiyyul Jismi)',
+                'description' => 'Pembinaan kedisiplinan dan keberanian santri melalui kepanduan alam terbuka dan seni bela diri pencak silat berprestasi.',
                 'order' => 6,
             ],
         ];
@@ -342,11 +331,11 @@ class SchoolDataSeeder extends Seeder
             'prestasi' => 'Prestasi',
             'juara' => 'Juara',
             'jsit' => 'JSIT',
-            'outing-class' => 'Outing Class',
-            'safar' => 'Madani Safar',
-            'berkhidmat' => 'Madani Berkhidmat',
+            'boarding' => 'Boarding School',
+            'ptn' => 'SNBT PTN',
+            'muara-enim' => 'Muara Enim',
             'ekskul' => 'Ekskul',
-            'kayuagung' => 'Kayuagung',
+            'rabbani' => 'Rabbani',
         ];
 
         $tagModels = [];
@@ -388,95 +377,7 @@ class SchoolDataSeeder extends Seeder
             Testimonial::create($t);
         }
 
-        // 11. Downloads (Buku, Dokumen & Media)
-        Download::truncate();
-        $localDownloads = [
-            [
-                'title' => "Panduan Kurikulum Tahfidz Al-Qur'an 2 Juz SMPS IT Madani",
-                'description' => 'Modul resmi kurikulum tahfidz mutqin SMPS IT Madani Kayuagung berbasis standar JSIT Indonesia.',
-                'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/panduan-mutqin-tahfidz-madani.pdf',
-                'cover_image' => '/uploads/covers/cover-tahfidz-mutqin.webp',
-                'file_type' => 'PDF',
-                'file_size' => '9.0 KB',
-                'download_count' => 342,
-            ],
-            [
-                'title' => 'Buku Saku Adab & 10 Karakter (Muwashofat) Siswa JSIT',
-                'description' => 'Pedoman pembiasaan akhlak islami, adab kepada guru dan orang tua, tata tertib siswa asrama dan sekolah.',
-                'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/buku-saku-adab-karakter-siswa.pdf',
-                'cover_image' => '/uploads/covers/cover-karakter-siswa.webp',
-                'file_type' => 'PDF',
-                'file_size' => '6.9 KB',
-                'download_count' => 284,
-            ],
-            [
-                'title' => 'Petunjuk Praktikum Laboratorium IPA Terpadu SMPS IT Madani',
-                'description' => 'Pedoman eksperimen laboratorium biologi dan fisika untuk siswa kelas VII-IX SMPS IT Madani.',
-                'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/petunjuk-praktikum-sains-terpadu.pdf',
-                'cover_image' => '/uploads/covers/cover-praktikum-sains.webp',
-                'file_type' => 'PDF',
-                'file_size' => '6.6 KB',
-                'download_count' => 195,
-            ],
-            [
-                'title' => "Kurikulum Pembinaan Da'i Muda, Khitabah & Public Speaking",
-                'description' => 'Kumpulan materi public speaking, retorika dakwah 3 bahasa (Indonesia, Arab, Inggris), dan sistematika kultum.',
-                'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/kurikulum-pembinaan-dai-muda.pdf',
-                'cover_image' => '/uploads/covers/cover-dai-muda.webp',
-                'file_type' => 'PDF',
-                'file_size' => '6.5 KB',
-                'download_count' => 210,
-            ],
-            [
-                'title' => 'Buku Saku Kosakata Harian Bilingual Bahasa Arab & Inggris Siswa',
-                'description' => 'Modul percakapan bilingual harian asrama dan lingkungan sekolah untuk mempercepat penguasaan active speaking.',
-                'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/buku-saku-kosakata-bilingual.pdf',
-                'cover_image' => '/uploads/covers/cover-bilingual-arab-inggris.webp',
-                'file_type' => 'PDF',
-                'file_size' => '6.6 KB',
-                'download_count' => 312,
-            ],
-            [
-                'title' => 'Panduan Sukses Asesmen Nasional & Masuk Sekolah Lanjutan Unggulan Favorit',
-                'description' => 'Strategi sukses menembus sekolah lanjutan favorit impian, pembedahan materi literasi dan numerasi Asesmen Nasional.',
-                'category_type' => 'E-Book',
-                'file_path' => '/uploads/downloads/panduan-sukses-snbt-ptn.pdf',
-                'cover_image' => '/uploads/covers/cover-sukses-snbt.webp',
-                'file_type' => 'PDF',
-                'file_size' => '6.6 KB',
-                'download_count' => 450,
-            ],
-
-            [
-                'title' => 'Logo Resmi SMPS IT Madani Kayuagung (High Resolution)',
-                'description' => 'File logo resmi SMPS IT Madani Kayuagung format PNG transparan.',
-                'category_type' => 'Logo',
-                'file_path' => '/uploads/logo-madani.png',
-                'file_type' => 'PNG',
-                'file_size' => '120 KB',
-                'download_count' => 780,
-            ],
-            [
-                'title' => 'Logo Lambang Madani Square HD',
-                'description' => 'Logo lambang persegi SMPS IT Madani Kayuagung format PNG.',
-                'category_type' => 'Logo',
-                'file_path' => '/uploads/logo-madani-square.webp',
-                'file_type' => 'PNG',
-                'file_size' => '85 KB',
-                'download_count' => 315,
-            ],
-        ];
-
-        foreach ($localDownloads as $dw) {
-            Download::create($dw);
-        }
-
-        // 12. Articles (Posts)
+        // 11. Articles (Posts)
         Post::where('type', 'post')->delete();
         $articles = $data['articles'] ?? [];
 
@@ -498,133 +399,133 @@ class SchoolDataSeeder extends Seeder
             $post->tags()->sync($selectedTags);
         }
 
-        // 13. Halaman Statis Resmi Sekolah (Gunakan firstOrCreate agar editan admin di dashboard tidak terhapus)
+        // 12. Halaman Statis Resmi Sekolah
         $officialPages = [
             [
                 'slug' => 'sambutan-kepala-sekolah',
-                'title' => 'Sambutan Kepala Sekolah SMPS IT Madani Kayuagung',
-                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Madani Kayuagung, Ribang Imam Satria, S.Pi., Gr..',
-                'featured_image' => '/uploads/dewan/kepala-sekolah.webp',
+                'title' => 'Sambutan Pimpinan Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Sambutan resmi Pimpinan Yayasan Generasi Rabbani Muara Enim, Drs. H. Basuki Wiwoho.',
+                'featured_image' => '/uploads/dewan/ust-basuki-wiwoho.webp',
                 'content' => <<<'HTML'
 <p><strong>Bismillahirrohmanirrohim. Assalamu'alaikum Warahmatullahi Wabarakatuh.</strong></p>
-<p>Segala puji dan syukur kita panjatkan kehadirat Allah SWT yang senantiasa melimpahkan rahmat, taufik, dan inayah-Nya kepada kita semua. Sholawat beriring salam senantiasa tercurah kepada junjungan alam Nabi Besar Muhammad SAW, para keluarga, sahabat, dan pengikutnya hingga akhir zaman.</p>
-<p>Selamat datang di website resmi <strong>SMPS IT Madani Kayuagung</strong>. Di era transformasi digital dan revolusi industri saat ini, kehadiran media informasi digital menjadi sarana vital untuk mempererat ukhuwah, menyajikan transparansi kegiatan sekolah, serta memberikan kemudahan akses informasi bagi para orang tua, siswa, dan masyarakat luas.</p>
-<p>Sebagai Sekolah Menengah Pertama Islam Terpadu di bawah naungan <strong>Yayasan Agung Madani Kayuagung</strong>, kami berkomitmen menghadirkan pendidikan holistik yang memadukan keunggulan kurikulum nasional, penguatan adab Islami, target hafalan Al-Qur'an 2 juz mutqin, kompetensi sains-teknologi, dan pembiasaan bahasa asing (Arab dan Inggris).</p>
-<p>Kami mengucapkan terima kasih yang sebesar-besarnya kepada Pembina dan Pengurus Yayasan Agung Madani, seluruh asatidz dan asatidzah, staf kependidikan, serta para wali murid yang senantiasa membersamai langkah kami dalam mendidik generasi terbaik umat. Mari bersama-sama kita wujudkan anak-anak yang sholih-sholihah, cerdas, berprestasi, dan berakhlakul karimah.</p>
+<p>Segala puji dan syukur kita panjatkan ke hadirat Allah Subhanahu Wa Ta'ala atas segala limpahan rahmat, hidayah, dan inayah-Nya. Sholawat beriring salam senantiasa tercurah kepada uswah hasanah kita, Baginda Nabi Muhammad SAW, beserta keluarga, sahabat, dan pengikutnya yang istiqomah hingga akhir zaman.</p>
+<p>Selamat datang di website resmi <strong>Yayasan Generasi Rabbani Muara Enim</strong> dan <strong>Sekolah Islam Terpadu (SIT) Rabbani</strong>. Di tengah era kemajuan teknologi informasi, portal ini hadir sebagai jembatan komunikasi, informasi, dan transparansi kegiatan pendidikan bagi seluruh orang tua, siswa, dan masyarakat luas.</p>
+<p>Yayasan Generasi Rabbani Muara Enim menaungi empat jenjang pendidikan terpadu satu atap: <strong>TKS IT Rabbani</strong>, <strong>SDS IT Rabbani</strong>, <strong>SMPS IT Rabbani</strong>, dan <strong>SMA IT Rabbani</strong>. Kami berikhtiar sungguh-sungguh menghadirkan ekosistem pembelajaran islami yang holistik, memadukan kurikulum nasional, kurikulum khas Jaringan Sekolah Islam Terpadu (JSIT) Indonesia, pembinaan tahfidz Al-Qur'an mutqin, serta penguasaan sains dan teknologi.</p>
+<p>Kami menyampaikan penghargaan setinggi-tingginya kepada seluruh asatidz dan asatidzah, staf kependidikan, serta para wali murid yang senantiasa berkolaborasi membersamai langkah kami. Semoga Allah SWT memberkahi setiap langkah perjuangan kita dalam mencetak generasi Qur'ani yang berkarakter Robbani.</p>
 <p><em>Wassalamu'alaikum Warahmatullahi Wabarakatuh.</em></p>
-<p><strong>Kepala SMPS IT Madani Kayuagung</strong><br>
-<strong>Ribang Imam Satria, S.Pi., Gr.</strong></p>
+<p><strong>Ketua Yayasan Generasi Rabbani Muara Enim</strong><br>
+<strong>Drs. H. Basuki Wiwoho</strong></p>
 HTML,
             ],
             [
                 'slug' => 'visi-dan-misi',
-                'title' => 'Visi dan Misi SMPS IT Madani Kayuagung',
-                'excerpt' => 'Visi, Misi, dan Tujuan penyelenggaraan pendidikan SMPS IT Madani Kayuagung.',
-                'featured_image' => '/uploads/logo-madani.png',
+                'title' => 'Visi dan Misi Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Visi, Misi, dan Tujuan penyelenggaraan pendidikan SIT Rabbani Muara Enim.',
+                'featured_image' => '/uploads/logo-rabbani.png',
                 'content' => <<<'HTML'
-<h3>VISI SEKOLAH</h3>
+<h3>VISI YAYASAN & SEKOLAH</h3>
 <blockquote class="text-xl font-bold text-school-primary my-4 p-4 border-l-4 border-school-primary bg-indigo-50/70 rounded-r-lg">
-“MENJADI LEMBAGA ISLAM TERPADU YANG MENCETAK GENERASI TERBAIK, BERKEPRIBADIAN ISLAMI, BERAKHLAK MULIA, CERDAS, BERPRESTASI, DAN BERWAWASAN GLOBAL”
+“MEWUJUDKAN GENERASI ROBBANI YANG CERDAS, BERAKHLAK MULIA, MANDIRI, BERPRESTASI, DAN BERWAWASAN GLOBAL BERLANDASKAN AL-QUR'AN DAN AS-SUNNAH”
 </blockquote>
 
-<h3>MISI SEKOLAH</h3>
+<h3>MISI YAYASAN</h3>
 <ol class="list-decimal pl-6 space-y-2.5 text-gray-700">
-    <li><strong>Unggul dalam Akhlakul Karimah:</strong> Menanamkan aqidah yang lurus, ibadah yang benar, dan akhlak mulia berlandaskan Al-Qur'an dan As-Sunnah.</li>
-    <li><strong>Unggul Prestasi Akademik & Non-Akademik:</strong> Menyelenggarakan pembelajaran aktif, kreatif, dan menantang untuk meraih prestasi di tingkat kota, provinsi, dan nasional.</li>
-    <li><strong>Berprestasi dalam Bahasa & MIPA:</strong> Membekali siswa dengan kecakapan berbahasa asing (Arab & Inggris) serta kemampuan sains dan nalar matematika.</li>
-    <li><strong>Target Tahfidzul Qur'an:</strong> Membina kemampuan tahsin dan tahfidz Al-Qur'an dengan target minimal 2 juz mutqin serta hafalan 12 hadits pilihan.</li>
-    <li><strong>Lingkungan Pendidikan Islami Profesional:</strong> Mewujudkan iklim sekolah yang kondusif, amanah, ramah anak, dan berbudaya Islami.</li>
+    <li><strong>Aqidah & Akhlakul Karimah:</strong> Menanamkan aqidah yang lurus, ibadah yang benar, dan akhlak mulia dalam setiap aspek kehidupan siswa.</li>
+    <li><strong>Tahfidzul Qur'an Mutqin:</strong> Menyelenggarakan pembelajaran Al-Qur'an tartil bersanad dan tahfidz dengan target hafalan mutqin di setiap jenjang pendidikan.</li>
+    <li><strong>Keunggulan Akademik & SNBT PTN:</strong> Menghantarkan siswa meraih prestasi akademik unggul serta siap bersaing menembus Perguruan Tinggi Negeri favorit.</li>
+    <li><strong>Pengembangan Karakter Mandiri & Kepemimpinan:</strong> Membina kemandirian, kedisiplinan, dan jiwa kepemimpinan melalui kepanduan Pramuka SIT, Asrama Boarding School, dan organisasi kesiswaan.</li>
+    <li><strong>Sains, Teknologi & Bahasa:</strong> Membekali peserta didik dengan kecakapan literasi digital, eksperimen sains, serta kemampuan berbahasa asing (Arab dan Inggris).</li>
 </ol>
 
 <h3 class="mt-8">TUJUAN PENDIDIKAN</h3>
 <ul class="list-disc pl-6 space-y-2 text-gray-700">
-    <li>Mencetak lulusan yang tertib dalam mendirikan sholat fardhu berjamaah dan gemar mengamalkan sunnah.</li>
-    <li>Mencapai target hafalan minimal 2 juz Al-Qur'an (Juz 29 dan Juz 30) dengan tajwid tartil.</li>
-    <li>Menghasilkan peserta didik yang berkarakter mandiri, santun, berpikir kritis, dan adaptif terhadap teknologi.</li>
-    <li>Meraih prestasi gemilang dalam kompetisi sains, keolahragaan, seni Islam, dan baris-berbaris.</li>
-    <li>Mempersiapkan siswa melanjutkan ke jenjang lanjutan/MA/Pesantren unggulan dengan bekal ilmu dan iman yang kokoh.</li>
+    <li>Mencetak santri/siswa yang tertib mendirikan sholat fardhu berjamaah dan membiasakan amalan sunnah.</li>
+    <li>Mencapai target hafalan Al-Qur'an mutqin sesuai jenjang pendidikan.</li>
+    <li>Membekali lulusan SMA IT Rabbani agar sukses menembus PTN impian (terbukti 88% lulusan tembus PTN).</li>
+    <li>Membentuk pribadi pembelajar sepanjang hayat yang adaptif, inovatif, dan berjiwa sosial tinggi.</li>
 </ul>
 HTML,
             ],
             [
                 'slug' => 'tentang-kami',
-                'title' => 'Profil SMPS IT Madani Kayuagung',
-                'excerpt' => 'Profil resmi lembaga pendidikan SMPS IT Madani Kayuagung, Kab. OKI.',
-                'featured_image' => '/uploads/campus-sit-madani.webp',
+                'title' => 'Profil Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Profil resmi Yayasan Generasi Rabbani Muara Enim & Sekolah Islam Terpadu Rabbani.',
+                'featured_image' => '/uploads/banner-yayasan-rabbani.webp',
                 'content' => <<<'HTML'
-<h3>Profil Singkat Sekolah</h3>
-<p><strong>SMPS IT Madani Kayuagung</strong> adalah lembaga pendidikan formal tingkat menengah pertama berbasis Islam Terpadu di Kabupaten Ogan Komering Ilir, Sumatera Selatan, di bawah naungan <strong>Yayasan Agung Madani Kayuagung</strong>.</p>
-<p>Berlokasi strategis di Jalan SMA Negeri 4, RT 02 LK III, Kelurahan Tanjung Rancing, Kecamatan Kayuagung, Kabupaten Ogan Komering Ilir, sekolah ini memadukan kurikulum nasional Kementerian Pendidikan Dasar dan Menengah dengan kurikulum khas Sekolah Islam Terpadu (SIT). Dengan pendekatan holistik, siswa dibina kecerdasan spiritual (SQ), emosional (EQ), dan intelektualnya (IQ) secara seimbang.</p>
+<h3>Profil Singkat Lembaga</h3>
+<p><strong>Yayasan Generasi Rabbani Muara Enim</strong> adalah lembaga yayasan pendidikan Islam yang menaungi <strong>Sekolah Islam Terpadu (SIT) Rabbani</strong> di Kabupaten Muara Enim, Sumatera Selatan. Menyelenggarakan pendidikan satu atap dari jenjang Anak Usia Dini hingga Sekolah Menengah Atas:</p>
+<ul class="list-disc pl-6 space-y-1.5 my-3">
+    <li><strong>TKS IT Rabbani Muara Enim</strong> (NPSN: 10647514) - Pembelajaran sentra usia dini & tahfidz cilik.</li>
+    <li><strong>SDS IT Rabbani Muara Enim</strong> (NPSN: 10648045) - Sekolah Dasar terpadu dengan target tahfidz mutqin dan 10 Muwashofat JSIT.</li>
+    <li><strong>SMPS IT Rabbani Muara Enim</strong> (NPSN: 69920340) - Sekolah Menengah Pertama Full Day School berkarakter Islami.</li>
+    <li><strong>SMA IT Rabbani Muara Enim</strong> (NPSN: 70010515) - Boarding School & Full Day School dengan fasilitas Bimbingan SNBT Gratis (88% Lulusan Hafal Qur'an & Masuk PTN).</li>
+</ul>
 
-<h4 class="mt-6 font-bold text-gray-900">Identitas Sekolah</h4>
+<h4 class="mt-6 font-bold text-gray-900">Identitas Lembaga</h4>
 <table class="w-full text-left border-collapse my-4 text-sm">
-    <tr class="border-b"><td class="py-2.5 font-semibold w-1/3 text-gray-800">Nama Resmi Sekolah</td><td class="py-2.5 text-gray-700">SMPS IT MADANI KAYUAGUNG</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">NPSN</td><td class="py-2.5 text-gray-700">70034917</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Bentuk Pendidikan</td><td class="py-2.5 text-gray-700">SMP (Sekolah Menengah Pertama)</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Status Sekolah</td><td class="py-2.5 text-gray-700">Swasta (Yayasan Agung Madani)</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Akreditasi</td><td class="py-2.5 text-gray-700"><span class="inline-block px-2.5 py-0.5 rounded-full bg-indigo-100 text-school-primary font-bold text-xs">TERAKREDITASI B</span></td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Kepala Sekolah</td><td class="py-2.5 text-gray-700">Ribang Imam Satria, S.Pi., Gr.</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Alamat Kampus</td><td class="py-2.5 text-gray-700">Jalan SMA Negeri 4, RT 02 LK III, Kelurahan Tanjung Rancing, Kecamatan Kayuagung, Kabupaten Ogan Komering Ilir, Sumatera Selatan 30618</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Telepon / WhatsApp</td><td class="py-2.5 text-gray-700">0858-3817-3417 / 0858-3817-3417</td></tr>
-    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Email Resmi</td><td class="py-2.5 text-gray-700">smpsislamterpadumadani@gmail.com</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold w-1/3 text-gray-800">Nama Yayasan</td><td class="py-2.5 text-gray-700">YAYASAN GENERASI RABBANI MUARA ENIM</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Satuan Pendidikan</td><td class="py-2.5 text-gray-700">TKS IT, SDS IT, SMPS IT, &amp; SMA IT Rabbani</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Ketua Yayasan</td><td class="py-2.5 text-gray-700">Drs. H. Basuki Wiwoho</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Alamat Kampus</td><td class="py-2.5 text-gray-700">Jl. Proklamasi No. 80, Kelurahan Air Lintang, Kec. Muara Enim, Kab. Muara Enim, Sumsel 31311</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Telepon / WhatsApp</td><td class="py-2.5 text-gray-700">0851-5929-3554</td></tr>
+    <tr class="border-b"><td class="py-2.5 font-semibold text-gray-800">Email Resmi</td><td class="py-2.5 text-gray-700">yayasangerabbani@gmail.com</td></tr>
 </table>
 HTML,
             ],
             [
                 'slug' => 'sejarah',
-                'title' => 'Sejarah SMPS IT Madani Kayuagung',
-                'excerpt' => 'Napak tilas perjalanan dan sejarah berdirinya SMPS IT Madani di Kayuagung, Kab. OKI.',
-                'featured_image' => '/uploads/campus-sit-madani.webp',
+                'title' => 'Sejarah Berdirinya Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Napak tilas perjalanan dan sejarah perjuangan pendidikan SIT Rabbani di Kabupaten Muara Enim.',
+                'featured_image' => '/uploads/campus-sit-rabbani.webp',
                 'content' => <<<'HTML'
-<h3>Sejarah dan Latar Belakang Pendirian</h3>
-<p><strong>SMPS IT Madani Kayuagung</strong> didirikan di bawah naungan <strong>Yayasan Agung Madani Kayuagung</strong> sebagai wujud kepedulian terhadap pentingnya pendidikan generasi muda Islam yang seimbang antara ilmu pengetahuan umum dan pemahaman agama yang mendalam.</p>
-<p>Berawal dari kesuksesan pembinaan di tingkat sekolah dasar (SDIT Madani), masyarakat dan para wali murid mendambakan kelanjutan pendidikan tingkat pertama yang tetap mengusung nilai-nilai Qur'ani dan pembiasaan adab Islami. Maka berdirilah SMPS IT Madani Kayuagung untuk melayani kebutuhan masyarakat Kayuagung dan sekitarnya.</p>
-<p>Di bawah kepemimpinan <strong>Ibu Ribang Imam Satria, S.Pi., Gr.</strong> beserta jajaran dewan guru yang amanah dan kompeten, SMPS IT Madani terus berinovasi dalam metode pembelajaran, sarana prasarana modern, pembinaan tahfidz 2 juz mutqin, serta prestasi siswa di berbagai ajang kejuaraan daerah dan nasional.</p>
+<h3>Perjalanan & Latar Belakang Pendirian</h3>
+<p><strong>Yayasan Generasi Rabbani Muara Enim</strong> berawal dari tekad para tokoh dan pendidik muslim di Kabupaten Muara Enim untuk menghadirkan institusi pendidikan yang mampu melahirkan generasi penghafal Al-Qur'an sekaligus unggul dalam sains dan teknologi.</p>
+<p>Langkah awal diawali dengan hadirnya unit pendidikan anak usia dini dan sekolah dasar. Sambutan hangat masyarakat yang mendambakan kelanjutan pendidikan islami terpadu mendorong lahirnya jenjang SMPS IT Rabbani dan SMA IT Rabbani Boarding School.</p>
+<p>Kini, dengan izin Allah SWT, SIT Rabbani Muara Enim telah berkembang pesat menjadi lembaga rujukan pendidikan Islam terpadu satu atap terkemuka di Kabupaten Muara Enim dengan ribuan alumni yang tersebar di berbagai perguruan tinggi negeri terkemuka di Indonesia.</p>
 HTML,
             ],
             [
                 'slug' => 'struktur-organisasi',
-                'title' => 'Struktur Organisasi SMPS IT Madani Kayuagung',
-                'excerpt' => 'Bagan kepemimpinan, yayasan, dan dewan guru SMPS IT Madani Kayuagung.',
-                'featured_image' => '/uploads/logo-madani.png',
+                'title' => 'Struktur Organisasi Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Bagan kepemimpinan yayasan dan para kepala satuan pendidikan SIT Rabbani.',
+                'featured_image' => '/uploads/struktur-yayasan-rabbani.webp',
                 'content' => <<<'HTML'
-<h3>Struktur Manajemen Sekolah & Yayasan</h3>
+<h3>Bagan Manajemen Yayasan & Satuan Pendidikan</h3>
 <ul class="space-y-3 text-gray-800">
-    <li><strong>Yayasan Penyelenggara:</strong> Yayasan Agung Madani Kayuagung</li>
-    <li><strong>Kepala Sekolah:</strong> Ribang Imam Satria, S.Pi., Gr.</li>
-    <li><strong>Wakil Kepala Sekolah Bidang Kurikulum:</strong> Ustadz Fulan, S.Pd.</li>
-    <li><strong>Koordinator Bidang Kesiswaan &amp; Ekskul:</strong> Ustadz Fulan, S.Kom.</li>
-    <li><strong>Koordinator Tahsin &amp; Tahfidz Al-Qur'an (TTQ):</strong> Ustadzah Fulanah, S.Pd.I</li>
-    <li><strong>Koordinator BPI &amp; Bina Karakter:</strong> Ustadzah Fulanah, S.Si.</li>
-    <li><strong>Dewan Guru &amp; Tenaga Kependidikan:</strong> Asatidz dan asatidzah profesional berdedikasi tinggi.</li>
+    <li><strong>Ketua Yayasan Generasi Rabbani:</strong> Drs. H. Basuki Wiwoho</li>
+    <li><strong>Kepala SMA IT Rabbani Muara Enim:</strong> Pimpinan Satuan SMA IT</li>
+    <li><strong>Kepala SMPS IT Rabbani Muara Enim:</strong> Pimpinan Satuan SMPS IT</li>
+    <li><strong>Kepala SDS IT Rabbani Muara Enim:</strong> Pimpinan Satuan SDS IT</li>
+    <li><strong>Kepala TKS IT Rabbani Muara Enim:</strong> Pimpinan Satuan TKS IT</li>
+    <li><strong>Dewan Asatidz & GTK:</strong> Para pendidik profesional dan musyrif asrama berpengalaman.</li>
 </ul>
 HTML,
             ],
             [
                 'slug' => 'donasi',
-                'title' => 'Infaq & Wakaf Pembangunan SMPS IT Madani Kayuagung',
-                'excerpt' => 'Salurkan infaq dan wakaf terbaik Anda untuk sarana pendidikan Islam dan beasiswa tahfidz di Kayuagung, Kab. OKI.',
-                'featured_image' => '/uploads/campus-sit-madani.webp',
+                'title' => 'Infaq & Wakaf Pembangunan Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Salurkan infaq dan wakaf terbaik Anda untuk sarana pendidikan Islam dan beasiswa tahfidz di Muara Enim.',
+                'featured_image' => '/uploads/campus-sit-rabbani.webp',
                 'content' => <<<'HTML'
-<h3>Investasi Akhirat Melalui Pendidikan Islam</h3>
-<p>Yayasan Agung Madani Kayuagung membuka kesempatan seluas-luasnya bagi kaum muslimin dan para dermawan untuk menyalurkan infaq dan sedekah jariyah. Dana yang terhimpun disalurkan untuk pengembangan fasilitas laboratorium, masjid kampus, ruang kelas digital, serta beasiswa pendidikan bagi siswa penghafal Al-Qur'an.</p>
+<h3>Investasi Akhirat Melalui Pendidikan Islam Terpadu</h3>
+<p>Yayasan Generasi Rabbani Muara Enim membuka kesempatan seluas-luasnya bagi kaum muslimin dan para muhsinin untuk mengalirkan amal jariyah melalui pembangunan sarana ruang kelas, masjid kampus terpadu, asrama santri, laboratorium komputer, serta beasiswa pendidikan santri yatim dan dhuafa berprestasi.</p>
 HTML,
             ],
             [
                 'slug' => 'e-book',
-                'title' => 'E-Library & Modul Pembelajaran SMPS IT Madani',
-                'excerpt' => 'Kumpulan buku pelajaran, panduan kurikulum, dan modul e-library siswa SMPS IT Madani.',
-                'featured_image' => '/uploads/activities-sit-madani.webp',
+                'title' => 'E-Library & Modul Pembelajaran SIT Rabbani Muara Enim',
+                'excerpt' => 'Kumpulan buku pelajaran, panduan kurikulum, dan modul e-library santri SIT Rabbani.',
+                'featured_image' => '/uploads/campus-smait-rabbani.webp',
                 'content' => <<<'HTML'
-<h3>Pusat E-Library & Buku Digital</h3>
-<p>Daftar koleksi buku pelajaran Kurikulum Merdeka, modul tahfidz 2 juz, dan bacaan islami yang dapat diakses dan diunduh oleh civitas akademika SMPS IT Madani Kayuagung.</p>
+<h3>Pusat E-Library & Buku Digital Santri</h3>
+<p>Daftar koleksi buku panduan kurikulum tahfidz mutqin, pedoman karakter 10 Muwashofat JSIT, serta modul praktikum yang dapat diunduh civitas akademika SIT Rabbani Muara Enim.</p>
 HTML,
             ],
             [
                 'slug' => 'hymne-mars',
-                'title' => 'Mars & Hymne Jaringan Sekolah Islam Terpadu',
-                'excerpt' => 'Lagu mars dan hymne Sekolah Islam Terpadu kebanggaan SMPS IT Madani Kayuagung.',
-                'featured_image' => '/uploads/logo-madani.png',
+                'title' => 'Mars & Hymne Jaringan Sekolah Islam Terpadu (JSIT)',
+                'excerpt' => 'Lagu mars dan hymne kebanggaan Sekolah Islam Terpadu SIT Rabbani Muara Enim.',
+                'featured_image' => '/uploads/logo-rabbani.png',
                 'content' => <<<'HTML'
 <h3>Mars JSIT Indonesia</h3>
 <p class="italic text-gray-600">Membina tunas bangsa, beriman dan bertaqwa, cerdas berakhlak mulia...</p>
@@ -632,39 +533,35 @@ HTML,
             ],
             [
                 'slug' => 'logo',
-                'title' => 'Logo Resmi SMPS IT Madani Kayuagung',
-                'excerpt' => 'Makna filosofis lambang dan logo resmi SMPS IT Madani Kayuagung.',
-                'featured_image' => '/uploads/logo-madani.png',
+                'title' => 'Makna Filosofis Logo Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Makna lambang bintang bersegi delapan, lengkungan, dan nama Generasi Rabbani Muara Enim.',
+                'featured_image' => '/uploads/logo-rabbani.png',
                 'content' => <<<'HTML'
-<h3>Filosofi Logo SMPS IT Madani Kayuagung</h3>
-<p>Logo SMPS IT Madani Kayuagung memadukan lambang perisai keimanan, kubah masjid, Al-Qur'an terbuka, dan obor semangat menuju terwujudnya generasi Qur'ani yang cerdas dan berakhlakul karimah.</p>
+<h3>Filosofi Lambang Yayasan Generasi Rabbani Muara Enim</h3>
+<p>Logo Yayasan Generasi Rabbani Muara Enim didesain dengan bentuk bintang segi delapan berlatar kuning cerah yang melambangkan cahaya Islam, keluhuran budi pekerti, dan kejayaan ilmu pengetahuan. Tulisan arab 'Robbani' di bagian tengah menegaskan komitmen mencetak generasi yang selalu terhubung dengan Allah SWT dan berpegang teguh pada Al-Qur'an dan As-Sunnah.</p>
 HTML,
             ],
             [
                 'slug' => 'hubungi',
-                'title' => 'Kontak & Sekretariat SPMB SMPS IT Madani',
-                'excerpt' => 'Alamat dan kontak resmi sekretariat SMPS IT Madani Kayuagung.',
-                'featured_image' => '/uploads/campus-sit-madani.webp',
+                'title' => 'Kontak & Sekretariat Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Alamat dan kontak resmi sekretariat Yayasan Generasi Rabbani dan Panitia SPMB.',
+                'featured_image' => '/uploads/banner-yayasan-rabbani.webp',
                 'content' => <<<'HTML'
-<h3>Sekretariat Sekolah & Panitia SPMB</h3>
-<p>Silakan kunjungi kampus kami atau hubungi panitia SPMB untuk informasi pendaftaran peserta didik baru gelombang exclusive, jadwal seleksi, dan cashback 1 juta.</p>
-<p><strong>Alamat Kampus:</strong> Jalan Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Kayuagung, Kabupaten Ogan Komering Ilir, Sumatera Selatan 31113.<br>
-<strong>WhatsApp / Telp:</strong> 0858-3817-3417 / 0858-3817-3417<br>
-<strong>Email:</strong> smpsislamterpadumadani@gmail.com</p>
+<h3>Sekretariat Yayasan & Panitia SPMB</h3>
+<p>Kunjungi kampus kami atau hubungi panitia SPMB untuk informasi pendaftaran santri baru gelombang 1, program boarding school SMA IT, dan fasilitas beasiswa.</p>
+<p><strong>Alamat Kampus:</strong> Jl. Proklamasi No. 80, Kelurahan Air Lintang, Kec. Muara Enim, Kab. Muara Enim, Sumatera Selatan 31311.<br>
+<strong>WhatsApp / Hotline:</strong> 0851-5929-3554<br>
+<strong>Email:</strong> yayasangerabbani@gmail.com</p>
 HTML,
             ],
             [
                 'slug' => 'privacy-policy',
-                'title' => 'Kebijakan Privasi SMPS IT Madani Kayuagung',
-                'excerpt' => 'Kebijakan privasi dan perlindungan data pengguna website resmi SMPS IT Madani.',
-                'featured_image' => '/uploads/logo-madani.png',
+                'title' => 'Kebijakan Privasi Yayasan Generasi Rabbani Muara Enim',
+                'excerpt' => 'Kebijakan privasi dan perlindungan data pengguna website resmi Yayasan Generasi Rabbani.',
+                'featured_image' => '/uploads/logo-rabbani.png',
                 'content' => <<<'HTML'
-<h3>Kebijakan Privasi SMPS IT Madani Kayuagung</h3>
-<p>Privasi Anda adalah prioritas bagi kami. SMPS IT Madani Kayuagung berkomitmen melindungi setiap data pribadi yang Anda berikan melalui situs ini, baik saat mendaftar SPMB online maupun mengisi formulir kontak.</p>
-<h4>1. Pengumpulan Informasi</h4>
-<p>Informasi yang kami kumpulkan mencakup data pendaftaran calon siswa (nama, alamat, nomor telepon orang tua, data akademik) yang digunakan semata-mata untuk keperluan administrasi dan seleksi peserta didik baru.</p>
-<h4>2. Keamanan Data</h4>
-<p>Kami menerapkan standar perlindungan data yang ketat untuk mencegah akses tanpa izin atau penyalahgunaan informasi pribadi Anda.</p>
+<h3>Kebijakan Privasi Yayasan Generasi Rabbani Muara Enim</h3>
+<p>Yayasan Generasi Rabbani Muara Enim berkomitmen melindungi privasi pengunjung dan calon peserta didik baru yang mengisi formulir SPMB melalui website resmi ini.</p>
 HTML,
             ],
         ];
@@ -681,181 +578,83 @@ HTML,
             );
         }
 
-        // Galeri Foto Dokumentasi Sekolah SMPS IT Madani Kayuagung (35 Foto Autentik SIT Madani)
+        // 13. Galeri Foto Dokumentasi Rabbani
         Post::where('type', 'gallery')->delete();
-
-        $galleryTitles = [
-            'Dokumentasi Pembelajaran & Praktikum Siswa SIT Madani',
-            'Aktivitas Sentra Bermain & Kreativitas TKS IT Madani',
-            'Pembiasaan Sholat Dhuha & Doa Bersama di Kampus Terpadu',
-            'Kegiatan Tahfidz Al-Qur\'an Juz 30 & Tasmi\' Akbar Santri',
-            'Upacara Hari Besar Nasional & Baris Berbaris Siswa',
-            'Pramuka SIT: Perkemahan & Uji Keterampilan Lapangan',
-            'Praktikum Sains & Eksperimen Ilmiah di Laboratorium IPA',
-            'Literasi Digital & Pembelajaran Komputer SMPS IT Madani',
-            'Market Day & Pengembangan Jiwa Wirausaha Cilik SDS IT',
-            'Peringatan Maulid Nabi & Isra Mi\'raj Keluarga Besar SIT Madani',
-            'Manasik Haji Cilik TKS IT Madani di Lapangan Terpadu',
-            'Latihan Panahan & Olahraga Sunnah Santri Madani',
-            'Bina Pribadi Islami (BPI) & Halaqah Karakter Robbani',
-            'Suasana Belajar Nyaman & Berpusat Pada Siswa di Kelas',
-            'Pemberian Apresiasi & Piagam Juara Siswa Berprestasi',
-            'Pertemuan Komite Orang Tua & Parenting Pendidikan Islami',
-            'Kunjungan Edukatif & Outbound Ceria Siswa di Luar Kelas',
-            'Wisuda Tahfidz & Khotmil Qur\'an SIT Madani',
-            'Gedung Asrama Tahfidz & Kampus Terpadu Kayuagung',
-            'Latihan Kesenian Hadroh & Nasyid Islami Siswa',
-            'Senam Sehat & Pembinaan Kebugaran Jasmani Siswa',
-            'Bakti Sosial & Kepedulian Berbagi Santri Madani',
-            'Simulasi Asesmen Nasional Berbasis Komputer (ANBK)',
-            'Pameran Karya Seni & Proyek Penguatan Profil Pancasila (P5)',
-            'Semarak Class Meeting & Perlombaan Antar Rombel Siswa',
-            'Pelatihan Guru & Peningkatan Mutu Tenaga Pendidik',
-            'Koleksi Perpustakaan & Pojok Baca Nyaman Siswa',
-            'Pojok Sains & Pengamatan Lingkungan Hidup Sekolah',
-            'Pelepasan & Wisuda Angkatan Siswa SIT Madani',
-            'Kegiatan Keputrian & Pembinaan Adab Muslimah Santriwati',
-            'Majelis Pagi: Muraja\'ah Bersama Sebelum Jam Pembelajaran',
-            'Pemberdayaan Santri: Kepemimpinan & Organisasi Siswa',
-            'Dokumentasi Tim Dewan Guru & Tenaga Kependidikan SIT Madani',
-            'Ruang Laboratorium & Fasilitas Multimedia Siswa',
-            'Keluarga Besar Yayasan Agung Madani & Seluruh Unit Sekolah',
-        ];
-
-        foreach ($galleryTitles as $idx => $title) {
-            $num = str_pad((string) ($idx + 1), 2, '0', STR_PAD_LEFT);
+        $galleries = $data['galleries'] ?? [];
+        foreach ($galleries as $idx => $g) {
+            $slug = Str::slug($g['title']).'-'.($idx + 1);
             Post::create([
-                'title' => $title,
-                'slug' => Str::slug($title)."-{$num}",
+                'title' => $g['title'],
+                'slug' => $slug,
                 'type' => 'gallery',
                 'status' => 'publish',
-                'featured_image' => "/uploads/madani/kegiatan-madani-{$num}.webp",
-                'content' => $title,
+                'featured_image' => $g['url'],
+                'content' => $g['title'],
                 'author_id' => 1,
-                'published_at' => now()->subHours(35 - $idx),
+                'published_at' => now()->subHours(10 - $idx),
             ]);
         }
 
-        // Ekstrakurikuler SMPS IT Madani Kayuagung
-        $ekskulItems = [
-            [
-                'title' => 'Pramuka SIT (Sekolah Islam Terpadu)',
-                'slug' => 'pramuka-sit',
-                'excerpt' => 'Kepanduan berkarakter Islam melatih kemandirian, kepemimpinan, dan kecintaan pada alam terbuka.',
-                'featured_image' => '/uploads/activities-sit-madani.webp',
-                'content' => '<p>Ekstrakurikuler Pramuka SIT (Satuan Komunitas Pramuka Sekolah Islam Terpadu) di SMPS IT Madani merupakan wadah pembinaan karakter, kedisiplinan, kemandirian, dan kepemimpinan berlandaskan nilai-nilai Islam. Melalui kegiatan perkemahan, penjelajahan alam, tali temali, semaphore, dan bakti sosial, para santri dilatih untuk tangguh, siap menolong sesama, dan berjiwa ksatria.</p><p>Kegiatan rutin dilaksanakan setiap pekan dibimbing oleh para pembina berpengalaman dan tersertifikasi KMD/KML.</p>',
-            ],
-            [
-                'title' => 'Robotika & Coding IT Club',
-                'slug' => 'robotika-coding-it-club',
-                'excerpt' => 'Pelatihan logika pemrograman dasar, perakitan mikrokontroler, dan persiapan olimpiade robotika.',
-                'featured_image' => '/uploads/madani/fasilitas_1274_Ruang-Lab-Komputer1.webp',
-                'content' => '<p>Klub Robotika dan Pemrograman dirancang untuk mempersiapkan santri menghadapi era kecerdasan buatan (AI) dan teknologi digital. Siswa mempelajari algoritma logika pemrograman, dasar elektronika, perakitan sensor, pemrograman mikrokontroler Arduino/ESP32, hingga pembuatan robot mobile cerdas.</p><p>Klub ini aktif mengikuti berbagai kompetisi sains dan teknologi madrasah/sekolah tingkat provinsi hingga nasional.</p>',
-            ],
-            [
-                'title' => 'Tahfidz & TTQ Club (Tartil Al-Qur\'an)',
-                'slug' => 'tahfidz-ttq-club',
-                'excerpt' => 'Pendalaman tajwid, makhorijul huruf, tilawah berirama, dan persiapan tasmi\' mutqin 2 juz.',
-                'featured_image' => '/uploads/tahfidz-sit-madani.webp',
-                'content' => '<p>Klub Tahsin dan Tahfidz Qur\'an (TTQ) berfokus pada pemantapan bacaan Al-Qur\'an berstandar riwayat Imam Hafsh, penguasaan matan Al-Jazariyah, perbaikan makharijul huruf, serta penguasaan seni tilawah berirama (Nahawand, Bayati, Hijaz, dll).</p><p>Klub ini mengantarkan para santri menuju ujian tasmi\' sekali duduk 2 juz mutqin serta ajang Musabaqah Tilawatil Qur\'an (MTQ) dan MHQ antarpelajar.</p>',
-            ],
-            [
-                'title' => 'English & Arabic Public Speaking Club',
-                'slug' => 'english-arabic-public-speaking-club',
-                'excerpt' => 'Latihan percakapan bahasa asing aktif, pidato 3 bahasa, dan pembiasaan retorika dakwah.',
-                'featured_image' => '/uploads/campus-sit-madani.webp',
-                'content' => '<p>Membekali santri dengan kecakapan berbahasa internasional dan keberanian berbicara di depan publik (public speaking). Materi meliputi pidato (speech), debat bahasa Inggris, khitabah bahasa Arab, story telling islami, dan pembiasaan active daily conversation.</p><p>Siswa dilatih menjadi dai dan pemimpin muda berwawasan global yang mampu menyuarakan pesan kebaikan Islam kepada dunia.</p>',
-            ],
-            [
-                'title' => 'Futsal & Olahraga Prestasi',
-                'slug' => 'futsal-olahraga-prestasi',
-                'excerpt' => 'Pembinaan kebugaran jasmani, teknik bermain futsal terpadu, dan kompetisi antarpelajar.',
-                'featured_image' => '/uploads/activities-sit-madani.webp',
-                'content' => '<p>Olahraga futsal dan kebugaran melatih fisik yang kuat (Qowiyyul Jismi), sportivitas, serta kerja sama tim solid. Didukung lapangan olahraga yang memadai, santri mendapatkan pembinaan teknik dasar dribbling, passing, formasi taktik bertanding, dan pola hidup sehat.</p><p>Tim futsal SMPS IT Madani rutin menjuarai turnamen tingkat kota dan persahabatan antarsekolah Islam di Sumatera Selatan.</p>',
-            ],
-            [
-                'title' => 'Seni Hadrah & Kaligrafi Islam',
-                'slug' => 'seni-hadrah-kaligrafi-islam',
-                'excerpt' => 'Pelatihan tabuhan rebana hadrah, vokal sholawat, dan seni lukis kaligrafi mushaf.',
-                'featured_image' => '/uploads/madani/fasilitas_1278_HALL-SIT-Madani_.webp',
-                'content' => '<p>Wadah apresiasi seni budaya Islam yang menanamkan mahabbah (cinta) kepada Nabi Muhammad SAW melalui lantunan sholawat dan tabuhan rebana banjari/hadrah modern, serta mengasah kepekaan estetika melalui seni menulis khat kaligrafi indah (Khat Tsuluts, Naskhi, Riq\'ah).</p><p>Grup hadrah dan tim kaligrafi sering tampil dalam peringatan hari besar Islam, wisuda sekolah, dan festival kesenian Islam se-Sumatera Selatan.</p>',
-            ],
-        ];
-
-        if (! Post::where('type', 'ekskul')->exists()) {
-            foreach ($ekskulItems as $idx => $e) {
-                Post::updateOrCreate(
-                    ['slug' => $e['slug'], 'type' => 'ekskul'],
-                    array_merge($e, [
-                        'type' => 'ekskul',
-                        'status' => 'publish',
-                        'author_id' => 1,
-                        'published_at' => now()->subDays(6 - $idx),
-                    ])
-                );
-            }
-        }
-
-        // 11. Jalur Pendaftaran PPDB Dinamis (First Brive, Mutasi Kerja, Tahfidz, Alumni, Prestasi, Reguler)
+        // 14. Jalur Pendaftaran PPDB Dinamis (Sesuai Brosur Resmi Rabbani 2025/2026)
         PpdbTrack::truncate();
         $defaultTracks = [
             [
-                'name' => 'Jalur First Brive',
-                'slug' => 'jalur-first-brive',
-                'percentage' => '10%',
-                'quota' => 'Kuota Terbatas',
-                'cashback_info' => 'Cashback Khusus Pendaftar Gelombang Pertama',
-                'description' => 'Keringanan biaya dan prioritas pendaftaran bagi calon siswa yang mendaftar pada periode awal (First Brive). Mendapatkan potongan biaya masuk serta souvenir eksklusif sekolah.',
+                'name' => 'Jalur Diskon Gelombang 1',
+                'slug' => 'jalur-diskon-gelombang-1',
+                'percentage' => '30%',
+                'quota' => '20 Orang Pertama',
+                'cashback_info' => 'Free Uang Pembangunan & Free Buku',
+                'description' => "Diskon khusus Gelombang 1 (01 Oktober - 20 Desember 2024 / Periode Awal TP 2025/2026):\nSPP hanya Rp 200.000\nRegistrasi Ulang Rp 1.000.000 (Include Seragam Sekolah)\nBenefit: Free Uang Pembangunan, Free Uang Kegiatan, dan Free Buku untuk 20 orang pertama.",
                 'order' => 1,
                 'is_active' => true,
             ],
             [
-                'name' => 'Jalur Mutasi Kerja',
-                'slug' => 'jalur-mutasi-kerja',
-                'percentage' => '5%',
-                'quota' => 'Kuota Khusus Mutasi',
-                'cashback_info' => 'Keringanan Khusus Pindahan Kedinasan / Perusahaan',
-                'description' => 'Jalur khusus bagi putra-putri dari orang tua yang mengalami mutasi kerja atau pindah tugas kedinasan (TNI, Polri, ASN, BUMN, Perusahaan Swasta) ke wilayah Kayuagung, Kab. OKI dan sekitarnya.',
+                'name' => 'Jalur Boarding School (SMA IT Asrama)',
+                'slug' => 'jalur-boarding-school-sma-it',
+                'percentage' => '25%',
+                'quota' => 'Asrama Putra & Putri',
+                'cashback_info' => 'Bimbel SNBT Gratis & Tahfidz Asrama',
+                'description' => "Program Asrama Boarding School SMA IT Rabbani. Pembinaan musyrif 24 jam, target hafalan Al-Qur'an minimal 1 juz (88% lulusan tercapai), bimbingan intensif SNBT PTN gratis, dan pembinaan karakter pemimpin Qur'ani.",
                 'order' => 2,
                 'is_active' => true,
             ],
             [
-                'name' => 'Jalur Tahfidz',
-                'slug' => 'jalur-tahfidz',
-                'percentage' => '5%',
-                'quota' => 'Hanya 10 Siswa',
-                'cashback_info' => 'Cashback Rp 750.000,- s/d Rp 1.000.000,-',
-                'description' => "Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-\nTahfidz >5 Juz Cashback Rp. 1.000.000,-\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Madani.\nKuota Jalur Tahfidz Hanya 10 Siswa.",
+                'name' => 'Jalur Tahfidz Al-Qur\'an',
+                'slug' => 'jalur-tahfidz-quran',
+                'percentage' => '15%',
+                'quota' => 'Hanya 15 Siswa',
+                'cashback_info' => 'Beasiswa / Keringanan Biaya Pendidikan',
+                'description' => "Jalur khusus bagi calon santri penghafal Al-Qur'an. Berhak mendapatkan potongan biaya dan beasiswa pembinaan tahfidz melalui uji tasmi' hafalan.",
                 'order' => 3,
                 'is_active' => true,
             ],
             [
-                'name' => 'Jalur Alumni',
-                'slug' => 'jalur-alumni',
-                'percentage' => '25%',
-                'quota' => 'Hanya 50 Siswa',
-                'cashback_info' => 'Potongan Uang Pangkal Rp 1.000.000,-',
-                'description' => 'Keringanan istimewa bagi lulusan SD IT Madani dan SD IT Madani Kayuagung 2 yang melanjutkan ke SMPS IT Madani Kayuagung berupa potongan biaya uang pangkal sebesar Rp. 1.000.000,- dengan kuota (hanya 50 siswa).',
+                'name' => 'Jalur Prestasi Akademik & Non-Akademik',
+                'slug' => 'jalur-prestasi-akademik-non-akademik',
+                'percentage' => '15%',
+                'quota' => 'Prioritas Penerimaan',
+                'cashback_info' => 'Bebas Tes Akademik & Potongan Biaya',
+                'description' => 'Bebas tes tulis akademik bagi peraih juara OSN, O2SN, FLS2N, MTQ, kejuaraan bela diri Tapak Suci, atau cabang olahraga lainnya di tingkat Kabupaten, Provinsi, maupun Nasional.',
                 'order' => 4,
                 'is_active' => true,
             ],
             [
-                'name' => 'Jalur Prestasi',
-                'slug' => 'jalur-prestasi',
-                'percentage' => '30%',
-                'quota' => 'Prioritas Penerimaan',
-                'cashback_info' => 'Bebas Tes Akademik & Potongan Biaya',
-                'description' => 'Bebas tes tulis akademik bagi peraih Juara 1, 2, atau 3 tingkat Kota/Kabupaten, Provinsi, maupun Nasional pada bidang akademik, sains, seni, dan olahraga. Diskon khusus biaya masuk dan prioritas penerimaan.',
+                'name' => 'Jalur Alumni SIT Rabbani',
+                'slug' => 'jalur-alumni-sit-rabbani',
+                'percentage' => '10%',
+                'quota' => 'Alumni SIT Rabbani',
+                'cashback_info' => 'Prioritas Penerimaan & Potongan Masuk',
+                'description' => 'Keringanan biaya uang masuk dan kemudahan administrasi bagi lulusan TKS IT ke SDS IT, SDS IT ke SMPS IT, atau SMPS IT ke SMA IT Rabbani Muara Enim.',
                 'order' => 5,
                 'is_active' => true,
             ],
             [
-                'name' => 'Jalur Reguler',
-                'slug' => 'jalur-reguler',
-                'percentage' => '25%',
-                'quota' => 'Sesuai Kuota Kelas',
-                'cashback_info' => 'Tes Mandiri Sekolah',
-                'description' => "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa.",
+                'name' => 'Jalur Reguler (Full Day School)',
+                'slug' => 'jalur-reguler-full-day',
+                'percentage' => '5%',
+                'quota' => 'Sesuai Kuota Rombel',
+                'cashback_info' => 'Tes Masuk Sekolah',
+                'description' => "Jalur seleksi reguler melalui tahapan wawancara komitmen orang tua, tes pemetaan minat dan potensi akademik, serta tes membaca Al-Qur'an.",
                 'order' => 6,
                 'is_active' => true,
             ],
@@ -865,7 +664,6 @@ HTML,
             PpdbTrack::create($track);
         }
 
-        // Sinkronisasi teks form tracks untuk kompatibilitas form
         $trackNames = array_map(fn ($t) => "{$t['name']} ({$t['percentage']})", $defaultTracks);
         Setting::set('ppdb_form_tracks', implode("\n", $trackNames), 'ppdb');
     }

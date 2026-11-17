@@ -21,10 +21,10 @@ class AdminHeroController extends Controller
             return [
                 [
                     'active' => true,
-                    'badge' => 'TKS IT MADANI KAYUAGUNG • TERAKREDITASI B',
+                    'badge' => 'TKS IT RABBANI MUARA ENIM • TERAKREDITASI B',
                     'title' => 'Membentuk Generasi Rabbani yang Kreatif, Cerdas, dan Mandiri',
                     'subtitle' => 'Pendidikan Anak Usia Dini berbasis fitrah, adab islami, tahfidz juz 30 cilik, dan pembelajaran sentra bermakna.',
-                    'image' => '/uploads/hero-slide-yayasan-2.webp',
+                    'image' => '/uploads/hero-slide-yayasan-1.webp',
                     'btn_text' => 'Profil TKS IT',
                     'btn_link' => '/tk/tentang-kami',
                     'btn_target' => '_self',
@@ -40,9 +40,9 @@ class AdminHeroController extends Controller
             return [
                 [
                     'active' => true,
-                    'badge' => 'SDS IT MADANI KAYUAGUNG • TERAKREDITASI B',
+                    'badge' => 'SDS IT RABBANI MUARA ENIM • TERAKREDITASI B',
                     'title' => 'Membentuk Generasi Berprestasi, Sholeh, Inovatif & Mandiri',
-                    'subtitle' => 'Sekolah Dasar Islam Terpadu unggulan dengan target tahfidz 2 juz mutqin, kurikulum terpadu JSIT, dan pembinaan akhlak mulia.',
+                    'subtitle' => 'Sekolah Dasar Islam Terpadu unggulan dengan target tahfidz mutqin, kurikulum terpadu JSIT, dan pembinaan akhlak mulia.',
                     'image' => '/uploads/hero-slide-yayasan-1.webp',
                     'btn_text' => 'Profil SDS IT',
                     'btn_link' => '/sd/tentang-kami',
@@ -59,10 +59,10 @@ class AdminHeroController extends Controller
             return [
                 [
                     'active' => true,
-                    'badge' => 'SMPS IT UNGGULAN KAYUAGUNG • TERAKREDITASI B',
+                    'badge' => 'SMPS IT RABBANI MUARA ENIM • TERAKREDITASI B',
                     'title' => 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia',
-                    'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kayuagung, Kab. OKI dengan Program Full Day School & Tahfidz Al-Qur\'an.',
-                    'image' => '/uploads/campus-smpit-madani.webp',
+                    'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Muara Enim dengan Program Full Day School & Tahfidz Al-Qur\'an.',
+                    'image' => '/uploads/campus-sit-rabbani.webp',
                     'btn_text' => 'Sambutan Kepala Sekolah',
                     'btn_link' => '/smp/sambutan-kepala-sekolah',
                     'btn_target' => '_self',
@@ -74,10 +74,29 @@ class AdminHeroController extends Controller
             ];
         }
 
+        if ($unit === 'sma') {
+            return [
+                [
+                    'active' => true,
+                    'badge' => 'SMA IT RABBANI MUARA ENIM • TERAKREDITASI B',
+                    'title' => 'Penerimaan Peserta Didik Baru (PPDB)',
+                    'subtitle' => 'Tersedia Boarding School • 88% Hafal Al-Qur\'an • 88% Lulusan Diterima di Perguruan Tinggi.',
+                    'image' => '/uploads/flyer-spmb-smait-rabbani.jpg',
+                    'btn_text' => 'Profil SMA IT',
+                    'btn_link' => '/sma/tentang-kami',
+                    'btn_target' => '_self',
+                    'btn2_active' => true,
+                    'btn2_text' => 'Info SPMB SMA',
+                    'btn2_link' => '/sma/ppdb',
+                    'btn2_target' => '_self',
+                ],
+            ];
+        }
+
         return [
             [
                 'active' => true,
-                'badge' => 'YAYASAN AGUNG MADANI KAYUAGUNG • KAB. OKI',
+                'badge' => 'YAYASAN GENERASI RABBANI MUARA ENIM • SUMATERA SELATAN',
                 'title' => 'Mewujudkan Generasi Robbani yang Cerdas, Mandiri & Berakhlak Mulia',
                 'subtitle' => 'Pendidikan Islam Terpadu Satu Atap Berbasis Al-Qur\'an, As-Sunnah, Sains dan Teknologi Modern di Bawah Naungan JSIT Indonesia.',
                 'image' => '/uploads/hero-slide-yayasan-1.webp',
@@ -93,7 +112,7 @@ class AdminHeroController extends Controller
                 'active' => true,
                 'badge' => 'TAHFIDZ QUR\'AN MUTQIN & ADAB NABAWI',
                 'title' => 'Pembinaan Karakter & Hafalan Al-Qur\'an Berkesinambungan',
-                'subtitle' => 'Mulai dari tahfidz cilik PAUD/TKS IT, target 2 juz mutqin di SDS IT, hingga penguatan karakter & tahfidz bersanad di SMPS IT Madani.',
+                'subtitle' => 'Mulai dari tahfidz cilik PAUD/TKS IT, penguatan di SDS IT & SMPS IT, hingga Boarding School SMA IT Rabbani Muara Enim.',
                 'image' => '/uploads/hero-slide-yayasan-2.webp',
                 'btn_text' => 'Profil Singkat Yayasan',
                 'btn_link' => '/yayasan/tentang-kami',
@@ -105,16 +124,16 @@ class AdminHeroController extends Controller
             ],
             [
                 'active' => true,
-                'badge' => 'SAINS, TEKNOLOGI & BAHASA INTERNASIONAL',
+                'badge' => 'SAINS, TEKNOLOGI & PERSIAPAN PERGURUAN TINGGI',
                 'title' => 'Integrasi Keunggulan Imtak dan Iptek Masa Depan',
-                'subtitle' => 'Laboratorium komputer modern, pembekalan literasi digital, bimbingan olimpiade sains, serta pembiasaan Bahasa Arab dan Inggris.',
+                'subtitle' => 'Laboratorium komputer modern, pembekalan ANBK, pembiasaan bahasa asing, serta program Bimbel SNBT gratis tembus PTN.',
                 'image' => '/uploads/hero-slide-yayasan-3.webp',
-                'btn_text' => 'Kunjungi SMPS IT Madani',
-                'btn_link' => '/smp',
+                'btn_text' => 'Kunjungi SMA IT Rabbani',
+                'btn_link' => '/sma',
                 'btn_target' => '_self',
                 'btn2_active' => true,
-                'btn2_text' => 'Kunjungi SDS IT Madani',
-                'btn2_link' => '/sd',
+                'btn2_text' => 'Kunjungi SMPS IT Rabbani',
+                'btn2_link' => '/smp',
                 'btn2_target' => '_self',
             ],
         ];
@@ -126,8 +145,8 @@ class AdminHeroController extends Controller
     public function index(Request $request)
     {
         $userUnit = auth()->user()->unit ?? 'yayasan';
-        $selectedUnit = $request->query('unit', (in_array($userUnit, ['tk', 'sd', 'smp']) ? $userUnit : 'yayasan'));
-        if (! in_array($selectedUnit, ['yayasan', 'tk', 'sd', 'smp'])) {
+        $selectedUnit = $request->query('unit', (in_array($userUnit, ['tk', 'sd', 'smp', 'sma']) ? $userUnit : 'yayasan'));
+        if (! in_array($selectedUnit, ['yayasan', 'tk', 'sd', 'smp', 'sma'])) {
             $selectedUnit = 'yayasan';
         }
 
@@ -158,7 +177,7 @@ class AdminHeroController extends Controller
     public static function getDefaultHeroChips(): array
     {
         return [
-            ['title' => '3 Unit', 'value' => '3 Unit', 'subtitle' => 'TK, SD & SMP', 'label' => 'TK, SD & SMP', 'color' => 'text-amber-400'],
+            ['title' => '4 Unit', 'value' => '4 Unit', 'subtitle' => 'TK, SD, SMP & SMA', 'label' => 'TK, SD, SMP & SMA', 'color' => 'text-amber-400'],
             ['title' => 'Terakreditasi', 'value' => 'Terakreditasi', 'subtitle' => 'BAN-SM / PAUD', 'label' => 'BAN-SM / PAUD', 'color' => 'text-emerald-400'],
             ['title' => 'JSIT', 'value' => 'JSIT', 'subtitle' => 'Jaringan Nasional', 'label' => 'Jaringan Nasional', 'color' => 'text-cyan-400'],
             ['title' => 'Tahfidz', 'value' => 'Tahfidz', 'subtitle' => 'Mutqin Bersanad', 'label' => 'Mutqin Bersanad', 'color' => 'text-amber-300'],
@@ -185,12 +204,12 @@ class AdminHeroController extends Controller
     {
         $hasUnitInput = $request->filled('unit');
         $selectedUnit = $request->input('unit', 'smp');
-        if (! in_array($selectedUnit, ['yayasan', 'tk', 'sd', 'smp'])) {
+        if (! in_array($selectedUnit, ['yayasan', 'tk', 'sd', 'smp', 'sma'])) {
             $selectedUnit = 'smp';
         }
 
         $request->validate([
-            'unit' => 'nullable|string|in:yayasan,tk,sd,smp',
+            'unit' => 'nullable|string|in:yayasan,tk,sd,smp,sma',
             'slides' => 'required|array|min:1|max:6',
             'slides.*.title' => 'required|string|max:255',
             'slides.*.subtitle' => 'nullable|string|max:500',
@@ -208,7 +227,7 @@ class AdminHeroController extends Controller
         $cleanSlides = [];
 
         foreach ($inputSlides as $index => $slideData) {
-            $currentImage = $slideData['existing_image'] ?? '/uploads/campus-sit-madani.webp';
+            $currentImage = $slideData['existing_image'] ?? '/uploads/hero-slide-yayasan-1.webp';
 
             // Check if user uploaded a new image file for this slide
             if ($request->hasFile("slides.{$index}.image_file")) {
@@ -227,7 +246,7 @@ class AdminHeroController extends Controller
 
             $cleanSlides[] = [
                 'active' => isset($slideData['active']) && ($slideData['active'] === '1' || $slideData['active'] === 1 || $slideData['active'] === true),
-                'badge' => trim($slideData['badge'] ?? 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B'),
+                'badge' => trim($slideData['badge'] ?? 'SMPS IT Unggulan Muara Enim, Kab. OKI • Terakreditasi B'),
                 'title' => trim($slideData['title'] ?? ''),
                 'subtitle' => trim($slideData['subtitle'] ?? ''),
                 'image' => $currentImage,

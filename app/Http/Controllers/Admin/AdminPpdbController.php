@@ -19,7 +19,7 @@ class AdminPpdbController extends Controller
     {
         $user = Auth::user();
         $userUnit = $user?->unit ?? 'yayasan';
-        $selectedUnit = in_array($userUnit, ['tk', 'sd', 'smp']) ? $userUnit : $request->query('unit', 'all');
+        $selectedUnit = in_array($userUnit, ['tk', 'sd', 'smp', 'sma']) ? $userUnit : $request->query('unit', 'all');
 
         $query = PpdbRegistration::latest();
 
@@ -27,23 +27,26 @@ class AdminPpdbController extends Controller
         if ($selectedUnit !== 'all') {
             if ($selectedUnit === 'tk') {
                 $query->where(function ($q) {
-                    $q->where('extra_fields', 'like', '%TKS IT Madani%')
+                    $q->where('extra_fields', 'like', '%TKS IT%')
+                        ->orWhere('extra_fields', 'like', '%TK IT%')
                         ->orWhere('extra_fields', 'like', '%"unit_school"%"tk"%');
                 });
             } elseif ($selectedUnit === 'sd') {
                 $query->where(function ($q) {
-                    $q->where('extra_fields', 'like', '%SDS IT Madani%')
+                    $q->where('extra_fields', 'like', '%SDS IT%')
+                        ->orWhere('extra_fields', 'like', '%SD IT%')
                         ->orWhere('extra_fields', 'like', '%"unit_school"%"sd"%');
                 });
             } elseif ($selectedUnit === 'smp') {
                 $query->where(function ($q) {
-                    $q->where('extra_fields', 'like', '%SMPS IT Madani%')
-                        ->orWhere('extra_fields', 'like', '%"unit_school"%"smp"%')
-                        ->orWhereNull('extra_fields')
-                        ->orWhere(function ($sub) {
-                            $sub->where('extra_fields', 'not like', '%TKS IT Madani%')
-                                ->where('extra_fields', 'not like', '%SDS IT Madani%');
-                        });
+                    $q->where('extra_fields', 'like', '%SMPS IT%')
+                        ->orWhere('extra_fields', 'like', '%SMP IT%')
+                        ->orWhere('extra_fields', 'like', '%"unit_school"%"smp"%');
+                });
+            } elseif ($selectedUnit === 'sma') {
+                $query->where(function ($q) {
+                    $q->where('extra_fields', 'like', '%SMA IT%')
+                        ->orWhere('extra_fields', 'like', '%"unit_school"%"sma"%');
                 });
             }
         }
@@ -68,23 +71,26 @@ class AdminPpdbController extends Controller
         if ($selectedUnit !== 'all') {
             if ($selectedUnit === 'tk') {
                 $statsBase->where(function ($q) {
-                    $q->where('extra_fields', 'like', '%TKS IT Madani%')
+                    $q->where('extra_fields', 'like', '%TKS IT%')
+                        ->orWhere('extra_fields', 'like', '%TK IT%')
                         ->orWhere('extra_fields', 'like', '%"unit_school"%"tk"%');
                 });
             } elseif ($selectedUnit === 'sd') {
                 $statsBase->where(function ($q) {
-                    $q->where('extra_fields', 'like', '%SDS IT Madani%')
+                    $q->where('extra_fields', 'like', '%SDS IT%')
+                        ->orWhere('extra_fields', 'like', '%SD IT%')
                         ->orWhere('extra_fields', 'like', '%"unit_school"%"sd"%');
                 });
             } elseif ($selectedUnit === 'smp') {
                 $statsBase->where(function ($q) {
-                    $q->where('extra_fields', 'like', '%SMPS IT Madani%')
-                        ->orWhere('extra_fields', 'like', '%"unit_school"%"smp"%')
-                        ->orWhereNull('extra_fields')
-                        ->orWhere(function ($sub) {
-                            $sub->where('extra_fields', 'not like', '%TKS IT Madani%')
-                                ->where('extra_fields', 'not like', '%SDS IT Madani%');
-                        });
+                    $q->where('extra_fields', 'like', '%SMPS IT%')
+                        ->orWhere('extra_fields', 'like', '%SMP IT%')
+                        ->orWhere('extra_fields', 'like', '%"unit_school"%"smp"%');
+                });
+            } elseif ($selectedUnit === 'sma') {
+                $statsBase->where(function ($q) {
+                    $q->where('extra_fields', 'like', '%SMA IT%')
+                        ->orWhere('extra_fields', 'like', '%"unit_school"%"sma"%');
                 });
             }
         }
@@ -181,11 +187,11 @@ class AdminPpdbController extends Controller
             'promo' => Setting::get('ppdb_promo', 'Potongan Biaya Masuk Up to 50% OFF (*S&K berlaku)'),
             'tagline' => Setting::get('ppdb_tagline', "Mendidik Sepenuh Cinta. Mewujudkan generasi Qur'ani berkarakter tangguh, cerdas sains, mandiri, dan berwawasan global di bawah naungan JSIT Indonesia."),
             'youtube_id' => Setting::get('ppdb_youtube_id', 'ULMekhqxvqU'),
-            'video_title' => Setting::get('ppdb_video_title', 'Video Profil & Dokumentasi SMPS IT Madani'),
+            'video_title' => Setting::get('ppdb_video_title', 'Video Profil & Dokumentasi SMPS IT Rabbani'),
             'video_desc' => Setting::get('ppdb_video_desc', 'Saksikan video profil dan aktivitas pembelajaran siswa kami secara visual.'),
             'operational_weekday' => Setting::get('ppdb_operational_weekday', "Senin – Jum'at: Pukul 08.00 – 15.00 WIB"),
             'operational_weekend' => Setting::get('ppdb_operational_weekend', 'Sabtu: Pukul 08.00 – 12.00 WIB'),
-            'secretariat' => Setting::get('ppdb_secretariat', 'Kompleks SMPS IT Madani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Kayuagung'),
+            'secretariat' => Setting::get('ppdb_secretariat', 'Kompleks SMPS IT Rabbani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Muara Enim'),
             'registration_fee' => Setting::get('ppdb_registration_fee', 'Rp 250.000,-'),
             'bank_name' => Setting::get('ppdb_bank_name', 'Bank Syariah Indonesia (BSI)'),
             'bank_code' => Setting::get('ppdb_bank_code', '451'),
@@ -201,7 +207,7 @@ class AdminPpdbController extends Controller
             'biaya' => Setting::get('ppdb_biaya', "Biaya Formulir Pendaftaran: Ditransfer ke rekening BSI sekolah 7011304251.\nPaket Seragam Sekolah (4 stel seragam lengkap + atribut dan jilbab/peci).\nBiaya Orientasi Siswa (MPLS) & Baitul Maqdis Leadership Camp.\nUntuk rincian lengkap uang pangkal dan SPP bulanan, hubungi langsung panitia PPDB."),
             'boarding' => Setting::get('ppdb_boarding', "Program Boarding (Asrama): Fasilitas asrama bersih, ber-AC/ventilasi sehat, makan 3x sehari, pendampingan tahfidz 24 jam bersama musyrif.\nProgram Full Day School: Pembelajaran terpadu hingga sore hari, shalat berjamaah, makan siang sehat, dan ekstrakurikuler."),
             'kelulusan' => Setting::get('ppdb_kelulusan', 'Hasil seleksi diumumkan melalui website resmi dan notifikasi WhatsApp kepada orang tua calon siswa. Calon Siswa yang dinyatakan lulus wajib melakukan daftar ulang sesuai jadwal yang ditentukan panitia.'),
-            'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SMPS IT Madani Kayuagung'),
+            'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SMPS IT Rabbani Muara Enim'),
             'closing_desc' => Setting::get('ppdb_closing_desc', 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin'),
 
             // FOTO DOKUMENTASI FASILITAS PPDB
@@ -213,7 +219,7 @@ class AdminPpdbController extends Controller
             'banner_badge' => Setting::get('spmb_banner_badge', 'PENERIMAAN SISWA BARU GELOMBANG EXCLUSIVE'),
             'banner_title' => Setting::get('spmb_banner_title', 'SPMB Gelombang Exclusive & Class Meeting Semester Genap'),
             'banner_year' => Setting::get('spmb_banner_year', Setting::get('ppdb_year', '2027-2028')),
-            'banner_desc' => Setting::get('spmb_banner_description', 'Bergabunglah bersama keluarga besar SMPS IT Madani Kayuagung. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.'),
+            'banner_desc' => Setting::get('spmb_banner_description', 'Bergabunglah bersama keluarga besar SMPS IT Rabbani Muara Enim. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur\'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.'),
             'banner_card1_title' => Setting::get('spmb_banner_card1_title', 'KUOTA TERBATAS'),
             'banner_card1_desc' => Setting::get('spmb_banner_card1_desc', 'Hanya 24 Siswa'),
             'banner_card1_color' => Setting::get('spmb_banner_card1_color', '#f59e0b'),
@@ -644,7 +650,7 @@ class AdminPpdbController extends Controller
     public function exportExcel()
     {
         $registrations = PpdbRegistration::latest()->get();
-        $filename = 'Data_Pendaftar_SPMB_SMPS_IT_Madani_Kayuagung_'.date('Ymd_His').'.csv';
+        $filename = 'Data_Pendaftar_SPMB_SMPS_IT_Madani_Muara Enim_'.date('Ymd_His').'.csv';
 
         $headers = [
             'Content-Type' => 'text/csv; charset=UTF-8',

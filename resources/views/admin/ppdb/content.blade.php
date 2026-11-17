@@ -324,7 +324,7 @@
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1">Deskripsi Kotak 2</label>
-                                <input type="text" name="spmb_banner_card2_desc" value="{{ old('spmb_banner_card2_desc', $settings['banner_card2_desc']) }}" placeholder="Alumni SDIT Madani 1 & 2" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600" style="color: {{ old('spmb_banner_card2_color', $settings['banner_card2_color'] ?? '#f59e0b') }};">
+                                <input type="text" name="spmb_banner_card2_desc" value="{{ old('spmb_banner_card2_desc', $settings['banner_card2_desc']) }}" placeholder="Alumni SDIT Rabbani 1 & 2" class="w-full bg-white text-xs font-semibold rounded-xl px-3 py-2 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600" style="color: {{ old('spmb_banner_card2_color', $settings['banner_card2_color'] ?? '#f59e0b') }};">
                             </div>
                             <div>
                                 <label class="block text-[11px] font-bold text-slate-600 mb-1 flex items-center justify-between">
@@ -415,12 +415,12 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Teks Narahubung</label>
-                                <input type="text" name="spmb_banner_contact_text" value="{{ old('spmb_banner_contact_text', $settings['banner_contact_text']) }}" placeholder="Narahubung: 0858-3817-3417" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                                <input type="text" name="spmb_banner_contact_text" value="{{ old('spmb_banner_contact_text', $settings['banner_contact_text']) }}" placeholder="Narahubung: 0851-5929-3554" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                             </div>
 
                             <div>
                                 <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">No WA Narahubung Banner</label>
-                                <input type="text" name="spmb_banner_contact_phone" value="{{ old('spmb_banner_contact_phone', $settings['banner_contact_phone']) }}" placeholder="0858-3817-3417" class="w-full bg-slate-50 text-xs font-bold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                                <input type="text" name="spmb_banner_contact_phone" value="{{ old('spmb_banner_contact_phone', $settings['banner_contact_phone']) }}" placeholder="0851-5929-3554" class="w-full bg-slate-50 text-xs font-bold rounded-xl px-3.5 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                             </div>
                         </div>
                     </div>
@@ -494,7 +494,7 @@
 
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Judul Teks Video</label>
-                        <input type="text" name="ppdb_video_title" value="{{ old('ppdb_video_title', $settings['video_title']) }}" placeholder="Video Profil & Dokumentasi SMPS IT Madani" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        <input type="text" name="ppdb_video_title" value="{{ old('ppdb_video_title', $settings['video_title']) }}" placeholder="Video Profil & Dokumentasi SMPS IT Rabbani" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                 </div>
             </div>
@@ -558,7 +558,7 @@
 
                     <div class="sm:col-span-2">
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Alamat Sekretariat SPMB <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_secretariat" required value="{{ old('ppdb_secretariat', $settings['secretariat']) }}" placeholder="Kompleks SMPS IT Madani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Kayuagung" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        <input type="text" name="ppdb_secretariat" required value="{{ old('ppdb_secretariat', $settings['secretariat']) }}" placeholder="Kompleks SMPS IT Rabbani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Muara Enim" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
                 </div>
             </div>
@@ -613,7 +613,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Nomor WhatsApp Admin Utama <span class="text-red-500">*</span></label>
-                        <input type="text" name="ppdb_hotline_phone" required value="{{ old('ppdb_hotline_phone', $settings['hotline_phone']) }}" placeholder="0858-3817-3417" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
+                        <input type="text" name="ppdb_hotline_phone" required value="{{ old('ppdb_hotline_phone', $settings['hotline_phone']) }}" placeholder="0851-5929-3554" class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-600">
                     </div>
 
                     <div>

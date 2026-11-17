@@ -52,22 +52,22 @@
                                 @if($user->unit === 'tk')
                                     <span class="bg-amber-100 text-amber-800 text-[11px] px-2.5 py-1 rounded-full font-bold flex items-center w-fit space-x-1">
                                         <i class="fa-solid fa-shapes text-[10px]"></i>
-                                        <span>TKS IT Madani</span>
+                                        <span>TKS IT Rabbani</span>
                                     </span>
                                 @elseif($user->unit === 'sd')
                                     <span class="bg-emerald-100 text-emerald-800 text-[11px] px-2.5 py-1 rounded-full font-bold flex items-center w-fit space-x-1">
                                         <i class="fa-solid fa-book-open-reader text-[10px]"></i>
-                                        <span>SDS IT Madani</span>
+                                        <span>SDS IT Rabbani</span>
                                     </span>
                                 @elseif($user->unit === 'smp')
                                     <span class="bg-blue-100 text-blue-800 text-[11px] px-2.5 py-1 rounded-full font-bold flex items-center w-fit space-x-1">
                                         <i class="fa-solid fa-graduation-cap text-[10px]"></i>
-                                        <span>SMPS IT Madani</span>
+                                        <span>SMPS IT Rabbani</span>
                                     </span>
                                 @else
                                     <span class="bg-indigo-100 text-indigo-800 text-[11px] px-2.5 py-1 rounded-full font-bold flex items-center w-fit space-x-1">
                                         <i class="fa-solid fa-landmark text-[10px]"></i>
-                                        <span>Yayasan Agung Madani</span>
+                                        <span>Yayasan Generasi Rabbani</span>
                                     </span>
                                 @endif
                             </td>

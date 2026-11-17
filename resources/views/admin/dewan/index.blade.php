@@ -25,13 +25,13 @@
                     Semua Tenaga Pendidik
                 </a>
                 <a href="{{ route('admin.dewan.index', ['unit' => 'tk']) }}" class="px-3 py-1.5 rounded-xl transition {{ ($selectedUnit ?? '') === 'tk' ? 'bg-amber-500 text-slate-950 shadow-xs' : 'bg-white text-slate-700 hover:bg-amber-50' }}">
-                    TKS IT Madani
+                    TKS IT Rabbani
                 </a>
                 <a href="{{ route('admin.dewan.index', ['unit' => 'sd']) }}" class="px-3 py-1.5 rounded-xl transition {{ ($selectedUnit ?? '') === 'sd' ? 'bg-emerald-600 text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-emerald-50' }}">
-                    SDS IT Madani
+                    SDS IT Rabbani
                 </a>
                 <a href="{{ route('admin.dewan.index', ['unit' => 'smp']) }}" class="px-3 py-1.5 rounded-xl transition {{ ($selectedUnit ?? '') === 'smp' ? 'bg-blue-600 text-white shadow-xs' : 'bg-white text-slate-700 hover:bg-blue-50' }}">
-                    SMPS IT Madani
+                    SMPS IT Rabbani
                 </a>
             </div>
         @else
@@ -51,7 +51,7 @@
                 <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200/80 flex flex-col justify-between space-y-4 hover:shadow-md transition">
                     <div class="text-center space-y-3">
                         <div class="w-24 h-24 mx-auto rounded-2xl bg-white p-1 shadow-xs border border-slate-200 overflow-hidden">
-                            <img src="{{ $d->photo }}" alt="{{ $d->name }}" class="w-full h-full object-cover object-top rounded-xl" onerror="this.onerror=null; this.src='/uploads/logo-madani-square.webp'">
+                            <img src="{{ $d->photo }}" alt="{{ $d->name }}" class="w-full h-full object-cover object-top rounded-xl" onerror="this.onerror=null; this.src='/uploads/logo-rabbani-square.webp'">
                         </div>
                         <div>
                             <h3 class="font-extrabold text-sm text-slate-900">{{ $d->name }}</h3>

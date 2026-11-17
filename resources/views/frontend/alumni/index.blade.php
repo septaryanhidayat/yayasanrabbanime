@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Data Alumni - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Database dan profil alumni SMPS IT Madani Kayuagung: jejak langkah lulusan di perguruan tinggi dan dunia profesional.')
+@section('title', 'Data Alumni - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Database dan profil alumni SMPS IT Rabbani Muara Enim: jejak langkah lulusan di perguruan tinggi dan dunia profesional.')
 
 @section('content')
 <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
@@ -18,7 +18,7 @@
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Data Alumni Kebanggaan</h1>
                 <p class="text-sm text-indigo-100 mt-1 font-light">
-                    Kiprah dan rekam jejak lulusan SMPS IT Madani Kayuagung di berbagai penjuru nusantara.
+                    Kiprah dan rekam jejak lulusan SMPS IT Rabbani Muara Enim di berbagai penjuru nusantara.
                 </p>
             </div>
         </div>
@@ -30,13 +30,13 @@
         @forelse($alumni as $idx => $item)
             <div class="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 text-center flex flex-col items-center group reveal-fade-up">
                 <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-4 bg-indigo-50/60 ring-4 ring-emerald-100 shadow-md group-hover:scale-105 transition">
-                    <img src="{{ $item->featured_image ?: '/uploads/logo-madani-square.webp' }}" alt="{{ $item->title }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/uploads/logo-madani-square.webp'">
+                    <img src="{{ $item->featured_image ?: '/uploads/logo-rabbani-square.webp' }}" alt="{{ $item->title }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/uploads/logo-rabbani-square.webp'">
                 </div>
                 <h3 class="font-bold text-gray-900 text-sm sm:text-base group-hover:text-indigo-600 transition line-clamp-1">
                     {{ $item->title }}
                 </h3>
                 <span class="text-xs text-indigo-600 font-semibold mt-1">
-                    {{ $item->excerpt ?: 'Alumni SMPS IT Madani' }}
+                    {{ $item->excerpt ?: 'Alumni SMPS IT Rabbani' }}
                 </span>
                 <span class="inline-block mt-3 bg-indigo-50 text-indigo-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
                     Terverifikasi

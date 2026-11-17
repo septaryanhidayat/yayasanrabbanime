@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 test('login page renders and allows user authentication', function () {
     $user = User::create([
         'name' => 'Admin Madani',
-        'email' => 'admin@sitmadani.sch.id',
+        'email' => 'admin@rabbanime.sch.id',
         'password' => Hash::make('SitMadani2026!'),
     ]);
 
@@ -17,7 +17,7 @@ test('login page renders and allows user authentication', function () {
 
     // Wrong password fails
     $failResponse = $this->post('/login', [
-        'email' => 'admin@sitmadani.sch.id',
+        'email' => 'admin@rabbanime.sch.id',
         'password' => 'wrongpassword',
     ]);
     $failResponse->assertSessionHasErrors('email');
@@ -25,7 +25,7 @@ test('login page renders and allows user authentication', function () {
 
     // Correct password succeeds
     $successResponse = $this->post('/login', [
-        'email' => 'admin@sitmadani.sch.id',
+        'email' => 'admin@rabbanime.sch.id',
         'password' => 'SitMadani2026!',
     ]);
     $successResponse->assertRedirect('/admin');
@@ -42,7 +42,7 @@ test('unauthenticated users are redirected from admin routes', function () {
 test('admin can manage posts and convert images to webp on upload', function () {
     $admin = User::create([
         'name' => 'Admin Madani',
-        'email' => 'admin@sitmadani.sch.id',
+        'email' => 'admin@rabbanime.sch.id',
         'password' => Hash::make('SitMadani2026!'),
     ]);
 
@@ -96,14 +96,14 @@ test('admin can manage posts and convert images to webp on upload', function () 
 test('admin can manage feedbacks and settings', function () {
     $admin = User::create([
         'name' => 'Admin Madani',
-        'email' => 'admin@sitmadani.sch.id',
+        'email' => 'admin@rabbanime.sch.id',
         'password' => Hash::make('SitMadani2026!'),
     ]);
 
     $feedback = Feedback::create([
         'name' => 'Wali Murid',
         'email' => 'wali@gmail.com',
-        'message' => 'Alhamdulillah pendidikan di SMPS IT Madani sangat memuaskan.',
+        'message' => 'Alhamdulillah pendidikan di SMPS IT Rabbani sangat memuaskan.',
         'status' => 'unread',
     ]);
 
@@ -121,12 +121,12 @@ test('admin can manage feedbacks and settings', function () {
 
     // Update settings
     $this->post('/admin/settings', [
-        'site_name' => 'SMPS IT MADANI JUARA',
+        'site_name' => 'SMPS IT RABBANI JUARA',
         'contact_phone' => '08999999999',
     ])->assertRedirect();
 
     $this->assertDatabaseHas('settings', [
         'key' => 'site_name',
-        'value' => 'SMPS IT MADANI JUARA',
+        'value' => 'SMPS IT RABBANI JUARA',
     ]);
 });

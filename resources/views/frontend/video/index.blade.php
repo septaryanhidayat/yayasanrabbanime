@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Galeri Video & Dokumentasi - SIT Madani Kayuagung')
-@section('meta_description', 'Kumpulan video profil sekolah, dokumentasi kegiatan siswa, pentas prestasi, dan liputan pembelajaran SIT Madani Kayuagung.')
+@section('title', 'Galeri Video & Dokumentasi - SIT Rabbani Muara Enim')
+@section('meta_description', 'Kumpulan video profil sekolah, dokumentasi kegiatan siswa, pentas prestasi, dan liputan pembelajaran SIT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -38,7 +38,7 @@
                              alt="Thumbnail video: {{ $vid->title }}" 
                              class="absolute top-0 left-0 w-full h-full object-cover transition-transform duration-500 group-hover/vid:scale-105"
                              loading="lazy"
-                             onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp';">
+                             onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp';">
                         <div class="absolute inset-0 bg-black/30 group-hover/vid:bg-black/10 transition flex items-center justify-center" aria-hidden="true">
                             <div class="w-14 h-14 rounded-full bg-red-600/90 text-white flex items-center justify-center shadow-xl group-hover/vid:scale-110 group-hover/vid:bg-red-600 transition-all">
                                 <i class="fa-solid fa-play text-xl ml-1"></i>
@@ -61,7 +61,7 @@
                     <span class="inline-flex items-center text-red-600 font-bold">
                         <i class="fa-brands fa-youtube mr-1.5 text-sm" aria-hidden="true"></i> YouTube
                     </span>
-                    <span>SIT Madani Kayuagung</span>
+                    <span>SIT Rabbani Muara Enim</span>
                 </div>
             </div>
                 @empty
@@ -71,12 +71,12 @@
                 </div>
                 <h3 class="text-base sm:text-lg font-black text-slate-800">Video Dokumentasi Sedang Diperbarui</h3>
                 <p class="text-xs sm:text-sm text-slate-500 mt-1.5 leading-relaxed">
-                    Liputan kegiatan terbaru santri SIT Madani dapat disaksikan langsung melalui channel YouTube resmi kami.
+                    Liputan kegiatan terbaru santri SIT Rabbani dapat disaksikan langsung melalui channel YouTube resmi kami.
                 </p>
                 <div class="mt-5">
-                    <a href="https://www.youtube.com/@sitmadani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-md transition">
+                    <a href="https://www.youtube.com/@rabbanimuaraenim" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-bold text-xs px-6 py-2.5 rounded-xl shadow-md transition">
                         <i class="fa-brands fa-youtube text-sm"></i>
-                        <span>Buka Channel YouTube SIT Madani</span>
+                        <span>Buka Channel YouTube SIT Rabbani</span>
                     </a>
                 </div>
             </div>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="text-center pt-6 pb-2 reveal-fade-up">
-        <a href="https://www.youtube.com/@sitmadani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg hover:shadow-red-600/30 transition transform hover:-translate-y-0.5">
+        <a href="https://www.youtube.com/@rabbanimuaraenim" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg hover:shadow-red-600/30 transition transform hover:-translate-y-0.5">
             <i class="fa-brands fa-youtube mr-2 text-base"></i>
             <span>Kunjungi &amp; Subscribe Channel YouTube Resmi Sekolah</span>
         </a>

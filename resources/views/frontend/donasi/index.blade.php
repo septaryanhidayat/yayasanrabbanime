@@ -1,26 +1,26 @@
 @extends('layouts.frontend')
 
-@section('title', ($page?->meta_title ?: ($page?->title ?: 'Infaq Pembangunan & Beasiswa Pendidikan')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
-@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Salurkan infaq pembangunan sarana laboratorium sains, ruang belajar modern, dan beasiswa pendidikan dhuafa berprestasi melalui rekening resmi SMPS IT Madani Kayuagung.'))
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Infaq Pembangunan & Beasiswa Pendidikan')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Salurkan infaq pembangunan sarana laboratorium sains, ruang belajar modern, dan beasiswa pendidikan dhuafa berprestasi melalui rekening resmi SMPS IT Rabbani Muara Enim.'))
 
 @section('content')
 @php
     $bank1Name = $siteSettings['donation_bank_1_name'] ?? 'Bank Sumsel Babel Syariah';
     $bank1Code = $siteSettings['donation_bank_1_code'] ?? '120';
     $bank1Rek = trim($siteSettings['donation_bank_1_rekening'] ?? '');
-    $bank1Holder = $siteSettings['donation_bank_1_holder'] ?? 'YAYASAN AGUNG MADANI KAYUAGUNG';
+    $bank1Holder = $siteSettings['donation_bank_1_holder'] ?? 'YAYASAN GENERASI RABBANI MUARA ENIM';
 
     $bank2Name = $siteSettings['donation_bank_2_name'] ?? 'Bank Syariah Indonesia (BSI)';
     $bank2Code = $siteSettings['donation_bank_2_code'] ?? '451';
     $bank2Rek = trim($siteSettings['donation_bank_2_rekening'] ?? '');
-    $bank2Holder = $siteSettings['donation_bank_2_holder'] ?? 'SMPS IT MADANI KAYUAGUNG';
+    $bank2Holder = $siteSettings['donation_bank_2_holder'] ?? 'SMPS IT RABBANI MUARA ENIM';
 
     $confirmPhone = !empty($siteSettings['donation_confirm_phone']) ? $siteSettings['donation_confirm_phone'] : ($siteSettings['contact_phone'] ?? '085269908696');
     $cleanWa = preg_replace('/[^0-9]/', '', $confirmPhone);
     if (str_starts_with($cleanWa, '0')) {
         $cleanWa = '62' . substr($cleanWa, 1);
     }
-    $confirmText = urlencode("Assalamu'alaikum Bendahara SMPS IT Madani Kayuagung, saya telah menyalurkan infaq / donasi pendidikan untuk kemaslahatan sekolah.");
+    $confirmText = urlencode("Assalamu'alaikum Bendahara SMPS IT Rabbani Muara Enim, saya telah menyalurkan infaq / donasi pendidikan untuk kemaslahatan sekolah.");
 @endphp
 
 {{-- HERO HEADER ELEGAN --}}
@@ -44,7 +44,7 @@
                 {{ $page?->title ?? 'Infaq Pembangunan & Beasiswa Madani' }}
             </h1>
             <p class="text-sm sm:text-base text-indigo-100 mt-4 leading-relaxed font-light">
-                {{ $page?->excerpt ?: 'Mari bergotong royong membangun sarana laboratorium riset modern, masjid sekolah, fasilitas ruang kelas terpadu, dan program beasiswa bagi siswa berprestasi di SMPS IT Madani Kayuagung.' }}
+                {{ $page?->excerpt ?: 'Mari bergotong royong membangun sarana laboratorium riset modern, masjid sekolah, fasilitas ruang kelas terpadu, dan program beasiswa bagi siswa berprestasi di SMPS IT Rabbani Muara Enim.' }}
             </p>
         </div>
     </div>
@@ -103,7 +103,7 @@
                         </div>
                         <div>
                             <h3 class="text-xl font-black text-gray-900 leading-tight">{{ $bank1Name }}</h3>
-                            <p class="text-xs text-indigo-800 font-semibold mt-0.5">Mitra Resmi Yayasan Madani Kayuagung</p>
+                            <p class="text-xs text-indigo-800 font-semibold mt-0.5">Mitra Resmi Yayasan Rabbani Muara Enim</p>
                         </div>
                     </div>
 
@@ -208,7 +208,7 @@
                     <i class="fa-brands fa-whatsapp text-lg text-indigo-600"></i>
                     <span>Kirim Bukti Transfer ({{ $confirmPhone }})</span>
                 </a>
-                <span class="text-[11px] text-indigo-200 text-center font-medium">Layanan Bendahara SMPS IT Madani Kayuagung</span>
+                <span class="text-[11px] text-indigo-200 text-center font-medium">Layanan Bendahara SMPS IT Rabbani Muara Enim</span>
             </div>
         </div>
     </div>
@@ -260,7 +260,7 @@
             <span>Akuntabilitas & Tata Kelola Infaq Yayasan</span>
         </h4>
         <p class="leading-relaxed text-gray-600">
-            Pengelolaan infaq pembangunan dan beasiswa pendidikan siswa diatur secara profesional oleh Yayasan Madani Kayuagung dengan prinsip amanah, transparan, dan dapat dipertanggungjawabkan secara berkala.
+            Pengelolaan infaq pembangunan dan beasiswa pendidikan siswa diatur secara profesional oleh Yayasan Rabbani Muara Enim dengan prinsip amanah, transparan, dan dapat dipertanggungjawabkan secara berkala.
         </p>
         <ul class="list-disc list-inside space-y-1 text-gray-600 text-xs">
             <li>100% dana infaq pembangunan dialokasikan langsung untuk sarana belajar, laboratorium, dan masjid sekolah.</li>

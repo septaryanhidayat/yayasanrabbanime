@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Admin Panel') - SIT Madani Kayuagung</title>
-    <link rel="icon" type="image/svg+xml" href="/uploads/logo-madani-square.webp">
+    <title>@yield('title', 'Admin Panel') - SIT Rabbani Muara Enim</title>
+    <link rel="icon" type="image/svg+xml" href="/uploads/logo-rabbani-square.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -181,16 +181,17 @@
             $adminUser = auth()->user();
             $adminUnit = $adminUser?->unit ?? 'yayasan';
             $adminUnitBrand = match($adminUnit) {
-                'tk' => ['title' => 'ADMIN TKS IT MADANI', 'sub' => 'PAUD / TK Islam Terpadu', 'color' => 'text-amber-400', 'badge' => 'bg-amber-500/20 text-amber-300'],
-                'sd' => ['title' => 'ADMIN SDS IT MADANI', 'sub' => 'SD Islam Terpadu', 'color' => 'text-emerald-400', 'badge' => 'bg-emerald-500/20 text-emerald-300'],
-                'smp' => ['title' => 'ADMIN SMPS IT MADANI', 'sub' => 'SMP Islam Terpadu', 'color' => 'text-blue-400', 'badge' => 'bg-blue-500/20 text-blue-300'],
-                default => ['title' => 'YAYASAN AGUNG MADANI', 'sub' => 'Super Admin Terpadu', 'color' => 'text-amber-400', 'badge' => 'bg-indigo-500/20 text-amber-300'],
+                'tk' => ['title' => 'ADMIN TKS IT RABBANI', 'sub' => 'PAUD / TK Islam Terpadu', 'color' => 'text-amber-400', 'badge' => 'bg-amber-500/20 text-amber-300'],
+                'sd' => ['title' => 'ADMIN SDS IT RABBANI', 'sub' => 'SD Islam Terpadu', 'color' => 'text-emerald-400', 'badge' => 'bg-emerald-500/20 text-emerald-300'],
+                'smp' => ['title' => 'ADMIN SMPS IT RABBANI', 'sub' => 'SMP Islam Terpadu', 'color' => 'text-blue-400', 'badge' => 'bg-blue-500/20 text-blue-300'],
+                'sma' => ['title' => 'ADMIN SMA IT RABBANI', 'sub' => 'SMA IT Boarding School', 'color' => 'text-purple-400', 'badge' => 'bg-purple-500/20 text-purple-300'],
+                default => ['title' => 'YAYASAN GENERASI RABBANI', 'sub' => 'Super Admin Terpadu', 'color' => 'text-amber-400', 'badge' => 'bg-indigo-500/20 text-amber-300'],
             };
         @endphp
         <div class="sidebar-header h-16 flex items-center justify-between px-4 border-b border-slate-800/80 bg-[#070b14]/50 flex-shrink-0">
             <a href="{{ route('admin.dashboard') }}" class="flex items-center space-x-2.5 group min-w-0" title="Admin Control Center">
                 <div class="w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shadow-md group-hover:scale-105 transition flex-shrink-0">
-                    <img src="/uploads/logo-madani-square.webp" alt="Logo Madani" class="h-8 w-auto object-contain">
+                    <img src="/uploads/logo-rabbani-square.webp" alt="Logo Rabbani" class="h-8 w-auto object-contain">
                 </div>
                 <div class="sidebar-brand-text min-w-0">
                     <span class="font-black text-white text-xs tracking-tight block truncate">{{ $adminUnitBrand['title'] }}</span>
@@ -458,7 +459,7 @@
                 </button>
                 <div class="min-w-0">
                     <h1 class="font-extrabold text-sm sm:text-lg text-slate-800 tracking-tight truncate max-w-[190px] xs:max-w-[280px] sm:max-w-none">@yield('header_title', 'Panel Kontrol')</h1>
-                    <p class="text-[10px] sm:text-[11px] text-slate-400 truncate hidden xs:block">{{ $adminUnitBrand['title'] }} &bull; SIT Madani</p>
+                    <p class="text-[10px] sm:text-[11px] text-slate-400 truncate hidden xs:block">{{ $adminUnitBrand['title'] }} &bull; SIT Rabbani</p>
                 </div>
             </div>
 
@@ -470,10 +471,11 @@
                     <a href="{{ route('admin.hero.index', ['unit' => 'tk']) }}" class="px-2.5 py-1 rounded-lg {{ request('unit') === 'tk' ? 'bg-amber-500 text-slate-950 font-bold shadow-xs' : 'text-slate-600 hover:bg-white' }}" title="Kelola TKS IT">TKS IT</a>
                     <a href="{{ route('admin.hero.index', ['unit' => 'sd']) }}" class="px-2.5 py-1 rounded-lg {{ request('unit') === 'sd' ? 'bg-emerald-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-white' }}" title="Kelola SDS IT">SDS IT</a>
                     <a href="{{ route('admin.hero.index', ['unit' => 'smp']) }}" class="px-2.5 py-1 rounded-lg {{ request('unit') === 'smp' ? 'bg-blue-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-white' }}" title="Kelola SMPS IT">SMPS IT</a>
+                    <a href="{{ route('admin.hero.index', ['unit' => 'sma']) }}" class="px-2.5 py-1 rounded-lg {{ request('unit') === 'sma' ? 'bg-purple-600 text-white font-bold shadow-xs' : 'text-slate-600 hover:bg-white' }}" title="Kelola SMA IT">SMA IT</a>
                 @else
                     <span class="px-2.5 py-1 rounded-lg {{ $adminUnitBrand['badge'] }} font-bold text-xs flex items-center space-x-1.5">
                         <i class="fa-solid fa-school text-[10px]"></i>
-                        <span>Panel Khusus: {{ strtoupper($adminUnit) }} IT Madani</span>
+                        <span>Panel Khusus: {{ strtoupper($adminUnit) }} IT Rabbani</span>
                     </span>
                     <a href="{{ route('unit.home', $adminUnit) }}" target="_blank" class="px-2.5 py-1 rounded-lg bg-white text-indigo-700 hover:bg-indigo-50 border border-slate-200 font-bold text-xs flex items-center space-x-1 transition" title="Lihat Website Resmi Unit">
                         <span>Lihat Web {{ strtoupper($adminUnit) }}</span>
@@ -533,7 +535,7 @@
         {{-- Admin Footer & Watermark --}}
         <footer class="px-6 sm:px-8 py-4 border-t border-slate-200/80 bg-white/70 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-500">
             <div>
-                &copy; {{ date('Y') }} SIT Madani Kayuagung &bull; Panel Administrasi
+                &copy; {{ date('Y') }} SIT Rabbani Muara Enim &bull; Panel Administrasi
             </div>
             <div class="text-[11px] text-slate-400">
                 Developed by <a href="https://berandadigital.net" target="_blank" rel="noopener" class="text-slate-500 hover:text-slate-800 hover:underline font-medium">Beranda Teknologi Digital</a>
@@ -659,7 +661,7 @@
         });
 
         // === SWEETALERT2 NOTIFICATIONS & CONFIRMATIONS ===
-        const MadaniToast = Swal.mixin({
+        const RabbaniToast = Swal.mixin({
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
@@ -672,28 +674,28 @@
         });
 
         @if(session('success'))
-            MadaniToast.fire({
+            RabbaniToast.fire({
                 icon: 'success',
                 title: "{{ addslashes(session('success')) }}"
             });
         @endif
 
         @if(session('error'))
-            MadaniToast.fire({
+            RabbaniToast.fire({
                 icon: 'error',
                 title: "{{ addslashes(session('error')) }}"
             });
         @endif
 
         @if(session('info'))
-            MadaniToast.fire({
+            RabbaniToast.fire({
                 icon: 'info',
                 title: "{{ addslashes(session('info')) }}"
             });
         @endif
 
         @if(session('warning'))
-            MadaniToast.fire({
+            RabbaniToast.fire({
                 icon: 'warning',
                 title: "{{ addslashes(session('warning')) }}"
             });

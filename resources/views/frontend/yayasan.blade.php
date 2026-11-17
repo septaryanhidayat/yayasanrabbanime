@@ -1,13 +1,13 @@
 @extends('layouts.frontend')
 
-@section('title', 'Yayasan Agung Madani Kayuagung - Sekolah Islam Terpadu Madani (TK • SD • SMP)')
-@section('meta_description', 'Portal Resmi Yayasan Agung Madani Kayuagung. Menaungi TKS IT Madani, SDS IT Madani, dan SMPS IT Madani di Kabupaten Ogan Komering Ilir, Sumatera Selatan.')
+@section('title', 'Yayasan Generasi Rabbani Muara Enim - Sekolah Islam Terpadu Rabbani (TK • SD • SMP)')
+@section('meta_description', 'Portal Resmi Yayasan Generasi Rabbani Muara Enim. Menaungi TKS IT Rabbani, SDS IT Rabbani, dan SMPS IT Rabbani di Kabupaten Muara Enim, Sumatera Selatan.')
 
 @section('content')
 <main id="main-content" class="w-full overflow-hidden bg-slate-50">
 
     {{-- ========================================================
-         HERO SECTION: RESPONSIVE IMAGE SLIDER YAYASAN AGUNG MADANI
+         HERO SECTION: RESPONSIVE IMAGE SLIDER YAYASAN GENERASI RABBANI
          ======================================================== --}}
     <section class="relative w-full overflow-hidden bg-slate-950 text-white border-b border-indigo-900/60 shadow-2xl" 
              x-data="{
@@ -63,9 +63,9 @@
                 
                 {{-- Background Image with Fallback --}}
                 <img src="{{ $slide['image'] ?? '/uploads/hero-slide-yayasan-1.webp' }}" 
-                     alt="{{ $slide['title'] ?? 'Yayasan Agung Madani' }}" 
+                     alt="{{ $slide['title'] ?? 'Yayasan Generasi Rabbani' }}" 
                      class="absolute inset-0 w-full h-full object-cover select-none pointer-events-none transform scale-105"
-                     onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp';">
+                     onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp';">
 
                 {{-- Triple-Layer Gradient Overlays ensuring crisp contrast & zero white text collision --}}
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-indigo-950/85 to-blue-950/80" 
@@ -88,7 +88,7 @@
                     {{-- Title (Anti Cut-Off & Responsive Break-Words) --}}
                     <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight uppercase drop-shadow-md break-words max-w-4xl mx-auto" 
                         style="color: #ffffff !important;">
-                        {{ $slide['title'] ?? 'Yayasan Agung Madani' }}
+                        {{ $slide['title'] ?? 'Yayasan Generasi Rabbani' }}
                     </h1>
 
                     {{-- Subtitle --}}
@@ -123,7 +123,7 @@
                         @endif
                     </div>
 
-                    {{-- Statistics Chips (Satu Atap SIT Madani - Dinamis & Responsif) --}}
+                    {{-- Statistics Chips (Satu Atap SIT Rabbani - Dinamis & Responsif) --}}
                     @if(!empty($heroChips) && is_array($heroChips))
                     <div class="pt-4 sm:pt-6 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3.5 max-w-3xl mx-auto text-center reveal-fade-up delay-2">
                         @foreach($heroChips as $chip)
@@ -186,14 +186,14 @@
                     <i class="fa-solid fa-shapes mr-1.5 text-indigo-500"></i> Jenjang Pendidikan Terpadu
                 </span>
                 <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight uppercase">
-                    Pilih Unit Pendidikan SIT Madani
+                    Pilih Unit Pendidikan SIT Rabbani
                 </h2>
                 <p class="text-sm sm:text-base text-slate-600 mt-2 font-medium">
                     Silakan klik tombol kunjungi pada masing-masing unit sekolah di bawah ini untuk mengakses website resmi lengkap unit bersangkutan:
                 </p>
             </div>
 
-            {{-- 3 CARDS GRID (100% Simetris & Dinamis dari Admin) --}}
+            {{-- 4 CARDS GRID (100% Simetris & Dinamis dari Admin) --}}
             @php
             $unitThemes = [
                 'tk' => [
@@ -221,22 +221,34 @@
                     'btn_sec' => 'bg-white hover:bg-emerald-50 border-emerald-300 text-emerald-700',
                 ],
                 'smp' => [
-                    'border' => 'border-indigo-200 hover:border-indigo-400',
-                    'header_bg' => 'linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%)',
+                    'border' => 'border-blue-200 hover:border-blue-400',
+                    'header_bg' => 'linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%)',
                     'badge_bg' => 'bg-amber-400 text-slate-950',
-                    'sub_color' => 'text-indigo-200',
-                    'leader_box' => 'bg-indigo-50/80 border-indigo-200',
-                    'leader_label' => 'text-indigo-800',
-                    'photo_border' => 'border-indigo-600',
-                    'icon_color' => 'text-indigo-600',
-                    'btn_primary' => 'bg-indigo-900 hover:bg-indigo-950 text-white',
-                    'btn_sec' => 'bg-white hover:bg-indigo-50 border-indigo-300 text-indigo-800',
+                    'sub_color' => 'text-blue-100',
+                    'leader_box' => 'bg-blue-50/80 border-blue-200',
+                    'leader_label' => 'text-blue-800',
+                    'photo_border' => 'border-blue-600',
+                    'icon_color' => 'text-blue-600',
+                    'btn_primary' => 'bg-blue-900 hover:bg-blue-950 text-white',
+                    'btn_sec' => 'bg-white hover:bg-blue-50 border-blue-300 text-blue-800',
+                ],
+                'sma' => [
+                    'border' => 'border-purple-200 hover:border-purple-400',
+                    'header_bg' => 'linear-gradient(135deg, #6b21a8 0%, #3b0764 100%)',
+                    'badge_bg' => 'bg-amber-400 text-slate-950',
+                    'sub_color' => 'text-purple-100',
+                    'leader_box' => 'bg-purple-50/80 border-purple-200',
+                    'leader_label' => 'text-purple-800',
+                    'photo_border' => 'border-purple-600',
+                    'icon_color' => 'text-purple-600',
+                    'btn_primary' => 'bg-purple-900 hover:bg-purple-950 text-white',
+                    'btn_sec' => 'bg-white hover:bg-purple-50 border-purple-300 text-purple-800',
                 ],
             ];
             @endphp
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
-                @foreach(['tk', 'sd', 'smp'] as $unitKey)
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                @foreach(['tk', 'sd', 'smp', 'sma'] as $unitKey)
                 @php
                     $card = $unitShowcaseCards[$unitKey] ?? [];
                     $t = $unitThemes[$unitKey] ?? $unitThemes['smp'];
@@ -339,7 +351,7 @@
 
 
     {{-- ========================================================
-         SECTION: SAMBUTAN KETUA YAYASAN AGUNG MADANI
+         SECTION: SAMBUTAN KETUA YAYASAN GENERASI RABBANI
          ======================================================== --}}
     <section class="py-14 sm:py-20 bg-white border-y border-slate-200 reveal-fade-up">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -350,17 +362,17 @@
                     {{-- Foto Ketua Yayasan (Format Pas Foto Formal Dinamis) --}}
                     <div class="lg:col-span-4 flex flex-col items-center text-center">
                         <div class="relative w-48 h-60 sm:w-56 sm:h-72 rounded-3xl overflow-hidden border-4 border-amber-400 shadow-2xl bg-slate-800">
-                            <img src="{{ $sambutanYayasan['photo'] ?? '/uploads/dewan/ust-legianto.webp' }}" 
-                                 alt="{{ $sambutanYayasan['name'] ?? 'Ketua Yayasan Agung Madani' }}" 
+                            <img src="{{ $sambutanYayasan['photo'] ?? '/uploads/dewan/ust-basuki-wiwoho.webp' }}" 
+                                 alt="{{ $sambutanYayasan['name'] ?? 'Ketua Yayasan Generasi Rabbani' }}" 
                                  class="w-full h-full object-cover object-top" 
                                  onerror="this.onerror=null; this.src='/uploads/dewan/avatar-default.svg';">
                         </div>
                         <div class="mt-4">
                             <h3 class="text-base sm:text-lg font-black text-amber-300">
-                                {{ $sambutanYayasan['name'] ?? 'Drs. H. Legianto, M.E.E.' }}
+                                {{ $sambutanYayasan['name'] ?? 'Drs. H. Basuki Wiwoho' }}
                             </h3>
                             <span class="text-xs text-slate-300 font-semibold uppercase tracking-wider block">
-                                {{ $sambutanYayasan['title'] ?? 'Ketua Yayasan Agung Madani Kayuagung' }}
+                                {{ $sambutanYayasan['title'] ?? 'Ketua Yayasan Generasi Rabbani Muara Enim' }}
                             </span>
                         </div>
                     </div>
@@ -372,15 +384,15 @@
                             <span>Sambutan Pimpinan Lembaga</span>
                         </div>
                         <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                            {{ $sambutanYayasan['heading'] ?? 'Mewujudkan Ekosistem Pendidikan Islam Terpadu Satu Atap di Kabupaten OKI' }}
+                            {{ $sambutanYayasan['heading'] ?? 'Mewujudkan Ekosistem Pendidikan Islam Terpadu Satu Atap di Kabupaten Muara Enim' }}
                         </h2>
                         <div class="text-sm sm:text-base text-slate-300 leading-relaxed space-y-3 font-normal">
                             @if(!empty($sambutanYayasan['content_html']))
                                 {!! $sambutanYayasan['content_html'] !!}
                             @else
                                 <p><em>Bismillahirrohmanirrohim. Alhamdulillahi Rabbil 'Alamin.</em></p>
-                                <p>Yayasan Agung Madani Kayuagung didirikan atas dasar komitmen tulus memajukan kualitas generasi masa depan bangsa di Kabupaten Ogan Komering Ilir. Kami meyakini bahwa pendidikan anak usia dini hingga remaja merupakan masa emas untuk meletakkan fondasi iman, takwa, adab Qur'ani, serta ketajaman nalar intelektual.</p>
-                                <p>Melalui 3 unit pendidikan di bawah naungan yayasan: <strong>TKS IT Madani, SDS IT Madani, dan SMPS IT Madani</strong>, kami membangun kesinambungan kurikulum terpadu khas JSIT Indonesia. Anak-anak dibimbing secara berjenjang dari pembiasaan ibadah dan tahfidz cilik, penguasaan hafalan 2 juz dan hadits di sekolah dasar, hingga pematangan tahfidz bersanad dan kepemimpinan di tingkat menengah pertama.</p>
+                                <p>Yayasan Generasi Rabbani Muara Enim didirikan atas dasar komitmen tulus memajukan kualitas generasi masa depan bangsa di Kabupaten Muara Enim. Kami meyakini bahwa pendidikan anak usia dini hingga remaja merupakan masa emas untuk meletakkan fondasi iman, takwa, adab Qur'ani, serta ketajaman nalar intelektual.</p>
+                                <p>Melalui 4 unit pendidikan di bawah naungan yayasan: <strong>TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, dan SMA IT Rabbani</strong>, kami membangun kesinambungan kurikulum terpadu khas JSIT Indonesia. Anak-anak dibimbing secara berjenjang dari pembiasaan ibadah dan tahfidz cilik, penguasaan hafalan Al-Qur'an dan hadits di sekolah dasar dan menengah pertama, hingga pematangan tahfidz bersanad, asrama boarding school, bimbingan SNBT PTN gratis, dan kepemimpinan di tingkat SMA IT.</p>
                                 <p class="text-xs text-amber-400 font-bold pt-1">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
                             @endif
                         </div>
@@ -392,7 +404,7 @@
 
 
     {{-- ========================================================
-         SECTION: STRUKTUR ORGANISASI YAYASAN AGUNG MADANI
+         SECTION: STRUKTUR ORGANISASI YAYASAN GENERASI RABBANI
          ======================================================== --}}
     <section id="struktur-yayasan" class="py-14 sm:py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -402,10 +414,10 @@
                     <i class="fa-solid fa-sitemap mr-1"></i> Bagan Kelembagaan
                 </span>
                 <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight uppercase">
-                    Struktur Organisasi Yayasan Agung Madani
+                    Struktur Organisasi Yayasan Generasi Rabbani
                 </h2>
                 <p class="text-sm text-slate-600 mt-2 font-medium">
-                    Berdasarkan Akta Pendirian dan Keputusan Organ Yayasan Agung Madani Kayuagung
+                    Berdasarkan Akta Pendirian dan Keputusan Organ Yayasan Generasi Rabbani Muara Enim
                 </p>
             </div>
 
@@ -443,7 +455,7 @@
                     <ul class="space-y-2.5 text-xs text-slate-800">
                         <li class="flex items-start justify-between">
                             <span class="text-slate-500 font-medium">Ketua:</span>
-                            <span class="font-bold text-slate-900">Drs. H. Legianto, M.E.E.</span>
+                            <span class="font-bold text-slate-900">Drs. H. Basuki Wiwoho</span>
                         </li>
                         <li class="flex items-start justify-between">
                             <span class="text-slate-500 font-medium">Sekretaris:</span>
@@ -478,7 +490,7 @@
             <div class="bg-gradient-to-r from-indigo-900 to-blue-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl reveal-fade-up delay-2" style="background: linear-gradient(135deg, #1e1b4b 0%, #1e40af 100%) !important; color: #ffffff !important;">
                 <div class="text-center mb-6">
                     <span class="text-xs uppercase font-extrabold tracking-widest text-amber-300 block mb-1">Manajemen Operasional</span>
-                    <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight">Direktorat Yayasan Agung Madani</h3>
+                    <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight">Direktorat Yayasan Generasi Rabbani</h3>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -491,7 +503,7 @@
                             </div>
                         </div>
                         <p class="text-xs text-slate-200 leading-relaxed">
-                            Membawahi dan mengoordinasikan mutu akademik, kurikulum JSIT, pembinaan guru, serta kegiatan kesiswaan seluruh unit TKS IT Madani, SDS IT Madani, dan SMPS IT Madani.
+                            Membawahi dan mengoordinasikan mutu akademik, kurikulum JSIT, pembinaan guru, serta kegiatan kesiswaan seluruh unit TKS IT Rabbani, SDS IT Rabbani, dan SMPS IT Rabbani.
                         </p>
                     </div>
 
@@ -524,7 +536,7 @@
                     <i class="fa-solid fa-award mr-1"></i> Standar Mutu Pendidikan
                 </span>
                 <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight uppercase">
-                    Keunggulan Pendidikan Terpadu SIT Madani
+                    Keunggulan Pendidikan Terpadu SIT Rabbani
                 </h2>
                 <p class="text-sm text-slate-600 mt-2 font-medium">
                     Kurikulum terintegrasi dari TK, SD, hingga SMP menjamin pembentukan karakter yang kokoh dan berkesinambungan.
@@ -588,7 +600,7 @@
                         <i class="fa-solid fa-newspaper mr-1"></i> Warta Kampus
                     </span>
                     <h2 class="text-2xl sm:text-3xl font-black text-slate-900 uppercase">
-                        Berita & Kegiatan SIT Madani
+                        Berita & Kegiatan SIT Rabbani
                     </h2>
                 </div>
                 <a href="{{ route('artikel.index') }}" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 hover:text-indigo-900">
@@ -602,7 +614,7 @@
                 <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-md hover:shadow-xl transition flex flex-col justify-between">
                     <div>
                         <div class="h-44 overflow-hidden bg-slate-100">
-                            <img src="{{ $post->featured_image ?? '/uploads/campus-sit-madani.webp' }}" alt="{{ $post->title }}" class="w-full h-full object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp';">
+                            <img src="{{ $post->featured_image ?? '/uploads/campus-sit-rabbani.webp' }}" alt="{{ $post->title }}" class="w-full h-full object-cover hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp';">
                         </div>
                         <div class="p-5">
                             <span class="text-[10px] uppercase font-bold text-amber-600 block mb-1">
@@ -639,7 +651,7 @@
                 Penerimaan Santri Baru TP 2026/2027
             </span>
             <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight uppercase max-w-2xl mx-auto">
-                Daftarkan Putra-Putri Anda di Sekolah Islam Terpadu Madani
+                Daftarkan Putra-Putri Anda di Sekolah Islam Terpadu Rabbani Muara Enim
             </h2>
             <p class="text-sm sm:text-base text-indigo-100 max-w-xl mx-auto font-medium">
                 Pilih jenjang yang Anda tuju dan isi formulir pendaftaran secara online dengan cepat, mudah, dan transparan.
@@ -664,7 +676,7 @@
 
 </main>
 
-{{-- Reusable Popup Promo SPMB SIT Madani --}}
+{{-- Reusable Popup Promo SPMB SIT Rabbani --}}
 @include('partials.popup-spmb')
 
 @endsection

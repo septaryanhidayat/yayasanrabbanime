@@ -48,10 +48,11 @@ class User extends Authenticatable
     public function getUnitLabelAttribute(): string
     {
         return match ($this->unit) {
-            'tk' => 'TKS IT Madani',
-            'sd' => 'SDS IT Madani',
-            'smp' => 'SMPS IT Madani',
-            default => 'Yayasan Agung Madani',
+            'tk' => 'TKS IT Rabbani Muara Enim',
+            'sd' => 'SDS IT Rabbani Muara Enim',
+            'smp' => 'SMPS IT Rabbani Muara Enim',
+            'sma' => 'SMA IT Rabbani Muara Enim',
+            default => 'Yayasan Generasi Rabbani Muara Enim',
         };
     }
 

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rekap Pendaftar PPDB - SMPS IT Madani Kayuagung</title>
-    <link rel="icon" type="image/png" href="/uploads/logo-madani-square.webp">
+    <title>Rekap Pendaftar PPDB - SMPS IT Rabbani Muara Enim</title>
+    <link rel="icon" type="image/png" href="/uploads/logo-rabbani-square.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @page {
@@ -181,13 +181,13 @@
 
     {{-- KOP SURAT --}}
     <div class="header">
-        <img src="/uploads/logo-madani-square.webp" alt="Logo Madani">
+        <img src="/uploads/logo-rabbani-square.webp" alt="Logo Madani">
         <div class="header-text">
-            <h2>YAYASAN AGUNG MADANI KAYUAGUNG</h2>
-            <h3>SMP ISLAM TERPADU MADANI KAYUAGUNG</h3>
+            <h2>YAYASAN GENERASI RABBANI MUARA ENIM</h2>
+            <h3>SMP ISLAM TERPADU RABBANI MUARA ENIM</h3>
             <p><strong>TERAKREDITASI BAN-SM (ANGGOTA JSIT INDONESIA)</strong> &bull; NPSN: 70034917</p>
-            <p>Jalan SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Kayuagung, OKI, Sumsel 30618</p>
-            <p>Telp/WA: 0858-3817-3417 | Email: smpsislamterpadumadani@gmail.com | Web: www.sitmadani.sch.id</p>
+            <p>Jalan SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Muara Enim, OKI, Sumsel 30618</p>
+            <p>Telp/WA: 0851-5929-3554 | Email: yayasangerabbani@gmail.com | Web: www.rabbanime.sch.id</p>
         </div>
     </div>
 
@@ -263,17 +263,17 @@
     <div class="signatures">
         <div class="sig-box">
             <p>Mengetahui,</p>
-            <p><strong>Kepala SMPS IT Madani</strong></p>
+            <p><strong>Kepala SMPS IT Rabbani</strong></p>
             <div class="sig-space"></div>
-            <p><strong><u>Ribang Imam Satria, S.Pi., Gr.</u></strong></p>
+            <p><strong><u>Drs. H. Basuki Wiwoho</u></strong></p>
             <p>NIY. 20190701001</p>
         </div>
         <div class="sig-box">
-            <p>Kayuagung, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
+            <p>Muara Enim, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
             <p><strong>Ketua Panitia SPMB</strong></p>
             <div class="sig-space"></div>
             <p><strong><u>Panitia SPMB Madani</u></strong></p>
-            <p>SMPS IT Madani</p>
+            <p>SMPS IT Rabbani</p>
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Pusat Unduhan & Dokumen Siswa - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Pusat unduhan formulir PPDB, kalender akademik, modul pembelajaran siswa, buku panduan kurikulum, dan logo resmi SMPS IT Madani Kayuagung.')
+@section('title', 'Pusat Unduhan & Dokumen Siswa - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Pusat unduhan formulir PPDB, kalender akademik, modul pembelajaran siswa, buku panduan kurikulum, dan logo resmi SMPS IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -14,7 +14,7 @@
         </nav>
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Pusat Download Dokumen & Modul</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
-            Unduh formulir pendaftaran PPDB, modul pembelajaran tahfidz & sains, kalender akademik, dan aset logo resmi SMPS IT Madani Kayuagung.
+            Unduh formulir pendaftaran PPDB, modul pembelajaran tahfidz & sains, kalender akademik, dan aset logo resmi SMPS IT Rabbani Muara Enim.
         </p>
     </div>
 </div>

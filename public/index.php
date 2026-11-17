@@ -8,14 +8,17 @@ define('LARAVEL_START', microtime(true));
 // 1. Auto-detect Laravel repository root directory
 $possibleRoots = [
     __DIR__.'/..',
+    dirname(__DIR__).'/repositories/yayasanrabbanime',
+    dirname(__DIR__).'/laravel_yayasanrabbanime',
+    dirname(__DIR__).'/yayasanrabbanime',
     dirname(__DIR__).'/repositories/sitmadani',
     dirname(__DIR__).'/laravel_sitmadani',
     dirname(__DIR__).'/sitmadani',
-    ($_SERVER['HOME'] ?? '').'/repositories/sitmadani',
-    ($_SERVER['HOME'] ?? '').'/laravel_sitmadani',
-    '/home/berandad/repositories/sitmadani',
-    '/home/berandad/laravel_sitmadani',
-    '/home/berandad/sitmadani',
+    ($_SERVER['HOME'] ?? '').'/repositories/yayasanrabbanime',
+    ($_SERVER['HOME'] ?? '').'/laravel_yayasanrabbanime',
+    '/home/berandad/repositories/yayasanrabbanime',
+    '/home/berandad/laravel_yayasanrabbanime',
+    '/home/berandad/yayasanrabbanime',
 ];
 
 $laravelRoot = null;
@@ -43,13 +46,13 @@ if (! $hasVendor || ! $phpOk || ! $hasEnv) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Status Setup Server - SMPS IT Madani Kayuagung</title>
+        <title>Status Setup Server - SIT Rabbani Muara Enim</title>
         <style>
             body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 2rem 1rem; }
             .container { max-width: 720px; margin: 0 auto; background: #1e1b4b; border-radius: 16px; border: 1px solid #4338ca; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
-            .header { background: linear-gradient(135deg, #4338ca, #7c3aed); padding: 1.75rem; text-align: center; color: white; border-bottom: 2px solid #f59e0b; }
+            .header { background: linear-gradient(135deg, #15803d, #16a34a); padding: 1.75rem; text-align: center; color: white; border-bottom: 2px solid #facc15; }
             .header h1 { margin: 0; font-size: 1.4rem; font-weight: 800; letter-spacing: 0.05em; }
-            .header p { margin: 0.5rem 0 0; opacity: 0.95; font-size: 0.9rem; color: #fde68a; }
+            .header p { margin: 0.5rem 0 0; opacity: 0.95; font-size: 0.9rem; color: #fef08a; }
             .body { padding: 1.75rem; }
             .item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 1.25rem; background: #0f172a; padding: 1rem; border-radius: 10px; border-left: 4px solid #64748b; }
             .item.ok { border-left-color: #22c55e; }
@@ -58,16 +61,16 @@ if (! $hasVendor || ! $phpOk || ! $hasEnv) {
             .item-title { font-weight: 600; margin-bottom: 0.25rem; color: #f8fafc; }
             .item-desc { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; }
             .code-box { background: #020617; border: 1px solid #334155; padding: 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; color: #38bdf8; margin-top: 0.5rem; overflow-x: auto; word-break: break-all; }
-            .btn { display: inline-block; background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 700; font-size: 0.9rem; margin-top: 1rem; transition: transform 0.2s, box-shadow 0.2s; text-align: center; box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39); }
-            .btn:hover { transform: scale(1.03); background: linear-gradient(135deg, #4338ca, #6d28d9); }
+            .btn { display: inline-block; background: linear-gradient(135deg, #15803d, #16a34a); color: white; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 700; font-size: 0.9rem; margin-top: 1rem; transition: transform 0.2s, box-shadow 0.2s; text-align: center; box-shadow: 0 4px 14px 0 rgba(22, 163, 74, 0.39); }
+            .btn:hover { transform: scale(1.03); background: linear-gradient(135deg, #166534, #15803d); }
             .actions { text-align: center; margin-top: 1.5rem; }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="header">
-                <h1>SMPS IT MADANI KAYUAGUNG</h1>
-                <p>Status Setup Sistem Website Sekolah di Hosting / Server</p>
+                <h1>YAYASAN GENERASI RABBANI MUARA ENIM</h1>
+                <p>Status Setup Sistem Website Sekolah Islam Terpadu Rabbani</p>
             </div>
             <div class="body">
                 <div class="item <?= $phpOk ? 'ok' : 'err' ?>">
@@ -113,7 +116,7 @@ if (! $hasVendor || ! $phpOk || ! $hasEnv) {
                 </div>
 
                 <div class="actions">
-                    <a href="cpanel_setup.php?token=SitMadani2026Setup&amp;action=status" class="btn">Buka cPanel Setup Helper &rarr;</a>
+                    <a href="cpanel_setup.php?token=RabbaniMuaraEnim2026Setup&amp;action=status" class="btn">Buka cPanel Setup Helper &rarr;</a>
                 </div>
             </div>
         </div>
@@ -154,7 +157,7 @@ try {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Error 500 - SMPS IT Madani Kayuagung</title>
+        <title>Error 500 - SIT Rabbani Muara Enim</title>
         <style>
             body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 2rem 1rem; }
             .box { max-width: 800px; margin: 0 auto; background: #1e1b4b; border-radius: 16px; border: 1px solid #7c3aed; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
@@ -176,7 +179,7 @@ try {
                 3. Pastikan APP_KEY sudah digenerate di file <code>.env</code>.
             </div>
             <p style="text-align:center;margin-top:1.5rem;">
-                <a href="cpanel_setup.php?token=SitMadani2026Setup&amp;action=status" style="color:#fbbf24;text-decoration:none;font-weight:bold;">&larr; Buka cPanel Setup Helper</a>
+                <a href="cpanel_setup.php?token=RabbaniMuaraEnim2026Setup&amp;action=status" style="color:#fbbf24;text-decoration:none;font-weight:bold;">&larr; Buka cPanel Setup Helper</a>
             </p>
         </div>
     </body>

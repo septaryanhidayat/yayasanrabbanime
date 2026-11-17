@@ -50,10 +50,10 @@
             <div>
                 <label for="unit" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Unit Lembaga / Sekolah *</label>
                 <select name="unit" id="unit" required class="w-full bg-slate-50 text-xs text-slate-800 rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition">
-                    <option value="yayasan" {{ old('unit', $user->unit ?? 'yayasan') === 'yayasan' ? 'selected' : '' }}>Yayasan - Yayasan Agung Madani (Pusat / Seluruh Portal)</option>
-                    <option value="tk" {{ old('unit', $user->unit ?? '') === 'tk' ? 'selected' : '' }}>TKS IT Madani (PAUD / TK)</option>
-                    <option value="sd" {{ old('unit', $user->unit ?? '') === 'sd' ? 'selected' : '' }}>SDS IT Madani (Sekolah Dasar)</option>
-                    <option value="smp" {{ old('unit', $user->unit ?? '') === 'smp' ? 'selected' : '' }}>SMPS IT Madani (Sekolah Menengah Pertama)</option>
+                    <option value="yayasan" {{ old('unit', $user->unit ?? 'yayasan') === 'yayasan' ? 'selected' : '' }}>Yayasan - Yayasan Generasi Rabbani (Pusat / Seluruh Portal)</option>
+                    <option value="tk" {{ old('unit', $user->unit ?? '') === 'tk' ? 'selected' : '' }}>TKS IT Rabbani (PAUD / TK)</option>
+                    <option value="sd" {{ old('unit', $user->unit ?? '') === 'sd' ? 'selected' : '' }}>SDS IT Rabbani (Sekolah Dasar)</option>
+                    <option value="smp" {{ old('unit', $user->unit ?? '') === 'smp' ? 'selected' : '' }}>SMPS IT Rabbani (Sekolah Menengah Pertama)</option>
                 </select>
                 @error('unit') <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span> @enderror
             </div>

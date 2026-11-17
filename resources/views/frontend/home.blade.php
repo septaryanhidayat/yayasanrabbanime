@@ -1,9 +1,9 @@
 @extends('layouts.frontend')
 
-@section('title', ($currentUnit['name'] ?? 'Sekolah Islam Terpadu Madani') . ' - ' . ($currentUnit['tagline'] ?? 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia'))
+@section('title', ($currentUnit['name'] ?? 'Sekolah Islam Terpadu Rabbani') . ' - ' . ($currentUnit['tagline'] ?? 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia'))
 
 @push('preload')
-    <link rel="preload" as="image" href="{{ asset('/uploads/campus-sit-madani.webp') }}" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="{{ asset('/uploads/campus-sit-rabbani.webp') }}" type="image/webp" fetchpriority="high">
 @endpush
 
 @section('content')
@@ -32,12 +32,12 @@
                  class="absolute inset-0"
                  @if($index !== 0) style="display: none;" @endif
             >
-                <img src="{{ asset($slide['image'] ?? '/uploads/campus-sit-madani.webp') }}" 
-                     alt="{{ $slide['title'] ?? 'SMPS IT Madani' }}" 
+                <img src="{{ asset($slide['image'] ?? '/uploads/campus-sit-rabbani.webp') }}" 
+                     alt="{{ $slide['title'] ?? 'SMPS IT Rabbani' }}" 
                      class="w-full h-full object-cover object-center brightness-[0.82] sm:brightness-[0.78]"
                      width="1376"
                      height="768"
-                     onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'"
+                     onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'"
                      @if($index === 0)
                          fetchpriority="high"
                          loading="eager"
@@ -119,7 +119,7 @@
                     <span class="w-2.5 h-2.5 rounded-full bg-indigo-600 inline-block animate-pulse"></span>
                     <span>Menu Utama Sekolah</span>
                 </h2>
-                <p class="text-xs text-gray-500 font-light mt-0.5">Akses cepat portal informasi dan layanan terpadu SMPS IT Madani Kayuagung</p>
+                <p class="text-xs text-gray-500 font-light mt-0.5">Akses cepat portal informasi dan layanan terpadu SMPS IT Rabbani Muara Enim</p>
             </div>
             <div class="flex items-center justify-center sm:justify-end">
                 <button @click="showDownloadModal = true" type="button" aria-label="Buka Pilihan Download" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black px-4 py-2 rounded-full transition shadow-md shadow-indigo-600/20 flex items-center space-x-1.5 cursor-pointer transform hover:scale-105 min-h-[40px]">
@@ -130,7 +130,7 @@
         </div>
 
         @php
-            if (!empty($currentUnitKey) && in_array($currentUnitKey, ['tk', 'sd', 'smp'])) {
+            if (!empty($currentUnitKey) && in_array($currentUnitKey, ['tk', 'sd', 'smp', 'sma'])) {
                 $uKey = $currentUnitKey;
                 $uShort = $currentUnit['short_name'] ?? strtoupper($uKey);
                 $quickMenus = collect([
@@ -200,7 +200,7 @@
                         (object)['name' => 'Struktur Yayasan', 'icon' => 'fa-solid fa-sitemap', 'url' => route('page.struktur.yayasan'), 'is_image' => false, 'color_class' => 'bg-emerald-50 text-emerald-600 border-emerald-200 group-hover:bg-emerald-600'],
                         (object)['name' => 'Visi & Misi', 'icon' => 'fa-solid fa-compass', 'url' => route('page.visi-misi.yayasan'), 'is_image' => false, 'color_class' => 'bg-purple-50 text-purple-600 border-purple-200 group-hover:bg-purple-600'],
                         (object)['name' => 'Pilih Unit', 'icon' => 'fa-solid fa-layer-group', 'url' => '#unit-sekolah', 'is_image' => false, 'color_class' => 'bg-cyan-50 text-cyan-600 border-cyan-200 group-hover:bg-cyan-600'],
-                        (object)['name' => 'Warta Madani', 'icon' => 'fa-solid fa-newspaper', 'url' => route('artikel.index'), 'is_image' => false, 'color_class' => 'bg-indigo-50 text-indigo-600 border-indigo-200 group-hover:bg-indigo-600'],
+                        (object)['name' => 'Warta Rabbani', 'icon' => 'fa-solid fa-newspaper', 'url' => route('artikel.index'), 'is_image' => false, 'color_class' => 'bg-indigo-50 text-indigo-600 border-indigo-200 group-hover:bg-indigo-600'],
                         (object)['name' => 'Galeri Kampus', 'icon' => 'fa-solid fa-images', 'url' => route('galeri.index'), 'is_image' => false, 'color_class' => 'bg-rose-50 text-rose-600 border-rose-200 group-hover:bg-rose-600'],
                         (object)['name' => 'Hubungi Kami', 'icon' => 'fa-solid fa-phone', 'url' => route('hubungi'), 'is_image' => false, 'color_class' => 'bg-teal-50 text-teal-600 border-teal-200 group-hover:bg-teal-600'],
                     ]);
@@ -218,7 +218,7 @@
                aria-label="Menu {{ $qm->name }}">
                 <div class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-2xl {{ $qm->color_class ?? 'bg-indigo-50 text-indigo-700 border-indigo-100 group-hover:bg-indigo-600' }} flex items-center justify-center mx-auto mb-1.5 sm:mb-2 shadow-xs border group-hover:text-white group-hover:scale-110 transition-all duration-300">
                     @if(!empty($qm->is_image) && $qm->is_image)
-                        <img src="{{ $qm->icon }}" alt="Ikon {{ $qm->name }}" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/logo-madani-square.webp'">
+                        <img src="{{ $qm->icon }}" alt="Ikon {{ $qm->name }}" class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 object-contain group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/logo-rabbani-square.webp'">
                     @else
                         <i class="{{ $qm->icon }} text-lg sm:text-xl md:text-2xl transition-colors duration-300" aria-hidden="true"></i>
                     @endif
@@ -263,7 +263,7 @@
                     <i class="fa-solid fa-folder-open"></i>
                 </div>
                 <h3 class="text-xl sm:text-2xl font-black text-gray-900">
-                    Pusat Unduhan {{ $currentUnit['name'] ?? 'SIT Madani Kayuagung' }}
+                    Pusat Unduhan {{ $currentUnit['name'] ?? 'SIT Rabbani Muara Enim' }}
                 </h3>
                 <p class="text-xs sm:text-sm text-gray-500 mt-1">
                     Silakan unduh brosur SPMB, formulir pendaftaran, modul siswa, dan pedoman resmi
@@ -339,7 +339,7 @@
                     <div class="relative group max-w-[260px] sm:max-w-xs md:max-w-sm w-full mx-auto">
                         <div class="absolute -inset-1 bg-gradient-to-r from-amber-400 via-blue-400 to-indigo-500 rounded-2xl blur-xs opacity-75 group-hover:opacity-100 transition duration-500"></div>
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border-2 border-white/20 aspect-[3/4]">
-                            <img src="{{ $spmbBanner['flyer_image'] ?? '/uploads/flyer-spmb-sit-madani.webp' }}" alt="{{ $spmbBanner['title'] ?? 'Flyer SPMB Gelombang Exclusive' }}" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/flyer-spmb-sit-madani.png'">
+                            <img src="{{ $spmbBanner['flyer_image'] ?? '/uploads/flyer-spmb-smait-rabbani.webp' }}" alt="{{ $spmbBanner['title'] ?? 'Flyer SPMB Gelombang Exclusive' }}" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/flyer-spmb-smait-rabbani.jpg'">
                             <div class="absolute bottom-2.5 left-2.5 right-2.5 bg-slate-950/85 backdrop-blur-md py-1.5 px-2.5 rounded-xl border border-white/10 text-center">
                                 <span class="text-[10px] sm:text-[11px] font-black text-amber-300 uppercase tracking-wider">
                                     <i class="fa-solid fa-bullhorn mr-1"></i> {{ $spmbBanner['flyer_label'] ?? 'Pengumuman Resmi Sekolah' }}
@@ -361,7 +361,7 @@
                     </h2>
 
                     <p class="text-xs sm:text-base text-indigo-100 leading-relaxed">
-                        {!! nl2br(e($spmbBanner['description'] ?? "Bergabunglah bersama keluarga besar SMPS IT Madani Kayuagung. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.")) !!}
+                        {!! nl2br(e($spmbBanner['description'] ?? "Bergabunglah bersama keluarga besar SMPS IT Rabbani Muara Enim. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur'ani, target hafalan 2 juz mutqin, serta penguasaan bahasa asing & teknologi.")) !!}
                     </p>
 
                     {{-- 3 Key Benefit Cards --}}
@@ -379,7 +379,7 @@
                                 <i class="fa-solid fa-money-bill-wave"></i>
                             </div>
                             <h4 class="text-[11px] sm:text-xs font-black uppercase tracking-wider text-white">{{ $spmbBanner['card2_title'] ?? 'CASH BACK 1 JUTA' }}</h4>
-                            <p class="text-xs font-bold mt-0.5" style="color: {{ $spmbBanner['card2_color'] ?? '#fde047' }};">{{ $spmbBanner['card2_desc'] ?? 'Alumni SDIT Madani 1 & 2' }}</p>
+                            <p class="text-xs font-bold mt-0.5" style="color: {{ $spmbBanner['card2_color'] ?? '#fde047' }};">{{ $spmbBanner['card2_desc'] ?? 'Alumni SDIT Rabbani 1 & 2' }}</p>
                         </div>
 
                         <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 border border-white/10 text-center">
@@ -405,9 +405,9 @@
                             <span>{{ $spmbBanner['btn_text'] ?? 'Daftar SPMB Online' }}</span>
                         </a>
 
-                        <a href="https://wa.me/{{ $cleanBannerPhone }}?text={{ urlencode('Halo Admin SMP IT Madani Kayuagung, saya ingin informasi ' . ($spmbBanner['title'] ?? 'SPMB Gelombang Exclusive')) }}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
+                        <a href="https://wa.me/{{ $cleanBannerPhone }}?text={{ urlencode('Halo Admin SMP IT Rabbani Muara Enim, saya ingin informasi ' . ($spmbBanner['title'] ?? 'SPMB Gelombang Exclusive')) }}" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-full font-bold text-xs sm:text-sm shadow-lg transition transform hover:scale-105">
                             <i class="fa-brands fa-whatsapp text-base mr-2"></i>
-                            <span>{{ $spmbBanner['contact_text'] ?? ('Narahubung: ' . ($spmbBanner['contact_phone'] ?? '0858-3817-3417')) }}</span>
+                            <span>{{ $spmbBanner['contact_text'] ?? ('Narahubung: ' . ($spmbBanner['contact_phone'] ?? '0851-5929-3554')) }}</span>
                         </a>
                     </div>
                 </div>
@@ -497,7 +497,7 @@
             <div class="lg:col-span-7 reveal-fade-up delay-1">
                 <article class="bg-white rounded-3xl shadow-md overflow-hidden border border-gray-100 h-full flex flex-col group">
                     <div class="relative h-60 sm:h-80 overflow-hidden bg-gray-100">
-                        <img src="{{ $featuredPost->featured_image_url }}" alt="{{ $featuredPost->title }}" width="600" height="320" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                        <img src="{{ $featuredPost->featured_image_url }}" alt="{{ $featuredPost->title }}" width="600" height="320" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                         @if($featuredPost->categories->isNotEmpty())
                         <span class="absolute top-3 left-3 bg-indigo-600 text-white text-[11px] font-bold px-3 py-1 rounded-full shadow">
                             {{ $featuredPost->categories->first()->name }}
@@ -520,7 +520,7 @@
                             </p>
                         </div>
                         <div class="pt-4 mt-4 border-t border-gray-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-indigo-600">{{ $currentUnit['short_name'] ?? 'SIT Madani' }}</span>
+                            <span class="text-xs font-semibold text-indigo-600">{{ $currentUnit['short_name'] ?? 'SIT Rabbani' }}</span>
                             <a href="{{ route('artikel.show', $featuredPost->slug) }}" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center">
                                 Baca Selengkapnya <i class="fa-solid fa-arrow-right ml-1 text-[10px]"></i>
                             </a>
@@ -535,7 +535,7 @@
                 @foreach($sidePosts as $index => $sp)
                 <article class="bg-white rounded-2xl p-3 sm:p-4 shadow-sm border border-gray-100 hover:shadow-md transition flex items-center space-x-3 sm:space-x-4 group reveal-fade-up delay-{{ $index + 2 }}">
                     <div class="w-20 h-20 sm:w-28 sm:h-24 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 relative">
-                        <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" width="112" height="96" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/activities-sit-madani.webp'">
+                        <img src="{{ $sp->featured_image_url }}" alt="{{ $sp->title }}" width="112" height="96" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/prestasi-sit-rabbani.webp'">
                     </div>
                     <div class="flex-1 min-w-0 space-y-1">
                         <div class="text-[11px] text-gray-500 flex items-center space-x-2">
@@ -558,7 +558,7 @@
 </section>
 
 {{-- ========================================================
-     SECTION #3: Prestasi Siswa SMPS IT MADANI
+     SECTION #3: Prestasi Siswa SMPS IT RABBANI
      ======================================================== --}}
 <section class="py-12 bg-white overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -568,7 +568,7 @@
                 Prestasi Siswa
             </h2>
             <p class="text-xs sm:text-sm text-gray-700 mt-1 font-medium">
-                Capaian membanggakan siswa {{ $currentUnit['name'] ?? 'SIT Madani Kayuagung' }} di bidang tahfidz, sains, bahasa, dan keolahragaan
+                Capaian membanggakan siswa {{ $currentUnit['name'] ?? 'SIT Rabbani Muara Enim' }} di bidang tahfidz, sains, bahasa, dan keolahragaan
             </p>
             <div class="w-16 h-1 bg-amber-400 mx-auto mt-2.5 rounded-full"></div>
         </div>
@@ -581,7 +581,7 @@
                         {{-- Ambient backdrop --}}
                         <img src="{{ $post->featured_image_url }}" alt="" class="absolute inset-0 w-full h-full object-cover blur-md opacity-30 scale-110 pointer-events-none" aria-hidden="true">
                         {{-- Uncropped foreground image --}}
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="240" loading="lazy" decoding="async" class="relative max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-xs group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/activities-sit-madani.webp'">
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="240" loading="lazy" decoding="async" class="relative max-h-full max-w-full w-auto h-auto object-contain rounded-lg shadow-xs group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/prestasi-sit-rabbani.webp'">
                     </a>
                     <span class="absolute bottom-2.5 left-2.5 z-10 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md">
                         <i class="fa-solid fa-trophy text-amber-400 mr-1"></i> Prestasi
@@ -631,7 +631,7 @@
                         @foreach($nasionalPosts as $post)
                         <div class="flex items-start space-x-3 group">
                             <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5 relative">
-                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -668,7 +668,7 @@
                         @foreach($daerahPosts as $post)
                         <div class="flex items-start space-x-3 group">
                             <div class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0 mt-0.5 relative">
-                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/tahfidz-sit-madani.webp'">
+                                <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="64" height="64" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/tahfidz-sit-rabbani.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <h4 class="text-xs sm:text-sm font-bold text-gray-900 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -715,7 +715,7 @@
             <article class="flex flex-col group reveal-fade-up delay-{{ ($index % 4) + 1 }}">
                 <div class="aspect-[16/10] overflow-hidden rounded-2xl bg-gray-100 shadow-sm relative">
                     <a href="{{ route('artikel.show', $post->slug) }}" class="block w-full h-full" aria-label="Baca program: {{ $post->title }}">
-                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/tahfidz-sit-madani.webp'">
+                        <img src="{{ $post->featured_image_url }}" alt="{{ $post->title }}" width="280" height="175" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/tahfidz-sit-rabbani.webp'">
                     </a>
                 </div>
                 <div class="pt-3 flex-1 flex flex-col justify-between">
@@ -773,17 +773,17 @@
                     if (!$thumb) {
                         $t = strtolower($ekskul->title);
                         if (str_contains($t, 'basket') || str_contains($t, 'badminton') || str_contains($t, 'futsal') || str_contains($t, 'atletik')) {
-                            $thumb = '/uploads/activities-sit-madani.webp';
-                        } elseif (str_contains($t, 'digital') || str_contains($t, 'grafis') || str_contains($t, 'robotika') || str_contains($t, 'coding')) {
-                            $thumb = '/uploads/madani/fasilitas_1274_Ruang-Lab-Komputer1.webp';
+                            $thumb = '/uploads/prestasi-sit-rabbani.webp';
+                        } elseif (str_contains($t, 'digital') || str_contains($t, 'grafis') || str_contains($t, 'robotika') || str_contains($t, 'coding') || str_contains($t, 'multimedia')) {
+                            $thumb = '/uploads/prestasi-sit-rabbani.webp';
                         } elseif (str_contains($t, 'sains') || str_contains($t, 'matematika')) {
-                            $thumb = '/uploads/madani/fasilitas_1275_R.-Lab-IPA.webp';
-                        } elseif (str_contains($t, 'tari') || str_contains($t, 'ansambel') || str_contains($t, 'vocal') || str_contains($t, 'hadrah') || str_contains($t, 'kriya') || str_contains($t, 'cerita') || str_contains($t, 'dongeng') || str_contains($t, 'pantomim')) {
-                            $thumb = '/uploads/madani/fasilitas_1278_HALL-SIT-Madani_.webp';
+                            $thumb = '/uploads/campus-smpit-rabbani.webp';
+                        } elseif (str_contains($t, 'tari') || str_contains($t, 'ansambel') || str_contains($t, 'vocal') || str_contains($t, 'hadrah') || str_contains($t, 'marawis') || str_contains($t, 'kriya') || str_contains($t, 'cerita') || str_contains($t, 'dongeng') || str_contains($t, 'pantomim')) {
+                            $thumb = '/uploads/banner-yayasan-rabbani.webp';
                         } elseif (str_contains($t, 'tahfidz') || str_contains($t, 'da\'i') || str_contains($t, 'dai')) {
-                            $thumb = '/uploads/tahfidz-sit-madani.webp';
+                            $thumb = '/uploads/tahfidz-sit-rabbani.webp';
                         } else {
-                            $thumb = '/uploads/campus-sit-madani.webp';
+                            $thumb = '/uploads/campus-sit-rabbani.webp';
                         }
                     }
                     $cleanDesc = trim(strip_tags($ekskul->content));
@@ -792,7 +792,7 @@
                 <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up delay-{{ ($idx % 3) + 1 }}">
                     <div class="relative h-48 sm:h-52 overflow-hidden bg-gray-100">
                         <a href="{{ route('ekskul.show', $ekskul->slug) }}" class="block w-full h-full">
-                            <img src="{{ $thumb }}" alt="{{ $ekskul->title }}" width="400" height="260" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                            <img src="{{ $thumb }}" alt="{{ $ekskul->title }}" width="400" height="260" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                         </a>
                         <span class="absolute top-3 left-3 bg-indigo-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1">
                             <i class="fa-solid fa-star text-amber-300 text-[10px]"></i>
@@ -827,12 +827,12 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @php
                     $defaultEkskul = [
-                        ['title' => 'Pramuka SIT (Sekolah Islam Terpadu)', 'desc' => 'Kepanduan berkarakter Islam melatih kemandirian, kepemimpinan, dan kecintaan pada alam terbuka.', 'img' => '/uploads/activities-sit-madani.webp'],
-                        ['title' => 'Robotika & Coding IT Club', 'desc' => 'Pelatihan logika pemrograman dasar, perakitan mikrokontroler, dan persiapan olimpiade robotika.', 'img' => '/uploads/madani/fasilitas_1274_Ruang-Lab-Komputer1.webp'],
-                        ['title' => 'Tahfidz & TTQ Club (Tartil Qur\'an)', 'desc' => 'Pendalaman tajwid, makhorijul huruf, tilawah berirama, dan persiapan tasmi\' mutqin 2 juz.', 'img' => '/uploads/tahfidz-sit-madani.webp'],
-                        ['title' => 'English & Public Speaking Club', 'desc' => 'Latihan percakapan bahasa Inggris aktif, pidato 3 bahasa, dan pembiasaan retorika dakwah.', 'img' => '/uploads/campus-sit-madani.webp'],
-                        ['title' => 'Futsal & Olahraga Prestasi', 'desc' => 'Pembinaan kebugaran jasmani, teknik bermain futsal terpadu, dan kompetisi antarpelajar.', 'img' => '/uploads/activities-sit-madani.webp'],
-                        ['title' => 'Seni Hadrah & Kaligrafi Islam', 'desc' => 'Pelatihan tabuhan rebana hadrah, vokal sholawat, dan seni lukis kaligrafi mushaf.', 'img' => '/uploads/madani/fasilitas_1278_HALL-SIT-Madani_.webp'],
+                        ['title' => 'Pramuka SIT (Sekolah Islam Terpadu)', 'desc' => 'Kepanduan berkarakter Islam melatih kemandirian, kepemimpinan, dan kecintaan pada alam terbuka.', 'img' => '/uploads/kegiatan-pramuka-rabbani.webp'],
+                        ['title' => 'Robotika & Multimedia Club', 'desc' => 'Pelatihan logika pemrograman dasar, desain grafis, fotografi, dan pengelolaan media digital.', 'img' => '/uploads/prestasi-sit-rabbani.webp'],
+                        ['title' => 'Tahfidz & TTQ Club (Tartil Qur\'an)', 'desc' => 'Pendalaman tajwid, makhorijul huruf, tilawah berirama, dan persiapan tasmi\' mutqin.', 'img' => '/uploads/tahfidz-sit-rabbani.webp'],
+                        ['title' => 'English & Public Speaking Club', 'desc' => 'Latihan percakapan bahasa Inggris aktif, pidato 3 bahasa, dan pembiasaan retorika dakwah.', 'img' => '/uploads/campus-sit-rabbani.webp'],
+                        ['title' => 'Bola Voli & Olahraga Prestasi', 'desc' => 'Pembinaan kebugaran jasmani, teknik bermain voli, dan kompetisi antarpelajar.', 'img' => '/uploads/campus-smait-rabbani.webp'],
+                        ['title' => 'Marawis & Seni Budaya Islam', 'desc' => 'Pelatihan tabuhan rebana marawis/hadrah, olah vokal sholawat, dan seni kaligrafi islami.', 'img' => '/uploads/banner-yayasan-rabbani.webp'],
                     ];
                 @endphp
                 @foreach($defaultEkskul as $idx => $dEks)
@@ -946,7 +946,7 @@
                 Galeri Video Resmi YouTube
             </h2>
             <p class="text-xs sm:text-sm text-amber-400 mt-1 font-semibold">
-                Dokumentasi Audio Visual Pembinaan &amp; Aktivitas Sekolah {{ $currentUnit['name'] ?? 'SIT Madani Kayuagung' }}
+                Dokumentasi Audio Visual Pembinaan &amp; Aktivitas Sekolah {{ $currentUnit['name'] ?? 'SIT Rabbani Muara Enim' }}
             </p>
             <div class="w-16 h-1 bg-amber-400 mx-auto mt-3 rounded-full"></div>
         </div>
@@ -961,7 +961,7 @@
                              alt="Thumbnail video: {{ $v->title }}" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover/vid:scale-105" 
                              loading="lazy" 
-                             onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp';">
+                             onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp';">
                         <div class="absolute inset-0 bg-black/35 group-hover/vid:bg-black/15 transition flex items-center justify-center" aria-hidden="true">
                             <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-xl group-hover/vid:scale-110 group-hover/vid:bg-red-500 transition-all">
                                 <i class="fa-solid fa-play text-base ml-0.5"></i>
@@ -992,7 +992,7 @@
         </script>
 
         <div class="text-center mt-10 reveal-fade-up">
-            <a href="https://www.youtube.com/@sitmadani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg transition">
+            <a href="https://www.youtube.com/@rabbanimuaraenim" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold px-7 py-3 rounded-full shadow-lg transition">
                 <i class="fa-brands fa-youtube mr-2 text-base"></i>
                 <span>Subscribe Channel YouTube Resmi</span>
             </a>
@@ -1021,7 +1021,7 @@
                         <div class="bg-white p-3.5 rounded-2xl border border-gray-100 hover:border-indigo-400 hover:shadow-sm transition flex items-center space-x-3.5 shadow-xs group">
                             <div class="w-14 h-14 rounded-xl overflow-hidden bg-indigo-50 flex-shrink-0 border border-indigo-100/60 flex items-center justify-center">
                                 @if($ann->featured_image)
-                                    <img src="{{ $ann->featured_image_url }}" alt="{{ $ann->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                    <img src="{{ $ann->featured_image_url }}" alt="{{ $ann->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                                 @else
                                     <i class="fa-solid fa-bullhorn text-indigo-500 text-lg"></i>
                                 @endif
@@ -1062,7 +1062,7 @@
                                 </h4>
                                 <div class="flex items-center flex-wrap gap-2 text-[11px] text-gray-500 mt-1">
                                     <span>
-                                        <i class="fa-solid fa-location-dot text-gray-400 mr-1"></i> {{ $ag->location ?? 'Sekolah SMPS IT Madani' }}
+                                        <i class="fa-solid fa-location-dot text-gray-400 mr-1"></i> {{ $ag->location ?? 'Sekolah SMPS IT Rabbani' }}
                                     </span>
                                     @php
                                         $agStatus = match($ag->status) {
@@ -1100,7 +1100,7 @@
                 Galeri Foto Siswa
             </h2>
             <p class="text-xs sm:text-sm text-amber-400 font-bold tracking-wide mt-2">
-                Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Sekolah {{ $currentUnit['short_name'] ?? ($currentUnit['name'] ?? 'SIT Madani Kayuagung') }}
+                Dokumentasi Pembiasaan Karakter, Praktikum &amp; Aktivitas Sekolah {{ $currentUnit['short_name'] ?? ($currentUnit['name'] ?? 'SIT Rabbani Muara Enim') }}
             </p>
             <div class="w-12 h-1 bg-amber-400 mx-auto mt-2.5 rounded-full"></div>
         </div>
@@ -1143,7 +1143,7 @@
                         <template x-for="(item, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-1.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-64 sm:h-80 md:h-96 lg:h-[380px] rounded-3xl overflow-hidden shadow-2xl bg-neutral-900 border border-neutral-800/80 group">
-                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-5">
                                         <span class="text-xs sm:text-sm font-bold text-white leading-snug drop-shadow-md" x-text="item.title"></span>
                                     </div>
@@ -1200,7 +1200,7 @@
                         <template x-for="(item, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-1.5 sm:px-2.5" :style="'width: ' + (100 / perView) + '%'">
                                 <div class="relative h-52 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden shadow-xl bg-neutral-900 border border-neutral-800/80 group">
-                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.onerror=null; this.src='/uploads/activities-sit-madani.webp'">
+                                    <img :src="item.url" :alt="item.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-700 ease-out" onerror="this.onerror=null; this.src='/uploads/prestasi-sit-rabbani.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end p-4">
                                         <span class="text-xs font-bold text-white leading-snug drop-shadow-md" x-text="item.title"></span>
                                     </div>
@@ -1319,7 +1319,7 @@
                         <template x-for="(eb, idx) in items" :key="idx">
                             <div class="flex-shrink-0 px-2.5 sm:px-3" :style="'width: ' + (100 / perView) + '%'">
                                 <a href="{{ route('download.ebook') }}" class="group block relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800 transform hover:scale-104 transition duration-300 cursor-pointer aspect-[3/4] w-full" :aria-label="'Unduh modul: ' + eb.title">
-                                    <img :src="eb.cover" :alt="eb.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-106 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                    <img :src="eb.cover" :alt="eb.title" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-106 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center p-3 text-center" aria-hidden="true">
                                         <span class="text-xs font-bold text-white truncate max-w-full" x-text="eb.title"></span>
                                     </div>
@@ -1337,7 +1337,7 @@
                 </button>
 
                 <div class="pt-6 flex justify-center">
-                    <a href="{{ route('download.ebook') }}" aria-label="Akses Perpustakaan Digital {{ $currentUnit['short_name'] ?? 'SIT Madani' }} Kayuagung" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-2xl shadow-xl transition flex items-center justify-center space-x-2 transform hover:scale-105 min-h-[44px]">
+                    <a href="{{ route('download.ebook') }}" aria-label="Akses Perpustakaan Digital {{ $currentUnit['short_name'] ?? 'SIT Rabbani' }} Muara Enim" class="w-full sm:w-auto bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-xs sm:text-sm px-6 sm:px-8 py-3.5 rounded-2xl shadow-xl transition flex items-center justify-center space-x-2 transform hover:scale-105 min-h-[44px]">
                         <i class="fa-solid fa-download" aria-hidden="true"></i>
                         <span>Akses Semua Modul &amp; E-Book</span>
                     </a>
@@ -1361,7 +1361,7 @@
                 Testimoni Wali Murid &amp; Alumni
             </h2>
             <p class="text-xs sm:text-sm text-gray-600 mt-1">
-                Kesan mendalam mengenai penguatan aqidah, tahfidz Al-Qur'an 2 juz mutqin, dan prestasi akademik di SMPS IT Madani Kayuagung
+                Kesan mendalam mengenai penguatan aqidah, tahfidz Al-Qur'an 2 juz mutqin, dan prestasi akademik di SMPS IT Rabbani Muara Enim
             </p>
             <div class="w-16 h-1 bg-indigo-600 mx-auto mt-2 rounded-full"></div>
         </div>
@@ -1406,7 +1406,7 @@
         <h2 class="sr-only">Aksi dan Layanan Cepat</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             
-            <a href="{{ route('ppdb.index') }}" class="bg-white p-4 rounded-2xl border-t-4 border-indigo-600 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-1" aria-label="Pendaftaran SPMB Online SMPS IT Madani Kayuagung">
+            <a href="{{ route('ppdb.index') }}" class="bg-white p-4 rounded-2xl border-t-4 border-indigo-600 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-1" aria-label="Pendaftaran SPMB Online SMPS IT Rabbani Muara Enim">
                 <div class="w-12 h-12 rounded-full bg-indigo-50 text-indigo-700 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-indigo-600 group-hover:text-white transition mx-auto sm:mx-0" aria-hidden="true">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </div>
@@ -1421,12 +1421,12 @@
                     <i class="fa-brands fa-whatsapp"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition">Hotline WA: 0858-3817-3417</h3>
+                    <h3 class="font-bold text-sm text-gray-900 group-hover:text-amber-600 transition">Hotline WA: 0851-5929-3554</h3>
                     <p class="text-xs text-gray-600 mt-0.5">Layanan informasi SPMB &amp; kegiatan siswa</p>
                 </div>
             </a>
 
-            <a href="{{ route('donasi') }}" class="bg-white p-4 rounded-2xl border-t-4 border-blue-600 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-3" aria-label="Infaq & Beasiswa Madani">
+            <a href="{{ route('donasi') }}" class="bg-white p-4 rounded-2xl border-t-4 border-blue-600 shadow-sm hover:shadow-md transition flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-3.5 group reveal-fade-up delay-3" aria-label="Infaq & Beasiswa Rabbani">
                 <div class="w-12 h-12 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition mx-auto sm:mx-0" aria-hidden="true">
                     <i class="fa-solid fa-hand-holding-heart"></i>
                 </div>

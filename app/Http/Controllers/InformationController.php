@@ -73,7 +73,7 @@ class InformationController extends Controller
     {
         $unitKey = $unit ?? $request->route('unit') ?? $request->query('unit');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : null;
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : null;
         $currentUnit = $currentUnitKey ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $videos = Video::latest()->paginate(9);
@@ -85,7 +85,7 @@ class InformationController extends Controller
     {
         $unitKey = $unit ?? $request->route('unit') ?? $request->query('unit');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : null;
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : null;
         $currentUnit = $currentUnitKey ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $page = Post::pages()->where('slug', 'galeri')->first();
@@ -106,7 +106,7 @@ class InformationController extends Controller
     {
         $unitKey = $unit ?? $request->route('unit') ?? $request->query('unit');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : null;
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : null;
         $currentUnit = $currentUnitKey ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $query = Post::where('type', 'prestasi')->where('status', 'publish');
@@ -130,6 +130,12 @@ class InformationController extends Controller
                     ->orWhere('title', 'like', '%SMPS IT%')
                     ->orWhere('title', 'like', '%SMP%');
             });
+        } elseif ($currentUnitKey === 'sma') {
+            $query->where(function ($q) {
+                $q->whereHas('categories', fn ($c) => $c->where('slug', 'prestasi-sma'))
+                    ->orWhere('title', 'like', '%SMA IT%')
+                    ->orWhere('title', 'like', '%SMA%');
+            });
         }
 
         $prestasi = $query->latest('published_at')->latest('id')->paginate(9);
@@ -141,7 +147,7 @@ class InformationController extends Controller
     {
         $unitKey = $unit ?? $request->route('unit') ?? $request->query('unit');
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : null;
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : null;
         $currentUnit = $currentUnitKey ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $item = Post::where('type', 'prestasi')
@@ -279,8 +285,8 @@ class InformationController extends Controller
             'status' => 'info',
         ]);
 
-        $waText = urlencode("Assalamu'alaikum Humas SMPS IT Madani Kayuagung,\n\nSaya telah mengajukan Permohonan Izin Kunjungan ke Sekolah:\n- Nama: {$validated['name']}\n- Instansi: {$validated['agency']}\n- Keperluan: {$validated['purpose']}\n\nMohon konfirmasi dan tindak lanjutnya. Terima kasih.");
-        $waUrl = "https://wa.me/6282182680647?text={$waText}";
+        $waText = urlencode("Assalamu'alaikum Humas SIT Rabbani Muara Enim,\n\nSaya telah mengajukan Permohonan Izin Kunjungan ke Sekolah:\n- Nama: {$validated['name']}\n- Instansi: {$validated['agency']}\n- Keperluan: {$validated['purpose']}\n\nMohon konfirmasi dan tindak lanjutnya. Terima kasih.");
+        $waUrl = "https://wa.me/6285159293554?text={$waText}";
 
         return redirect()->route('layanan.izin')->with('success', 'Permohonan izin kunjungan Anda berhasil dikirim! Silakan konfirmasi via WhatsApp untuk respon cepat.')->with('wa_url', $waUrl);
     }
@@ -354,8 +360,8 @@ class InformationController extends Controller
             'status' => 'info',
         ]);
 
-        $waText = urlencode("Assalamu'alaikum Humas SMPS IT Madani Kayuagung,\n\nSaya telah mengajukan Permohonan Kerja Sama / Kemitraan:\n- Nama: {$validated['name']}\n- Lembaga/Instansi: {$validated['agency']}\n- Rencana Kemitraan: {$validated['purpose']}\n\nMohon informasi waktu koordinasi dan tindak lanjutnya. Terima kasih.");
-        $waUrl = "https://wa.me/6282182680647?text={$waText}";
+        $waText = urlencode("Assalamu'alaikum Humas SIT Rabbani Muara Enim,\n\nSaya telah mengajukan Permohonan Kerja Sama / Kemitraan:\n- Nama: {$validated['name']}\n- Lembaga/Instansi: {$validated['agency']}\n- Rencana Kemitraan: {$validated['purpose']}\n\nMohon informasi waktu koordinasi dan tindak lanjutnya. Terima kasih.");
+        $waUrl = "https://wa.me/6285159293554?text={$waText}";
 
         return redirect()->route('layanan.kerjasama')->with('success', 'Permohonan kerja sama berhasil dikirim! Silakan konfirmasi via WhatsApp untuk respon cepat.')->with('wa_url', $waUrl);
     }
@@ -437,8 +443,8 @@ class InformationController extends Controller
             'status' => 'info',
         ]);
 
-        $waText = urlencode("Assalamu'alaikum Humas Sarpras SMPS IT Madani Kayuagung,\n\nSaya telah mengajukan Permohonan Sewa Fasilitas/Barang Sekolah:\n- Nama: {$validated['name']}\n- Instansi/Komunitas: {$validated['agency']}\n- Fasilitas/Barang: {$validated['purpose']}\n\nMohon konfirmasi ketersediaan jadwal dan syarat sewanya. Terima kasih.");
-        $waUrl = "https://wa.me/6282182680647?text={$waText}";
+        $waText = urlencode("Assalamu'alaikum Humas Sarpras SIT Rabbani Muara Enim,\n\nSaya telah mengajukan Permohonan Sewa Fasilitas/Barang Sekolah:\n- Nama: {$validated['name']}\n- Instansi/Komunitas: {$validated['agency']}\n- Fasilitas/Barang: {$validated['purpose']}\n\nMohon konfirmasi ketersediaan jadwal dan syarat sewanya. Terima kasih.");
+        $waUrl = "https://wa.me/6285159293554?text={$waText}";
 
         return redirect()->route('layanan.sewa')->with('success', 'Permohonan sewa barang/fasilitas berhasil dikirim! Silakan konfirmasi via WhatsApp untuk respon cepat.')->with('wa_url', $waUrl);
     }
@@ -465,7 +471,7 @@ class InformationController extends Controller
     }
 
     /**
-     * Default detailed accordions from SMPS IT Madani Kayuagung portal
+     * Default detailed accordions from SMPS IT Rabbani Muara Enim portal
      */
     public static function getDefaultAccordions(string $type): array
     {
@@ -485,11 +491,11 @@ class InformationController extends Controller
                 ],
                 [
                     'title' => 'Produk Layanan',
-                    'content' => '<p>Surat Persetujuan Kunjungan ke SMPS IT Madani Kayuagung</p>',
+                    'content' => '<p>Surat Persetujuan Kunjungan ke SIT Rabbani Muara Enim</p>',
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan secara tertulis melalui kotak saran di kantor sekolah atau melalui email: smpsislamterpadumadani@gmail.com dan WhatsApp: 0858-3817-3417</p>',
+                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan secara tertulis melalui kotak saran di kantor sekolah atau melalui email: yayasangerabbani@gmail.com dan WhatsApp: 0851-5929-3554</p>',
                 ],
             ],
             'kerjasama' => [
@@ -515,7 +521,7 @@ class InformationController extends Controller
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan melalui email: smpsislamterpadumadani@gmail.com atau WhatsApp Humas: 0858-3817-3417</p>',
+                    'content' => '<p>Pengaduan, saran, dan masukan dapat disampaikan melalui email: yayasangerabbani@gmail.com atau WhatsApp Humas: 0851-5929-3554</p>',
                 ],
             ],
             'sewa' => [

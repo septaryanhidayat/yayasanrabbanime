@@ -49,15 +49,15 @@
             </a>
             <a href="{{ route('admin.hero.index', ['unit' => 'tk']) }}" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 {{ ($selectedUnit ?? '') === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow ring-2 ring-amber-300' : 'bg-slate-100 hover:bg-slate-200 text-slate-700' }}">
                 <i class="fa-solid fa-shapes"></i>
-                <span>TKS IT Madani</span>
+                <span>TKS IT Rabbani</span>
             </a>
             <a href="{{ route('admin.hero.index', ['unit' => 'sd']) }}" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 {{ ($selectedUnit ?? '') === 'sd' ? 'bg-emerald-600 text-white shadow ring-2 ring-emerald-400' : 'bg-slate-100 hover:bg-slate-200 text-slate-700' }}">
                 <i class="fa-solid fa-book-open-reader"></i>
-                <span>SDS IT Madani</span>
+                <span>SDS IT Rabbani</span>
             </a>
             <a href="{{ route('admin.hero.index', ['unit' => 'smp']) }}" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 {{ ($selectedUnit ?? '') === 'smp' ? 'bg-blue-600 text-white shadow ring-2 ring-blue-400' : 'bg-slate-100 hover:bg-slate-200 text-slate-700' }}">
                 <i class="fa-solid fa-graduation-cap"></i>
-                <span>SMPS IT Madani</span>
+                <span>SMPS IT Rabbani</span>
             </a>
         </div>
     </div>
@@ -151,10 +151,10 @@
                         <div class="w-full lg:w-1/2 space-y-2">
                             <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-200 shadow-sm group">
                                 <img id="heroPreviewImg_{{ $index }}" 
-                                     src="{{ asset($slide['image'] ?? '/uploads/campus-sit-madani.webp') }}" 
+                                     src="{{ asset($slide['image'] ?? '/uploads/campus-sit-rabbani.webp') }}" 
                                      alt="Preview Banner Slide {{ $index + 1 }}" 
                                      class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500"
-                                     onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                     onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                                 
                                 {{-- Overlay preview badge & title --}}
                                 <div class="absolute inset-0 bg-slate-950/45 p-4 flex flex-col justify-end text-white pointer-events-none">
@@ -174,7 +174,7 @@
 
                         {{-- Kolom Kanan: Upload File & URL --}}
                         <div class="w-full lg:w-1/2 space-y-4">
-                            <input type="hidden" name="slides[{{ $index }}][existing_image]" value="{{ $slide['image'] ?? '/uploads/campus-sit-madani.webp' }}">
+                            <input type="hidden" name="slides[{{ $index }}][existing_image]" value="{{ $slide['image'] ?? '/uploads/campus-sit-rabbani.webp' }}">
 
                             <div class="p-4 bg-slate-50 border-2 border-dashed border-slate-300 rounded-2xl space-y-2 hover:border-indigo-400 transition">
                                 <label for="slide_img_file_{{ $index }}" class="block text-xs font-bold text-slate-800">
@@ -223,8 +223,8 @@
                             <input type="text" 
                                    name="slides[{{ $index }}][badge]" 
                                    id="slide_badge_{{ $index }}" 
-                                   value="{{ old('slides.'.$index.'.badge', $slide['badge'] ?? 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B') }}" 
-                                   placeholder="Contoh: SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B" 
+                                   value="{{ old('slides.'.$index.'.badge', $slide['badge'] ?? 'SMPS IT Unggulan Muara Enim, Kab. Muara Enim • Terakreditasi B') }}" 
+                                   placeholder="Contoh: SMPS IT Unggulan Muara Enim, Kab. Muara Enim • Terakreditasi B" 
                                    class="w-full bg-slate-50 text-xs font-semibold rounded-xl px-4 py-3 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">
                         </div>
 
@@ -250,7 +250,7 @@
                             <textarea name="slides[{{ $index }}][subtitle]" 
                                       id="slide_subtitle_{{ $index }}" 
                                       rows="2" 
-                                      placeholder="Contoh: SMPS IT Madani Kayuagung atau deskripsi singkat keunggulan..." 
+                                      placeholder="Contoh: SMPS IT Rabbani Muara Enim atau deskripsi singkat keunggulan..." 
                                       class="w-full bg-slate-50 text-xs font-medium rounded-xl px-4 py-2.5 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500">{{ old('slides.'.$index.'.subtitle', $slide['subtitle'] ?? '') }}</textarea>
                         </div>
                     </div>

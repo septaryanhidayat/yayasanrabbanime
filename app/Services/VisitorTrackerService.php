@@ -74,7 +74,7 @@ class VisitorTrackerService
                 'page_title' => $pageTitle,
                 'country' => $geo['country'] ?? 'Indonesia',
                 'country_code' => $geo['country_code'] ?? 'ID',
-                'city' => $geo['city'] ?? 'Kayuagung',
+                'city' => $geo['city'] ?? 'Muara Enim',
                 'region' => $geo['region'] ?? 'Sumatera Selatan',
                 'is_bot' => $isBot,
             ]);

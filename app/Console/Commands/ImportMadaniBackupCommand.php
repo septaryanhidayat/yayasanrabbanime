@@ -23,11 +23,11 @@ class ImportMadaniBackupCommand extends Command
 {
     protected $signature = 'app:import-madani-backup {--force : Overwrite existing records}';
 
-    protected $description = 'Import SMPS IT Madani WordPress backup, convert all images to WebP, and populate Laravel models';
+    protected $description = 'Import SMPS IT Rabbani WordPress backup, convert all images to WebP, and populate Laravel models';
 
     protected WebpService $webpService;
 
-    protected string $uploadsSource = 'D:/SIM/SIT MADANI/well-known/wp-content/uploads';
+    protected string $uploadsSource = 'D:/SIM/SIT RABBANI/well-known/wp-content/uploads';
 
     protected array $attachmentsMap = []; // attachment_id => relative_path
 
@@ -44,7 +44,7 @@ class ImportMadaniBackupCommand extends Command
         ini_set('memory_limit', '1024M');
         set_time_limit(0);
 
-        $this->info('=== STARTING SMPS IT MADANI KAYUAGUNG DATA MIGRATION ===');
+        $this->info('=== STARTING SMPS IT RABBANI MUARA ENIM DATA MIGRATION ===');
 
         $scratchDir = 'C:/Users/RYAN/.gemini/antigravity-ide/brain/c1a9ab74-f347-4491-ac2b-b207e5661e84/scratch';
         $attachmentsFile = $scratchDir.'/attachments.json';
@@ -68,14 +68,14 @@ class ImportMadaniBackupCommand extends Command
         // 1. Ensure Admin User
         $this->info('Step 1: Setting up Admin User...');
         $adminUser = User::updateOrCreate(
-            ['email' => 'admin@sitmadani.sch.id'],
+            ['email' => 'admin@rabbanime.sch.id'],
             [
-                'name' => 'Administrator SMPS IT MADANI',
+                'name' => 'Administrator SMPS IT RABBANI',
                 'password' => Hash::make('SitMadani2026!'),
                 'role' => 'admin',
             ]
         );
-        $this->line(' - Admin ready: admin@sitmadani.sch.id');
+        $this->line(' - Admin ready: admin@rabbanime.sch.id');
 
         // 2. Populate Settings from myschool
         $this->info('Step 2: Populating Website Settings from myschool...');
@@ -294,9 +294,9 @@ class ImportMadaniBackupCommand extends Command
         $fotoKasek = $this->getWebpUrl($myschool['foto-kasek'] ?? null) ?: '/uploads/kepsek-agi-gustiawan.jpg';
 
         $settings = [
-            'site_name' => $myschool['nama-sekolah'] ?? 'SMPS IT Madani Kayuagung',
+            'site_name' => $myschool['nama-sekolah'] ?? 'SMPS IT Rabbani Muara Enim',
             'site_tagline' => 'Tanggap, Tangkas dan Tangguh Menuju Indonesia Emas',
-            'site_description' => 'Official Website SMPS IT Madani Kayuagung (SMPS IT Madani). Sekolah Islam Terpadu pertama di Kayuagung yang tergabung dalam JSIT Indonesia dengan kurikulum terpadu.',
+            'site_description' => 'Official Website SMPS IT Rabbani Muara Enim (SMPS IT Rabbani). Sekolah Islam Terpadu pertama di Muara Enim yang tergabung dalam JSIT Indonesia dengan kurikulum terpadu.',
             'npsn' => $myschool['npsn'] ?? '69990882',
             'akreditasi' => $myschool['akreditasi'] ?? 'TERAKREDITASI BAN -SM',
             'no_sk_akreditasi' => $myschool['no-sk-akreditasi'] ?? '202110234917 Pada Tanggal 25 Oktober 2021',
@@ -308,30 +308,30 @@ class ImportMadaniBackupCommand extends Command
             'foto_kasek' => $fotoKasek,
             'site_logo' => $logoWebp,
             'site_logo_square' => $logoSquare,
-            'contact_address' => $myschool['alamat'] ?? 'Jalan Sadewa No. 45 RT 01 RW 04 Kelurahan Karang Raja Kecamatan Kayuagung Kayuagung, Kab. OKI Provinsi Sumatera Selatan, Kode Pos 31113',
-            'contact_email' => $myschool['email'] ?? 'smpsislamterpadumadani@gmail.com',
+            'contact_address' => $myschool['alamat'] ?? 'Jalan Sadewa No. 45 RT 01 RW 04 Kelurahan Karang Raja Kecamatan Muara Enim Muara Enim, Kab. OKI Provinsi Sumatera Selatan, Kode Pos 31113',
+            'contact_email' => $myschool['email'] ?? 'yayasangerabbani@gmail.com',
             'contact_phone' => $myschool['telp'] ?? '0858-3817-3417',
             'contact_whatsapp' => '0858-3817-3417',
-            'social_facebook' => $myschool['facebook'] ?? 'https://www.facebook.com/sitmadani.kayuagung?locale=sw_KE',
+            'social_facebook' => $myschool['facebook'] ?? 'https://www.facebook.com/sitmadani.muara enim?locale=sw_KE',
             'social_instagram' => $myschool['instagram'] ?? 'https://www.instagram.com/sitmadani/',
-            'social_youtube' => $myschool['youtube'] ?? 'https://www.youtube.com/@sitmadani',
+            'social_youtube' => $myschool['youtube'] ?? 'https://www.youtube.com/@rabbanime',
             'color_primary' => $myschool['primary'] ?? '#4338ca',
             'color_accent' => $myschool['accent'] ?? '#f59e0b',
-            'meta_keywords' => 'smps it madani kayuagung, smp it madani, jsit kayuagung, spmb smp it madani, tahfidz kayuagung',
-            'og_title' => 'SMPS IT Madani Kayuagung',
-            'og_description' => 'Official Website SMPS IT Madani Kayuagung: Informasi SPMB, Berita & Prestasi, Profil Guru, Fasilitas, dan Kurikulum Terpadu.',
+            'meta_keywords' => 'smps it rabbani muara enim, smp it rabbani, jsit muara enim, spmb smp it rabbani, tahfidz muara enim',
+            'og_title' => 'SMPS IT Rabbani Muara Enim',
+            'og_description' => 'Official Website SMPS IT Rabbani Muara Enim: Informasi SPMB, Berita & Prestasi, Profil Guru, Fasilitas, dan Kurikulum Terpadu.',
             'og_image' => $fotoKasek,
             'donation_bank_1_name' => 'Bank Syariah Indonesia (BSI)',
             'donation_bank_1_code' => '451',
             'donation_bank_1_rekening' => '718-293-8401',
-            'donation_bank_1_holder' => 'YAYASAN AGUNG MADANI KAYUAGUNG',
+            'donation_bank_1_holder' => 'YAYASAN AGUNG RABBANI MUARA ENIM',
             'donation_bank_2_name' => 'Bank Sumsel Babel Syariah',
             'donation_bank_2_code' => '120',
             'donation_bank_2_rekening' => '801-09-00123',
-            'donation_bank_2_holder' => 'SMPS IT MADANI',
-            'donation_confirm_phone' => '0821-8268-0647',
-            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMPS IT Madani, saya telah menyalurkan infaq pembangunan.",
-            'donation_intro_text' => "Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur'an, dan pengembangan kampus SMPS IT Madani Kayuagung.",
+            'donation_bank_2_holder' => 'SMPS IT RABBANI',
+            'donation_confirm_phone' => '0851-5929-3554',
+            'donation_confirm_text' => "Assalamu'alaikum Bendahara SMPS IT Rabbani, saya telah menyalurkan infaq pembangunan.",
+            'donation_intro_text' => "Salurkan infaq pembangunan sarana pendidikan, beasiswa tahfidz Qur'an, dan pengembangan kampus SMPS IT Rabbani Muara Enim.",
         ];
 
         foreach ($settings as $k => $v) {
@@ -349,87 +349,87 @@ class ImportMadaniBackupCommand extends Command
             'sambutan-kepala-sekolah' => [
                 'title' => 'Sambutan Kepala Sekolah',
                 'content' => $this->cleanHtmlContent($sambutanHtml),
-                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Madani Kayuagung, Agi Gustiawan, S. Pd.',
-                'meta_title' => 'Sambutan Kepala Sekolah - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Pesan dan komitmen pembinaan karakter, iman, dan ilmu di SMPS IT Madani Kayuagung.',
+                'excerpt' => 'Sambutan resmi Kepala Sekolah SMPS IT Rabbani Muara Enim, Agi Gustiawan, S. Pd.',
+                'meta_title' => 'Sambutan Kepala Sekolah - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Pesan dan komitmen pembinaan karakter, iman, dan ilmu di SMPS IT Rabbani Muara Enim.',
             ],
             'visi-dan-misi' => [
                 'title' => 'Visi dan Misi',
                 'content' => '<div class="mb-6"><h3 class="text-xl font-bold text-[#00913e] mb-3">Visi Sekolah</h3>'.$this->cleanHtmlContent($visiHtml).'</div>'.
                              '<div><h3 class="text-xl font-bold text-[#00913e] mb-3">Misi Sekolah</h3>'.$this->cleanHtmlContent($misiHtml).'</div>',
-                'excerpt' => 'Visi & Misi resmi SMPS IT Madani Kayuagung menuju generasi emas tanggap, tangkas, dan tangguh.',
-                'meta_title' => 'Visi dan Misi - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Visi dan Misi pendidikan Islam terpadu SMPS IT Madani Kayuagung.',
+                'excerpt' => 'Visi & Misi resmi SMPS IT Rabbani Muara Enim menuju generasi emas tanggap, tangkas, dan tangguh.',
+                'meta_title' => 'Visi dan Misi - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Visi dan Misi pendidikan Islam terpadu SMPS IT Rabbani Muara Enim.',
             ],
             'tentang-kami' => [
                 'title' => 'Tentang Kami',
-                'content' => '<p>SMPS IT Madani Kayuagung adalah Sekolah Menengah Atas Islam Terpadu pertama di Kayuagung, Kab. OKI yang berada di bawah naungan Yayasan Agung Madani dan tergabung dalam Jaringan Sekolah Islam Terpadu (JSIT) Indonesia.</p><p>Sekolah kami memadukan kurikulum nasional dan kurikulum keislaman khas JSIT yang menekankan pada pembentukan akidah salimah, ibadah shahihah, akhlak karimah, kemampuan tahfidz Al-Qur\'an, kepemimpinan, dan keunggulan akademik sains serta teknologi.</p>',
-                'excerpt' => 'Profil singkat SMPS IT Madani Kayuagung: Kurikulum terpadu JSIT dan Kurikulum Merdeka.',
-                'meta_title' => 'Tentang Kami - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Profil SMPS IT Madani Kayuagung, sekolah Islam terpadu di Kayuagung.',
+                'content' => '<p>SMPS IT Rabbani Muara Enim adalah Sekolah Menengah Atas Islam Terpadu pertama di Muara Enim, Kab. OKI yang berada di bawah naungan Yayasan Agung Madani dan tergabung dalam Jaringan Sekolah Islam Terpadu (JSIT) Indonesia.</p><p>Sekolah kami memadukan kurikulum nasional dan kurikulum keislaman khas JSIT yang menekankan pada pembentukan akidah salimah, ibadah shahihah, akhlak karimah, kemampuan tahfidz Al-Qur\'an, kepemimpinan, dan keunggulan akademik sains serta teknologi.</p>',
+                'excerpt' => 'Profil singkat SMPS IT Rabbani Muara Enim: Kurikulum terpadu JSIT dan Kurikulum Merdeka.',
+                'meta_title' => 'Tentang Kami - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Profil SMPS IT Rabbani Muara Enim, sekolah Islam terpadu di Muara Enim.',
             ],
             'sejarah' => [
                 'title' => 'Sejarah Singkat',
-                'content' => '<p>SMPS IT Madani Kayuagung didirikan atas aspirasi masyarakat muslim di Kayuagung yang mendambakan kelanjutan pendidikan Islam terpadu setelah jenjang SMP IT. Dengan izin operasional resmi nomor 002/DPMPTSP/IPS-SMP/X/2022 dan SK Pendirian 04 November 2019 tertanggal 23 Oktober 2020, sekolah ini terus berkembang pesat menjadi institusi pendidikan unggulan di Sumatera Selatan.</p>',
-                'excerpt' => 'Sejarah berdirinya SMPS IT Madani Kayuagung.',
-                'meta_title' => 'Sejarah - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Sejarah perjalanan pendirian SMPS IT Madani Kayuagung.',
+                'content' => '<p>SMPS IT Rabbani Muara Enim didirikan atas aspirasi masyarakat muslim di Muara Enim yang mendambakan kelanjutan pendidikan Islam terpadu setelah jenjang SMP IT. Dengan izin operasional resmi nomor 002/DPMPTSP/IPS-SMP/X/2022 dan SK Pendirian 04 November 2019 tertanggal 23 Oktober 2020, sekolah ini terus berkembang pesat menjadi institusi pendidikan unggulan di Sumatera Selatan.</p>',
+                'excerpt' => 'Sejarah berdirinya SMPS IT Rabbani Muara Enim.',
+                'meta_title' => 'Sejarah - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Sejarah perjalanan pendirian SMPS IT Rabbani Muara Enim.',
             ],
             'struktur-organisasi' => [
                 'title' => 'Struktur Organisasi',
-                'content' => '<p>Struktur kepemimpinan dan manajemen SMPS IT Madani Kayuagung dipimpin oleh Kepala Sekolah Agi Gustiawan, S.Pd, didampingi oleh Wakil Kepala Sekolah Bidang Kurikulum Ribang Imam Satria, S.IP., M.Pd, serta staf pendidik dan tenaga kependidikan profesional.</p>',
-                'excerpt' => 'Bagan susunan struktur pimpinan dan manajemen SMPS IT Madani Kayuagung.',
-                'meta_title' => 'Struktur Organisasi - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Susunan pimpinan dan tata kelola SMPS IT Madani Kayuagung.',
+                'content' => '<p>Struktur kepemimpinan dan manajemen SMPS IT Rabbani Muara Enim dipimpin oleh Kepala Sekolah Agi Gustiawan, S.Pd, didampingi oleh Wakil Kepala Sekolah Bidang Kurikulum Ribang Imam Satria, S.IP., M.Pd, serta staf pendidik dan tenaga kependidikan profesional.</p>',
+                'excerpt' => 'Bagan susunan struktur pimpinan dan manajemen SMPS IT Rabbani Muara Enim.',
+                'meta_title' => 'Struktur Organisasi - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Susunan pimpinan dan tata kelola SMPS IT Rabbani Muara Enim.',
             ],
             'kontak' => [
                 'title' => 'Kontak & Lokasi',
-                'content' => '<p>Silakan hubungi kami atau kunjungi kampus SMPS IT Madani Kayuagung di Jalan Sadewa RT 01 RW 03 Kelurahan Karang Raja Kecamatan Kayuagung Kayuagung, Kab. OKI.</p>',
-                'excerpt' => 'Kontak resmi, telepon, WhatsApp, email, dan alamat SMPS IT Madani.',
-                'meta_title' => 'Kontak Kami - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Hubungi SMPS IT Madani Kayuagung.',
+                'content' => '<p>Silakan hubungi kami atau kunjungi kampus SMPS IT Rabbani Muara Enim di Jalan Sadewa RT 01 RW 03 Kelurahan Karang Raja Kecamatan Muara Enim Muara Enim, Kab. OKI.</p>',
+                'excerpt' => 'Kontak resmi, telepon, WhatsApp, email, dan alamat SMPS IT Rabbani.',
+                'meta_title' => 'Kontak Kami - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Hubungi SMPS IT Rabbani Muara Enim.',
             ],
             'layanan-terpadu-2' => [
                 'title' => 'Layanan Terpadu',
-                'content' => '<p>Layanan Terpadu SMPS IT Madani Kayuagung melayani berbagai permohonan administrasi secara transparan dan mudah, antara lain:</p><ul><li><strong>Permohonan Izin Kunjungan ke Sekolah:</strong> Pengajuan kunjungan edukatif, studi banding, atau instansi.</li><li><strong>Permohonan Kerja Sama:</strong> Kemitraan lembaga, magang, beasiswa, dan sponsorship.</li><li><strong>Permohonan Sewa Menyewa Barang / Fasilitas:</strong> Penyewaan aula, sarana olahraga, dan fasilitas sekolah.</li></ul>',
-                'excerpt' => 'Layanan administrasi terpadu SMPS IT Madani Kayuagung.',
-                'meta_title' => 'Layanan Terpadu - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Portal permohonan dan layanan terpadu SMPS IT Madani Kayuagung.',
+                'content' => '<p>Layanan Terpadu SMPS IT Rabbani Muara Enim melayani berbagai permohonan administrasi secara transparan dan mudah, antara lain:</p><ul><li><strong>Permohonan Izin Kunjungan ke Sekolah:</strong> Pengajuan kunjungan edukatif, studi banding, atau instansi.</li><li><strong>Permohonan Kerja Sama:</strong> Kemitraan lembaga, magang, beasiswa, dan sponsorship.</li><li><strong>Permohonan Sewa Menyewa Barang / Fasilitas:</strong> Penyewaan aula, sarana olahraga, dan fasilitas sekolah.</li></ul>',
+                'excerpt' => 'Layanan administrasi terpadu SMPS IT Rabbani Muara Enim.',
+                'meta_title' => 'Layanan Terpadu - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Portal permohonan dan layanan terpadu SMPS IT Rabbani Muara Enim.',
             ],
             'izin-sekolah' => [
                 'title' => 'Permohonan Izin Kunjungan ke Sekolah',
-                'content' => '<p>Formulir dan prosedur permohonan izin kunjungan edukasi, studi banding, atau observasi ke SMPS IT Madani Kayuagung.</p>',
+                'content' => '<p>Formulir dan prosedur permohonan izin kunjungan edukasi, studi banding, atau observasi ke SMPS IT Rabbani Muara Enim.</p>',
                 'excerpt' => 'Permohonan Izin Kunjungan ke Sekolah.',
-                'meta_title' => 'Permohonan Izin Kunjungan - SMPS IT Madani',
-                'meta_description' => 'Pengajuan izin kunjungan resmi ke SMPS IT Madani Kayuagung.',
+                'meta_title' => 'Permohonan Izin Kunjungan - SMPS IT Rabbani',
+                'meta_description' => 'Pengajuan izin kunjungan resmi ke SMPS IT Rabbani Muara Enim.',
             ],
             'permohonan-kerja-sama' => [
                 'title' => 'Permohonan Kerja Sama',
-                'content' => '<p>Layanan resmi permohonan kemitraan, kerjasama kelembagaan, dan kegiatan kolaboratif bersama SMPS IT Madani Kayuagung.</p>',
+                'content' => '<p>Layanan resmi permohonan kemitraan, kerjasama kelembagaan, dan kegiatan kolaboratif bersama SMPS IT Rabbani Muara Enim.</p>',
                 'excerpt' => 'Permohonan Kerja Sama Kelembagaan.',
-                'meta_title' => 'Permohonan Kerja Sama - SMPS IT Madani',
-                'meta_description' => 'Kerjasama strategis dan kelembagaan bersama SMPS IT Madani.',
+                'meta_title' => 'Permohonan Kerja Sama - SMPS IT Rabbani',
+                'meta_description' => 'Kerjasama strategis dan kelembagaan bersama SMPS IT Rabbani.',
             ],
             'sewa-barang' => [
                 'title' => 'Permohonan Sewa Menyewa Barang Sekolah',
                 'content' => '<p>Layanan dan ketentuan penyewaan fasilitas sekolah (Hall Madani, laboratorium, perlengkapan event) bagi masyarakat dan instansi.</p>',
                 'excerpt' => 'Permohonan Sewa Menyewa Barang / Fasilitas Sekolah.',
-                'meta_title' => 'Permohonan Sewa Barang - SMPS IT Madani',
+                'meta_title' => 'Permohonan Sewa Barang - SMPS IT Rabbani',
                 'meta_description' => 'Ketentuan dan permohonan sewa sarana prasarana sekolah.',
             ],
             'data-alumni' => [
                 'title' => 'Data Alumni',
-                'content' => '<p>Daftar alumni kebanggaan SMPS IT Madani Kayuagung yang telah melanjutkan pendidikan ke berbagai perguruan tinggi negeri, kedinasan, kampus Islam terkemuka, dan berkarier di berbagai sektor.</p>',
-                'excerpt' => 'Data alumni dan rekam jejak lulusan SMPS IT Madani.',
-                'meta_title' => 'Data Alumni - SMPS IT Madani Kayuagung',
-                'meta_description' => 'Database alumni SMPS IT Madani Kayuagung.',
+                'content' => '<p>Daftar alumni kebanggaan SMPS IT Rabbani Muara Enim yang telah melanjutkan pendidikan ke berbagai perguruan tinggi negeri, kedinasan, kampus Islam terkemuka, dan berkarier di berbagai sektor.</p>',
+                'excerpt' => 'Data alumni dan rekam jejak lulusan SMPS IT Rabbani.',
+                'meta_title' => 'Data Alumni - SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Database alumni SMPS IT Rabbani Muara Enim.',
             ],
-            'ppdb-smp-it-madani-kayuagung' => [
+            'ppdb-smp-it-madani-muara enim' => [
                 'title' => 'Informasi SPMB Online',
-                'content' => '<p>Penerimaan Peserta Didik Baru (SPMB) SMPS IT Madani Kayuagung dibuka setiap tahun ajaran baru dengan jalur beasiswa tahfidz dan reguler. Pendaftaran dapat dilakukan langsung melalui portal online resmi atau hubungi WA 0858-3817-3417.</p>',
-                'excerpt' => 'Informasi pendaftaran siswa baru SMPS IT Madani Kayuagung.',
-                'meta_title' => 'SPMB SMPS IT Madani Kayuagung',
-                'meta_description' => 'Informasi SPMB SMPS IT Madani Kayuagung.',
+                'content' => '<p>Penerimaan Peserta Didik Baru (SPMB) SMPS IT Rabbani Muara Enim dibuka setiap tahun ajaran baru dengan jalur beasiswa tahfidz dan reguler. Pendaftaran dapat dilakukan langsung melalui portal online resmi atau hubungi WA 0858-3817-3417.</p>',
+                'excerpt' => 'Informasi pendaftaran siswa baru SMPS IT Rabbani Muara Enim.',
+                'meta_title' => 'SPMB SMPS IT Rabbani Muara Enim',
+                'meta_description' => 'Informasi SPMB SMPS IT Rabbani Muara Enim.',
             ],
         ];
 
@@ -471,7 +471,7 @@ class ImportMadaniBackupCommand extends Command
 
             // If empty content, provide a decent snippet from title
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>{$art['title']}. Dokumentasi dan liputan kegiatan resmi SMPS IT Madani Kayuagung.</p>";
+                $cleanContent = "<p>{$art['title']}. Dokumentasi dan liputan kegiatan resmi SMPS IT Rabbani Muara Enim.</p>";
             }
 
             $date = ! empty($art['date']) && $art['date'] !== '0000-00-00 00:00:00' ? Carbon::parse($art['date']) : now();
@@ -487,7 +487,7 @@ class ImportMadaniBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/campus-sit-madani.webp',
                     'author_id' => $authorId,
                     'published_at' => $date,
-                    'meta_title' => $art['title'].' - SMPS IT Madani',
+                    'meta_title' => $art['title'].' - SMPS IT Rabbani',
                     'meta_description' => Str::limit(strip_tags($cleanContent), 150),
                 ]
             );
@@ -511,7 +511,7 @@ class ImportMadaniBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Selamat dan sukses atas raihan {$item['title']} oleh siswa-siswi SMPS IT Madani Kayuagung.</p>";
+                $cleanContent = "<p>Selamat dan sukses atas raihan {$item['title']} oleh siswa-siswi SMPS IT Rabbani Muara Enim.</p>";
             }
 
             $date = ! empty($item['date']) && $item['date'] !== '0000-00-00 00:00:00' ? Carbon::parse($item['date']) : now();
@@ -527,7 +527,7 @@ class ImportMadaniBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/campus-sit-madani.webp',
                     'author_id' => $authorId,
                     'published_at' => $date,
-                    'meta_title' => 'Prestasi: '.$item['title'].' - SMPS IT Madani',
+                    'meta_title' => 'Prestasi: '.$item['title'].' - SMPS IT Rabbani',
                     'meta_description' => Str::limit(strip_tags($cleanContent), 150),
                 ]
             );
@@ -551,7 +551,7 @@ class ImportMadaniBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Ekstrakurikuler {$item['title']} merupakan salah satu wadah pengembangan minat, bakat, kepemimpinan, dan kreativitas siswa di SMPS IT Madani Kayuagung.</p>";
+                $cleanContent = "<p>Ekstrakurikuler {$item['title']} merupakan salah satu wadah pengembangan minat, bakat, kepemimpinan, dan kreativitas siswa di SMPS IT Rabbani Muara Enim.</p>";
             }
 
             Post::updateOrCreate(
@@ -565,7 +565,7 @@ class ImportMadaniBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/campus-sit-madani.webp',
                     'author_id' => $authorId,
                     'published_at' => now(),
-                    'meta_title' => 'Ekstrakurikuler '.$item['title'].' - SMPS IT Madani',
+                    'meta_title' => 'Ekstrakurikuler '.$item['title'].' - SMPS IT Rabbani',
                     'meta_description' => Str::limit(strip_tags($cleanContent), 150),
                 ]
             );
@@ -588,7 +588,7 @@ class ImportMadaniBackupCommand extends Command
             }
 
             $tahun = $meta['lulus-tahun'] ?? '2022';
-            $content = "<p>Alumni SMPS IT Madani Kayuagung Angkatan Lulus {$tahun}.</p>";
+            $content = "<p>Alumni SMPS IT Rabbani Muara Enim Angkatan Lulus {$tahun}.</p>";
 
             Post::updateOrCreate(
                 ['slug' => 'alumni-'.Str::slug($item['slug'] ?: $item['title'])],
@@ -601,7 +601,7 @@ class ImportMadaniBackupCommand extends Command
                     'featured_image' => $featImage ?: '/uploads/logo-madani-square.webp',
                     'author_id' => $authorId,
                     'published_at' => now(),
-                    'meta_title' => 'Alumni: '.$item['title'].' - SMPS IT Madani',
+                    'meta_title' => 'Alumni: '.$item['title'].' - SMPS IT Rabbani',
                 ]
             );
         }
@@ -634,8 +634,8 @@ class ImportMadaniBackupCommand extends Command
                 [
                     'name' => $item['title'],
                     'position' => $jabatan,
-                    'fraction' => 'SMPS IT Madani',
-                    'profile_summary' => $summary ?: 'Tenaga pendidik profesional SMPS IT Madani Kayuagung.',
+                    'fraction' => 'SMPS IT Rabbani',
+                    'profile_summary' => $summary ?: 'Tenaga pendidik profesional SMPS IT Rabbani Muara Enim.',
                     'education' => 'S1 / S2 Pendidikan',
                     'photo' => $photo ?: '/uploads/logo-madani-square.webp',
                     'order' => $order++,
@@ -664,7 +664,7 @@ class ImportMadaniBackupCommand extends Command
             $cleanDesc = $this->cleanHtmlContent($desc);
 
             if (strlen(strip_tags($cleanDesc)) < 10) {
-                $cleanDesc = "<p>Sarana {$item['title']} berstandar modern untuk menunjang kegiatan pembelajaran dan pembinaan karakter di SMPS IT Madani Kayuagung.</p>";
+                $cleanDesc = "<p>Sarana {$item['title']} berstandar modern untuk menunjang kegiatan pembelajaran dan pembinaan karakter di SMPS IT Rabbani Muara Enim.</p>";
             }
 
             Bidang::updateOrCreate(
@@ -672,9 +672,9 @@ class ImportMadaniBackupCommand extends Command
                 [
                     'name' => $item['title'],
                     'description' => $cleanDesc,
-                    'address' => 'Kampus SMPS IT Madani Kayuagung',
+                    'address' => 'Kampus SMPS IT Rabbani Muara Enim',
                     'phone' => '0858-3817-3417',
-                    'email' => 'smpsislamterpadumadani@gmail.com',
+                    'email' => 'yayasangerabbani@gmail.com',
                     'icon' => 'fa-solid fa-building-columns',
                     'thumbnail' => $thumb ?: '/uploads/campus-sit-madani.webp',
                     'order' => $order++,
@@ -705,7 +705,7 @@ class ImportMadaniBackupCommand extends Command
                     'name' => $item['title'],
                     'description' => $cleanDesc,
                     'head_name' => 'Koordinator Program',
-                    'address' => 'SMPS IT Madani Kayuagung',
+                    'address' => 'SMPS IT Rabbani Muara Enim',
                     'order' => $order++,
                 ]
             );
@@ -724,7 +724,7 @@ class ImportMadaniBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Agenda kegiatan {$ag['title']} SMPS IT Madani Kayuagung.</p>";
+                $cleanContent = "<p>Agenda kegiatan {$ag['title']} SMPS IT Rabbani Muara Enim.</p>";
             }
 
             $date = ! empty($ag['date']) && $ag['date'] !== '0000-00-00 00:00:00' ? Carbon::parse($ag['date']) : now();
@@ -734,7 +734,7 @@ class ImportMadaniBackupCommand extends Command
                 [
                     'title' => $ag['title'],
                     'content' => $cleanContent,
-                    'location' => 'Kampus SMPS IT Madani Kayuagung',
+                    'location' => 'Kampus SMPS IT Rabbani Muara Enim',
                     'event_date' => $date,
                     'status' => 'publish',
                     'featured_image' => $img ?: '/uploads/campus-sit-madani.webp',
@@ -752,7 +752,7 @@ class ImportMadaniBackupCommand extends Command
             $cleanContent = $this->cleanHtmlContent($content);
 
             if (strlen(strip_tags($cleanContent)) < 10) {
-                $cleanContent = "<p>Pengumuman resmi: {$pe['title']} untuk seluruh civitas akademika SMPS IT Madani Kayuagung.</p>";
+                $cleanContent = "<p>Pengumuman resmi: {$pe['title']} untuk seluruh civitas akademika SMPS IT Rabbani Muara Enim.</p>";
             }
 
             Pengumuman::updateOrCreate(
@@ -781,8 +781,8 @@ class ImportMadaniBackupCommand extends Command
             Testimonial::updateOrCreate(
                 ['name' => $t['title']],
                 [
-                    'profession' => 'Wali Siswa SMPS IT Madani',
-                    'content' => $cleanMsg ?: 'Alhamdulillah pendidikan di SMPS IT Madani membina anak kami menjadi pribadi berakhlak mulia dan giat beribadah.',
+                    'profession' => 'Wali Siswa SMPS IT Rabbani',
+                    'content' => $cleanMsg ?: 'Alhamdulillah pendidikan di SMPS IT Rabbani membina anak kami menjadi pribadi berakhlak mulia dan giat beribadah.',
                     'photo' => $photo ?: '/uploads/logo-madani-square.webp',
                     'status' => 'publish',
                 ]

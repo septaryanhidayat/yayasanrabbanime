@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Hash;
 
 beforeEach(function () {
     $this->admin = User::firstOrCreate(
-        ['email' => 'admin_test@sitmadani.sch.id'],
+        ['email' => 'admin_test@rabbanime.sch.id'],
         [
             'name' => 'Admin Test Video',
             'password' => Hash::make('Secret12345!'),

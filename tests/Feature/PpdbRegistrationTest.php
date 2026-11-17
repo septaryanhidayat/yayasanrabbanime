@@ -13,11 +13,11 @@ test('public can view spmb landing page and form', function () {
     $response = $this->get('/ppdb');
     $response->assertStatus(200);
     $response->assertSee('7011304251');
-    $response->assertSee('SPMB TERPADU SIT MADANI');
+    $response->assertSee('SPMB TERPADU SIT RABBANI');
 
     $smpResponse = $this->get('/smp/ppdb');
     $smpResponse->assertStatus(200);
-    $smpResponse->assertSee('SPMB SMPS IT MADANI');
+    $smpResponse->assertSee('SPMB SMPS IT RABBANI');
 
     $formResponse = $this->get('/form_ppdb');
     $formResponse->assertStatus(200);
@@ -30,32 +30,32 @@ test('public can register through ppdb form successfully', function () {
 
     $postData = [
         'full_name' => 'Ahmad Rabbani',
-        'birth_place' => 'Kayuagung',
+        'birth_place' => 'Muara Enim',
         'birth_date' => '2010-05-15',
         'gender' => 'Laki-laki',
-        'address' => 'Jl. Jenderal Sudirman No. 45 Kayuagung',
+        'address' => 'Jl. Jenderal Sudirman No. 45 Muara Enim',
         'living_with' => 'Orang Tua',
         'child_order' => 1,
         'siblings_count' => 3,
-        'previous_school' => 'SMP IT Madani',
+        'previous_school' => 'SMP IT Rabbani',
         'nisn' => '0098765432',
         'hobby' => 'Membaca',
         'favorite_subject' => 'Matematika',
         'ambition' => 'Dokter',
-        'achievements' => 'Juara 1 MTQ Tingkat Kayuagung, Kab. OKI',
+        'achievements' => 'Juara 1 MTQ Tingkat Muara Enim, Kab. OKI',
         'phone' => '081234567890',
         'father_name' => 'Bambang Supriyanto',
         'father_birth_place' => 'Palembang',
         'father_birth_date' => '1980-01-01',
-        'father_address' => 'Jl. Jenderal Sudirman No. 45 Kayuagung',
+        'father_address' => 'Jl. Jenderal Sudirman No. 45 Muara Enim',
         'father_education' => 'S1',
         'father_job' => 'PNS / ASN',
         'father_income' => 'Rp 5.000.000 - Rp 10.000.000',
         'father_phone' => '081298765432',
         'mother_name' => 'Siti Fatimah',
-        'mother_birth_place' => 'Kayuagung',
+        'mother_birth_place' => 'Muara Enim',
         'mother_birth_date' => '1983-02-02',
-        'mother_address' => 'Jl. Jenderal Sudirman No. 45 Kayuagung',
+        'mother_address' => 'Jl. Jenderal Sudirman No. 45 Muara Enim',
         'mother_education' => 'S1',
         'mother_job' => 'Ibu Rumah Tangga',
         'mother_income' => '< Rp 2.000.000',
@@ -93,30 +93,30 @@ test('admin can view and manage ppdb registrations', function () {
     $applicant = PpdbRegistration::create([
         'registration_number' => 'PPDB-2026-9999',
         'full_name' => 'Fatimah Az-Zahra',
-        'birth_place' => 'Kayuagung',
+        'birth_place' => 'Muara Enim',
         'birth_date' => '2010-08-20',
         'gender' => 'Perempuan',
-        'address' => 'Kayuagung',
+        'address' => 'Muara Enim',
         'living_with' => 'Orang Tua',
         'child_order' => 2,
         'siblings_count' => 2,
-        'previous_school' => 'MTs Negeri 1 Kayuagung',
+        'previous_school' => 'MTs Negeri 1 Muara Enim',
         'nisn' => '0091122334',
         'hobby' => 'Menulis',
         'ambition' => 'Dosen',
         'phone' => '082188776655',
         'father_name' => 'Muhammad Ali',
-        'father_birth_place' => 'Kayuagung',
+        'father_birth_place' => 'Muara Enim',
         'father_birth_date' => '1978-04-12',
-        'father_address' => 'Kayuagung',
+        'father_address' => 'Muara Enim',
         'father_education' => 'S1',
         'father_job' => 'Wiraswasta',
         'father_income' => 'Rp 5.000.000 - Rp 10.000.000',
         'father_phone' => '082155443322',
         'mother_name' => 'Khadijah',
-        'mother_birth_place' => 'Kayuagung',
+        'mother_birth_place' => 'Muara Enim',
         'mother_birth_date' => '1982-06-15',
-        'mother_address' => 'Kayuagung',
+        'mother_address' => 'Muara Enim',
         'mother_education' => 'SMA',
         'mother_job' => 'Ibu Rumah Tangga',
         'mother_income' => '< Rp 2.000.000',
@@ -134,7 +134,7 @@ test('admin can view and manage ppdb registrations', function () {
     $showResponse = $this->actingAs($admin)->get("/admin/ppdb/{$applicant->id}");
     $showResponse->assertStatus(200);
     $showResponse->assertSee('Fatimah Az-Zahra');
-    $showResponse->assertSee('MTs Negeri 1 Kayuagung');
+    $showResponse->assertSee('MTs Negeri 1 Muara Enim');
 
     // 3. Status update
     $statusResponse = $this->actingAs($admin)->put("/admin/ppdb/{$applicant->id}/status", [
@@ -179,16 +179,16 @@ test('admin can manage ppdb content and form flexibility settings', function () 
         'ppdb_promo' => 'Diskon 50% Khusus Pendaftar Awal',
         'ppdb_tagline' => 'Sekolah Islam Terpadu Pilihan Utama.',
         'ppdb_youtube_id' => 'ULMekhqxvqU',
-        'ppdb_video_title' => 'Video Profil Kampus SMPS IT Madani',
+        'ppdb_video_title' => 'Video Profil Kampus SMPS IT Rabbani',
         'ppdb_operational_weekday' => 'Senin - Jumat: 08.00 - 15.00 WIB',
         'ppdb_operational_weekend' => 'Sabtu: 08.00 - 12.00 WIB',
-        'ppdb_secretariat' => 'Gedung SMPS IT Madani Karang Raja',
+        'ppdb_secretariat' => 'Gedung SMPS IT Rabbani Karang Raja',
         'ppdb_registration_fee' => 'Rp 250.000,-',
         'ppdb_bank_name' => 'Bank Syariah Indonesia (BSI)',
         'ppdb_bank_code' => '451',
         'ppdb_bank_account' => '7011304251',
         'ppdb_bank_holder' => 'YL. Fatmawati',
-        'ppdb_hotline_phone' => '0821-8268-0647',
+        'ppdb_hotline_phone' => '0851-5929-3554',
         'ppdb_hotline_name' => 'Admin Hotline PPDB',
         'ppdb_hotline_2_phone' => '0822-8157-3615',
         'ppdb_hotline_2_name' => 'Ust. Agi',
@@ -196,7 +196,7 @@ test('admin can manage ppdb content and form flexibility settings', function () 
         'ppdb_syarat' => "Syarat 1: Akta kelahiran\nSyarat 2: Kartu Keluarga\nSyarat 3: Foto 3x4",
         'ppdb_prestasi' => 'Jalur Juara 1-3 OSN dan Tahfidz',
         'ppdb_tahfidz' => 'Jalur minimal 3 Juz',
-        'ppdb_alumni' => 'Keringanan khusus lulusan SIT Madani',
+        'ppdb_alumni' => 'Keringanan khusus lulusan SIT Rabbani',
         'ppdb_mandiri' => 'Jalur tes akademik dan tahsin',
         'ppdb_jadwal_gelombang' => "Gelombang 1: Oktober - Desember\nGelombang 2: Januari - April",
         'ppdb_biaya' => 'Biaya formulir Rp 250.000 dan seragam lengkap',
@@ -228,7 +228,7 @@ test('admin can manage ppdb content and form flexibility settings', function () 
     $publicResponse->assertSee('Gelombang 1 Unggulan');
     $publicResponse->assertSee('Diskon 50% Khusus Pendaftar Awal');
     $publicResponse->assertSee('Langkah 1: Transfer biaya pendaftaran');
-    $publicResponse->assertSee('Keringanan khusus lulusan SIT Madani');
+    $publicResponse->assertSee('Keringanan khusus lulusan SIT Rabbani');
     $publicResponse->assertSee('Jalur Juara 1-3 OSN dan Tahfidz');
 
     // Verify exports
@@ -259,7 +259,7 @@ test('registration number generation avoids duplicates when gaps or higher seque
     PpdbRegistration::create([
         'registration_number' => sprintf('PPDB-%s-0008', $year),
         'full_name' => 'Existing Student 8',
-        'birth_place' => 'Kayuagung',
+        'birth_place' => 'Muara Enim',
         'birth_date' => '2010-01-01',
         'gender' => 'Laki-laki',
         'address' => 'Jl. Alamat',
@@ -280,7 +280,7 @@ test('registration number generation avoids duplicates when gaps or higher seque
     PpdbRegistration::create([
         'registration_number' => $nextNumber,
         'full_name' => 'Existing Student 9',
-        'birth_place' => 'Kayuagung',
+        'birth_place' => 'Muara Enim',
         'birth_date' => '2010-01-01',
         'gender' => 'Laki-laki',
         'address' => 'Jl. Alamat',

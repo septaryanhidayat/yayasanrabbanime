@@ -1,4 +1,4 @@
-{{-- FOOTER RESMI YAYASAN AGUNG MADANI & SEKOLAH ISLAM TERPADU MADANI --}}
+{{-- FOOTER RESMI YAYASAN GENERASI RABBANI & SEKOLAH ISLAM TERPADU RABBANI --}}
 <footer class="bg-[#0b1120] text-white pt-8 sm:pt-10 pb-8 font-['Poppins',sans-serif] border-t border-indigo-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -6,7 +6,7 @@
         <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 rounded-[22px] sm:rounded-[26px] px-6 sm:px-10 py-5 sm:py-6 mb-10 sm:mb-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left border border-indigo-700/40">
             <div>
                 <span class="text-xs uppercase tracking-wider text-amber-300 font-bold block mb-1">Buletin &amp; Kabar Sekolah</span>
-                <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Dapatkan Info &amp; Pengumuman Terupdate SIT Madani</h2>
+                <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Dapatkan Info &amp; Pengumuman Terupdate SIT Rabbani</h2>
             </div>
             <form action="{{ route('hubungi') }}" method="GET" class="w-full md:w-auto flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 max-w-lg">
                 <input type="email" name="subscribe_email" placeholder="Masukkan Email Anda" aria-label="Masukkan Email Anda untuk Berlangganan" class="bg-white/95 text-xs sm:text-sm text-gray-800 placeholder-gray-500 px-5 py-2.5 sm:py-3 rounded-full focus:outline-none focus:ring-2 focus:ring-amber-400 w-full shadow-inner font-light" required>
@@ -23,13 +23,13 @@
             {{-- KOLOM 1: LOGO & PROFIL LEMBAGA (Col 3) --}}
             <div class="lg:col-span-3 flex flex-col items-center md:items-start space-y-3">
                 <div class="bg-white p-3.5 rounded-2xl shadow-lg inline-block border border-indigo-200/50">
-                    <img src="/uploads/logo-madani-square.webp" alt="Logo Resmi SIT Madani Kayuagung" width="120" height="120" loading="lazy" decoding="async" class="w-24 sm:w-28 h-auto object-contain block mx-auto md:mx-0" onerror="this.onerror=null; this.src='/uploads/logo-madani.png'">
+                    <img src="/uploads/logo-rabbani-square.webp" alt="Logo Resmi SIT Rabbani Muara Enim" width="120" height="120" loading="lazy" decoding="async" class="w-24 sm:w-28 h-auto object-contain block mx-auto md:mx-0" onerror="this.onerror=null; this.src='/uploads/logo-rabbani.png'">
                 </div>
                 <div class="space-y-1 text-center md:text-left">
-                    <h3 class="text-base font-black text-white">YAYASAN AGUNG MADANI</h3>
+                    <h3 class="text-base font-black text-white">YAYASAN GENERASI RABBANI</h3>
                     <p class="text-xs text-amber-300 font-semibold">Pendidikan Islam Terpadu Satu Atap</p>
                     <p class="text-[11px] text-slate-300 leading-relaxed font-light">
-                        Menaungi TKS IT Madani, SDS IT Madani, dan SMPS IT Madani Kayuagung berlandaskan nilai Qur'ani dan sains modern.
+                        Menaungi TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, dan SMA IT Rabbani Muara Enim berlandaskan nilai Qur'ani dan sains modern.
                     </p>
                 </div>
             </div>
@@ -40,16 +40,16 @@
                     Alamat Kampus Terpadu
                 </h3>
                 <p class="w-full text-sm sm:text-[14px] text-slate-200 font-normal leading-relaxed text-center md:text-left pr-0 md:pr-4">
-                    {{ $siteSettings['contact_address'] ?? 'Jalan SMA Negeri 4, RT 02 LK III, Kelurahan Tanjung Rancing, Kecamatan Kayuagung, Kabupaten Ogan Komering Ilir, Sumatera Selatan 30618' }}
+                    {{ $siteSettings['contact_address'] ?? 'Jl. Proklamasi No. 80, Kelurahan Air Lintang, Kecamatan Muara Enim, Kabupaten Muara Enim, Sumatera Selatan 31311' }}
                 </p>
                 <div class="w-full space-y-2 pt-1 text-xs sm:text-sm text-slate-200 flex flex-col items-center md:items-start">
                     <div class="w-full flex items-center justify-center md:justify-start space-x-2.5">
                         <i class="fa-solid fa-phone text-amber-400 w-4 text-center text-sm flex-shrink-0" aria-hidden="true"></i>
-                        <a href="tel:{{ $siteSettings['contact_phone'] ?? '0858-3817-3417' }}" class="text-slate-200 hover:text-amber-300 transition py-0.5" aria-label="Telepon">{{ $siteSettings['contact_phone'] ?? '0858-3817-3417' }}</a>
+                        <a href="tel:{{ $siteSettings['contact_phone'] ?? '0851-5929-3554' }}" class="text-slate-200 hover:text-amber-300 transition py-0.5" aria-label="Telepon">{{ $siteSettings['contact_phone'] ?? '0851-5929-3554' }}</a>
                     </div>
                     <div class="w-full flex items-center justify-center md:justify-start space-x-2.5">
                         <i class="fa-solid fa-envelope text-amber-400 w-4 text-center text-sm flex-shrink-0" aria-hidden="true"></i>
-                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpsislamterpadumadani@gmail.com' }}" class="text-slate-200 hover:text-amber-300 transition py-0.5" aria-label="Email">{{ $siteSettings['contact_email'] ?? 'smpsislamterpadumadani@gmail.com' }}</a>
+                        <a href="mailto:{{ $siteSettings['contact_email'] ?? 'yayasangerabbani@gmail.com' }}" class="text-slate-200 hover:text-amber-300 transition py-0.5" aria-label="Email">{{ $siteSettings['contact_email'] ?? 'yayasangerabbani@gmail.com' }}</a>
                     </div>
                     <div class="w-full flex items-center justify-center md:justify-start space-x-2.5">
                         <i class="fa-solid fa-certificate text-amber-400 w-4 text-center text-sm flex-shrink-0" aria-hidden="true"></i>
@@ -67,25 +67,31 @@
                     <li>
                         <a href="{{ route('home') }}" class="hover:text-amber-300 transition flex items-center justify-center md:justify-start space-x-2">
                             <i class="fa-solid fa-landmark text-indigo-400 text-xs"></i>
-                            <span class="font-semibold">Portal Yayasan Agung Madani</span>
+                            <span class="font-semibold">Portal Yayasan Generasi Rabbani</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('unit.tk') }}" class="hover:text-amber-300 transition flex items-center justify-center md:justify-start space-x-2">
                             <i class="fa-solid fa-shapes text-amber-400 text-xs"></i>
-                            <span class="font-semibold">TKS IT Madani (PAUD/TK)</span>
+                            <span class="font-semibold">TKS IT Rabbani (PAUD/TK)</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('unit.sd') }}" class="hover:text-amber-300 transition flex items-center justify-center md:justify-start space-x-2">
                             <i class="fa-solid fa-book-open-reader text-emerald-400 text-xs"></i>
-                            <span class="font-semibold">SDS IT Madani (SD)</span>
+                            <span class="font-semibold">SDS IT Rabbani (SD)</span>
                         </a>
                     </li>
                     <li>
                         <a href="{{ route('unit.smp') }}" class="hover:text-amber-300 transition flex items-center justify-center md:justify-start space-x-2">
                             <i class="fa-solid fa-graduation-cap text-blue-400 text-xs"></i>
-                            <span class="font-semibold">SMPS IT Madani (SMP)</span>
+                            <span class="font-semibold">SMPS IT Rabbani (SMP)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('unit.sma') }}" class="hover:text-amber-300 transition flex items-center justify-center md:justify-start space-x-2">
+                            <i class="fa-solid fa-building-columns text-purple-400 text-xs"></i>
+                            <span class="font-semibold">SMA IT Rabbani (SMA/Boarding)</span>
                         </a>
                     </li>
                     <li class="pt-1 border-t border-slate-800">
@@ -98,16 +104,16 @@
 
                 {{-- Ikon Sosial Media --}}
                 <div class="flex items-center justify-center md:justify-start space-x-2 pt-3">
-                    <a href="{{ $siteSettings['social_facebook'] ?? 'https://www.facebook.com/sitmadani' }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-amber-500 hover:scale-110 transition shadow" aria-label="Facebook SIT Madani">
+                    <a href="{{ $siteSettings['social_facebook'] ?? 'https://www.facebook.com/YayasanGenerasiRabbaniMuaraEnim' }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-amber-500 hover:scale-110 transition shadow" aria-label="Facebook SIT Rabbani">
                         <i class="fa-brands fa-facebook-f text-sm" aria-hidden="true"></i>
                     </a>
-                    <a href="{{ $siteSettings['social_instagram'] ?? 'https://www.instagram.com/sitmadani/' }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-pink-600 hover:scale-110 transition shadow" aria-label="Instagram SIT Madani">
+                    <a href="{{ $siteSettings['social_instagram'] ?? 'https://www.instagram.com/smaitrabbanime/' }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-pink-600 hover:scale-110 transition shadow" aria-label="Instagram SIT Rabbani">
                         <i class="fa-brands fa-instagram text-sm" aria-hidden="true"></i>
                     </a>
-                    <a href="{{ $siteSettings['social_youtube'] ?? 'https://www.youtube.com/@sitmadani' }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-red-600 hover:scale-110 transition shadow" aria-label="YouTube SIT Madani">
+                    <a href="{{ $siteSettings['social_youtube'] ?? 'https://www.youtube.com/@rabbanimuaraenim' }}" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-red-600 hover:scale-110 transition shadow" aria-label="YouTube SIT Rabbani">
                         <i class="fa-brands fa-youtube text-sm" aria-hidden="true"></i>
                     </a>
-                    <a href="https://wa.me/6285838173417" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-emerald-600 hover:scale-110 transition shadow" aria-label="WhatsApp SIT Madani">
+                    <a href="https://wa.me/6285159293554" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white flex items-center justify-center text-indigo-700 hover:text-emerald-600 hover:scale-110 transition shadow" aria-label="WhatsApp SIT Rabbani">
                         <i class="fa-brands fa-whatsapp text-sm" aria-hidden="true"></i>
                     </a>
                 </div>
@@ -146,7 +152,7 @@
         {{-- 4. BOTTOM COPYRIGHT & WATERMARK --}}
         <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-3 text-center sm:text-left">
             <div>
-                Copyright &copy; {{ date('Y') }} Yayasan Agung Madani Kayuagung &amp; SIT Madani (TK &bull; SD &bull; SMP). All Rights Reserved.
+                Copyright &copy; {{ date('Y') }} Yayasan Generasi Rabbani Muara Enim &amp; SIT Rabbani (TK &bull; SD &bull; SMP &bull; SMA). All Rights Reserved.
             </div>
 
             <div class="text-[11px] text-slate-500">

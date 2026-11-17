@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\DB;
 
 /**
  * ==============================================================================
- * CPANEL POST-DEPLOYMENT HELPER - SIT MADANI
+ * CPANEL POST-DEPLOYMENT HELPER - SIT RABBANI MUARA ENIM
  * ==============================================================================
  * File ini digunakan untuk membantu setup cPanel tanpa perlu akses terminal SSH.
- * Akses URL: https://sitmadani.sch.id/cpanel-setup.php?key=sitmadani2026
+ * Akses URL: https://rabbanime.sch.id/cpanel-setup.php?key=rabbanime2026
  * Hapus file ini setelah setup selesai untuk keamanan!
  * ==============================================================================
  */
-define('SECRET_KEY', 'sitmadani2026');
+define('SECRET_KEY', 'rabbanime2026');
 
 $key = $_GET['key'] ?? ($_POST['key'] ?? '');
 if ($key !== SECRET_KEY) {
@@ -124,7 +124,7 @@ if ($action === 'storage_link') {
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>cPanel Deployment Helper - SIT Madani</title>
+    <title>cPanel Deployment Helper - SIT Rabbani Muara Enim</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 30px; }
         .container { max-width: 800px; margin: auto; background: #1e293b; padding: 32px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5); border: 1px solid #334155; }
@@ -143,7 +143,7 @@ if ($action === 'storage_link') {
 <body>
 <div class="container">
     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 20px;">
-        <h1>cPanel Deployment Helper <span class="badge">SIT MADANI</span></h1>
+        <h1>cPanel Deployment Helper <span class="badge">SIT RABBANI</span></h1>
         <a href="/" target="_blank" style="color:#38bdf8; font-size:12px; font-weight:bold;">Lihat Website &rarr;</a>
     </div>
 

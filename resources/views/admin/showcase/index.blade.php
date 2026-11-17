@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Kelola 3 Kartu Unit Sekolah (Showcase Beranda)')
+@section('title', 'Kelola 4 Kartu Unit Sekolah (Showcase Beranda)')
 @section('header_title', 'Showcase Unit Sekolah')
 
 @section('content')
@@ -14,10 +14,10 @@
             </div>
             <div>
                 <h2 class="text-base sm:text-lg font-extrabold text-slate-900 tracking-tight">
-                    Pengaturan 3 Kartu Unit Sekolah (Showcase Beranda Yayasan)
+                    Pengaturan 4 Kartu Unit Sekolah (Showcase Beranda Yayasan)
                 </h2>
                 <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                    Kelola identitas, foto pimpinan/kepala sekolah, visi slogan, 5 poin keunggulan, akreditasi, dan tautan SPMB untuk ketiga unit: TKS IT, SDS IT, dan SMPS IT Madani.
+                    Kelola identitas, foto pimpinan/kepala sekolah, visi slogan, 5 poin keunggulan, akreditasi, dan tautan SPMB untuk seluruh unit: TKS IT, SDS IT, SMPS IT, dan SMA IT Rabbani.
                 </p>
             </div>
         </div>
@@ -42,21 +42,28 @@
                 :class="activeUnit === 'tk' ? 'border-amber-500 text-amber-600 font-black bg-amber-50/50' : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50'"
                 class="px-5 py-3 rounded-t-xl border-b-2 text-xs sm:text-sm transition flex items-center gap-2 shrink-0">
             <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
-            <span>1. TKS IT Madani (TK / PAUD)</span>
+            <span>1. TKS IT Rabbani (TK / PAUD)</span>
         </button>
 
         <button type="button" @click="activeUnit = 'sd'" 
                 :class="activeUnit === 'sd' ? 'border-emerald-600 text-emerald-700 font-black bg-emerald-50/50' : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50'"
                 class="px-5 py-3 rounded-t-xl border-b-2 text-xs sm:text-sm transition flex items-center gap-2 shrink-0">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
-            <span>2. SDS IT Madani (Sekolah Dasar)</span>
+            <span>2. SDS IT Rabbani (Sekolah Dasar)</span>
         </button>
 
         <button type="button" @click="activeUnit = 'smp'" 
                 :class="activeUnit === 'smp' ? 'border-indigo-600 text-indigo-700 font-black bg-indigo-50/50' : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50'"
                 class="px-5 py-3 rounded-t-xl border-b-2 text-xs sm:text-sm transition flex items-center gap-2 shrink-0">
             <span class="w-2.5 h-2.5 rounded-full bg-indigo-600"></span>
-            <span>3. SMPS IT Madani (SMP IT & Boarding)</span>
+            <span>3. SMPS IT Rabbani (SMP IT & Boarding)</span>
+        </button>
+
+        <button type="button" @click="activeUnit = 'sma'" 
+                :class="activeUnit === 'sma' ? 'border-purple-600 text-purple-700 font-black bg-purple-50/50' : 'border-transparent text-slate-500 hover:text-slate-700 hover:bg-slate-50'"
+                class="px-5 py-3 rounded-t-xl border-b-2 text-xs sm:text-sm transition flex items-center gap-2 shrink-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-purple-600"></span>
+            <span>4. SMA IT Rabbani (SMA & Boarding)</span>
         </button>
     </div>
 
@@ -64,7 +71,7 @@
     <form action="{{ route('admin.showcase.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
 
-        @foreach(['tk' => 'TKS IT Madani', 'sd' => 'SDS IT Madani', 'smp' => 'SMPS IT Madani'] as $unitKey => $unitTitle)
+        @foreach(['tk' => 'TKS IT Rabbani', 'sd' => 'SDS IT Rabbani', 'smp' => 'SMPS IT Rabbani', 'sma' => 'SMA IT Rabbani'] as $unitKey => $unitTitle)
         @php
             $card = $cards[$unitKey] ?? [];
         @endphp

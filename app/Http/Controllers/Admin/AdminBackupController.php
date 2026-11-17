@@ -54,7 +54,7 @@ class AdminBackupController extends Controller
 
         return response()->streamDownload(function () {
             echo "-- ==========================================================\n";
-            echo "-- SMPS IT MADANI KAYUAGUNG - DATABASE SQL DUMP\n";
+            echo "-- SMPS IT RABBANI MUARA ENIM - DATABASE SQL DUMP\n";
             echo '-- Generated at: '.date('Y-m-d H:i:s')."\n";
             echo "-- Platform: Laravel 12 / MySQL 8 & MariaDB Compatible\n";
             echo "-- ==========================================================\n\n";

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Testimonial Wali Murid & Alumni - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Suara, apresiasi, dan kesan para orang tua murid dan alumni terhadap mutu pendidikan di SMPS IT Madani Kayuagung.')
+@section('title', 'Testimonial Wali Murid & Alumni - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Suara, apresiasi, dan kesan para orang tua murid dan alumni terhadap mutu pendidikan di SMPS IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Testimonial Orang Tua & Alumni</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Kesan, apresiasi, dan pengalaman nyata para orang tua siswa dan alumni mengenai kualitas pendidikan karakter dan akademik di SMPS IT Madani Kayuagung.
+            Kesan, apresiasi, dan pengalaman nyata para orang tua siswa dan alumni mengenai kualitas pendidikan karakter dan akademik di SMPS IT Rabbani Muara Enim.
         </p>
     </div>
 </div>
@@ -26,7 +26,7 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">Kesan & Pengalaman Nyata</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Apresiasi Terhadap SMPS IT Madani Kayuagung
+            Apresiasi Terhadap SMPS IT Rabbani Muara Enim
         </h2>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
@@ -43,7 +43,7 @@
                 <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left space-y-3 sm:space-y-0 sm:space-x-3 pt-4 border-t border-gray-50">
                     <div class="w-12 h-12 rounded-full bg-emerald-100 text-indigo-600 font-bold flex items-center justify-center flex-shrink-0 overflow-hidden text-base shadow-sm mx-auto sm:mx-0">
                         @if($testi->photo)
-                            <img src="{{ $testi->photo }}" alt="{{ $testi->name }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                            <img src="{{ $testi->photo }}" alt="{{ $testi->name }}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                         @else
                             {{ substr($testi->name, 0, 1) }}
                         @endif

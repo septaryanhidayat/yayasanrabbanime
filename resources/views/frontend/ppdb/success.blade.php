@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', 'Pendaftaran Berhasil - PPDB SMPS IT Madani Kayuagung')
+@section('title', 'Pendaftaran Berhasil - PPDB SMPS IT Rabbani Muara Enim')
 
 @section('content')
 <div class="bg-gray-50 py-12 sm:py-16">
@@ -21,7 +21,7 @@
                     Alhamdulillah, Formulir Telah Diterima!
                 </h1>
                 <p class="text-xs text-slate-500 max-w-sm mx-auto leading-relaxed">
-                    Terima kasih telah mendaftar di SMPS IT Madani Kayuagung Tahun Pelajaran {{ $registration->academic_year ?? '2026/2027' }}.
+                    Terima kasih telah mendaftar di SMPS IT Rabbani Muara Enim Tahun Pelajaran {{ $registration->academic_year ?? '2026/2027' }}.
                 </p>
             </div>
 

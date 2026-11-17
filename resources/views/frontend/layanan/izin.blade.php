@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Permohonan Izin Kunjungan ke Sekolah - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Formulir dan ketentuan permohonan izin kunjungan edukasi, studi banding, atau riset di SMPS IT Madani Kayuagung.')
+@section('title', 'Permohonan Izin Kunjungan ke Sekolah - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Formulir dan ketentuan permohonan izin kunjungan edukasi, studi banding, atau riset di SMPS IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -21,7 +21,7 @@
             <div>
                 <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Izin Kunjungan ke Sekolah</h1>
                 <p class="text-sm text-indigo-100 mt-1 font-light">
-                    Pengajuan izin kunjungan instansi, studi banding, atau riset edukatif di SMPS IT Madani.
+                    Pengajuan izin kunjungan instansi, studi banding, atau riset edukatif di SMPS IT Rabbani.
                 </p>
             </div>
         </div>
@@ -36,7 +36,7 @@
             PERMOHONAN IZIN KUNJUNGAN KE SEKOLAH
         </h2>
         <p class="text-sm sm:text-base font-bold text-emerald-600 mt-1">
-            SMPS IT Madani Kayuagung
+            SMPS IT Rabbani Muara Enim
         </p>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>
@@ -84,7 +84,7 @@
                 ],
                 [
                     'title' => 'Pengaduan, Saran dan Masukan',
-                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Madani Kayuagung</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Kayuagung</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6282182680647" target="_blank" class="text-indigo-600 font-bold hover:underline">0858-3817-3417</a></p><p><strong>Website :</strong> sitmadani.sch.id</p><p><strong>Email :</strong> <a href="mailto:smpsislamterpadumadani@gmail.com" class="text-indigo-600 font-bold hover:underline">smpsislamterpadumadani@gmail.com</a></p>'
+                    'content' => '<p>Pengaduan, saran dan masukan dapat disampaikan ke bagian humas dan media layanan terpadu SMPS IT Rabbani Muara Enim</p><p class="mt-2"><strong>Alamat :</strong> Jln. Sadewa RT 01 RW 03 Kel. Krg Raja Muara Enim</p><p><strong>No. HP (WA) :</strong> <a href="https://wa.me/6285159293554" target="_blank" class="text-indigo-600 font-bold hover:underline">0851-5929-3554</a></p><p><strong>Website :</strong> rabbanime.sch.id</p><p><strong>Email :</strong> <a href="mailto:yayasangerabbani@gmail.com" class="text-indigo-600 font-bold hover:underline">yayasangerabbani@gmail.com</a></p>'
                 ]
             ];
             $tabs = !empty($accordions) ? $accordions : $defaultIzinTabs;

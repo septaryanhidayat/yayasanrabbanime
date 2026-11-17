@@ -36,7 +36,7 @@ class SecurityMonitorMiddleware
                     'status' => 'danger',
                 ]);
 
-                abort(403, 'Akses Ditolak: Pola permintaan tidak sah terdeteksi oleh sistem keamanan SMPS IT Madani.');
+                abort(403, 'Akses Ditolak: Pola permintaan tidak sah terdeteksi oleh sistem keamanan SMPS IT Rabbani.');
             }
         }
 

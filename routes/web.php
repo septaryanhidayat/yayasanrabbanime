@@ -159,13 +159,14 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/beranda', fn () => redirect()->route('home'));
 Route::get('/yayasan', [HomeController::class, 'yayasan'])->name('yayasan');
 
-// Direct Unit Shortcuts (/tk, /sd, /smp) & Multi-Unit Home
+// Direct Unit Shortcuts (/tk, /sd, /smp, /sma) & Multi-Unit Home
 Route::get('/tk', [HomeController::class, 'unit'])->defaults('unit', 'tk')->name('unit.tk');
 Route::get('/sd', [HomeController::class, 'unit'])->defaults('unit', 'sd')->name('unit.sd');
 Route::get('/smp', [HomeController::class, 'unit'])->defaults('unit', 'smp')->name('unit.smp');
-Route::get('/unit/{unit}', [HomeController::class, 'unit'])->where('unit', 'tk|sd|smp')->name('unit.home');
+Route::get('/sma', [HomeController::class, 'unit'])->defaults('unit', 'sma')->name('unit.sma');
+Route::get('/unit/{unit}', [HomeController::class, 'unit'])->where('unit', 'tk|sd|smp|sma')->name('unit.home');
 
-// Profil Yayasan Agung Madani (Khusus Yayasan)
+// Profil Yayasan Generasi Rabbani Muara Enim (Khusus Yayasan)
 Route::prefix('yayasan')->group(function () {
     Route::get('/sambutan', [PageController::class, 'sambutan'])->defaults('unit', 'yayasan')->name('page.sambutan.yayasan');
     Route::get('/tentang-kami', [PageController::class, 'tentangKami'])->defaults('unit', 'yayasan')->name('page.tentang.yayasan');
@@ -179,8 +180,8 @@ Route::get('/profil-yayasan', [PageController::class, 'tentangKami'])->defaults(
 Route::get('/struktur-yayasan', [PageController::class, 'struktur'])->defaults('unit', 'yayasan');
 Route::get('/sejarah-yayasan', [PageController::class, 'sejarah'])->defaults('unit', 'yayasan');
 
-// Unit Scoped Routes (/tk/..., /sd/..., /smp/...)
-Route::prefix('{unit}')->where(['unit' => 'tk|sd|smp'])->group(function () {
+// Unit Scoped Routes (/tk/..., /sd/..., /smp/..., /sma/...)
+Route::prefix('{unit}')->where(['unit' => 'tk|sd|smp|sma'])->group(function () {
     Route::get('/spmb', [PpdbController::class, 'index'])->name('unit.spmb');
     Route::get('/ppdb', [PpdbController::class, 'index'])->name('unit.ppdb');
     Route::get('/form-spmb', [PpdbController::class, 'form'])->name('unit.spmb.form');

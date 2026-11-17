@@ -59,13 +59,13 @@
                     <i class="fa-solid fa-layer-group mr-1 text-[10px]"></i> Semua Unit
                 </a>
                 <a href="{{ route('admin.ppdb.index', ['unit' => 'tk']) }}" class="px-3 py-1.5 rounded-xl font-bold transition {{ ($selectedUnit ?? '') === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow ring-1 ring-amber-300' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }}">
-                    <i class="fa-solid fa-shapes mr-1 text-[10px]"></i> TKS IT Madani
+                    <i class="fa-solid fa-shapes mr-1 text-[10px]"></i> TKS IT Rabbani
                 </a>
                 <a href="{{ route('admin.ppdb.index', ['unit' => 'sd']) }}" class="px-3 py-1.5 rounded-xl font-bold transition {{ ($selectedUnit ?? '') === 'sd' ? 'bg-emerald-600 text-white font-black shadow ring-1 ring-emerald-300' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }}">
-                    <i class="fa-solid fa-book-open-reader mr-1 text-[10px]"></i> SDS IT Madani
+                    <i class="fa-solid fa-book-open-reader mr-1 text-[10px]"></i> SDS IT Rabbani
                 </a>
                 <a href="{{ route('admin.ppdb.index', ['unit' => 'smp']) }}" class="px-3 py-1.5 rounded-xl font-bold transition {{ ($selectedUnit ?? '') === 'smp' ? 'bg-blue-600 text-white font-black shadow ring-1 ring-blue-300' : 'bg-slate-800 text-slate-300 hover:bg-slate-700' }}">
-                    <i class="fa-solid fa-graduation-cap mr-1 text-[10px]"></i> SMPS IT Madani
+                    <i class="fa-solid fa-graduation-cap mr-1 text-[10px]"></i> SMPS IT Rabbani
                 </a>
             </div>
         </div>

@@ -111,7 +111,7 @@ class ImportWordPressContentCommand extends Command
             $displayName = (string) $author->author_display_name;
 
             if (! $email) {
-                $email = Str::slug($login).'@sitmadani.sch.id';
+                $email = Str::slug($login).'@rabbanime.sch.id';
             }
 
             User::updateOrCreate(
@@ -450,7 +450,7 @@ class ImportWordPressContentCommand extends Command
                     [
                         'title' => $title,
                         'content' => $this->cleanHtmlContent($rawContent),
-                        'location' => 'Kayuagung, Kab. OKI',
+                        'location' => 'Muara Enim, Kab. OKI',
                         'event_date' => $postDate ? Carbon::parse($postDate) : now(),
                         'status' => $status,
                         'featured_image' => $featuredImage,
@@ -490,9 +490,9 @@ class ImportWordPressContentCommand extends Command
                     [
                         'name' => $title,
                         'description' => $this->cleanHtmlContent($desc),
-                        'address' => $meta['alamat'] ?? 'Jl. Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Kayuagung, Kayuagung, Kab. OKI',
+                        'address' => $meta['alamat'] ?? 'Jl. Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Muara Enim, Muara Enim, Kab. OKI',
                         'phone' => $meta['telp'] ?? '0858-3817-3417',
-                        'email' => $meta['email'] ?? 'smpsislamterpadumadani@gmail.com',
+                        'email' => $meta['email'] ?? 'yayasangerabbani@gmail.com',
                         'website' => $meta['website'] ?? 'https://sitmadani.sch.id',
                         'thumbnail' => $featuredImage,
                     ]
@@ -505,12 +505,12 @@ class ImportWordPressContentCommand extends Command
                     [
                         'name' => $title,
                         'description' => $this->cleanHtmlContent($desc),
-                        'address' => 'Kayuagung, Kab. OKI',
+                        'address' => 'Muara Enim, Kab. OKI',
                     ]
                 );
             } elseif ($type === 'testimonial') {
                 $testimoni = $meta['isi-testimoni'] ?? $rawContent;
-                $profesi = $meta['alumni-tahun'] ?? 'Wali Murid SMPS IT Madani';
+                $profesi = $meta['alumni-tahun'] ?? 'Wali Murid SMPS IT Rabbani';
                 Testimonial::updateOrCreate(
                     ['name' => $title],
                     [
@@ -608,17 +608,17 @@ class ImportWordPressContentCommand extends Command
     protected function populateSettings(): void
     {
         $settings = [
-            'site_name' => 'SMPS IT Madani Kayuagung',
+            'site_name' => 'SMPS IT Rabbani Muara Enim',
             'site_tagline' => 'Membina Generasi Qur\'ani, Cerdas, Berakhlak Mulia & Berprestasi Global',
-            'site_description' => 'Official Website SMPS IT Madani Kayuagung (SIT Madani). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kayuagung, Kab. OKI.',
-            'contact_email' => 'smpsislamterpadumadani@gmail.com',
+            'site_description' => 'Official Website SMPS IT Rabbani Muara Enim (SIT Rabbani). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Muara Enim, Kab. OKI.',
+            'contact_email' => 'yayasangerabbani@gmail.com',
             'contact_phone' => '0858-3817-3417',
             'contact_whatsapp' => '0858-3817-3417',
-            'contact_address' => 'Jalan Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Kayuagung, Kabupaten Ogan Komering Ilir, Sumatera Selatan 31113',
-            'social_facebook' => 'https://www.facebook.com/sitmadani.kayuagung?locale=sw_KE',
+            'contact_address' => 'Jalan Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Muara Enim, Kabupaten Ogan Komering Ilir, Sumatera Selatan 31113',
+            'social_facebook' => 'https://www.facebook.com/sitmadani.muara enim?locale=sw_KE',
             'social_instagram' => 'https://www.instagram.com/sitmadani/',
-            'social_youtube' => 'https://www.youtube.com/@sitmadani',
-            'social_tiktok' => 'https://www.tiktok.com/@sitmadani',
+            'social_youtube' => 'https://www.youtube.com/@rabbanime',
+            'social_tiktok' => 'https://www.tiktok.com/@rabbanime',
             'social_twitter' => 'https://x.com/sitmadani',
             'banner_daftar_url' => '/ppdb',
             'banner_donasi_url' => '/donasi',

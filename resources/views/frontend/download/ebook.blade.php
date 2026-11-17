@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', ($page?->meta_title ?: ($page?->title ?: 'Download Modul Belajar & E-Book Siswa')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
-@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kumpulan modul kurikulum, e-book materi tahfidz, panduan praktikum sains, dan buku digital gratis untuk siswa SMPS IT Madani Kayuagung.'))
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Download Modul Belajar & E-Book Siswa')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kumpulan modul kurikulum, e-book materi tahfidz, panduan praktikum sains, dan buku digital gratis untuk siswa SMPS IT Rabbani Muara Enim.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'E-Book & Modul Pembelajaran Digital' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            {{ $page?->excerpt ?: 'Buku panduan siswa, modul tahfidz mutqin, buku saku adab siswa, dan materi suplemen sains SMPS IT Madani Kayuagung.' }}
+            {{ $page?->excerpt ?: 'Buku panduan siswa, modul tahfidz mutqin, buku saku adab siswa, dan materi suplemen sains SMPS IT Rabbani Muara Enim.' }}
         </p>
     </div>
 </div>
@@ -67,7 +67,7 @@
                             {{ $eb->title }}
                         </h3>
                         <p class="text-xs text-gray-600 mt-2.5 line-clamp-3 leading-relaxed font-light">
-                            {{ $eb->description ?: 'Buku panduan dan modul pembelajaran resmi siswa SMPS IT Madani Kayuagung berstandar kurikulum JSIT Indonesia.' }}
+                            {{ $eb->description ?: 'Buku panduan dan modul pembelajaran resmi siswa SMPS IT Rabbani Muara Enim berstandar kurikulum JSIT Indonesia.' }}
                         </p>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                 {{-- FOOTER INFO & BUTTON DOWNLOAD --}}
                 <div class="p-6 pt-0 border-t border-gray-100 mt-2 space-y-3">
                     <div class="flex items-center justify-between text-[11px] text-gray-400 pt-3">
-                        <span><i class="fa-solid fa-school mr-1 text-indigo-600"></i>SMPS IT Madani</span>
+                        <span><i class="fa-solid fa-school mr-1 text-indigo-600"></i>SMPS IT Rabbani</span>
                         <span><i class="fa-solid fa-download mr-1 text-amber-500"></i>{{ number_format($eb->download_count ?? 150) }} unduhan</span>
                     </div>
                     <a href="{{ route('download.file', $eb->id) }}" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl text-xs font-bold shadow-md transition flex items-center justify-center space-x-2">

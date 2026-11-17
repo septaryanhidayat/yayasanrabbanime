@@ -7,22 +7,25 @@ use Illuminate\Contracts\Console\Kernel;
 
 /**
  * cPanel Setup, Maintenance & Diagnostic Helper for Laravel
- * SMPS IT Madani Kayuagung
+ * Yayasan Generasi Rabbani Muara Enim - SIT Rabbani Muara Enim
  *
- * Akses: cpanel_setup.php?token=SitMadani2026Setup&action=status
+ * Akses: cpanel_setup.php?token=RabbaniMuaraEnim2026Setup&action=status
  */
 
 // 1. Auto-detect Laravel repository root directory
 $possibleRoots = [
     __DIR__.'/..',
+    dirname(__DIR__).'/repositories/yayasanrabbanime',
+    dirname(__DIR__).'/laravel_yayasanrabbanime',
+    dirname(__DIR__).'/yayasanrabbanime',
     dirname(__DIR__).'/repositories/sitmadani',
     dirname(__DIR__).'/laravel_sitmadani',
     dirname(__DIR__).'/sitmadani',
-    ($_SERVER['HOME'] ?? '').'/repositories/sitmadani',
-    ($_SERVER['HOME'] ?? '').'/laravel_sitmadani',
-    '/home/berandad/repositories/sitmadani',
-    '/home/berandad/laravel_sitmadani',
-    '/home/berandad/sitmadani',
+    ($_SERVER['HOME'] ?? '').'/repositories/yayasanrabbanime',
+    ($_SERVER['HOME'] ?? '').'/laravel_yayasanrabbanime',
+    '/home/berandad/repositories/yayasanrabbanime',
+    '/home/berandad/laravel_yayasanrabbanime',
+    '/home/berandad/yayasanrabbanime',
 ];
 
 $laravelRoot = null;
@@ -37,7 +40,7 @@ if (! $laravelRoot) {
 }
 
 // 2. Secret Token Authentication
-$secretToken = 'SitMadani2026Setup';
+$secretToken = 'RabbaniMuaraEnim2026Setup';
 
 // Parse .env directly if it exists to get custom token if defined
 $envFile = $laravelRoot.'/.env';
@@ -63,7 +66,7 @@ if (! isset($_GET['token']) || empty($_GET['token']) || ! hash_equals($secretTok
     http_response_code(403);
     echo '<!DOCTYPE html><html><body style="background:#0f172a;color:#ef4444;font-family:sans-serif;text-align:center;padding:50px;">';
     echo '<h2>403 Forbidden: Token Akses Tidak Valid!</h2>';
-    echo '<p style="color:#94a3b8;">Gunakan URL: <code>cpanel_setup.php?token=SitMadani2026Setup&action=status</code></p>';
+    echo '<p style="color:#94a3b8;">Gunakan URL: <code>cpanel_setup.php?token=RabbaniMuaraEnim2026Setup&action=status</code></p>';
     echo '</body></html>';
     exit;
 }
@@ -418,7 +421,7 @@ switch ($action) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cPanel Helper &amp; Diagnostik - SMPS IT Madani Kayuagung</title>
+    <title>cPanel Helper &amp; Diagnostik - SIT Rabbani Muara Enim</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; padding: 2rem 1rem; color: #e2e8f0; margin: 0; }
         .card { max-width: 800px; margin: 0 auto; background: #1e1b4b; border-radius: 16px; border: 1px solid #4338ca; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); padding: 2rem; }
@@ -442,7 +445,7 @@ switch ($action) {
 </head>
 <body>
     <div class="card">
-        <h1>🛠️ Helper &amp; Diagnostik cPanel - SMPS IT Madani Kayuagung</h1>
+        <h1>🛠️ Helper &amp; Diagnostik cPanel - SIT Rabbani Muara Enim</h1>
         
         <div class="section-title">1. Diagnostik &amp; Persiapan Awal</div>
         <div class="nav-links">

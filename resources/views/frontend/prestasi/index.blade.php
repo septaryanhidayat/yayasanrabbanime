@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 
 @php
-    $unitTitle = $currentUnit ? $currentUnit['short_name'] : 'SIT Madani Kayuagung';
-    $unitFullName = $currentUnit ? $currentUnit['name'] : 'Sekolah Islam Terpadu Madani Kayuagung';
+    $unitTitle = $currentUnit ? $currentUnit['short_name'] : 'SIT Rabbani Muara Enim';
+    $unitFullName = $currentUnit ? $currentUnit['name'] : 'Sekolah Islam Terpadu Rabbani Muara Enim';
 @endphp
 
 @section('title', 'Prestasi Santri & Siswa - ' . $unitTitle)
@@ -40,7 +40,7 @@
     {{-- UNIT SWITCHER TABS --}}
     <div class="flex flex-wrap items-center justify-center gap-2 bg-white p-2 sm:p-3 rounded-2xl shadow-sm border border-gray-100">
         <a href="{{ route('prestasi.index') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ empty($currentUnitKey) || $currentUnitKey === 'yayasan' ? 'bg-indigo-600 text-white shadow' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
-            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Semua Prestasi SIT Madani
+            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Semua Prestasi SIT Rabbani
         </a>
         <a href="{{ route('unit.prestasi', 'tk') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $currentUnitKey === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-amber-50' }}">
             <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> Prestasi TKS IT
@@ -61,7 +61,7 @@
                     {{-- Ambient background --}}
                     <img src="{{ $item->featured_image_url }}" alt="" class="absolute inset-0 w-full h-full object-cover blur-md opacity-30 scale-110 pointer-events-none" aria-hidden="true">
                     {{-- Full uncropped image --}}
-                    <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="relative max-h-full max-w-full w-auto h-auto object-contain rounded-xl shadow-xs group-hover:scale-102 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                    <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="relative max-h-full max-w-full w-auto h-auto object-contain rounded-xl shadow-xs group-hover:scale-102 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                     <span class="absolute top-3 left-3 z-10 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5">
                         <i class="fa-solid fa-award text-xs"></i>
                         <span>Juara &amp; Prestasi</span>

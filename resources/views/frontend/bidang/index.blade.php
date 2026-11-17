@@ -1,32 +1,37 @@
 @extends('layouts.frontend')
 
 @php
-    $activeKey = in_array($currentUnitKey, ['yayasan', 'tk', 'sd', 'smp']) ? $currentUnitKey : 'all';
+    $activeKey = in_array($currentUnitKey, ['yayasan', 'tk', 'sd', 'smp', 'sma']) ? $currentUnitKey : 'all';
     $facilityHeaders = [
         'all' => [
-            'title' => 'Fasilitas & Sarana Prasarana Kampus Terpadu SIT Madani',
+            'title' => 'Fasilitas & Sarana Prasarana Kampus Terpadu SIT Rabbani',
             'sub' => 'Infrastruktur modern dan lingkungan belajar satu atap yang asri, nyaman, dan mendukung potensi Qur\'ani serta sains seluruh unit.',
-            'badge' => 'KAMPUS TERPADU SIT MADANI',
+            'badge' => 'KAMPUS TERPADU SIT RABBANI',
         ],
         'yayasan' => [
-            'title' => 'Fasilitas Kampus Terpadu Yayasan Agung Madani',
-            'sub' => 'Sarana utama kawasan pendidikan Islam terpadu SIT Madani Kayuagung.',
-            'badge' => 'SARANA KAMPUS MADANI',
+            'title' => 'Fasilitas Kampus Terpadu Yayasan Generasi Rabbani',
+            'sub' => 'Sarana utama kawasan pendidikan Islam terpadu SIT Rabbani Muara Enim.',
+            'badge' => 'SARANA KAMPUS RABBANI',
         ],
         'tk' => [
-            'title' => 'Fasilitas & Sarana Belajar TKS Islam Terpadu Madani',
+            'title' => 'Fasilitas & Sarana Belajar TKS Islam Terpadu Rabbani',
             'sub' => 'Sentra belajar tematik, wahana bermain ramah anak indoor & outdoor, dan lingkungan PAUD/TK yang aman serta menyenangkan.',
-            'badge' => 'FASILITAS TKS IT MADANI',
+            'badge' => 'FASILITAS TKS IT RABBANI',
         ],
         'sd' => [
-            'title' => 'Fasilitas & Sarana Belajar SDS Islam Terpadu Madani',
+            'title' => 'Fasilitas & Sarana Belajar SDS Islam Terpadu Rabbani',
             'sub' => '13 ruang kelas ber-AC, laboratorium komputer modern ANBK, perpustakaan, UKS, dan lapangan olahraga serbaguna.',
-            'badge' => 'FASILITAS SDS IT MADANI',
+            'badge' => 'FASILITAS SDS IT RABBANI',
         ],
         'smp' => [
-            'title' => 'Fasilitas & Sarana Belajar SMPS Islam Terpadu Madani',
+            'title' => 'Fasilitas & Sarana Belajar SMPS Islam Terpadu Rabbani',
             'sub' => 'Laboratorium IPA terpadu, laboratorium komputer multimedia, perpustakaan digital, sarana olahraga, dan masjid kampus.',
-            'badge' => 'FASILITAS SMPS IT MADANI',
+            'badge' => 'FASILITAS SMPS IT RABBANI',
+        ],
+        'sma' => [
+            'title' => 'Fasilitas & Sarana Belajar SMA Islam Terpadu Rabbani Boarding School',
+            'sub' => 'Gedung asrama putra dan putri 24 jam, laboratorium komputer SNBT, ruang kelas multimedia, lapangan voli, dan masjid kampus.',
+            'badge' => 'FASILITAS SMA IT RABBANI',
         ],
     ];
     $head = $facilityHeaders[$activeKey] ?? $facilityHeaders['all'];
@@ -35,35 +40,44 @@
     $facilityList = [];
     if ($activeKey === 'tk') {
         $facilityList = [
-            ['name' => 'Ruang Sentra Belajar Ber-AC', 'desc' => 'Ruang kelas tematik sentra yang nyaman, sejuk, dan ramah anak dengan alat peraga edukatif terstandar.', 'icon' => 'fa-solid fa-door-open', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Arena Bermain Edukatif Indoor & Outdoor', 'desc' => 'Wahana permainan ketangkasan luar dan dalam ruangan yang aman untuk menstimulasi motorik kasar dan kebugaran anak.', 'icon' => 'fa-solid fa-gamepad', 'image' => '/uploads/campus-sit-madani.webp'],
-            ['name' => 'Pojok Baca & Literasi Bergambar', 'desc' => 'Koleksi buku dongeng islami, sirah nabawiyah anak, dan ensiklopedia cilik yang menumbuhkan minat membaca sejak dini.', 'icon' => 'fa-solid fa-book-open', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Kebun Edukasi & Tanaman Cilik', 'desc' => 'Area hijau sekolah untuk kegiatan berkebun bersama, mengenalkan ciptaan Allah SWT, dan menumbuhkan rasa syukur.', 'icon' => 'fa-solid fa-seedling', 'image' => '/uploads/campus-sit-madani.webp'],
-            ['name' => 'Panggung Ekspresi & Aula Pentas Cilik', 'desc' => 'Tempat ananda berlatih tampil percaya diri membawakan hafalan surat pendek, puisi, dan bernyanyi riang gembira.', 'icon' => 'fa-solid fa-microphone', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Ruang UKS & Istirahat Ramah Anak', 'desc' => 'Ruangan bersih dan nyaman untuk pertolongan pertama serta penanganan kesehatan harian bagi ananda.', 'icon' => 'fa-solid fa-notes-medical', 'image' => '/uploads/campus-sit-madani.webp'],
+            ['name' => 'Ruang Sentra Belajar Ber-AC', 'desc' => 'Ruang kelas tematik sentra yang nyaman, sejuk, dan ramah anak dengan alat peraga edukatif terstandar.', 'icon' => 'fa-solid fa-door-open', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Arena Bermain Edukatif Indoor & Outdoor', 'desc' => 'Wahana permainan ketangkasan luar dan dalam ruangan yang aman untuk menstimulasi motorik kasar dan kebugaran anak.', 'icon' => 'fa-solid fa-gamepad', 'image' => '/uploads/campus-sit-rabbani.webp'],
+            ['name' => 'Pojok Baca & Literasi Bergambar', 'desc' => 'Koleksi buku dongeng islami, sirah nabawiyah anak, dan ensiklopedia cilik yang menumbuhkan minat membaca sejak dini.', 'icon' => 'fa-solid fa-book-open', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Kebun Edukasi & Tanaman Cilik', 'desc' => 'Area hijau sekolah untuk kegiatan berkebun bersama, mengenalkan ciptaan Allah SWT, dan menumbuhkan rasa syukur.', 'icon' => 'fa-solid fa-seedling', 'image' => '/uploads/campus-sit-rabbani.webp'],
+            ['name' => 'Panggung Ekspresi & Aula Pentas Cilik', 'desc' => 'Tempat ananda berlatih tampil percaya diri membawakan hafalan surat pendek, puisi, dan bernyanyi riang gembira.', 'icon' => 'fa-solid fa-microphone', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Ruang UKS & Istirahat Ramah Anak', 'desc' => 'Ruangan bersih dan nyaman untuk pertolongan pertama serta penanganan kesehatan harian bagi ananda.', 'icon' => 'fa-solid fa-notes-medical', 'image' => '/uploads/campus-sit-rabbani.webp'],
         ];
     } elseif ($activeKey === 'sd') {
         $facilityList = [
-            ['name' => '13 Ruang Kelas Ber-AC & Multimedia', 'desc' => 'Ruang belajar bersih berpendingin udara dengan pencahayaan alami optimal, proyektor, dan tata letak ergonomis untuk 13 rombel.', 'icon' => 'fa-solid fa-school', 'image' => '/uploads/campus-sit-madani.webp'],
-            ['name' => 'Laboratorium Komputer Siswa Modern', 'desc' => 'Perangkat PC mutakhir terkoneksi jaringan internet berkecepatan tinggi untuk pembelajaran literasi digital dan ANBK mandiri.', 'icon' => 'fa-solid fa-desktop', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Perpustakaan & Pojok Literasi Sekolah', 'desc' => 'Koleksi ribuan buku pelajaran, ensiklopedia sains, sirah sahabat, dan buku pengayaan untuk menumbuhkan budaya membaca.', 'icon' => 'fa-solid fa-book', 'image' => '/uploads/tahfidz-sit-madani.webp'],
-            ['name' => 'Unit Kesehatan Sekolah (UKS)', 'desc' => 'Layanan pemantauan kesehatan berkala, cek fisik, dan penanganan medis pertama bagi seluruh civitas sekolah.', 'icon' => 'fa-solid fa-notes-medical', 'image' => '/uploads/campus-sit-madani.webp'],
-            ['name' => 'Lapangan Olahraga & Arena Upacara', 'desc' => 'Lapangan luas serbaguna untuk olahraga futsal, bulutangkis, senam ceria anak sholeh, dan latihan kepanduan Pramuka SIT.', 'icon' => 'fa-solid fa-futbol', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Ruang Halaqah Tahfidz Al-Qur\'an', 'desc' => 'Ruangan khusus yang tenang dan kondusif untuk bimbingan talaqqi, tasmi\', dan setoran hafalan 2 Juz Mutqin bersanad.', 'icon' => 'fa-solid fa-quran', 'image' => '/uploads/tahfidz-sit-madani.webp'],
+            ['name' => '13 Ruang Kelas Ber-AC & Multimedia', 'desc' => 'Ruang belajar bersih berpendingin udara dengan pencahayaan alami optimal, proyektor, dan tata letak ergonomis untuk 13 rombel.', 'icon' => 'fa-solid fa-school', 'image' => '/uploads/campus-sit-rabbani.webp'],
+            ['name' => 'Laboratorium Komputer Siswa Modern', 'desc' => 'Perangkat PC mutakhir terkoneksi jaringan internet berkecepatan tinggi untuk pembelajaran literasi digital dan ANBK mandiri.', 'icon' => 'fa-solid fa-desktop', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Perpustakaan & Pojok Literasi Sekolah', 'desc' => 'Koleksi ribuan buku pelajaran, ensiklopedia sains, sirah sahabat, dan buku pengayaan untuk menumbuhkan budaya membaca.', 'icon' => 'fa-solid fa-book', 'image' => '/uploads/tahfidz-sit-rabbani.webp'],
+            ['name' => 'Unit Kesehatan Sekolah (UKS)', 'desc' => 'Layanan pemantauan kesehatan berkala, cek fisik, dan penanganan medis pertama bagi seluruh civitas sekolah.', 'icon' => 'fa-solid fa-notes-medical', 'image' => '/uploads/campus-sit-rabbani.webp'],
+            ['name' => 'Lapangan Olahraga & Arena Upacara', 'desc' => 'Lapangan luas serbaguna untuk olahraga futsal, bulutangkis, senam ceria anak sholeh, dan latihan kepanduan Pramuka SIT.', 'icon' => 'fa-solid fa-futbol', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Ruang Halaqah Tahfidz Al-Qur\'an', 'desc' => 'Ruangan khusus yang tenang dan kondusif untuk bimbingan talaqqi, tasmi\', dan setoran hafalan Juz Mutqin bersanad.', 'icon' => 'fa-solid fa-quran', 'image' => '/uploads/tahfidz-sit-rabbani.webp'],
         ];
     } elseif ($activeKey === 'smp') {
         $facilityList = [
-            ['name' => 'Laboratorium IPA & Riset Sains Terpadu', 'desc' => 'Dilengkapi mikroskop, alat praktikum fisika, kimia, dan biologi modern untuk mengasah daya analisis dan riset ilmiah santri.', 'icon' => 'fa-solid fa-flask', 'image' => '/uploads/campus-sit-madani.webp'],
-            ['name' => 'Laboratorium Komputer Multimedia & ANBK', 'desc' => 'Jajaran komputer PC berspesifikasi tinggi untuk coding dasar, desain grafis, riset internet, dan asesmen nasional terpadu.', 'icon' => 'fa-solid fa-desktop', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Ruang Kelas Multimedia Ber-AC', 'desc' => 'Ruang kelas representatif berpendingin udara dengan smart display proyektor LCD dan audio-visual joyful learning.', 'icon' => 'fa-solid fa-chalkboard-user', 'image' => '/uploads/campus-sit-madani.webp'],
-            ['name' => 'Perpustakaan Digital & Ruang Diskusi', 'desc' => 'Koleksi literatur keislaman klasik dan modern, ensiklopedia sains, modul pembelajaran, dan area diskusi yang nyaman.', 'icon' => 'fa-solid fa-book-bookmark', 'image' => '/uploads/tahfidz-sit-madani.webp'],
-            ['name' => 'Lapangan Olahraga Multifungsi', 'desc' => 'Sarana berolahraga futsal, bola basket, bola voli, bulutangkis, dan arena ketangkasan kepramukaan terpadu.', 'icon' => 'fa-solid fa-basketball', 'image' => '/uploads/activities-sit-madani.webp'],
-            ['name' => 'Masjid Kampus Utama Madani', 'desc' => 'Pusat pembinaan ruhiyah siswa, sholat berjamaah lima waktu, kajian kitab adab, dan halaqah tahfidz Al-Qur\'an.', 'icon' => 'fa-solid fa-mosque', 'image' => '/uploads/campus-sit-madani.webp'],
+            ['name' => 'Laboratorium IPA & Riset Sains Terpadu', 'desc' => 'Dilengkapi mikroskop, alat praktikum fisika, kimia, dan biologi modern untuk mengasah daya analisis dan riset ilmiah santri.', 'icon' => 'fa-solid fa-flask', 'image' => '/uploads/campus-smpit-rabbani.webp'],
+            ['name' => 'Laboratorium Komputer Multimedia & ANBK', 'desc' => 'Jajaran komputer PC berspesifikasi tinggi untuk coding dasar, desain grafis, riset internet, dan asesmen nasional terpadu.', 'icon' => 'fa-solid fa-desktop', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Ruang Kelas Multimedia Ber-AC', 'desc' => 'Ruang kelas representatif berpendingin udara dengan smart display proyektor LCD dan audio-visual joyful learning.', 'icon' => 'fa-solid fa-chalkboard-user', 'image' => '/uploads/campus-smpit-rabbani.webp'],
+            ['name' => 'Perpustakaan Digital & Ruang Diskusi', 'desc' => 'Koleksi literatur keislaman klasik dan modern, ensiklopedia sains, modul pembelajaran, dan area diskusi yang nyaman.', 'icon' => 'fa-solid fa-book-bookmark', 'image' => '/uploads/tahfidz-sit-rabbani.webp'],
+            ['name' => 'Lapangan Olahraga Multifungsi', 'desc' => 'Sarana berolahraga futsal, bola basket, bola voli, bulutangkis, dan arena ketangkasan kepramukaan terpadu.', 'icon' => 'fa-solid fa-volleyball', 'image' => '/uploads/kegiatan-pramuka-rabbani.webp'],
+            ['name' => 'Masjid Kampus Utama Rabbani', 'desc' => 'Pusat pembinaan ruhiyah siswa, sholat berjamaah lima waktu, kajian kitab adab, dan halaqah tahfidz Al-Qur\'an.', 'icon' => 'fa-solid fa-mosque', 'image' => '/uploads/campus-sit-rabbani.webp'],
+        ];
+    } elseif ($activeKey === 'sma') {
+        $facilityList = [
+            ['name' => 'Gedung Asrama Putra & Putri 24 Jam', 'desc' => 'Asrama boarding school modern dengan pendampingan musyrif/ah 24 jam untuk pembiasaan ibadah dan tahfidz.', 'icon' => 'fa-solid fa-hotel', 'image' => '/uploads/campus-smait-rabbani.webp'],
+            ['name' => 'Laboratorium Komputer & Bimbel SNBT Gratis', 'desc' => 'Fasilitas PC modern dan bimbingan SNBT intensif gratis untuk mengantarkan kelulusan PTN favorit.', 'icon' => 'fa-solid fa-desktop', 'image' => '/uploads/prestasi-sit-rabbani.webp'],
+            ['name' => 'Ruang Halaqah Tahfidz Al-Qur\'an Mutqin', 'desc' => 'Ruang halaqah tahsin dan tahfidz bersanad dengan target 88% lulusan hafal Al-Qur\'an minimal 1 juz.', 'icon' => 'fa-solid fa-quran', 'image' => '/uploads/tahfidz-sit-rabbani.webp'],
+            ['name' => 'Lapangan Olahraga Multifungsi & Bola Voli', 'desc' => 'Sarana olahraga untuk voli prestasi, futsal, dan seni bela diri Tapak Suci.', 'icon' => 'fa-solid fa-volleyball', 'image' => '/uploads/kegiatan-pramuka-rabbani.webp'],
+            ['name' => 'Ruang Kelas Multimedia Ber-AC', 'desc' => 'Ruang belajar modern dilengkapi proyektor, audio visual, dan suasana pembelajaran kondusif.', 'icon' => 'fa-solid fa-chalkboard-user', 'image' => '/uploads/campus-smait-rabbani.webp'],
+            ['name' => 'Perpustakaan & Pusat Literasi Digital', 'desc' => 'Koleksi buku kurikulum, referensi sains, dan literatur persiapan masuk perguruan tinggi.', 'icon' => 'fa-solid fa-book-open-reader', 'image' => '/uploads/campus-smpit-rabbani.webp'],
         ];
     }
 @endphp
 
-@section('title', $head['title'] . ' - SIT Madani')
+@section('title', $head['title'] . ' - SIT Rabbani')
 @section('meta_description', $head['sub'])
 
 @section('content')
@@ -89,7 +103,7 @@
     {{-- UNIT SWITCHER TABS --}}
     <div class="flex flex-wrap items-center justify-center gap-2 bg-white p-2 sm:p-3 rounded-2xl shadow-sm border border-gray-100">
         <a href="{{ route('bidang.index') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ ($activeKey === 'all' || $activeKey === 'yayasan') ? 'bg-indigo-600 text-white shadow' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
-            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Kampus Terpadu SIT Madani
+            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Kampus Terpadu SIT Rabbani
         </a>
         <a href="{{ route('unit.fasilitas', 'tk') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-amber-50' }}">
             <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> Fasilitas TKS IT
@@ -99,6 +113,9 @@
         </a>
         <a href="{{ route('unit.fasilitas', 'smp') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'smp' ? 'bg-blue-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-blue-50' }}">
             <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> Fasilitas SMPS IT
+        </a>
+        <a href="{{ route('unit.fasilitas', 'sma') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'sma' ? 'bg-purple-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-purple-50' }}">
+            <i class="fa-solid fa-building-columns text-purple-500 mr-1.5"></i> Fasilitas SMA IT
         </a>
     </div>
 
@@ -110,7 +127,7 @@
                 <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl transition transform hover:-translate-y-1.5 flex flex-col justify-between group reveal-fade-up delay-{{ $idx % 3 }}">
                     <div>
                         <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
-                            <img src="{{ $f['image'] }}" alt="{{ $f['name'] }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                            <img src="{{ $f['image'] }}" alt="{{ $f['name'] }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             <span class="absolute top-3.5 left-3.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
                                 {{ $head['badge'] }}
                             </span>
@@ -134,7 +151,7 @@
 
                     <div class="px-6 pb-6 pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
                         <span class="text-[11px] text-gray-500 font-medium"><i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i> Standar Terpadu</span>
-                        <span class="text-[11px] text-indigo-600 font-bold">SIT Madani</span>
+                        <span class="text-[11px] text-indigo-600 font-bold">SIT Rabbani</span>
                     </div>
                 </div>
             @endforeach
@@ -146,7 +163,7 @@
                 <div class="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 hover:shadow-2xl transition transform hover:-translate-y-1.5 flex flex-col justify-between group reveal-fade-up delay-{{ $idx % 3 }}">
                     <div>
                         <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
-                            <img src="{{ $b->thumbnail_url }}" alt="{{ $b->name }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                            <img src="{{ $b->thumbnail_url }}" alt="{{ $b->name }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             <span class="absolute top-3.5 left-3.5 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider">
                                 Fasilitas Kampus Terpadu
                             </span>
@@ -159,7 +176,7 @@
                                 @else
                                     <i class="fa-solid fa-school text-sm text-indigo-600"></i>
                                 @endif
-                                <span>SIT Madani Kayuagung</span>
+                                <span>SIT Rabbani Muara Enim</span>
                             </div>
 
                             <h3 class="font-black text-gray-900 text-base sm:text-lg group-hover:text-indigo-600 transition leading-snug">

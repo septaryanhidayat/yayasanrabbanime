@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', $agenda->title . ' - Agenda SMPS IT Madani Kayuagung')
+@section('title', $agenda->title . ' - Agenda SMPS IT Rabbani Muara Enim')
 
 @section('content')
 <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
@@ -27,7 +27,7 @@
                 <span>&bull;</span>
                 <div class="flex items-center">
                     <i class="fa-solid fa-location-dot text-orange-500 mr-2 text-base"></i>
-                    <span>{{ $agenda->location ?: 'Sekolah SMPS IT Madani Kayuagung' }}</span>
+                    <span>{{ $agenda->location ?: 'Sekolah SMPS IT Rabbani Muara Enim' }}</span>
                 </div>
                 <span>&bull;</span>
                 @php
@@ -51,7 +51,7 @@
 
             @if($agenda->featured_image)
                 <div class="rounded-2xl overflow-hidden shadow-md">
-                    <img src="{{ $agenda->featured_image_url }}" alt="{{ $agenda->title }}" class="w-full h-auto" onerror="this.onerror=null; this.src='/uploads/activities-sit-madani.webp'">
+                    <img src="{{ $agenda->featured_image_url }}" alt="{{ $agenda->title }}" class="w-full h-auto" onerror="this.onerror=null; this.src='/uploads/prestasi-sit-rabbani.webp'">
                 </div>
             @endif
 
@@ -84,7 +84,7 @@
                     @foreach($otherAgendas as $oA)
                         <a href="{{ route('agenda.show', $oA->slug) }}" class="flex items-center space-x-3 p-3 rounded-xl hover:bg-indigo-50/60 transition border border-gray-50 group">
                             <div class="w-14 h-14 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
-                                <img src="{{ $oA->featured_image_url }}" alt="{{ $oA->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/activities-sit-madani.webp'">
+                                <img src="{{ $oA->featured_image_url }}" alt="{{ $oA->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='/uploads/prestasi-sit-rabbani.webp'">
                             </div>
                             <div class="flex-1 min-w-0">
                                 <span class="text-[10px] text-orange-600 font-bold block mb-1">

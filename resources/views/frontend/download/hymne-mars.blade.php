@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', ($page?->meta_title ?: ($page?->title ?: 'Mars JSIT Indonesia')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
-@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Lagu resmi Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia di SMPS IT Madani Kayuagung.'))
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Mars JSIT Indonesia')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Lagu resmi Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia di SMPS IT Rabbani Muara Enim.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Mars Jaringan Sekolah Islam Terpadu (JSIT) Indonesia' }}</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            {{ $page?->excerpt ?: 'Lagu kebanggaan civitas akademika SMPS IT Madani Kayuagung sebagai bagian dari Jaringan Sekolah Islam Terpadu (JSIT) Indonesia dalam membina generasi Rabbani yang unggul dan berdaya saing global.' }}
+            {{ $page?->excerpt ?: 'Lagu kebanggaan civitas akademika SMPS IT Rabbani Muara Enim sebagai bagian dari Jaringan Sekolah Islam Terpadu (JSIT) Indonesia dalam membina generasi Rabbani yang unggul dan berdaya saing global.' }}
         </p>
     </div>
 </div>
@@ -111,7 +111,7 @@
                 <i class="fa-solid fa-shield-halved text-indigo-600 mr-2"></i> 10 Karakter Siswa JSIT (Muwashofat)
             </h4>
             <p class="text-xs text-gray-700 mb-4 leading-relaxed font-medium">
-                Sebagai sekolah anggota resmi Jaringan Sekolah Islam Terpadu (JSIT) Indonesia, SMPS IT Madani Kayuagung menanamkan 10 standar kompetensi lulusan siswa:
+                Sebagai sekolah anggota resmi Jaringan Sekolah Islam Terpadu (JSIT) Indonesia, SMPS IT Rabbani Muara Enim menanamkan 10 standar kompetensi lulusan siswa:
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-800">
                 <div class="flex items-center space-x-2 bg-white p-3 rounded-xl border border-indigo-100 shadow-xs">

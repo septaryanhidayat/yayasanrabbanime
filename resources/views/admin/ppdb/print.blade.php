@@ -126,13 +126,13 @@
     <div class="container">
         {{-- KOP SURAT --}}
         <div class="header">
-            <img src="/uploads/logo-madani-square.webp" alt="Logo" class="logo">
+            <img src="/uploads/logo-rabbani-square.webp" alt="Logo" class="logo">
             <div class="header-text">
-                <h1>Yayasan Agung Madani Kayuagung</h1>
-                <h2>SMPS IT Madani Kayuagung</h2>
+                <h1>Yayasan Generasi Rabbani Muara Enim</h1>
+                <h2>SMPS IT Rabbani Muara Enim</h2>
                 <p>NPSN: 69990882 &bull; Status Akreditasi B (BAN-SM: 074/BAP-SM/TU/XI/2016)</p>
-                <p>Jl. Lingkar Timur, Kel. Gunung Ibul, Kec. Kayuagung, Kabupaten Ogan Komering Ilir, Sumatera Selatan 31111</p>
-                <p>Email: smpsislamterpadumadani@gmail.com | Website: https://sitmadani.sch.id | WA: 0858-3817-3417</p>
+                <p>Jl. Lingkar Timur, Kel. Gunung Ibul, Kec. Muara Enim, Kabupaten Muara Enim, Sumatera Selatan 31111</p>
+                <p>Email: yayasangerabbani@gmail.com | Website: https://rabbanime.sch.id | WA: 0851-5929-3554</p>
             </div>
         </div>
 
@@ -254,7 +254,7 @@
                 <p>( {{ $ppdb->full_name }} )</p>
             </div>
             <div class="sig-box">
-                <p>Kayuagung, {{ date('d F Y') }}<br>Panitia SPMB Madani,</p>
+                <p>Muara Enim, {{ date('d F Y') }}<br>Panitia SPMB Madani,</p>
                 <div class="sig-space"></div>
                 <p>( Panitia SPMB TP {{ $ppdb->academic_year ?? '2026/2027' }} )</p>
             </div>

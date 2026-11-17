@@ -22,7 +22,7 @@ class AdminDewanController extends Controller
     public function index(Request $request)
     {
         $userUnit = auth()->user()->unit ?? 'yayasan';
-        $selectedUnit = in_array($userUnit, ['tk', 'sd', 'smp']) ? $userUnit : $request->query('unit', 'all');
+        $selectedUnit = in_array($userUnit, ['tk', 'sd', 'smp', 'sma']) ? $userUnit : $request->query('unit', 'all');
 
         $query = AnggotaDewan::orderBy('order', 'asc');
 
@@ -32,15 +32,9 @@ class AdminDewanController extends Controller
             } elseif ($selectedUnit === 'sd') {
                 $query->where('fraction', 'like', '%SD%');
             } elseif ($selectedUnit === 'smp') {
-                $query->where(function ($q) {
-                    $q->where('fraction', 'like', '%SMP%')
-                        ->orWhere('fraction', 'like', '%Pendidik%')
-                        ->orWhere('fraction', 'like', '%Pimpinan%')
-                        ->orWhere(function ($sub) {
-                            $sub->where('fraction', 'not like', '%TK%')
-                                ->where('fraction', 'not like', '%SD%');
-                        });
-                });
+                $query->where('fraction', 'like', '%SMP%');
+            } elseif ($selectedUnit === 'sma') {
+                $query->where('fraction', 'like', '%SMA%');
             }
         }
 
@@ -79,7 +73,7 @@ class AdminDewanController extends Controller
             'name' => $validated['name'],
             'slug' => Str::slug($validated['name']),
             'position' => $validated['position'],
-            'fraction' => $validated['fraction'] ?? 'Dewan Guru & GTK SMPS IT Madani',
+            'fraction' => $validated['fraction'] ?? 'Dewan Guru & GTK SMPS IT Rabbani',
             'profile_summary' => $validated['profile_summary'] ?? '',
             'education' => $validated['education'] ?? '',
             'photo' => $photoPath ?? '/uploads/logo-madani-square.webp',
@@ -124,7 +118,7 @@ class AdminDewanController extends Controller
 
         $dewan->name = $validated['name'];
         $dewan->position = $validated['position'];
-        $dewan->fraction = $validated['fraction'] ?? 'Dewan Guru & GTK SMPS IT Madani';
+        $dewan->fraction = $validated['fraction'] ?? 'Dewan Guru & GTK SMPS IT Rabbani';
         $dewan->profile_summary = $validated['profile_summary'] ?? '';
         $dewan->education = $validated['education'] ?? '';
         $dewan->order = $validated['order'] ?? 0;

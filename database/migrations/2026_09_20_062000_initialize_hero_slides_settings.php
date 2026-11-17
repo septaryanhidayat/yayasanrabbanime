@@ -13,9 +13,9 @@ return new class extends Migration
         $defaultSlides = [
             [
                 'active' => true,
-                'badge' => 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B',
+                'badge' => 'SMPS IT Unggulan Muara Enim, Kab. OKI • Terakreditasi B',
                 'title' => 'Selamat Datang di Website Resmi',
-                'subtitle' => 'SMPS IT Madani Kayuagung',
+                'subtitle' => 'SMPS IT Rabbani Muara Enim',
                 'image' => '/uploads/campus-sit-madani.webp',
                 'btn_text' => 'Sambutan Kepala Sekolah',
                 'btn_link' => '/sambutan-kepala-sekolah',
@@ -27,9 +27,9 @@ return new class extends Migration
             ],
             [
                 'active' => true,
-                'badge' => 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B',
+                'badge' => 'SMPS IT Unggulan Muara Enim, Kab. OKI • Terakreditasi B',
                 'title' => 'Membina Generasi Qur\'ani, Cerdas & Berakhlak Mulia',
-                'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Kayuagung, Kab. OKI dengan Kurikulum Terpadu & Tahfidz Al-Qur\'an.',
+                'subtitle' => 'Sekolah Menengah Pertama Islam Terpadu berakreditasi di Muara Enim, Kab. OKI dengan Kurikulum Terpadu & Tahfidz Al-Qur\'an.',
                 'image' => '/uploads/activities-sit-madani.webp',
                 'btn_text' => 'Profil Singkat Sekolah',
                 'btn_link' => '/tentang-kami',
@@ -41,7 +41,7 @@ return new class extends Migration
             ],
             [
                 'active' => true,
-                'badge' => 'SMPS IT Unggulan Kayuagung, Kab. OKI • Terakreditasi B',
+                'badge' => 'SMPS IT Unggulan Muara Enim, Kab. OKI • Terakreditasi B',
                 'title' => 'SPMB Gelombang Exclusive TP Baru',
                 'subtitle' => 'Kuota Terbatas Hanya 24 Orang & Promo Cash Back 1 Juta Alumni SDIT Madani.',
                 'image' => '/uploads/tahfidz-sit-madani.webp',

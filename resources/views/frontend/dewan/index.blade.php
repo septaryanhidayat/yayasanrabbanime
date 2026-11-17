@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Dewan Guru & Tenaga Kependidikan - Sekolah Islam Terpadu Madani')
-@section('meta_description', 'Profil pendidik, ustadz/ustadzah, pimpinan, dan pengurus Yayasan Agung Madani, TKS IT, SDS IT, dan SMPS IT Madani Kayuagung.')
+@section('title', 'Dewan Guru & Tenaga Kependidikan - Sekolah Islam Terpadu Rabbani')
+@section('meta_description', 'Profil pendidik, ustadz/ustadzah, pimpinan, dan pengurus Yayasan Generasi Rabbani, TKS IT, SDS IT, dan SMPS IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Dewan Guru &amp; Tenaga Kependidikan</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Pendidik profesional, pembina Qur'ani, sarjana kependidikan, serta jajaran pengurus Yayasan Agung Madani yang berdedikasi membimbing generasi robbani.
+            Pendidik profesional, pembina Qur'ani, sarjana kependidikan, serta jajaran pengurus Yayasan Generasi Rabbani yang berdedikasi membimbing generasi robbani.
         </p>
     </div>
 </div>
@@ -39,23 +39,23 @@
             <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Yayasan
         </button>
         <button type="button" onclick="filterDewan('tk')" id="tab-tk" class="dewan-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $selectedTab === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-amber-50' }}">
-            <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> TKS IT Madani
+            <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> TKS IT Rabbani
         </button>
         <button type="button" onclick="filterDewan('sd')" id="tab-sd" class="dewan-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $selectedTab === 'sd' ? 'bg-emerald-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-emerald-50' }}">
-            <i class="fa-solid fa-book-open-reader text-emerald-500 mr-1.5"></i> SDS IT Madani
+            <i class="fa-solid fa-book-open-reader text-emerald-500 mr-1.5"></i> SDS IT Rabbani
         </button>
         <button type="button" onclick="filterDewan('smp')" id="tab-smp" class="dewan-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $selectedTab === 'smp' ? 'bg-blue-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-blue-50' }}">
-            <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Madani
+            <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Rabbani
         </button>
     </div>
 
-    {{-- SEKSI 1: PENGURUS YAYASAN AGUNG MADANI --}}
+    {{-- SEKSI 1: PENGURUS YAYASAN GENERASI RABBANI --}}
     <div id="section-yayasan" class="dewan-section space-y-6">
         <div class="border-b border-indigo-100 pb-3 flex items-center justify-between">
             <div>
                 <span class="text-xs font-bold text-amber-500 uppercase tracking-wider block">Badan Penyelenggara</span>
                 <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight flex items-center">
-                    <i class="fa-solid fa-landmark text-indigo-600 mr-2"></i> Pengurus Yayasan Agung Madani
+                    <i class="fa-solid fa-landmark text-indigo-600 mr-2"></i> Pengurus Yayasan Generasi Rabbani
                 </h2>
             </div>
             <span class="text-xs bg-indigo-50 text-indigo-700 font-bold px-3 py-1 rounded-full border border-indigo-200">
@@ -77,7 +77,7 @@
                             {{ $p['name'] }}
                         </h3>
                         <p class="text-[11px] text-gray-500 line-clamp-2 leading-relaxed">
-                            {{ $p['desc'] ?? 'Pengurus Harian Yayasan Agung Madani Kayuagung.' }}
+                            {{ $p['desc'] ?? 'Pengurus Harian Yayasan Generasi Rabbani Muara Enim.' }}
                         </p>
                     </div>
                 </div>
@@ -85,13 +85,13 @@
         </div>
     </div>
 
-    {{-- SEKSI 2: DEWAN GURU TKS IT MADANI --}}
+    {{-- SEKSI 2: DEWAN GURU TKS IT RABBANI --}}
     <div id="section-tk" class="dewan-section space-y-6">
         <div class="border-b border-amber-200 pb-3 flex items-center justify-between">
             <div>
                 <span class="text-xs font-bold text-amber-500 uppercase tracking-wider block">PAUD / TK Islam Terpadu</span>
                 <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight flex items-center">
-                    <i class="fa-solid fa-shapes text-amber-500 mr-2"></i> Pendidik &amp; GTK TKS IT Madani
+                    <i class="fa-solid fa-shapes text-amber-500 mr-2"></i> Pendidik &amp; GTK TKS IT Rabbani
                 </h2>
             </div>
             <a href="{{ route('unit.tk') }}" class="text-xs text-amber-600 font-bold hover:underline flex items-center">
@@ -118,7 +118,7 @@
                             <span class="text-xs text-gray-500 block mt-1">{{ $g['fraction'] ?? 'Pendidik Sentra' }}</span>
                         </div>
                         <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                            <span>TKS IT Madani</span>
+                            <span>TKS IT Rabbani</span>
                             <span class="text-amber-500 font-bold"><i class="fa-solid fa-heart mr-0.5"></i> Sentra</span>
                         </div>
                     </div>
@@ -127,13 +127,13 @@
         </div>
     </div>
 
-    {{-- SEKSI 3: DEWAN GURU SDS IT MADANI --}}
+    {{-- SEKSI 3: DEWAN GURU SDS IT RABBANI --}}
     <div id="section-sd" class="dewan-section space-y-6">
         <div class="border-b border-emerald-200 pb-3 flex items-center justify-between">
             <div>
                 <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Sekolah Dasar Islam Terpadu</span>
                 <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight flex items-center">
-                    <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> Pendidik &amp; GTK SDS IT Madani
+                    <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> Pendidik &amp; GTK SDS IT Rabbani
                 </h2>
             </div>
             <a href="{{ route('unit.sd') }}" class="text-xs text-emerald-600 font-bold hover:underline flex items-center">
@@ -160,7 +160,7 @@
                             <span class="text-xs text-gray-500 block mt-1">{{ $g['fraction'] ?? 'Guru Kelas / Mapel' }}</span>
                         </div>
                         <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                            <span>SDS IT Madani</span>
+                            <span>SDS IT Rabbani</span>
                             <span class="text-emerald-600 font-bold"><i class="fa-solid fa-check mr-0.5"></i> Terakreditasi B</span>
                         </div>
                     </div>
@@ -169,13 +169,13 @@
         </div>
     </div>
 
-    {{-- SEKSI 4: DEWAN GURU SMPS IT MADANI --}}
+    {{-- SEKSI 4: DEWAN GURU SMPS IT RABBANI --}}
     <div id="section-smp" class="dewan-section space-y-6">
         <div class="border-b border-blue-200 pb-3 flex items-center justify-between">
             <div>
                 <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block">Sekolah Menengah Pertama Islam Terpadu &amp; Boarding</span>
                 <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight flex items-center">
-                    <i class="fa-solid fa-graduation-cap text-blue-600 mr-2"></i> Pendidik &amp; GTK SMPS IT Madani
+                    <i class="fa-solid fa-graduation-cap text-blue-600 mr-2"></i> Pendidik &amp; GTK SMPS IT Rabbani
                 </h2>
             </div>
             <a href="{{ route('unit.smp') }}" class="text-xs text-blue-600 font-bold hover:underline flex items-center">
@@ -202,7 +202,7 @@
                             <span class="text-xs text-gray-500 block mt-1">{{ $g['fraction'] ?? 'Guru Bidang Studi' }}</span>
                         </div>
                         <div class="pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-gray-400">
-                            <span>SMPS IT Madani</span>
+                            <span>SMPS IT Rabbani</span>
                             <span class="text-blue-600 font-bold"><i class="fa-solid fa-quran mr-0.5"></i> Tahfidz &amp; Sains</span>
                         </div>
                     </div>

@@ -1,30 +1,30 @@
 @extends('layouts.frontend')
 
 @php
-    $activeKey = in_array($currentUnitKey, ['yayasan', 'tk', 'sd', 'smp']) ? $currentUnitKey : 'yayasan';
+    $activeKey = in_array($currentUnitKey, ['yayasan', 'tk', 'sd', 'smp', 'sma']) ? $currentUnitKey : 'yayasan';
     $profileMap = [
         'yayasan' => [
             'key' => 'yayasan',
-            'title' => 'Profil Yayasan Agung Madani Kayuagung',
-            'sub' => 'Lembaga Penyelenggara Pendidikan Islam Terpadu Satu Atap (TKS IT • SDS IT • SMPS IT)',
+            'title' => 'Profil Yayasan Generasi Rabbani Muara Enim',
+            'sub' => 'Lembaga Penyelenggara Pendidikan Islam Terpadu Satu Atap (TKS IT • SDS IT • SMPS IT • SMA IT)',
             'leader_title' => 'Ketua Yayasan',
-            'leader_name' => 'Drs. H. Legianto, M.E.E.',
-            'leader_photo' => '/uploads/dewan/ust-legianto.webp',
-            'heading_sambutan' => 'Mewujudkan Ekosistem Pendidikan Islam Terpadu Satu Atap di Kabupaten OKI',
-            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Yayasan Agung Madani Kayuagung hadir dengan komitmen kokoh menyelenggarakan pendidikan Islam terpadu satu atap yang berkesinambungan mulai dari jenjang TKS IT Madani, SDS IT Madani, hingga SMPS IT Madani. Kami memadukan keluhuran nilai Al-Qur'an dan as-Sunnah dengan keunggulan sains teknologi, bahasa global, dan adab islami untuk melahirkan generasi robbani yang cerdas, mandiri, dan berakhlak mulia.",
+            'leader_name' => 'Drs. H. Basuki Wiwoho',
+            'leader_photo' => '/uploads/dewan/ust-basuki-wiwoho.webp',
+            'heading_sambutan' => 'Mewujudkan Ekosistem Pendidikan Islam Terpadu Satu Atap di Kabupaten Muara Enim',
+            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Yayasan Generasi Rabbani Muara Enim hadir dengan komitmen kokoh menyelenggarakan pendidikan Islam terpadu satu atap yang berkesinambungan mulai dari jenjang TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, hingga SMA IT Rabbani Boarding School. Kami memadukan keluhuran nilai Al-Qur'an dan as-Sunnah dengan keunggulan sains teknologi, bahasa global, dan adab islami untuk melahirkan generasi robbani yang cerdas, mandiri, dan berakhlak mulia.",
             'sambutan_url' => route('page.sambutan.yayasan'),
-            'sejarah_title' => 'Sejarah Berdirinya Yayasan Agung Madani Kayuagung',
-            'sejarah_sub' => 'Membangun Peradaban Pendidikan Islam di Kabupaten OKI',
-            'sejarah_text1' => 'Yayasan Agung Madani didirikan di Kayuagung atas inisiatif para alim ulama dan tokoh pendidikan Islam di Kabupaten Ogan Komering Ilir yang mendambakan hadirnya institusi pendidikan Islam terpadu yang bermutu tinggi, berwawasan global, namun tetap berakar kuat pada nilai-nilai tradisi keislaman.',
-            'sejarah_text2' => 'Secara bertahap, Yayasan Agung Madani merintis satuan pendidikan terpadu: diawali dengan SDS IT Madani pada tahun 2013, disusul TKS IT Madani pada tahun 2014, dan SMPS IT Madani pada tahun 2019. Kini, dalam naungan kampus terpadu SIT Madani di Kayuagung, seluruh unit bersinergi mewujudkan pendidikan Islam modern, berkarakter robbani, dan berprestasi unggul.',
+            'sejarah_title' => 'Sejarah Berdirinya Yayasan Generasi Rabbani Muara Enim',
+            'sejarah_sub' => 'Membangun Peradaban Pendidikan Islam di Kabupaten Muara Enim',
+            'sejarah_text1' => 'Yayasan Generasi Rabbani didirikan di Muara Enim atas inisiatif para alim ulama dan tokoh pendidikan Islam di Kabupaten Muara Enim yang mendambakan hadirnya institusi pendidikan Islam terpadu yang bermutu tinggi, berwawasan global, namun tetap berakar kuat pada nilai-nilai tradisi keislaman.',
+            'sejarah_text2' => 'Secara bertahap, Yayasan Generasi Rabbani merintis satuan pendidikan terpadu: diawali dengan TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, hingga SMA IT Rabbani Boarding School. Kini, dalam naungan kampus terpadu SIT Rabbani di Muara Enim, seluruh unit bersinergi mewujudkan pendidikan Islam modern, berkarakter robbani, dan berprestasi unggul.',
             'sejarah_url' => route('page.sejarah.yayasan'),
-            'campus_photo' => '/uploads/campus-sit-madani.webp',
-            'badge' => 'YAYASAN AGUNG MADANI',
+            'campus_photo' => '/uploads/campus-sit-rabbani.webp',
+            'badge' => 'YAYASAN GENERASI RABBANI',
             'fasilitas_url' => route('bidang.index'),
             'dewan_url' => route('page.struktur.yayasan'),
             'visi' => 'Menjadi Yayasan Pendidikan Islam Terkemuka yang Melahirkan Generasi Rabbani Berkualitas Tinggi, Berakhlak Mulia, dan Unggul Menghadapi Era Global.',
             'misi' => [
-                'Menyelenggarakan pendidikan Islam terpadu yang berkualitas dari jenjang PAUD/TK, SD, hingga SMP.',
+                'Menyelenggarakan pendidikan Islam terpadu yang berkualitas dari jenjang PAUD/TK, SD, SMP, hingga SMA.',
                 'Menyediakan sarana dan prasarana pendidikan yang modern, representatif, islami, dan asri.',
                 'Meningkatkan kompetensi, profesionalitas, dan kesejahteraan seluruh tenaga pendidik dan kependidikan.',
                 'Membangun sinergi kokoh dengan orang tua, masyarakat, pemerintah, dan Jaringan Sekolah Islam Terpadu (JSIT) Indonesia.',
@@ -32,74 +32,74 @@
         ],
         'tk' => [
             'key' => 'tk',
-            'title' => 'Profil TKS Islam Terpadu Madani Kayuagung',
-            'sub' => 'PAUD / TK Islam Terpadu (NPSN: 69915461 • Terakreditasi B BAN-PAUD)',
+            'title' => 'Profil TKS Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'PAUD / TK Islam Terpadu (NPSN: 10647514 • Terakreditasi B)',
             'leader_title' => 'Kepala Sekolah',
-            'leader_name' => 'Ayu Rahmayani, S.Pd.Gr. (Bunda Ayu)',
-            'leader_photo' => '/uploads/dewan/bunda-ayu.webp',
+            'leader_name' => 'Kepala TKS IT Rabbani',
+            'leader_photo' => '/uploads/dewan/avatar-default.svg',
             'heading_sambutan' => 'Mendidik dengan Sepenuh Kasih Membentuk Generasi Kreatif & Mandiri',
-            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di TKS IT Madani Kayuagung. Kami mendidik ananda usia emas (golden age) dengan pendekatan sentra dan Deep Learning yang berkesadaran, bermakna, dan menggembirakan. Melalui sentra bermain peran, ibadah harian, tahfidz cilik Juz 30, serta bimbingan penuh kasih sayang dari para bunda ustadzah, kami memfasilitasi setiap ananda agar tumbuh percaya diri, ceria, dan beradab islami sejak dini.",
+            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di TKS IT Rabbani Muara Enim. Kami mendidik ananda usia emas (golden age) dengan pendekatan sentra dan Joyful Learning yang berkesadaran, bermakna, dan menggembirakan. Melalui sentra bermain peran, ibadah harian, tahfidz cilik Juz 30, serta bimbingan penuh kasih sayang dari para bunda ustadzah, kami memfasilitasi setiap ananda agar tumbuh percaya diri, ceria, dan beradab islami sejak dini.",
             'sambutan_url' => route('unit.sambutan', 'tk'),
-            'sejarah_title' => 'Sejarah Berdirinya TKS Islam Terpadu Madani',
-            'sejarah_sub' => 'Merintis Pendidikan Anak Usia Dini Berkarakter Islami Sejak 2014',
-            'sejarah_text1' => 'TKS IT Madani didirikan pada tahun 2014 di bawah naungan Yayasan Agung Madani Kayuagung (NPSN: 69915461). Berdiri di atas komitmen menghadirkan wadah PAUD/TK berkualitas tinggi yang berlandaskan nilai-nilai keislaman dan pembiasaan adab nabawi sejak usia keemasan.',
-            'sejarah_text2' => 'Dengan kurikulum sentra dan pendekatan joyful learning, TKS IT Madani telah terakreditasi B BAN-PAUD dan menjadi pilihan utama orang tua di Kayuagung dalam meletakkan fondasi akhlak, kemandirian, dan kecintaan pada Al-Qur\'an bagi buah hati tercinta.',
+            'sejarah_title' => 'Sejarah Berdirinya TKS Islam Terpadu Rabbani',
+            'sejarah_sub' => 'Merintis Pendidikan Anak Usia Dini Berkarakter Islami di Muara Enim',
+            'sejarah_text1' => 'TKS IT Rabbani didirikan di bawah naungan Yayasan Generasi Rabbani Muara Enim (NPSN: 10647514). Berdiri di atas komitmen menghadirkan wadah PAUD/TK berkualitas tinggi yang berlandaskan nilai-nilai keislaman dan pembiasaan adab nabawi sejak usia keemasan.',
+            'sejarah_text2' => 'Dengan kurikulum sentra dan pendekatan joyful learning, TKS IT Rabbani telah terakreditasi B dan menjadi pilihan utama orang tua di Muara Enim dalam meletakkan fondasi akhlak, kemandirian, dan kecintaan pada Al-Qur\'an bagi buah hati tercinta.',
             'sejarah_url' => route('unit.sejarah', 'tk'),
-            'campus_photo' => '/uploads/activities-sit-madani.webp',
+            'campus_photo' => '/uploads/prestasi-sit-rabbani.webp',
             'badge' => 'PAUD / TK ISLAM TERPADU',
             'fasilitas_url' => route('unit.fasilitas', 'tk'),
             'dewan_url' => route('unit.dewan', 'tk'),
             'visi' => 'Membentuk Generasi Rabbani yang Kreatif, Cerdas, dan Mandiri.',
             'misi' => [
                 'Membiasakan ibadah harian: Sholat Dhuha, Doa harian, Muroja\'ah hafalan surat pendek, hadits, dan infaq Jumat.',
-                'Membentuk karakter yang berakhlak karimah melalui kegiatan Jumat Sejahtera, ZISWAF, dan kepedulian sosial.',
+                'Membentuk karakter yang berakhlak karimah melalui kegiatan sosial dan kepedulian berbagi.',
                 'Mengembangkan daya imajinasi melalui bermain peran, sentra seni, kreativitas, dan eksplorasi lingkungan.',
                 'Menumbuhkan rasa percaya diri, kemandirian, dan kebiasaan hidup bersih sehat dan gembira.',
             ],
         ],
         'sd' => [
             'key' => 'sd',
-            'title' => 'Profil SDS Islam Terpadu Madani Kayuagung',
-            'sub' => 'Sekolah Dasar Islam Terpadu (NPSN: 69881529 • 13 Rombel • 293 Siswa)',
+            'title' => 'Profil SDS Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'Sekolah Dasar Islam Terpadu (NPSN: 10648045 • Terakreditasi B)',
             'leader_title' => 'Kepala Sekolah',
-            'leader_name' => 'Yudhi Arsyandi, S.Pd., Gr.',
-            'leader_photo' => '/uploads/dewan/ust-andi.webp',
+            'leader_name' => 'Kepala SDS IT Rabbani',
+            'leader_photo' => '/uploads/dewan/avatar-default.svg',
             'heading_sambutan' => 'Membentuk Generasi Rabbani Berprestasi, Sholeh, Inovatif dan Mandiri',
-            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di SDS IT Madani Kayuagung. Kami memadukan Kurikulum Merdeka dengan kurikulum kekhasan JSIT untuk menumbuhkan kecintaan pada Al-Qur'an dengan target mutqin 2 juz, penguasaan 30 hadits adab, pembekalan sains dan komputer sejak dini, serta pembiasaan sholat berjamaah yang membekas sepanjang hayat.",
+            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di SDS IT Rabbani Muara Enim. Kami memadukan Kurikulum Nasional dengan kurikulum kekhasan JSIT untuk menumbuhkan kecintaan pada Al-Qur'an dengan target mutqin, penguasaan hadits adab, pembekalan sains dan komputer sejak dini, serta pembiasaan sholat berjamaah yang membekas sepanjang hayat.",
             'sambutan_url' => route('unit.sambutan', 'sd'),
-            'sejarah_title' => 'Sejarah Berdirinya SDS Islam Terpadu Madani',
-            'sejarah_sub' => 'Pilar Pertama Satuan Pendidikan SIT Madani Sejak 2013',
-            'sejarah_text1' => 'SDS IT Madani didirikan pada tahun 2013 (NPSN: 69881529) sebagai unit sekolah pertama di bawah Yayasan Agung Madani Kayuagung. Bermula dari kelas rintisan yang didorong oleh antusiasme masyarakat akan pendidikan dasar bernuansa islami.',
-            'sejarah_text2' => 'Kini SDS IT Madani telah berkembang pesat menjadi sekolah dasar unggulan di Kabupaten OKI dengan 13 rombongan belajar, 293 murid aktif, dan 37 tenaga pendidik profesional terakreditasi B BAN-SM, mencatatkan berbagai prestasi di olimpiade sains, tahfidz Qur\'an, dan kepanduan.',
+            'sejarah_title' => 'Sejarah Berdirinya SDS Islam Terpadu Rabbani',
+            'sejarah_sub' => 'Pilar Pendidikan Dasar Satuan Pendidikan SIT Rabbani',
+            'sejarah_text1' => 'SDS IT Rabbani didirikan (NPSN: 10648045) sebagai unit sekolah dasar di bawah Yayasan Generasi Rabbani Muara Enim. Bermula dari kelas rintisan yang didorong oleh antusiasme masyarakat akan pendidikan dasar bernuansa islami.',
+            'sejarah_text2' => 'Kini SDS IT Rabbani telah berkembang pesat menjadi sekolah dasar unggulan di Kabupaten Muara Enim dengan tenaga pendidik profesional terakreditasi B BAN-SM, mencatatkan berbagai prestasi di olimpiade sains, tahfidz Qur\'an, dan kepanduan.',
             'sejarah_url' => route('unit.sejarah', 'sd'),
-            'campus_photo' => '/uploads/campus-sit-madani.webp',
+            'campus_photo' => '/uploads/campus-sit-rabbani.webp',
             'badge' => 'SEKOLAH DASAR ISLAM TERPADU',
             'fasilitas_url' => route('unit.fasilitas', 'sd'),
             'dewan_url' => route('unit.dewan', 'sd'),
             'visi' => 'Membentuk Generasi Rabbani yang Berprestasi, Sholeh, Inovatif dan Mandiri.',
             'misi' => [
                 'Membangun atmosfer belajar yang islami dan menyenangkan bagi seluruh siswa.',
-                'Menumbuhkan hafalan Al-Qur\'an minimal 2 juz mutqin bersanad dan 30 hadits adab.',
+                'Menumbuhkan hafalan Al-Qur\'an mutqin bersanad dan hadits adab.',
                 'Membangun kepercayaan diri, kreativitas, dan daya nalar ilmiah siswa.',
                 'Mengembangkan budaya belajar untuk belajar dan menguasai dasar-dasar TIK modern.',
             ],
         ],
         'smp' => [
             'key' => 'smp',
-            'title' => 'Profil SMPS Islam Terpadu Madani Kayuagung',
-            'sub' => 'Sekolah Menengah Pertama Islam Terpadu (NPSN: 70034917 • Full Day School)',
+            'title' => 'Profil SMPS Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'Sekolah Menengah Pertama Islam Terpadu (NPSN: 69920340 • Full Day School)',
             'leader_title' => 'Kepala Sekolah',
-            'leader_name' => 'Ribang Imam Satria, S.Pi., Gr.',
-            'leader_photo' => '/uploads/dewan/kepala-sekolah.webp',
+            'leader_name' => 'Kepala SMPS IT Rabbani',
+            'leader_photo' => '/uploads/dewan/avatar-default.svg',
             'heading_sambutan' => 'Mendidik Generasi Qur\'ani yang Cerdas, Mandiri, Inovatif & Visioner',
-            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di portal resmi SMPS IT Madani Kayuagung. Menjawab tantangan global dan era digital, kami menyajikan pendidikan menengah pertama Full Day School yang memadukan hafalan Al-Qur'an bersanad, pembinaan adab melalui Bina Pribadi Islam (BPI), sains teknologi modern, serta dwibahasa (Arab dan Inggris). Setiap siswa dipersiapkan menjadi pemimpin masa depan yang berwawasan luas dan berakhlakul karimah.",
+            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di portal resmi SMPS IT Rabbani Muara Enim. Menjawab tantangan global dan era digital, kami menyajikan pendidikan menengah pertama Full Day School yang memadukan hafalan Al-Qur'an bersanad, pembinaan adab melalui Bina Pribadi Islam (BPI), sains teknologi modern, serta dwibahasa (Arab dan Inggris). Setiap siswa dipersiapkan menjadi pemimpin masa depan yang berwawasan luas dan berakhlakul karimah.",
             'sambutan_url' => route('unit.sambutan', 'smp'),
-            'sejarah_title' => 'Sejarah Berdirinya SMPS Islam Terpadu Madani',
-            'sejarah_sub' => 'Melanjutkan Estafet Pendidikan Islam Terpadu Berkualitas Sejak 2019',
-            'sejarah_text1' => 'SMPS IT Madani didirikan pada tahun 2019 (NPSN: 70034917) guna menjawab kebutuhan alumni SDIT dan masyarakat Kabupaten Ogan Komering Ilir akan kelanjutan jenjang sekolah menengah pertama Islam terpadu yang bermutu tinggi.',
-            'sejarah_text2' => 'Menerapkan Kurikulum Merdeka terintegrasi JSIT dengan program Full Day School, SMPS IT Madani berfokus pada kematangan spiritual, laboratorium sains modern, literasi digital, dan pembinaan karakter remaja Qur\'ani.',
+            'sejarah_title' => 'Sejarah Berdirinya SMPS Islam Terpadu Rabbani',
+            'sejarah_sub' => 'Melanjutkan Estafet Pendidikan Islam Terpadu Berkualitas di Muara Enim',
+            'sejarah_text1' => 'SMPS IT Rabbani didirikan (NPSN: 69920340) guna menjawab kebutuhan alumni SDIT dan masyarakat Kabupaten Muara Enim akan kelanjutan jenjang sekolah menengah pertama Islam terpadu yang bermutu tinggi.',
+            'sejarah_text2' => 'Menerapkan Kurikulum Nasional terintegrasi JSIT dengan program Full Day School, SMPS IT Rabbani berfokus pada kematangan spiritual, laboratorium sains modern, literasi digital, dan pembinaan karakter remaja Qur\'ani.',
             'sejarah_url' => route('unit.sejarah', 'smp'),
-            'campus_photo' => '/uploads/campus-sit-madani.webp',
+            'campus_photo' => '/uploads/campus-smpit-rabbani.webp',
             'badge' => 'SEKOLAH MENENGAH PERTAMA IT',
             'fasilitas_url' => route('unit.fasilitas', 'smp'),
             'dewan_url' => route('unit.dewan', 'smp'),
@@ -111,11 +111,38 @@
                 'Membina kepemimpinan pemuda islam yang tangguh, amanah, dan moderat.',
             ],
         ],
+        'sma' => [
+            'key' => 'sma',
+            'title' => 'Profil SMA Islam Terpadu Rabbani Muara Enim',
+            'sub' => 'SMA IT Boarding School (NPSN: 70010515 • Terakreditasi B • Bimbel SNBT Gratis)',
+            'leader_title' => 'Kepala Sekolah',
+            'leader_name' => 'Kepala SMA IT Rabbani',
+            'leader_photo' => '/uploads/dewan/avatar-default.svg',
+            'heading_sambutan' => 'Mencetak Pemimpin Masa Depan Berkarakter Qur\'ani & Berdaya Saing Global',
+            'text_sambutan' => "Assalamu'alaikum Warahmatullahi Wabarakatuh. Selamat datang di portal resmi SMA IT Rabbani Muara Enim. Kami menyelenggarakan pendidikan menengah atas terpadu berbasis Boarding School (Asrama Pesantren) dan Full Day School. Didukung fasilitas asrama modern, bimbingan SNBT PTN gratis, target hafalan Al-Qur'an mutqin (88% lulusan tercapai), dan 8 pilihan ekstrakurikuler prestasi, kami berkomitmen menghantarkan santri menuju gerbang kesuksesan dunia dan akhirat.",
+            'sambutan_url' => route('unit.sambutan', 'sma'),
+            'sejarah_title' => 'Sejarah Berdirinya SMA Islam Terpadu Rabbani',
+            'sejarah_sub' => 'Menghadirkan Pesantren Modern & Keunggulan Akademik Masuk PTN',
+            'sejarah_text1' => 'SMA IT Rabbani Muara Enim (NPSN: 70010515) didirikan di bawah naungan Yayasan Generasi Rabbani Muara Enim untuk menjawab kebutuhan masyarakat akan jenjang lanjutan setingkat SMA yang memadukan keunggulan tahfidz asrama dan keberhasilan masuk PTN.',
+            'sejarah_text2' => 'Dengan pembinaan musyrif 24 jam, kurikulum nasional terintegrasi JSIT, dan bimbingan belajar SNBT intensif, SMA IT Rabbani terbukti mencatatkan 88% lulusannya diterima di berbagai Perguruan Tinggi Negeri terkemuka.',
+            'sejarah_url' => route('unit.sejarah', 'sma'),
+            'campus_photo' => '/uploads/campus-smait-rabbani.webp',
+            'badge' => 'SMA IT BOARDING SCHOOL',
+            'fasilitas_url' => route('unit.fasilitas', 'sma'),
+            'dewan_url' => route('unit.dewan', 'sma'),
+            'visi' => 'Mewujudkan Generasi Pemimpin Masa Depan yang Berkarakter Qur\'ani, Berprestasi Global, dan Sukses Masuk PTN.',
+            'misi' => [
+                'Membina hafalan Al-Qur\'an minimal 1 juz mutqin bersanad bagi seluruh santri.',
+                'Menyelenggarakan program Bimbingan Belajar SNBT Gratis untuk menembus PTN favorit.',
+                'Membentuk kultur asrama pesantren yang disiplin, mandiri, dan berakhlakul karimah.',
+                'Mengembangkan potensi kepemimpinan dan minat bakat melalui 8 ekstrakurikuler pilihan.',
+            ],
+        ],
     ];
     $info = $profileMap[$activeKey] ?? $profileMap['yayasan'];
 @endphp
 
-@section('title', $info['title'] . ' - SIT Madani')
+@section('title', $info['title'] . ' - SIT Rabbani')
 @section('meta_description', $info['sub'])
 
 @section('content')
@@ -141,21 +168,24 @@
     {{-- UNIT SWITCHER TABS --}}
     <div class="flex flex-wrap items-center justify-center gap-2 bg-white p-2 sm:p-3 rounded-2xl shadow-sm border border-gray-100">
         <a href="{{ route('page.tentang.yayasan') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'yayasan' ? 'bg-indigo-600 text-white shadow' : 'bg-gray-50 text-gray-700 hover:bg-gray-100' }}">
-            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Yayasan Agung Madani
+            <i class="fa-solid fa-landmark text-amber-500 mr-1.5"></i> Yayasan Generasi Rabbani
         </a>
         <a href="{{ route('unit.tentang-kami', 'tk') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'tk' ? 'bg-amber-500 text-slate-950 font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-amber-50' }}">
-            <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> TKS IT Madani
+            <i class="fa-solid fa-shapes text-amber-500 mr-1.5"></i> TKS IT Rabbani
         </a>
         <a href="{{ route('unit.tentang-kami', 'sd') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'sd' ? 'bg-emerald-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-emerald-50' }}">
-            <i class="fa-solid fa-book-open-reader text-emerald-500 mr-1.5"></i> SDS IT Madani
+            <i class="fa-solid fa-book-open-reader text-emerald-500 mr-1.5"></i> SDS IT Rabbani
         </a>
         <a href="{{ route('unit.tentang-kami', 'smp') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'smp' ? 'bg-blue-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-blue-50' }}">
-            <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Madani
+            <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Rabbani
+        </a>
+        <a href="{{ route('unit.tentang-kami', 'sma') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $activeKey === 'sma' ? 'bg-purple-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-purple-50' }}">
+            <i class="fa-solid fa-user-graduate text-purple-500 mr-1.5"></i> SMA IT Rabbani
         </a>
     </div>
 
     {{-- SEKSI UTAMA: PROFIL SEKOLAH / YAYASAN DARI DASHBOARD ADMIN JIKA ADA --}}
-    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 20 && !str_contains($page?->title, 'SMPS IT Madani Kayuagung'))
+    @if(!empty($page?->content) && strlen(trim(strip_tags($page?->content ?? ''))) > 20 && !str_contains($page?->title, 'SMPS IT Rabbani Muara Enim'))
     <section class="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-xl border border-gray-100 reveal-fade-up">
         <div class="border-b border-gray-100 pb-5 mb-8">
             <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider block">Identitas &amp; Profil Resmi</span>
@@ -234,7 +264,7 @@
             </div>
             <div class="lg:col-span-5 order-1 lg:order-2 flex justify-center">
                 <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-h-80 bg-gray-50 w-full">
-                    <img src="{{ $info['campus_photo'] }}" alt="{{ $info['title'] }}" class="w-full h-full object-cover object-center" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                    <img src="{{ $info['campus_photo'] }}" alt="{{ $info['title'] }}" class="w-full h-full object-cover object-center" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                 </div>
             </div>
         </div>
@@ -368,7 +398,7 @@
             <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
                 Komentar Alumni &amp; Orang Tua
             </h2>
-            <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-1">Pengalaman berharga belajar dan bertumbuh di lingkungan SIT Madani Kayuagung</p>
+            <p class="text-xs sm:text-sm text-gray-500 font-semibold mt-1">Pengalaman berharga belajar dan bertumbuh di lingkungan SIT Rabbani Muara Enim</p>
             <div class="w-16 h-1 bg-emerald-600 mx-auto rounded-full mt-3"></div>
         </div>
 

@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Ekstrakurikuler & Club - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Kegiatan ekstrakurikuler dan klub minat bakat di SMPS IT Madani Kayuagung: Pramuka SIT, Robotika IT, Tahfidz TTQ, Seni Hadrah, Olahraga, dan Bahasa.')
+@section('title', 'Ekstrakurikuler & Club - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Kegiatan ekstrakurikuler dan klub minat bakat di SMPS IT Rabbani Muara Enim: Pramuka SIT, Robotika IT, Tahfidz TTQ, Seni Hadrah, Olahraga, dan Bahasa.')
 
 @section('content')
 <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
@@ -18,7 +18,7 @@
             <div>
                 <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">Ekstrakurikuler &amp; Club</h1>
                 <p class="text-xs sm:text-sm text-indigo-100 mt-1 font-light">
-                    Mengasah minat bakat, kepemimpinan, kemandirian, dan persaudaraan siswa SMPS IT Madani.
+                    Mengasah minat bakat, kepemimpinan, kemandirian, dan persaudaraan siswa SMPS IT Rabbani.
                 </p>
             </div>
         </div>
@@ -43,26 +43,26 @@
                 if (!$thumb) {
                     $t = strtolower($item->title);
                     if (str_contains($t, 'basket') || str_contains($t, 'badminton') || str_contains($t, 'futsal') || str_contains($t, 'atletik')) {
-                        $thumb = '/uploads/activities-sit-madani.webp';
+                        $thumb = '/uploads/prestasi-sit-rabbani.webp';
                     } elseif (str_contains($t, 'digital') || str_contains($t, 'grafis') || str_contains($t, 'robotika') || str_contains($t, 'coding')) {
-                        $thumb = '/uploads/madani/fasilitas_1274_Ruang-Lab-Komputer1.webp';
+                        $thumb = '/uploads/fasilitas_1274_Ruang-Lab-Komputer1.webp';
                     } elseif (str_contains($t, 'sains') || str_contains($t, 'matematika')) {
-                        $thumb = '/uploads/madani/fasilitas_1275_R.-Lab-IPA.webp';
+                        $thumb = '/uploads/fasilitas_1275_R.-Lab-IPA.webp';
                     } elseif (str_contains($t, 'tari') || str_contains($t, 'ansambel') || str_contains($t, 'vocal') || str_contains($t, 'hadrah') || str_contains($t, 'kriya') || str_contains($t, 'cerita') || str_contains($t, 'dongeng') || str_contains($t, 'pantomim')) {
-                        $thumb = '/uploads/madani/fasilitas_1278_HALL-SIT-Madani_.webp';
+                        $thumb = '/uploads/campus-sit-rabbani.webp';
                     } elseif (str_contains($t, 'tahfidz') || str_contains($t, 'da\'i') || str_contains($t, 'dai')) {
-                        $thumb = '/uploads/tahfidz-sit-madani.webp';
+                        $thumb = '/uploads/tahfidz-sit-rabbani.webp';
                     } else {
-                        $thumb = '/uploads/campus-sit-madani.webp';
+                        $thumb = '/uploads/campus-sit-rabbani.webp';
                     }
                 }
                 $cleanDesc = trim(strip_tags($item->content));
-                $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 130) : (!empty($item->excerpt) ? $item->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan siswa SMPS IT Madani dalam bidang ' . $item->title . '.');
+                $desc = !empty($cleanDesc) ? Str::limit($cleanDesc, 130) : (!empty($item->excerpt) ? $item->excerpt : 'Wadah pembinaan bakat, kreativitas, dan kepemimpinan siswa SMPS IT Rabbani dalam bidang ' . $item->title . '.');
             @endphp
             <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group reveal-fade-up">
                 <div class="relative h-56 overflow-hidden bg-gray-100">
                     <a href="{{ route('ekskul.show', $item->slug) }}" class="block w-full h-full">
-                        <img src="{{ $thumb }}" alt="{{ $item->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                        <img src="{{ $thumb }}" alt="{{ $item->title }}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                     </a>
                     <span class="absolute top-3 left-3 bg-indigo-600/90 backdrop-blur-xs text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-md flex items-center space-x-1.5">
                         <i class="fa-solid fa-star text-amber-300 text-xs"></i>

@@ -37,11 +37,11 @@ class PpdbController extends Controller
             'promo' => Setting::get('ppdb_promo', 'Potongan Biaya Masuk Up to 50% OFF (*S&K berlaku)'),
             'tagline' => Setting::get('ppdb_tagline', "Mendidik Sepenuh Cinta. Mewujudkan generasi Qur'ani berkarakter tangguh, cerdas sains, mandiri, dan berwawasan global di bawah naungan JSIT Indonesia."),
             'youtube_id' => Setting::get('ppdb_youtube_id', 'ULMekhqxvqU'),
-            'video_title' => Setting::get('ppdb_video_title', 'Video Profil & Dokumentasi SMPS IT Madani'),
+            'video_title' => Setting::get('ppdb_video_title', 'Video Profil & Dokumentasi SMPS IT Rabbani'),
             'video_desc' => Setting::get('ppdb_video_desc', 'Saksikan video profil dan aktivitas pembelajaran siswa kami secara visual.'),
             'operational_weekday' => Setting::get('ppdb_operational_weekday', "Senin – Jum'at: Pukul 08.00 – 15.00 WIB"),
             'operational_weekend' => Setting::get('ppdb_operational_weekend', 'Sabtu: Pukul 08.00 – 12.00 WIB'),
-            'secretariat' => Setting::get('ppdb_secretariat', 'Kompleks SMPS IT Madani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Kayuagung'),
+            'secretariat' => Setting::get('ppdb_secretariat', 'Kompleks SMPS IT Rabbani, Jl. SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Muara Enim'),
             'registration_fee' => Setting::get('ppdb_registration_fee', 'Rp 250.000,-'),
             'bank_name' => Setting::get('ppdb_bank_name', 'Bank Syariah Indonesia (BSI)'),
             'bank_code' => Setting::get('ppdb_bank_code', '451'),
@@ -55,13 +55,13 @@ class PpdbController extends Controller
             'syarat' => Setting::get('ppdb_syarat', "Mengisi Formulir Pendaftaran online dengan data yang benar dan lengkap.\nMelampirkan bukti transfer biaya pendaftaran.\nMelampirkan scan/fotokopi Akta Kelahiran dan Kartu Keluarga (KK).\nMelampirkan fotokopi rapor SMP/MTs semester 1-5.\nPas foto terbaru calon siswa ukuran 3x4 berwarna."),
             'prestasi' => Setting::get('ppdb_prestasi', 'Keringanan biaya khusus bagi siswa berprestasi Akademik (Peringkat 1-3 Paralel) dan Non-Akademik (Juara 1-3 OSN, O2SN, FLS2N, MTQ/MHQ) minimal tingkat Kota/Kabupaten dengan melampirkan sertifikat/piagam kejuaraan resmi.'),
             'tahfidz' => Setting::get('ppdb_tahfidz', "Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-\nTahfidz >5 Juz Cashback Rp. 1.000.000,-\n\nMengikuti tes sima'an tahfidz bersama dewan musyrif Al-Qur'an Madani.\nKuota Jalur Tahfidz Hanya 10 Siswa"),
-            'alumni' => Setting::get('ppdb_alumni', 'Keringanan istimewa bagi lulusan SD IT Madani dan SD IT Madani Kayuagung 2 yang melanjutkan ke SMPS IT Madani Kayuagung berupa potongan biaya uang pangkal sebesar Rp. 1.000.000,- dengan kuota (hanya 50 siswa)'),
+            'alumni' => Setting::get('ppdb_alumni', 'Keringanan istimewa bagi lulusan SD IT Rabbani dan SD IT Rabbani Muara Enim 2 yang melanjutkan ke SMPS IT Rabbani Muara Enim berupa potongan biaya uang pangkal sebesar Rp. 1.000.000,- dengan kuota (hanya 50 siswa)'),
             'mandiri' => Setting::get('ppdb_mandiri', "Jalur seleksi reguler melalui tahapan:\nTes Potensi Akademik (Matematika, Bahasa Indonesia, PAI).\nTes Kemampuan Membaca Al-Qur'an (Tahsin & Tajwid).\nWawancara Komitmen Orang Tua & Siswa."),
             'jadwal_gelombang' => Setting::get('ppdb_jadwal_gelombang', "Gelombang 1: Oktober s/d Desember (Diskon Biaya Masuk s/d 50%)\nGelombang 2: Januari s/d April\nGelombang 3: Mei s/d Juli (Khusus sisa kuota)\n* Pendaftaran akan ditutup otomatis apabila kuota per kelas telah terpenuhi."),
             'biaya' => Setting::get('ppdb_biaya', "Biaya Formulir Pendaftaran: Ditransfer ke rekening BSI sekolah 7011304251.\nPaket Seragam Sekolah (4 stel seragam lengkap + atribut dan jilbab/peci).\nBiaya Orientasi Siswa (MPLS) & Baitul Maqdis Leadership Camp.\nUntuk rincian lengkap uang pangkal dan SPP bulanan, hubungi langsung panitia PPDB."),
             'boarding' => Setting::get('ppdb_boarding', 'Program Full Day School: Pembelajaran terpadu hingga sore hari yang memadukan kurikulum nasional dan kekhasan JSIT, shalat berjamaah, makan siang sehat, tahfidz bersanad, dan ekstrakurikuler.'),
             'kelulusan' => Setting::get('ppdb_kelulusan', 'Hasil seleksi diumumkan melalui website resmi dan notifikasi WhatsApp kepada orang tua calon siswa. Calon Siswa yang dinyatakan lulus wajib melakukan daftar ulang sesuai jadwal yang ditentukan panitia.'),
-            'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SIT Madani Kayuagung'),
+            'closing_title' => Setting::get('ppdb_closing_title', 'Terima Kasih Sudah Mendaftar di SIT Rabbani Muara Enim'),
             'closing_desc' => Setting::get('ppdb_closing_desc', 'Semoga Ananda kelak bisa menjadi anak yang cerdas, sholeh/ah, berbakti kepada orang tua dan menjadi kebanggaan bagi agama, bangsa dan negara. Aamiin'),
             'image_1' => (! empty(Setting::get('ppdb_image_1')) && file_exists(public_path(ltrim(Setting::get('ppdb_image_1'), '/')))) ? Setting::get('ppdb_image_1') : '/uploads/fasilitas/fasilitas-gedung-utama.webp',
             'image_2' => (! empty(Setting::get('ppdb_image_2')) && file_exists(public_path(ltrim(Setting::get('ppdb_image_2'), '/')))) ? Setting::get('ppdb_image_2') : '/uploads/fasilitas/fasilitas-ruang-kelas.webp',
@@ -131,7 +131,7 @@ class PpdbController extends Controller
             'bank_account' => Setting::get('ppdb_bank_account', '7011304251'),
             'bank_holder' => Setting::get('ppdb_bank_holder', 'YL. Fatmawati'),
             'registration_fee' => Setting::get('ppdb_registration_fee', 'Rp 250.000,-'),
-            'hotline_phone' => Setting::get('ppdb_hotline_phone', '0821-8268-0647'),
+            'hotline_phone' => Setting::get('ppdb_hotline_phone', '0851-5929-3554'),
         ];
 
         $groupedFields = PpdbFormService::getActiveFieldsGrouped();
@@ -383,7 +383,7 @@ class PpdbController extends Controller
         }
 
         $text = "*FORMULIR PENDAFTARAN Siswa Baru (PPDB)*\n";
-        $text .= "*SMPS IT MADANI KAYUAGUNG*\n";
+        $text .= "*SMPS IT RABBANI MUARA ENIM*\n";
         $text .= "----------------------------------------\n";
         $text .= '📋 *No. Registrasi:* '.$registration->registration_number."\n";
         $createdAtStr = $registration->created_at ? $registration->created_at->translatedFormat('d F Y, H:i') : date('d F Y, H:i');

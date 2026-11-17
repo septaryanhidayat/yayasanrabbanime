@@ -140,7 +140,7 @@ test('spmb banner is fully customizable and visible on homepage with custom text
 test('redesigned ppdb page renders cleanly with bsi account and parent-friendly layout', function () {
     $response = $this->get(route('ppdb.index'));
     $response->assertStatus(200);
-    $response->assertSee('SPMB TERPADU SIT MADANI');
+    $response->assertSee('SPMB TERPADU SIT RABBANI');
     $response->assertSee('Info Rekening');
     $response->assertDontSee('Info Biaya & Rekening BSI');
     $response->assertSee('7011304251');
@@ -148,7 +148,7 @@ test('redesigned ppdb page renders cleanly with bsi account and parent-friendly 
     $response->assertSee('padding-top: 56.25%', false);
     $response->assertSee('Alur Pendaftaran');
     $response->assertSee('Syarat Pendaftaran');
-    $response->assertSee('Jenjang Satuan Pendidikan SIT Madani');
+    $response->assertSee('Jenjang Satuan Pendidikan SIT Rabbani');
     $response->assertSee('Full Day School');
 });
 

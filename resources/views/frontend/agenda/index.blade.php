@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Agenda Akademik & Kegiatan - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Jadwal dan kalender agenda kegiatan akademik, ujian, perlombaan, tasmi\' Qur\'an, dan ekstrakurikuler SMPS IT Madani Kayuagung.')
+@section('title', 'Agenda Akademik & Kegiatan - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Jadwal dan kalender agenda kegiatan akademik, ujian, perlombaan, tasmi\' Qur\'an, dan ekstrakurikuler SMPS IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Agenda Akademik & Siswa</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Jadwal kegiatan belajar, agenda tasmi' Al-Qur'an, olimpiade sains, dan ekstrakurikuler SMPS IT Madani Kayuagung.
+            Jadwal kegiatan belajar, agenda tasmi' Al-Qur'an, olimpiade sains, dan ekstrakurikuler SMPS IT Rabbani Muara Enim.
         </p>
     </div>
 </div>
@@ -38,7 +38,7 @@
                 <div>
                     {{-- FOTO BANNER AGENDA SEPERTI PROGRAM UNGGULAN --}}
                     <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
-                        <img src="{{ $agenda->featured_image_url }}" alt="{{ $agenda->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/activities-sit-madani.webp'">
+                        <img src="{{ $agenda->featured_image_url }}" alt="{{ $agenda->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/prestasi-sit-rabbani.webp'">
                         
                         {{-- STATUS BADGE (TOP-LEFT) --}}
                         @php
@@ -85,7 +85,7 @@
                         {{-- LOKASI --}}
                         <div class="text-xs text-gray-600 flex items-center font-medium">
                             <i class="fa-solid fa-location-dot text-orange-500 mr-2 text-xs flex-shrink-0"></i>
-                            <span class="line-clamp-1">{{ $agenda->location ?: 'Sekolah SMPS IT Madani' }}</span>
+                            <span class="line-clamp-1">{{ $agenda->location ?: 'Sekolah SMPS IT Rabbani' }}</span>
                         </div>
 
                         {{-- RINGKASAN DESKRIPSI --}}

@@ -17,13 +17,14 @@ class PageController extends Controller
     {
         $unitKey = $unit ?? $request->query('unit', ($request->is('yayasan*') ? 'yayasan' : 'smp'));
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : 'smp';
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : 'smp';
         $currentUnit = SchoolUnitService::getUnit($currentUnitKey);
 
         $slug = match ($currentUnitKey) {
             'yayasan' => 'sambutan-ketua-yayasan',
             'tk' => 'sambutan-kepala-tks-it',
             'sd' => 'sambutan-kepala-sds-it',
+            'sma' => 'sambutan-kepala-sma-it',
             default => 'sambutan-kepala-sekolah',
         };
 
@@ -32,9 +33,9 @@ class PageController extends Controller
 
         // Custom leader object depending on unit
         $kepsek = (object) [
-            'name' => $currentUnit['leader_name'] ?? 'Ribang Imam Satria, S.Pi., Gr.',
+            'name' => $currentUnit['leader_name'] ?? 'Pimpinan Sekolah',
             'position' => ($currentUnit['leader_title'] ?? 'Kepala Sekolah').' '.$currentUnit['short_name'],
-            'photo' => $currentUnit['leader_photo'] ?? '/uploads/dewan/kepala-sekolah.webp',
+            'photo' => $currentUnit['leader_photo'] ?? '/uploads/dewan/avatar-ustadz.svg',
         ];
 
         return view('frontend.pages.sambutan', compact('page', 'kepsek', 'units', 'currentUnitKey', 'currentUnit'));
@@ -44,13 +45,14 @@ class PageController extends Controller
     {
         $unitKey = $unit ?? $request->query('unit', ($request->is('yayasan*') ? 'yayasan' : 'all'));
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : 'all';
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : 'all';
         $currentUnit = ($currentUnitKey !== 'all') ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $slug = match ($currentUnitKey) {
             'yayasan' => 'tentang-yayasan',
             'tk' => 'tentang-tks-it',
             'sd' => 'tentang-sds-it',
+            'sma' => 'tentang-sma-it',
             'smp' => 'tentang-kami',
             default => 'tentang-kami',
         };
@@ -66,13 +68,14 @@ class PageController extends Controller
     {
         $unitKey = $unit ?? $request->query('unit', ($request->is('yayasan*') ? 'yayasan' : 'all'));
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : 'all';
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : 'all';
         $currentUnit = ($currentUnitKey !== 'all') ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $slug = match ($currentUnitKey) {
             'yayasan' => 'visi-misi-yayasan',
             'tk' => 'visi-misi-tks-it',
             'sd' => 'visi-misi-sds-it',
+            'sma' => 'visi-misi-sma-it',
             'smp' => 'visi-dan-misi',
             default => 'visi-dan-misi',
         };
@@ -89,13 +92,14 @@ class PageController extends Controller
     {
         $unitKey = $unit ?? $request->query('unit', ($request->is('yayasan*') ? 'yayasan' : 'yayasan'));
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : 'yayasan';
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : 'yayasan';
         $currentUnit = SchoolUnitService::getUnit($currentUnitKey);
 
         $slug = match ($currentUnitKey) {
             'yayasan' => 'sejarah-yayasan',
             'tk' => 'sejarah-tks-it',
             'sd' => 'sejarah-sds-it',
+            'sma' => 'sejarah-sma-it',
             'smp' => 'sejarah',
             default => 'sejarah',
         };
@@ -112,13 +116,14 @@ class PageController extends Controller
     {
         $unitKey = $unit ?? $request->query('unit', ($request->is('yayasan*') ? 'yayasan' : 'all'));
         $units = SchoolUnitService::getUnits();
-        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'yayasan']) ? $unitKey : 'all';
+        $currentUnitKey = in_array($unitKey, ['tk', 'sd', 'smp', 'sma', 'yayasan']) ? $unitKey : 'all';
         $currentUnit = ($currentUnitKey !== 'all') ? SchoolUnitService::getUnit($currentUnitKey) : null;
 
         $slug = match ($currentUnitKey) {
             'yayasan' => 'struktur-yayasan',
             'tk' => 'struktur-tks-it',
             'sd' => 'struktur-sds-it',
+            'sma' => 'struktur-sma-it',
             'smp' => 'struktur-organisasi',
             default => 'struktur-organisasi',
         };
@@ -151,7 +156,7 @@ class PageController extends Controller
      */
     public function showUnitPage(string $unit, string $slug)
     {
-        $validUnits = ['tk', 'sd', 'smp'];
+        $validUnits = ['tk', 'sd', 'smp', 'sma'];
         if (! in_array($unit, $validUnits)) {
             return redirect()->route('home');
         }

@@ -1,0 +1,256 @@
+{
+    "gurus": [
+        {
+            "name": "Drs. H. Basuki Wiwoho",
+            "slug": "drs-h-basuki-wiwoho",
+            "position": "Ketua Yayasan Generasi Rabbani",
+            "fraction": "Pengurus Yayasan",
+            "photo": "/uploads/dewan/ust-basuki-wiwoho.webp",
+            "profile_summary": "Ketua Yayasan Generasi Rabbani Muara Enim. Mengayomi dan membina pengembangan mutu pendidikan terpadu dari jenjang TK, SD, SMP, hingga SMA IT Rabbani.",
+            "education": "S1 Pendidikan Islam & Manajemen Organisasi",
+            "order": 1
+        },
+        {
+            "name": "Ustadz Pembina SMA IT Rabbani",
+            "slug": "pembina-sma-it-rabbani",
+            "position": "Kepala SMA IT Rabbani",
+            "fraction": "Pimpinan Unit SMA",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Kepala SMA IT Rabbani Muara Enim. Berkomitmen mencetak generasi pemimpin Qur'ani, berdaya saing global, dengan target 88% lulusan hafal Al-Qur'an dan tembus PTN favorit.",
+            "education": "S1 Pendidikan, S2 Manajemen Pendidikan",
+            "order": 2
+        },
+        {
+            "name": "Ustadz Pembina SMPS IT Rabbani",
+            "slug": "pembina-smps-it-rabbani",
+            "position": "Kepala SMPS IT Rabbani",
+            "fraction": "Pimpinan Unit SMP",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Kepala SMPS IT Rabbani Muara Enim. Memadukan kurikulum terpadu nasional dengan pembiasaan adab Qur'ani dan pembinaan tahfidz berkesinambungan.",
+            "education": "S1 Pendidikan Sains, Gr",
+            "order": 3
+        },
+        {
+            "name": "Ustadz Pembina SDS IT Rabbani",
+            "slug": "pembina-sds-it-rabbani",
+            "position": "Kepala SDS IT Rabbani",
+            "fraction": "Pimpinan Unit SD",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Kepala SDS IT Rabbani Muara Enim. Mengembangkan pembelajaran joyful learning berakar pada 10 Muwashofat karakter JSIT.",
+            "education": "S1 Pendidikan Guru Sekolah Dasar (PGSD)",
+            "order": 4
+        },
+        {
+            "name": "Bunda Kepala TKS IT Rabbani",
+            "slug": "kepala-tks-it-rabbani",
+            "position": "Kepala TKS IT Rabbani",
+            "fraction": "Pimpinan Unit TK",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Kepala TKS IT Rabbani Muara Enim. Menerapkan kurikulum sentra usia dini yang merangsang fitrah keimanan, kemandirian, dan motorik anak.",
+            "education": "S1 Pendidikan Anak Usia Dini (PAUD)",
+            "order": 5
+        },
+        {
+            "name": "Helen Lestari, S.Pd., Gr.",
+            "slug": "helen-lestari-spd-gr",
+            "position": "Waka Kurikulum SMPS IT Rabbani",
+            "fraction": "Dewan Guru SMP",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Waka Kurikulum SMPS IT Rabbani Muara Enim. Mengintegrasikan Kurikulum Merdeka dan standar mutu kekhasan JSIT.",
+            "education": "S1 Pendidikan, Gr",
+            "order": 6
+        },
+        {
+            "name": "Yushamdalah, S.Pd.",
+            "slug": "yushamdalah-spd",
+            "position": "Waka Kesiswaan & TTQ SMPS IT Rabbani",
+            "fraction": "Dewan Guru SMP",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Waka Kesiswaan dan Pembina TTQ SMPS IT Rabbani. Membimbing akhlak dan program tahfidz Qur'an santri.",
+            "education": "S1 Pendidikan Islam",
+            "order": 7
+        },
+        {
+            "name": "Rudini, S.Pd., Gr.",
+            "slug": "rudini-spd-gr",
+            "position": "Waka Sarana & Prasarana",
+            "fraction": "Dewan Guru SMP",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "profile_summary": "Waka Sarpras SMPS IT Rabbani. Mengelola laboratorium, sarana pembelajaran, dan fasilitas kampus.",
+            "education": "S1 Pendidikan, Gr",
+            "order": 8
+        }
+    ],
+    "facilities": [
+        {
+            "name": "Kampus Terpadu & Gedung Representatif",
+            "slug": "kampus-terpadu-gedung-representatif",
+            "description": "Gedung belajar representatif, bersih, dan asri di lingkungan strategis Muara Enim untuk mendukung kegiatan belajar mengajar yang kondusif.",
+            "thumbnail": "/uploads/campus-sit-rabbani.webp",
+            "icon": "fa-solid fa-school",
+            "order": 1
+        },
+        {
+            "name": "Asrama Boarding School SMA IT Putra & Putri",
+            "slug": "asrama-boarding-school-putra-putri",
+            "description": "Fasilitas asrama pesantren modern dengan pembinaan musyrif/musyrifah 24 jam untuk pembiasaan sholat berjamaah, tahfidz, dan kemandirian santri.",
+            "thumbnail": "/uploads/campus-smait-rabbani.webp",
+            "icon": "fa-solid fa-hotel",
+            "order": 2
+        },
+        {
+            "name": "Laboratorium Komputer & Multimedia",
+            "slug": "laboratorium-komputer-multimedia",
+            "description": "Laboratorium komputer ber-AC dengan PC modern dan akses internet cepat untuk pembelajaran TIK, literasi digital, ANBK, dan Bimbel SNBT.",
+            "thumbnail": "/uploads/prestasi-sit-rabbani.webp",
+            "icon": "fa-solid fa-desktop",
+            "order": 3
+        },
+        {
+            "name": "Pusat Tahfidz Al-Qur'an & Halaqah Keislaman",
+            "slug": "pusat-tahfidz-halaqah-keislaman",
+            "description": "Ruang halaqah tahfidz dan mushalla terpadu untuk pembelajaran tilawah, tahsin bersanad, dan muraja'ah harian santri.",
+            "thumbnail": "/uploads/tahfidz-sit-rabbani.webp",
+            "icon": "fa-solid fa-quran",
+            "order": 4
+        },
+        {
+            "name": "Lapangan Olahraga & Arena Kepanduan",
+            "slug": "lapangan-olahraga-arena-kepanduan",
+            "description": "Lapangan multifungsi untuk kegiatan olahraga (voli, futsal, bulutangkis), latihan Tapak Suci, upacara, dan kegiatan Pramuka SIT.",
+            "thumbnail": "/uploads/kegiatan-pramuka-rabbani.webp",
+            "icon": "fa-solid fa-volleyball",
+            "order": 5
+        },
+        {
+            "name": "Perpustakaan & Pojok Baca Digital",
+            "slug": "perpustakaan-pojok-baca-digital",
+            "description": "Perpustakaan sekolah lengkap dengan koleksi buku kurikulum, referensi keislaman, sains, fiksi edukatif, dan sumber belajar digital.",
+            "thumbnail": "/uploads/campus-smpit-rabbani.webp",
+            "icon": "fa-solid fa-book-open-reader",
+            "order": 6
+        }
+    ],
+    "galleries": [
+        {
+            "url": "/uploads/banner-yayasan-rabbani.webp",
+            "title": "Keluarga Besar Yayasan Generasi Rabbani Muara Enim"
+        },
+        {
+            "url": "/uploads/campus-sit-rabbani.webp",
+            "title": "Gedung Kampus Terpadu SIT Rabbani Muara Enim"
+        },
+        {
+            "url": "/uploads/campus-smait-rabbani.webp",
+            "title": "Kampus SMA IT Rabbani Muara Enim Boarding School"
+        },
+        {
+            "url": "/uploads/campus-smpit-rabbani.webp",
+            "title": "Kampus SMPS IT Rabbani Muara Enim"
+        },
+        {
+            "url": "/uploads/prestasi-sit-rabbani.webp",
+            "title": "Apresiasi Siswa Berprestasi SIT Rabbani Muara Enim"
+        },
+        {
+            "url": "/uploads/kegiatan-pramuka-rabbani.webp",
+            "title": "Kegiatan Kepanduan Pramuka SIT Rabbani Muara Enim"
+        },
+        {
+            "url": "/uploads/tahfidz-sit-rabbani.webp",
+            "title": "Pembinaan Tahfidz Al-Qur'an & Wisuda Santri Rabbani"
+        },
+        {
+            "url": "/uploads/flyer-spmb-smait-rabbani.webp",
+            "title": "Informasi SPMB SMA IT Rabbani Muara Enim"
+        }
+    ],
+    "videos": [
+        {
+            "title": "Profil Yayasan Generasi Rabbani Muara Enim",
+            "slug": "profil-yayasan-generasi-rabbani-muara-enim",
+            "youtube_url": "https://www.youtube.com/watch?v=ULMekhqxvqU",
+            "youtube_id": "ULMekhqxvqU",
+            "description": "Profil resmi dan komitmen pendidikan Sekolah Islam Terpadu Rabbani Muara Enim: TKS IT, SDS IT, SMPS IT, dan SMA IT Rabbani."
+        }
+    ],
+    "testimonials": [
+        {
+            "name": "H. Ahmad Fauzi, S.E.",
+            "profession": "Wali Murid SMA IT Rabbani",
+            "content": "Alhamdulillah, putra kami menempuh pendidikan di SMA IT Rabbani program Boarding School. Hafalan Al-Qur'an berkembang pesat, adab ibadah sangat terjaga, dan program Bimbel SNBT sangat membantu persiapan masuk PTN.",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "status": "publish"
+        },
+        {
+            "name": "dr. Hj. Nurul Hidayah, Sp.A",
+            "profession": "Wali Murid SMPS IT Rabbani",
+            "content": "SIT Rabbani Muara Enim adalah pilihan tepat. Lingkungannya islami, asatidz sangat membimbing dengan penuh keikhlasan, dan akademiknya unggul berstandar JSIT Indonesia.",
+            "photo": "/uploads/dewan/avatar-default.svg",
+            "status": "publish"
+        }
+    ],
+    "downloads": [
+        {
+            "title": "Brosur Resmi SPMB SMA IT Rabbani Muara Enim TP 2025/2026",
+            "description": "Informasi lengkap pendaftaran peserta didik baru SMA IT Rabbani: Program Boarding & Full Day, rincian biaya, beasiswa, dan ekskul.",
+            "category_type": "Brosur",
+            "file_path": "/uploads/flyer-spmb-smait-rabbani.webp",
+            "cover_image": "/uploads/flyer-spmb-smait-rabbani.webp",
+            "file_type": "WEBP",
+            "file_size": "240 KB",
+            "download_count": 890
+        },
+        {
+            "title": "Brosur SPMB Sekolah Islam Terpadu (SIT) Rabbani Muara Enim",
+            "description": "Panduan pendaftaran siswa baru untuk jenjang TK IT, SD IT, dan SMP IT Rabbani Muara Enim.",
+            "category_type": "Brosur",
+            "file_path": "/uploads/flyer-spmb-sit-rabbani.webp",
+            "cover_image": "/uploads/flyer-spmb-sit-rabbani.webp",
+            "file_type": "WEBP",
+            "file_size": "260 KB",
+            "download_count": 670
+        }
+    ],
+    "articles": [
+        {
+            "title": "Penerimaan Peserta Didik Baru (SPMB) SMA IT Rabbani Muara Enim TP 2025/2026 Resmi Dibuka",
+            "slug": "penerimaan-peserta-didik-baru-spmb-sma-it-rabbani-muara-enim-2025-2026",
+            "content": "<p>SMA IT Rabbani Muara Enim (Terakreditasi B) secara resmi membuka Penerimaan Peserta Didik Baru (SPMB) Tahun Pelajaran 2025/2026. Tersedia program <strong>Boarding School (Asrama)</strong> dan <strong>Full Day School</strong>.</p><p>SMA IT Rabbani memiliki keunggulan terbukti: <strong>88% Lulusan Hafal Al-Qur'an minimal 1 Juz</strong>, <strong>88% Lulusan Masuk Perguruan Tinggi Negeri (PTN)</strong>, dan fasilitas <strong>Bimbel SNBT Gratis</strong> untuk seluruh siswa.</p><p>Dapatkan diskon khusus pendaftaran Gelombang 1: SPP hanya Rp 200.000, Registrasi Ulang Rp 1.000.000 (include seragam sekolah), serta Free Uang Pembangunan & Free Uang Kegiatan! Informasi lengkap silakan hubungi kontak panitia di <strong>0851-5929-3554</strong>.</p>",
+            "excerpt": "SPMB SMA IT Rabbani Muara Enim TP 2025/2026 resmi dibuka! Tersedia Boarding & Full Day, diskon khusus Gelombang 1, Bimbel SNBT gratis, dan target hafal Qur'an.",
+            "featured_image": "/uploads/flyer-spmb-smait-rabbani.webp",
+            "category": "berita-sma",
+            "views_count": 1450
+        },
+        {
+            "title": "Komitmen Yayasan Generasi Rabbani Muara Enim Membina Generasi Robbani yang Unggul & Berkarakter",
+            "slug": "komitmen-yayasan-generasi-rabbani-muara-enim-membina-generasi-robbani",
+            "content": "<p>Yayasan Generasi Rabbani Muara Enim terus berkomitmen meningkatkan mutu layanan pendidikan Islam satu atap, mulai dari jenjang TKS IT, SDS IT, SMPS IT, hingga SMA IT Rabbani.</p><p>Dengan integrasi kurikulum nasional Kemendikbudristek dan kurikulum JSIT Indonesia, santri dibekali pondasi akidah yang kokoh, adab islami, tahfidzul Qur'an mutqin, serta penguasaan sains dan teknologi untuk menyongsong masa depan gemilang.</p>",
+            "excerpt": "Perjalanan Yayasan Generasi Rabbani Muara Enim dalam menghadirkan ekosistem pendidikan Islam terpadu yang menyeluruh dan unggul di Kabupaten Muara Enim.",
+            "featured_image": "/uploads/banner-yayasan-rabbani.webp",
+            "category": "kabar-yayasan",
+            "views_count": 980
+        }
+    ],
+    "agendas": [
+        {
+            "title": "Sosialisasi & Orientasi Peserta Didik Baru SIT Rabbani Muara Enim",
+            "slug": "sosialisasi-dan-orientasi-peserta-didik-baru-sit-rabbani-muara-enim",
+            "event_date": "2026-07-15 08:00:00",
+            "location": "Kompleks Kampus SIT Rabbani Muara Enim",
+            "content": "Temu silaturahim orang tua/wali murid baru dan pengenalan program pembiasaan ibadah serta kurikulum terpadu SIT Rabbani Muara Enim.",
+            "status": "publish",
+            "featured_image": "/uploads/campus-sit-rabbani.webp"
+        }
+    ],
+    "pengumumen": [
+        {
+            "title": "Pengumuman Resmi SPMB Gelombang 1 SIT Rabbani Muara Enim",
+            "slug": "pengumuman-resmi-spmb-gelombang-1-sit-rabbani-muara-enim",
+            "content": "Pendaftaran SPMB SIT Rabbani Muara Enim (TK IT, SD IT, SMP IT, dan SMA IT) telah dibuka. Pendaftaran online dapat diakses melalui website resmi atau hotline WhatsApp 0851-5929-3554.",
+            "file_attachment": "/uploads/flyer-spmb-smait-rabbani.webp",
+            "status": "publish",
+            "featured_image": "/uploads/flyer-spmb-smait-rabbani.webp"
+        }
+    ]
+}

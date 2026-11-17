@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Visi dan Misi - Yayasan Agung Madani & Sekolah Islam Terpadu Madani')
-@section('meta_description', 'Visi, misi, dan tujuan luhur Yayasan Agung Madani, TKS IT Madani, SDS IT Madani, dan SMPS IT Madani Kayuagung.')
+@section('title', 'Visi dan Misi - Yayasan Generasi Rabbani & SIT Rabbani Muara Enim')
+@section('meta_description', 'Visi, misi, dan tujuan luhur Yayasan Generasi Rabbani, TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, dan SMA IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Visi &amp; Misi Lembaga &amp; Sekolah</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
-            Arah dan komitmen luhur Yayasan Agung Madani serta seluruh unit pendidikan (TKS, SDS, SMPS IT Madani) dalam membina generasi robbani berkarakter Qur'ani dan visioner.
+            Arah dan komitmen luhur Yayasan Generasi Rabbani serta seluruh unit pendidikan (TKS, SDS, SMPS, SMA IT Rabbani) dalam membina generasi robbani berkarakter Qur'ani dan visioner.
         </p>
     </div>
 </div>
@@ -35,12 +35,12 @@
             </article>
             @endif
 
-            {{-- 1. VISI & MISI YAYASAN AGUNG MADANI --}}
+            {{-- 1. VISI & MISI YAYASAN GENERASI RABBANI --}}
             <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 space-y-6">
                 <div class="border-b border-gray-100 pb-4">
                     <span class="text-xs font-bold text-amber-500 uppercase tracking-wider block">Badan Penyelenggara</span>
                     <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center">
-                        <i class="fa-solid fa-landmark text-indigo-600 mr-2"></i> Yayasan Agung Madani Kayuagung
+                        <i class="fa-solid fa-landmark text-indigo-600 mr-2"></i> Yayasan Generasi Rabbani Muara Enim
                     </h2>
                 </div>
 
@@ -56,7 +56,7 @@
                     <ul class="space-y-2 text-xs sm:text-sm text-gray-700">
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-circle-check text-indigo-600 mt-1 flex-shrink-0 text-xs"></i>
-                            <span>Menyelenggarakan pendidikan Islam terpadu yang berkualitas dari jenjang PAUD/TK, SD, hingga SMP.</span>
+                            <span>Menyelenggarakan pendidikan Islam terpadu yang berkualitas dari jenjang PAUD/TK, SD, SMP, hingga SMA.</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-circle-check text-indigo-600 mt-1 flex-shrink-0 text-xs"></i>
@@ -74,20 +74,20 @@
                 </div>
             </article>
 
-            {{-- 2. VISI & MISI TKS IT MADANI --}}
+            {{-- 2. VISI & MISI TKS IT RABBANI --}}
             <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 space-y-6">
                 <div class="border-b border-amber-100 pb-4 flex items-center justify-between">
                     <div>
                         <span class="text-xs font-bold text-amber-500 uppercase tracking-wider block">PAUD / TK Islam Terpadu</span>
                         <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center">
-                            <i class="fa-solid fa-shapes text-amber-500 mr-2"></i> TKS IT Madani Kayuagung
+                            <i class="fa-solid fa-shapes text-amber-500 mr-2"></i> TKS IT Rabbani Muara Enim
                         </h2>
                     </div>
                     <a href="{{ route('unit.tk') }}" class="text-xs font-bold text-amber-600 hover:underline">Web TK &rarr;</a>
                 </div>
 
                 <div class="bg-amber-50/70 p-6 rounded-2xl border-l-4 border-amber-500 shadow-sm">
-                    <h3 class="text-xs font-black uppercase text-amber-900 tracking-wider mb-1">Visi TKS IT Madani</h3>
+                    <h3 class="text-xs font-black uppercase text-amber-900 tracking-wider mb-1">Visi TKS IT Rabbani</h3>
                     <p class="text-base sm:text-lg font-bold text-gray-900 italic font-serif leading-relaxed">
                         “Membentuk Generasi Rabbani yang Kreatif, Cerdas, dan Mandiri.”
                     </p>
@@ -116,20 +116,20 @@
                 </div>
             </article>
 
-            {{-- 3. VISI & MISI SDS IT MADANI --}}
+            {{-- 3. VISI & MISI SDS IT RABBANI --}}
             <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 space-y-6">
                 <div class="border-b border-emerald-100 pb-4 flex items-center justify-between">
                     <div>
                         <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Sekolah Dasar Islam Terpadu</span>
                         <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center">
-                            <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> SDS IT Madani Kayuagung
+                            <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> SDS IT Rabbani Muara Enim
                         </h2>
                     </div>
                     <a href="{{ route('unit.sd') }}" class="text-xs font-bold text-emerald-600 hover:underline">Web SD &rarr;</a>
                 </div>
 
                 <div class="bg-emerald-50/70 p-6 rounded-2xl border-l-4 border-emerald-600 shadow-sm">
-                    <h3 class="text-xs font-black uppercase text-emerald-900 tracking-wider mb-1">Visi SDS IT Madani</h3>
+                    <h3 class="text-xs font-black uppercase text-emerald-900 tracking-wider mb-1">Visi SDS IT Rabbani</h3>
                     <p class="text-base sm:text-lg font-bold text-gray-900 italic font-serif leading-relaxed">
                         “Membentuk Generasi Rabbani yang Berprestasi, Sholeh, Inovatif dan Mandiri.”
                     </p>
@@ -144,7 +144,7 @@
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
-                            <span>Membangun Kepercayaan Diri Siswa dan Civitas Akademika SIT Madani.</span>
+                            <span>Membangun Kepercayaan Diri Siswa dan Civitas Akademika SIT Rabbani.</span>
                         </li>
                         <li class="flex items-start space-x-2.5">
                             <i class="fa-solid fa-check text-emerald-600 mt-1 flex-shrink-0 text-xs"></i>
@@ -158,20 +158,20 @@
                 </div>
             </article>
 
-            {{-- 4. VISI & MISI SMPS IT MADANI --}}
+            {{-- 4. VISI & MISI SMPS IT RABBANI --}}
             <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 space-y-6">
                 <div class="border-b border-blue-100 pb-4 flex items-center justify-between">
                     <div>
                         <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block">Sekolah Menengah Pertama Islam Terpadu &amp; Boarding</span>
                         <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center">
-                            <i class="fa-solid fa-graduation-cap text-blue-600 mr-2"></i> SMPS IT Madani Kayuagung
+                            <i class="fa-solid fa-graduation-cap text-blue-600 mr-2"></i> SMPS IT Rabbani Muara Enim
                         </h2>
                     </div>
                     <a href="{{ route('unit.smp') }}" class="text-xs font-bold text-blue-600 hover:underline">Web SMP &rarr;</a>
                 </div>
 
                 <div class="bg-blue-50/70 p-6 rounded-2xl border-l-4 border-blue-600 shadow-sm">
-                    <h3 class="text-xs font-black uppercase text-blue-900 tracking-wider mb-1">Visi SMPS IT Madani</h3>
+                    <h3 class="text-xs font-black uppercase text-blue-900 tracking-wider mb-1">Visi SMPS IT Rabbani</h3>
                     <p class="text-base sm:text-lg font-bold text-gray-900 italic font-serif leading-relaxed">
                         “Terbentuknya Generasi Qur'ani, Mandiri, Inovatif, Visioner, dan Moderat Berbekal Ilmu Pengetahuan dan Teknologi.”
                     </p>
@@ -200,6 +200,48 @@
                 </div>
             </article>
 
+            {{-- 5. VISI & MISI SMA IT RABBANI --}}
+            <article class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-gray-100 space-y-6">
+                <div class="border-b border-purple-100 pb-4 flex items-center justify-between">
+                    <div>
+                        <span class="text-xs font-bold text-purple-600 uppercase tracking-wider block">Sekolah Menengah Atas Islam Terpadu &amp; Boarding</span>
+                        <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center">
+                            <i class="fa-solid fa-user-graduate text-purple-600 mr-2"></i> SMA IT Rabbani Muara Enim
+                        </h2>
+                    </div>
+                    <a href="{{ route('unit.sma') }}" class="text-xs font-bold text-purple-600 hover:underline">Web SMA &rarr;</a>
+                </div>
+
+                <div class="bg-purple-50/70 p-6 rounded-2xl border-l-4 border-purple-600 shadow-sm">
+                    <h3 class="text-xs font-black uppercase text-purple-900 tracking-wider mb-1">Visi SMA IT Rabbani</h3>
+                    <p class="text-base sm:text-lg font-bold text-gray-900 italic font-serif leading-relaxed">
+                        “Mewujudkan Generasi Pemimpin Masa Depan yang Berkarakter Qur'ani, Berprestasi Global, dan Sukses Masuk Perguruan Tinggi Negeri Favorit.”
+                    </p>
+                </div>
+
+                <div class="space-y-3">
+                    <h3 class="text-sm font-bold text-gray-900 uppercase tracking-wider">Misi Pembelajaran &amp; Boarding School SMA</h3>
+                    <ul class="space-y-2 text-xs sm:text-sm text-gray-700">
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-award text-purple-600 mt-1 flex-shrink-0 text-xs"></i>
+                            <span>Membina hafalan Al-Qur'an minimal 1 juz mutqin bersanad bagi seluruh santri (88% target capaian hafalan).</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-award text-purple-600 mt-1 flex-shrink-0 text-xs"></i>
+                            <span>Menyelenggarakan program Bimbingan Belajar SNBT Gratis untuk menembus PTN favorit (88% target kelulusan PTN).</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-award text-purple-600 mt-1 flex-shrink-0 text-xs"></i>
+                            <span>Membentuk kultur asrama pesantren/boarding yang mandiri, disiplin, dan berakhlakul karimah.</span>
+                        </li>
+                        <li class="flex items-start space-x-2.5">
+                            <i class="fa-solid fa-award text-purple-600 mt-1 flex-shrink-0 text-xs"></i>
+                            <span>Mengembangkan minat bakat santri melalui 8 ekstrakurikuler unggulan (Pramuka, OSIS, Voli, PMR, Marawis, Multimedia, Tapak Suci, TPA).</span>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
         </div>
 
         {{-- SIDEBAR KANAN (1/3) --}}
@@ -211,16 +253,20 @@
                 <h3 class="text-lg font-black mb-4">Website Unit Pendidikan</h3>
                 <div class="space-y-2.5">
                     <a href="{{ route('unit.tk') }}" class="block p-3 rounded-xl bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
-                        <span class="font-bold text-xs"><i class="fa-solid fa-shapes text-amber-400 mr-2"></i> TKS IT Madani</span>
+                        <span class="font-bold text-xs"><i class="fa-solid fa-shapes text-amber-400 mr-2"></i> TKS IT Rabbani</span>
                         <i class="fa-solid fa-arrow-right text-xs text-amber-300"></i>
                     </a>
                     <a href="{{ route('unit.sd') }}" class="block p-3 rounded-xl bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
-                        <span class="font-bold text-xs"><i class="fa-solid fa-book-open-reader text-emerald-400 mr-2"></i> SDS IT Madani</span>
+                        <span class="font-bold text-xs"><i class="fa-solid fa-book-open-reader text-emerald-400 mr-2"></i> SDS IT Rabbani</span>
                         <i class="fa-solid fa-arrow-right text-xs text-emerald-300"></i>
                     </a>
                     <a href="{{ route('unit.smp') }}" class="block p-3 rounded-xl bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
-                        <span class="font-bold text-xs"><i class="fa-solid fa-graduation-cap text-blue-400 mr-2"></i> SMPS IT Madani</span>
+                        <span class="font-bold text-xs"><i class="fa-solid fa-graduation-cap text-blue-400 mr-2"></i> SMPS IT Rabbani</span>
                         <i class="fa-solid fa-arrow-right text-xs text-blue-300"></i>
+                    </a>
+                    <a href="{{ route('unit.sma') }}" class="block p-3 rounded-xl bg-white/10 hover:bg-white/20 transition flex items-center justify-between">
+                        <span class="font-bold text-xs"><i class="fa-solid fa-user-graduate text-purple-400 mr-2"></i> SMA IT Rabbani</span>
+                        <i class="fa-solid fa-arrow-right text-xs text-purple-300"></i>
                     </a>
                 </div>
             </div>
@@ -238,7 +284,7 @@
                     @forelse($latestPosts ?? [] as $lp)
                         <a href="{{ route('artikel.show', $lp->slug) }}" class="flex items-center space-x-3 group">
                             <div class="w-14 h-14 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
-                                <img src="{{ $lp->featured_image }}" alt="{{ $lp->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                <img src="{{ $lp->featured_image }}" alt="{{ $lp->title }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                             </div>
                             <div>
                                 <h4 class="text-xs font-bold text-gray-800 group-hover:text-indigo-600 transition line-clamp-2 leading-snug">
@@ -276,7 +322,7 @@
                                     {{ $la->title }}
                                 </h4>
                                 <span class="text-[11px] text-gray-400 block mt-1">
-                                    <i class="fa-solid fa-location-dot mr-1 text-orange-400"></i> {{ $la->location ?: 'Sekolah SMPS IT Madani Kayuagung' }}
+                                    <i class="fa-solid fa-location-dot mr-1 text-orange-400"></i> {{ $la->location ?: 'Sekolah SMPS IT Rabbani Muara Enim' }}
                                 </span>
                             </div>
                         </a>

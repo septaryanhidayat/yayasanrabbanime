@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 header('Content-Type: text/plain; charset=UTF-8');
 
-echo "=== DIAGNOSTIK SERVER SMPS IT MADANI KAYUAGUNG ===\n";
+echo "=== DIAGNOSTIK SERVER SIT RABBANI MUARA ENIM ===\n";
 echo 'PHP Version: '.PHP_VERSION."\n";
 echo 'Server Software: '.($_SERVER['SERVER_SOFTWARE'] ?? 'Unknown')."\n";
 echo 'Current Directory (__DIR__): '.__DIR__."\n";
@@ -13,10 +13,13 @@ echo 'Server Name: '.($_SERVER['SERVER_NAME'] ?? 'Unknown')."\n";
 
 $candidates = [
     __DIR__.'/..',
+    dirname(__DIR__).'/repositories/yayasanrabbanime',
+    dirname(__DIR__).'/laravel_yayasanrabbanime',
+    dirname(__DIR__).'/yayasanrabbanime',
     dirname(__DIR__).'/repositories/sitmadani',
     dirname(__DIR__).'/laravel_sitmadani',
     dirname(__DIR__).'/sitmadani',
-    '/home/berandad/repositories/sitmadani',
+    '/home/berandad/repositories/yayasanrabbanime',
 ];
 
 echo "\n--- Pengecekan Lokasi Repositori Laravel ---\n";

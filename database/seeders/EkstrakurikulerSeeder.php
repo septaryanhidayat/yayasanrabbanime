@@ -9,52 +9,62 @@ class EkstrakurikulerSeeder extends Seeder
 {
     public function run(): void
     {
-        if (Post::where('type', 'ekskul')->exists()) {
-            return;
-        }
-
         $ekskulItems = [
             [
                 'title' => 'Pramuka SIT (Sekolah Islam Terpadu)',
                 'slug' => 'pramuka-sit',
-                'excerpt' => 'Kepanduan berkarakter Islam melatih kemandirian, kepemimpinan, dan kecintaan pada alam terbuka.',
-                'featured_image' => '/uploads/activities-sit-madani.webp',
-                'content' => '<p>Ekstrakurikuler Pramuka SIT (Satuan Komunitas Pramuka Sekolah Islam Terpadu) di SMPS IT Madani merupakan wadah pembinaan karakter, kedisiplinan, kemandirian, dan kepemimpinan berlandaskan nilai-nilai Islam. Melalui kegiatan perkemahan, penjelajahan alam, tali temali, semaphore, dan bakti sosial, para santri dilatih untuk tangguh, siap menolong sesama, dan berjiwa ksatria.</p><p>Kegiatan rutin dilaksanakan setiap pekan dibimbing oleh para pembina berpengalaman dan tersertifikasi KMD/KML.</p>',
+                'excerpt' => 'Kepanduan berkarakter Islam melatih kemandirian, kepemimpinan, tali temali, dan kecintaan pada alam terbuka.',
+                'featured_image' => '/uploads/kegiatan-pramuka-rabbani.webp',
+                'content' => '<p>Ekstrakurikuler Pramuka SIT (Satuan Komunitas Pramuka Sekolah Islam Terpadu) di SIT Rabbani Muara Enim merupakan wadah pembinaan karakter, kedisiplinan, kemandirian, dan kepemimpinan berlandaskan nilai-nilai Islam. Melalui kegiatan perkemahan, penjelajahan alam, tali temali, semaphore, dan bakti sosial, para santri dilatih untuk tangguh, siap menolong sesama, dan berjiwa ksatria.</p>',
             ],
             [
-                'title' => 'Robotika & Coding IT Club',
-                'slug' => 'robotika-coding-it-club',
-                'excerpt' => 'Pelatihan logika pemrograman dasar, perakitan mikrokontroler, dan persiapan olimpiade robotika.',
-                'featured_image' => '/uploads/madani/fasilitas_1274_Ruang-Lab-Komputer1.webp',
-                'content' => '<p>Klub Robotika dan Pemrograman dirancang untuk mempersiapkan santri menghadapi era kecerdasan buatan (AI) dan teknologi digital. Siswa mempelajari algoritma logika pemrograman, dasar elektronika, perakitan sensor, pemrograman mikrokontroler Arduino/ESP32, hingga pembuatan robot mobile cerdas.</p><p>Klub ini aktif mengikuti berbagai kompetisi sains dan teknologi madrasah/sekolah tingkat provinsi hingga nasional.</p>',
+                'title' => 'OSIS Rabbani (Organisasi Siswa Intra Sekolah)',
+                'slug' => 'osis-rabbani',
+                'excerpt' => 'Wadah pembentukan karakter kepemimpinan, manajemen organisasi, dan kreasi kegiatan santri.',
+                'featured_image' => '/uploads/prestasi-sit-rabbani.webp',
+                'content' => '<p>OSIS Rabbani membina santri dalam tata kelola kepemimpinan, kepanitiaan acara, musyawarah, serta memfasilitasi aspirasi dan kreativitas siswa dalam berbagai event sekolah dan dakwah kepemudaan.</p>',
             ],
             [
-                'title' => 'Tahfidz & TTQ Club (Tartil Al-Qur\'an)',
-                'slug' => 'tahfidz-ttq-club',
-                'excerpt' => 'Pendalaman tajwid, makhorijul huruf, tilawah berirama, dan persiapan tasmi\' mutqin 2 juz.',
-                'featured_image' => '/uploads/tahfidz-sit-madani.webp',
-                'content' => '<p>Klub Tahsin dan Tahfidz Qur\'an (TTQ) berfokus pada pemantapan bacaan Al-Qur\'an berstandar riwayat Imam Hafsh, penguasaan matan Al-Jazariyah, perbaikan makharijul huruf, serta penguasaan seni tilawah berirama (Nahawand, Bayati, Hijaz, dll).</p><p>Klub ini mengantarkan para santri menuju ujian tasmi\' sekali duduk 2 juz mutqin serta ajang Musabaqah Tilawatil Qur\'an (MTQ) dan MHQ antarpelajar.</p>',
+                'title' => 'Bola Voli & Olahraga Prestasi',
+                'slug' => 'bola-voli-dan-olahraga-prestasi',
+                'excerpt' => 'Pembinaan kebugaran jasmani, sportivitas, dan keterampilan teknik olahraga bola voli beregu.',
+                'featured_image' => '/uploads/campus-sit-rabbani.webp',
+                'content' => '<p>Melatih fisik yang kuat (Qowiyyul Jismi), ketahanan tubuh, kekompakan tim, dan sportivitas melalui latihan teknik passing, smash, block, serta partisipasi dalam turnamen antarpelajar se-Kabupaten Muara Enim.</p>',
             ],
             [
-                'title' => 'English & Arabic Public Speaking Club',
-                'slug' => 'english-arabic-public-speaking-club',
-                'excerpt' => 'Latihan percakapan bahasa asing aktif, pidato 3 bahasa, dan pembiasaan retorika dakwah.',
-                'featured_image' => '/uploads/campus-sit-madani.webp',
-                'content' => '<p>Membekali santri dengan kecakapan berbahasa internasional dan keberanian berbicara di depan publik (public speaking). Materi meliputi pidato (speech), debat bahasa Inggris, khitabah bahasa Arab, story telling islami, dan pembiasaan active daily conversation.</p><p>Siswa dilatih menjadi dai dan pemimpin muda berwawasan global yang mampu menyuarakan pesan kebaikan Islam kepada dunia.</p>',
+                'title' => 'PMR (Palang Merah Remaja)',
+                'slug' => 'pmr-palang-merah-remaja',
+                'excerpt' => 'Keterampilan pertolongan pertama, kepedulian kemanusiaan, dan kesehatan lingkungan sekolah.',
+                'featured_image' => '/uploads/campus-smait-rabbani.webp',
+                'content' => '<p>Mendidik santri agar sigap dalam penanganan medis darurat, pertolongan pertama pada kecelakaan (P3K), donor darah, serta menumbuhkan jiwa kerelawanan dan kepedulian sosial tinggi.</p>',
             ],
             [
-                'title' => 'Futsal & Olahraga Prestasi',
-                'slug' => 'futsal-olahraga-prestasi',
-                'excerpt' => 'Pembinaan kebugaran jasmani, teknik bermain futsal terpadu, dan kompetisi antarpelajar.',
-                'featured_image' => '/uploads/activities-sit-madani.webp',
-                'content' => '<p>Olahraga futsal dan kebugaran melatih fisik yang kuat (Qowiyyul Jismi), sportivitas, serta kerja sama tim solid. Didukung lapangan olahraga yang memadai, santri mendapatkan pembinaan teknik dasar dribbling, passing, formasi taktik bertanding, dan pola hidup sehat.</p><p>Tim futsal SMPS IT Madani rutin menjuarai turnamen tingkat kota dan persahabatan antarsekolah Islam di Sumatera Selatan.</p>',
+                'title' => 'Marawis, Hadroh & Nasyid Islami',
+                'slug' => 'marawis-dan-hadroh-islami',
+                'excerpt' => 'Seni musik perkusi islami, lantunan sholawat, dan pengasahan bakat seni religi santri.',
+                'featured_image' => '/uploads/banner-yayasan-rabbani.webp',
+                'content' => '<p>Wadah apresiasi seni budaya Islam yang melatih ketukan rebana hadroh/marawis, olah vokal sholawat, dan pembawaan nasyid untuk mengisi berbagai haflah dan perlombaan seni islami.</p>',
             ],
             [
-                'title' => 'Seni Hadrah & Kaligrafi Islam',
-                'slug' => 'seni-hadrah-kaligrafi-islam',
-                'excerpt' => 'Pelatihan tabuhan rebana hadrah, vokal sholawat, dan seni lukis kaligrafi mushaf.',
-                'featured_image' => '/uploads/madani/fasilitas_1278_HALL-SIT-Madani_.webp',
-                'content' => '<p>Wadah apresiasi seni budaya Islam yang menanamkan mahabbah (cinta) kepada Nabi Muhammad SAW melalui lantunan sholawat dan tabuhan rebana banjari/hadrah modern, serta mengasah kepekaan estetika melalui seni menulis khat kaligrafi indah (Khat Tsuluts, Naskhi, Riq\'ah).</p><p>Grup hadrah dan tim kaligrafi sering tampil dalam peringatan hari besar Islam, wisuda sekolah, dan festival kesenian Islam se-Sumatera Selatan.</p>',
+                'title' => 'Multimedia & Jurnalistik',
+                'slug' => 'multimedia-dan-jurnalistik',
+                'excerpt' => 'Pelatihan desain grafis, fotografi, sinematografi, liputan berita, dan pengelolaan media digital.',
+                'featured_image' => '/uploads/campus-smpit-rabbani.webp',
+                'content' => '<p>Membekali santri keterampilan kreatif abad 21 meliputi teknik fotografi, pembuatan video konten dakwah edukatif, editing digital, penulisan berita, dan manajemen publikasi sekolah.</p>',
+            ],
+            [
+                'title' => 'Tapak Suci Putera Muhammadiyah (Bela Diri)',
+                'slug' => 'tapak-suci-bela-diri',
+                'excerpt' => 'Seni bela diri pencak silat berakhlak mulia untuk kebugaran, pertahanan diri, dan prestasi kejuaraan.',
+                'featured_image' => '/uploads/kegiatan-pramuka-rabbani.webp',
+                'content' => '<p>Seni bela diri pencak silat Tapak Suci menanamkan keimanan, akhlak terpuji, keberanian, disiplin, dan penguasaan jurus-jurus pencak silat prestasi untuk kejuaraan tingkat daerah hingga nasional.</p>',
+            ],
+            [
+                'title' => 'TPA & Bimbingan Belajar SNBT Gratis',
+                'slug' => 'tpa-dan-bimbel-snbt-gratis',
+                'excerpt' => 'Pendalaman Al-Qur\'an dan bimbingan intensif persiapan tembus Perguruan Tinggi Negeri (PTN) favorit.',
+                'featured_image' => '/uploads/tahfidz-sit-rabbani.webp',
+                'content' => '<p>Program unggulan SMA IT Rabbani yang mengombinasikan pemantapan bacaan dan hafalan Al-Qur\'an bersama program Bimbel SNBT Gratis guna mengantarkan 88% lulusan sukses menembus PTN impian.</p>',
             ],
         ];
 
@@ -65,7 +75,7 @@ class EkstrakurikulerSeeder extends Seeder
                     'type' => 'ekskul',
                     'status' => 'publish',
                     'author_id' => 1,
-                    'published_at' => now()->subDays(6 - $idx),
+                    'published_at' => now()->subDays(8 - $idx),
                 ])
             );
         }

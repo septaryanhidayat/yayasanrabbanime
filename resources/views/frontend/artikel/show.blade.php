@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', ($post->meta_title ?: $post->title) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
+@section('title', ($post->meta_title ?: $post->title) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
 @section('og_title', $post->meta_title ?: $post->title)
 @section('meta_description', $post->meta_description ?: Str::limit(strip_tags($post->content), 160))
 @section('og_description', $post->meta_description ?: Str::limit(strip_tags($post->content), 160))
@@ -54,7 +54,7 @@
             <div class="flex flex-wrap items-center text-xs text-gray-500 gap-4 py-3 border-y border-gray-100 mb-6">
                 <div class="flex items-center space-x-2">
                     <i class="fa-solid fa-user text-indigo-600"></i>
-                    <span>{{ $post->author?->name ?: 'Humas SMPS IT Madani Kayuagung' }}</span>
+                    <span>{{ $post->author?->name ?: 'Humas SMPS IT Rabbani Muara Enim' }}</span>
                 </div>
                 <span>&bull;</span>
                 <div class="flex items-center space-x-2">
@@ -128,9 +128,9 @@
                             <a href="{{ route('artikel.show', $rPost->slug) }}" class="group block">
                                 <div class="h-36 rounded-xl overflow-hidden bg-gray-100 mb-3 shadow-sm">
                                     @if($rPost->featured_image)
-                                        <img src="{{ $rPost->featured_image }}" alt="{{ $rPost->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                        <img src="{{ $rPost->featured_image }}" alt="{{ $rPost->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                                     @else
-                                        <img src="/uploads/campus-sit-madani.webp" alt="{{ $rPost->title }}" class="w-full h-full object-cover">
+                                        <img src="/uploads/campus-sit-rabbani.webp" alt="{{ $rPost->title }}" class="w-full h-full object-cover">
                                     @endif
                                 </div>
                                 <span class="text-[10px] text-gray-400 block mb-1">
@@ -186,9 +186,9 @@
                         <div class="flex items-start space-x-3 group">
                             <a href="{{ route('artikel.show', $rPost->slug) }}" class="w-16 h-16 rounded-xl overflow-hidden bg-gray-100 flex-shrink-0">
                                 @if($rPost->featured_image)
-                                    <img src="{{ $rPost->featured_image }}" alt="{{ $rPost->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                                    <img src="{{ $rPost->featured_image }}" alt="{{ $rPost->title }}" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                                 @else
-                                    <img src="/uploads/campus-sit-madani.webp" alt="{{ $rPost->title }}" class="w-full h-full object-cover">
+                                    <img src="/uploads/campus-sit-rabbani.webp" alt="{{ $rPost->title }}" class="w-full h-full object-cover">
                                 @endif
                             </a>
                             <div class="flex-grow">
@@ -208,7 +208,7 @@
             <div class="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-br from-indigo-900 to-blue-900 p-6 text-white text-center space-y-3">
                 <span class="inline-block bg-emerald-600 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white">SPMB Online</span>
                 <h4 class="text-lg font-extrabold text-white">Penerimaan Siswa Baru</h4>
-                <p class="text-xs text-indigo-100">Jadilah bagian dari generasi Qur'ani dan saintis berprestasi di SMPS IT Madani Kayuagung.</p>
+                <p class="text-xs text-indigo-100">Jadilah bagian dari generasi Qur'ani dan saintis berprestasi di SMPS IT Rabbani Muara Enim.</p>
                 <a href="{{ route('ppdb.index') }}" class="inline-block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow">
                     Daftar Sekarang
                 </a>

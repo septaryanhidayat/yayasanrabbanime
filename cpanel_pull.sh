@@ -1,7 +1,7 @@
 #!/bin/bash
 # ==============================================================================
 # Script Otomatisasi Pull Git & Update Laravel di Terminal cPanel
-# SMPS IT Madani Kayuagung
+# Yayasan Generasi Rabbani Muara Enim - SIT Rabbani
 #
 # Cara Menjalankan di Terminal cPanel:
 #   bash cpanel_pull.sh
@@ -20,7 +20,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 echo -e "${BLUE}======================================================${NC}"
-echo -e "${BLUE}   MEMULAI PROSES PULL & UPDATE SIT MADANI KAYUAGUNG   ${NC}"
+echo -e "${BLUE}  MEMULAI PROSES PULL & UPDATE SIT RABBANI MUARA ENIM  ${NC}"
 echo -e "${BLUE}======================================================${NC}"
 
 # Tentukan lokasi direktori repository secara dinamis (folder tempat skrip ini berada)

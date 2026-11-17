@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', ($page?->meta_title ?: ($page?->title ?: 'Hubungi Kami')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Madani Kayuagung'))
-@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kontak resmi SMPS IT Madani Kayuagung: Nomor telepon, WhatsApp humas PPDB, email resmi, alamat sekolah, dan formulir pesan.'))
+@section('title', ($page?->meta_title ?: ($page?->title ?: 'Hubungi Kami')) . ' - ' . ($siteSettings['site_name'] ?? 'SMPS IT Rabbani Muara Enim'))
+@section('meta_description', $page?->meta_description ?: ($page?->excerpt ?: 'Kontak resmi SMPS IT Rabbani Muara Enim: Nomor telepon, WhatsApp humas PPDB, email resmi, alamat sekolah, dan formulir pesan.'))
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -12,7 +12,7 @@
             <span>/</span>
             <span class="text-amber-300 font-semibold">{{ $page?->title ?? 'Hubungi Kami' }}</span>
         </nav>
-        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Hubungi SMPS IT Madani Kayuagung' }}</h1>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight">{{ $page?->title ?? 'Hubungi SMPS IT Rabbani Muara Enim' }}</h1>
         <p class="text-xs sm:text-sm text-indigo-100 mt-2 font-light max-w-2xl mx-auto sm:mx-0">
             {{ $page?->excerpt ?: 'Kami siap melayani pertanyaan seputar PPDB, kurikulum tahfidz & sains, program unggulan, maupun kunjungan ke sekolah.' }}
         </p>
@@ -23,7 +23,7 @@
     
     {{-- GOOGLE MAPS EMBED ATAS --}}
     <div class="rounded-3xl overflow-hidden shadow-xl border border-gray-100 h-64 sm:h-96 reveal-fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15935.918903337965!2d104.642145!3d-3.232491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9991cb45aaab%3A0x28dfaa3303668f80!2sKayuagung%20Mulya%2C%20Kayuagung%2C%20Ogan%20Ilir%20Regency%2C%20South%20Sumatra!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15935.918903337965!2d104.642145!3d-3.232491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b9991cb45aaab%3A0x28dfaa3303668f80!2sMuara Enim%20Mulya%2C%20Muara Enim%2C%20Ogan%20Ilir%20Regency%2C%20South%20Sumatra!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     {{-- SUBTITLE --}}
@@ -44,8 +44,8 @@
             </div>
             <div>
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Telepon Kantor :</span>
-                <a href="tel:{{ $siteSettings['contact_phone'] ?? '0858-3817-3417' }}" class="text-base font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block">
-                    {{ $siteSettings['contact_phone'] ?? '0858-3817-3417' }}
+                <a href="tel:{{ $siteSettings['contact_phone'] ?? '0851-5929-3554' }}" class="text-base font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block">
+                    {{ $siteSettings['contact_phone'] ?? '0851-5929-3554' }}
                 </a>
                 <p class="text-xs text-gray-500 mt-1">Layanan administrasi tata usaha pada jam kerja (07.30 - 16.00 WIB).</p>
             </div>
@@ -58,8 +58,8 @@
             </div>
             <div>
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Email Resmi :</span>
-                <a href="mailto:{{ $siteSettings['contact_email'] ?? 'smpsislamterpadumadani@gmail.com' }}" class="text-xs sm:text-sm font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block break-all">
-                    {{ $siteSettings['contact_email'] ?? 'smpsislamterpadumadani@gmail.com' }}
+                <a href="mailto:{{ $siteSettings['contact_email'] ?? 'yayasangerabbani@gmail.com' }}" class="text-xs sm:text-sm font-extrabold text-gray-900 hover:text-indigo-600 transition mt-1 block break-all">
+                    {{ $siteSettings['contact_email'] ?? 'yayasangerabbani@gmail.com' }}
                 </a>
                 <p class="text-xs text-gray-500 mt-1">Surat-menyurat dan permohonan informasi akademik resmi.</p>
             </div>
@@ -67,7 +67,7 @@
 
         {{-- Box 3: WhatsApp --}}
         @php
-            $rawPhone = $siteSettings['contact_phone'] ?? '0858-3817-3417';
+            $rawPhone = $siteSettings['contact_phone'] ?? '0851-5929-3554';
             $cleanWa = preg_replace('/[^0-9]/', '', $rawPhone);
             if (str_starts_with($cleanWa, '0')) {
                 $cleanWa = '62' . substr($cleanWa, 1);
@@ -94,7 +94,7 @@
             <div>
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Alamat Sekolah :</span>
                 <p class="text-xs font-bold text-gray-900 mt-1 leading-relaxed">
-                    {{ $siteSettings['contact_address'] ?? 'Jl. Lintas Timur Palembang-Kayuagung KM 35, Kayuagung, Sumatera Selatan' }}
+                    {{ $siteSettings['contact_address'] ?? 'Jl. Lintas Timur Palembang-Muara Enim KM 35, Muara Enim, Sumatera Selatan' }}
                 </p>
             </div>
         </div>

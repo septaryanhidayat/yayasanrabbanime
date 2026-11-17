@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('title', $bidang->name . ' - SMPS IT Madani Kayuagung')
+@section('title', $bidang->name . ' - SMPS IT Rabbani Muara Enim')
 
 @section('content')
 <div class="bg-gradient-to-r from-indigo-950 via-indigo-900 to-blue-950 border-b border-indigo-500/20 text-white py-12">
@@ -13,7 +13,7 @@
             <span class="text-amber-300 font-semibold">{{ $bidang->name }}</span>
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">{{ $bidang->name }}</h1>
-        <p class="text-sm text-indigo-100 mt-2 font-light">Sarana & Prasarana SMPS IT Madani Kayuagung</p>
+        <p class="text-sm text-indigo-100 mt-2 font-light">Sarana & Prasarana SMPS IT Rabbani Muara Enim</p>
     </div>
 </div>
 
@@ -24,7 +24,7 @@
         <div class="lg:col-span-2 space-y-6">
             {{-- Foto Fasilitas --}}
             <div class="rounded-2xl overflow-hidden bg-slate-100 shadow-md">
-                <img src="{{ $bidang->thumbnail_url }}" alt="{{ $bidang->name }}" class="w-full h-64 sm:h-80 object-cover" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                <img src="{{ $bidang->thumbnail_url }}" alt="{{ $bidang->name }}" class="w-full h-64 sm:h-80 object-cover" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
             </div>
 
             <div class="flex items-center space-x-4 pb-6 border-b border-gray-100">
@@ -37,7 +37,7 @@
                 </div>
                 <div>
                     <h2 class="text-2xl font-extrabold text-gray-900">{{ $bidang->name }}</h2>
-                    <span class="text-xs text-gray-500">SMPS IT Madani Kayuagung</span>
+                    <span class="text-xs text-gray-500">SMPS IT Rabbani Muara Enim</span>
                 </div>
             </div>
 
@@ -47,9 +47,9 @@
 
             <div class="mt-8 p-6 bg-indigo-50/60 rounded-2xl border border-indigo-100 space-y-3 text-xs sm:text-sm">
                 <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-2">Informasi Layanan Fasilitas</h3>
-                <p class="flex items-start"><i class="fa-solid fa-location-dot text-indigo-600 mt-1 mr-3 w-4"></i><span>{{ $bidang->address ?: 'Kompleks Sekolah SMPS IT Madani Kayuagung, Kayuagung, Sumatera Selatan' }}</span></p>
-                <p class="flex items-center"><i class="fa-solid fa-phone text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->phone ?: '0858-3817-3417' }}</span></p>
-                <p class="flex items-center"><i class="fa-solid fa-envelope text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->email ?: 'smpsislamterpadumadani@gmail.com' }}</span></p>
+                <p class="flex items-start"><i class="fa-solid fa-location-dot text-indigo-600 mt-1 mr-3 w-4"></i><span>{{ $bidang->address ?: 'Kompleks Sekolah SMPS IT Rabbani Muara Enim, Muara Enim, Sumatera Selatan' }}</span></p>
+                <p class="flex items-center"><i class="fa-solid fa-phone text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->phone ?: '0851-5929-3554' }}</span></p>
+                <p class="flex items-center"><i class="fa-solid fa-envelope text-indigo-600 mr-3 w-4"></i><span>{{ $bidang->email ?: 'yayasangerabbani@gmail.com' }}</span></p>
             </div>
         </div>
 

@@ -71,9 +71,9 @@ class AdminDashboardController extends Controller
         $userUnit = $user?->unit ?? 'yayasan';
 
         $spmbCount = match ($userUnit) {
-            'tk' => PpdbRegistration::where('extra_fields', 'like', '%TKS IT Madani%')->count(),
-            'sd' => PpdbRegistration::where('extra_fields', 'like', '%SDS IT Madani%')->count(),
-            'smp' => PpdbRegistration::where('extra_fields', 'like', '%SMPS IT Madani%')->orWhereNull('extra_fields')->count(),
+            'tk' => PpdbRegistration::where('extra_fields', 'like', '%TKS IT Rabbani%')->count(),
+            'sd' => PpdbRegistration::where('extra_fields', 'like', '%SDS IT Rabbani%')->count(),
+            'smp' => PpdbRegistration::where('extra_fields', 'like', '%SMPS IT Rabbani%')->orWhereNull('extra_fields')->count(),
             default => PpdbRegistration::count(),
         };
 

@@ -31,7 +31,7 @@ class AdminUserController extends Controller
             'email' => 'required|email|max:255|unique:users,email',
             'password' => 'required|string|min:8',
             'role' => ['required', Rule::in(['super_admin', 'admin', 'editor', 'author'])],
-            'unit' => ['nullable', Rule::in(['yayasan', 'tk', 'sd', 'smp'])],
+            'unit' => ['nullable', Rule::in(['yayasan', 'tk', 'sd', 'smp', 'sma'])],
         ]);
 
         $user = User::create([
@@ -67,7 +67,7 @@ class AdminUserController extends Controller
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'password' => 'nullable|string|min:8',
             'role' => ['required', Rule::in(['super_admin', 'admin', 'editor', 'author'])],
-            'unit' => ['nullable', Rule::in(['yayasan', 'tk', 'sd', 'smp'])],
+            'unit' => ['nullable', Rule::in(['yayasan', 'tk', 'sd', 'smp', 'sma'])],
         ]);
 
         $user->name = $validated['name'];

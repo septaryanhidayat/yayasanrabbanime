@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
-@section('title', 'Papan Pengumuman Resmi - SMPS IT Madani Kayuagung')
-@section('meta_description', 'Kumpulan pengumuman resmi akademik, jadwal ujian, informasi PPDB, dan surat edaran SMPS IT Madani Kayuagung.')
+@section('title', 'Papan Pengumuman Resmi - SMPS IT Rabbani Muara Enim')
+@section('meta_description', 'Kumpulan pengumuman resmi akademik, jadwal ujian, informasi PPDB, dan surat edaran SMPS IT Rabbani Muara Enim.')
 
 @section('content')
 {{-- HERO HEADER --}}
@@ -16,7 +16,7 @@
         </nav>
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Papan Pengumuman Sekolah</h1>
         <p class="text-sm text-indigo-100 mt-2 font-light max-w-2xl">
-            Informasi penting, edaran akademik, jadwal kegiatan siswa, dan pengumuman resmi SMPS IT Madani Kayuagung.
+            Informasi penting, edaran akademik, jadwal kegiatan siswa, dan pengumuman resmi SMPS IT Rabbani Muara Enim.
         </p>
     </div>
 </div>
@@ -38,7 +38,7 @@
                 <div>
                     {{-- FOTO BANNER PENGUMUMAN SEPERTI PROGRAM UNGGULAN --}}
                     <div class="h-48 sm:h-52 w-full overflow-hidden bg-slate-100 relative">
-                        <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-madani.webp'">
+                        <img src="{{ $item->featured_image_url }}" alt="{{ $item->title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='/uploads/campus-sit-rabbani.webp'">
                         
                         {{-- BADGE KATEGORI (TOP-LEFT) --}}
                         <span class="absolute top-3.5 left-3.5 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-md uppercase tracking-wider flex items-center gap-1.5">
@@ -58,7 +58,7 @@
 
                         <div class="text-xs text-emerald-600 font-semibold flex items-center">
                             <i class="fa-solid fa-certificate text-[10px] mr-1.5"></i>
-                            <span>Publikasi Resmi SMPS IT Madani</span>
+                            <span>Publikasi Resmi SMPS IT Rabbani</span>
                         </div>
 
                         <p class="text-xs text-gray-500 line-clamp-3 leading-relaxed font-light">
