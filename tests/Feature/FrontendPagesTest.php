@@ -27,8 +27,8 @@ test('home page renders all authentic school sections successfully', function ()
 test('articles page renders successfully', function () {
     $category = Category::firstOrCreate(['name' => 'Akademik'], ['slug' => 'akademik']);
     $post = Post::create([
-        'title' => 'Uji Coba Prestasi Siswa Madani',
-        'slug' => 'uji-coba-prestasi-siswa-madani',
+        'title' => 'Uji Coba Prestasi Siswa Rabbani',
+        'slug' => 'uji-coba-prestasi-siswa-rabbani',
         'content' => '<p>Konten artikel pengujian sekolah.</p>',
         'status' => 'publish',
         'type' => 'post',
@@ -37,9 +37,9 @@ test('articles page renders successfully', function () {
 
     $response = $this->get('/artikel');
     $response->assertStatus(200);
-    $response->assertSee('Uji Coba Prestasi Siswa Madani');
+    $response->assertSee('Uji Coba Prestasi Siswa Rabbani');
 
-    $detailResponse = $this->get('/artikel/uji-coba-prestasi-siswa-madani');
+    $detailResponse = $this->get('/artikel/uji-coba-prestasi-siswa-rabbani');
     $detailResponse->assertStatus(200);
     $detailResponse->assertSee('Konten artikel pengujian sekolah.');
 });
@@ -74,8 +74,8 @@ test('static profil pages render successfully', function () {
         'type' => 'page',
     ]);
     Post::create([
-        'title' => 'Berita Terkini Madani',
-        'slug' => 'berita-terkini-madani',
+        'title' => 'Berita Terkini Rabbani',
+        'slug' => 'berita-terkini-rabbani',
         'content' => 'Konten berita',
         'status' => 'publish',
         'type' => 'post',
@@ -90,15 +90,15 @@ test('static profil pages render successfully', function () {
 
     $this->get('/sambutan-kepala-sekolah')->assertStatus(200);
     $this->get('/tentang-kami')->assertStatus(200);
-    $this->get('/visi-dan-misi')->assertStatus(200)->assertSee('Berita Terkini Madani')->assertSee('Ujian Tasmi Al-Quran');
-    $this->get('/sejarah')->assertStatus(200)->assertSee('Berita Terkini Madani')->assertSee('Ujian Tasmi Al-Quran');
+    $this->get('/visi-dan-misi')->assertStatus(200)->assertSee('Berita Terkini Rabbani')->assertSee('Ujian Tasmi Al-Quran');
+    $this->get('/sejarah')->assertStatus(200)->assertSee('Berita Terkini Rabbani')->assertSee('Ujian Tasmi Al-Quran');
     $this->get('/struktur-organisasi')->assertStatus(200);
 });
 
 test('dewan, bidang, agenda, and pengumuman pages render successfully', function () {
     AnggotaDewan::create([
-        'name' => 'Ustadz Ahmad Madani',
-        'slug' => 'ustadz-ahmad-madani',
+        'name' => 'Ustadz Ahmad Rabbani',
+        'slug' => 'ustadz-ahmad-rabbani',
         'position' => 'Kepala Sekolah',
     ]);
 
@@ -120,7 +120,7 @@ test('dewan, bidang, agenda, and pengumuman pages render successfully', function
         'status' => 'publish',
     ]);
 
-    $this->get('/dewan-guru')->assertStatus(200)->assertSee('Ustadz Ahmad Madani');
+    $this->get('/dewan-guru')->assertStatus(200)->assertSee('Ustadz Ahmad Rabbani');
     $this->get('/fasilitas')->assertStatus(200)->assertSee('Laboratorium Biologi Modern');
     $this->get('/bidang/laboratorium-biologi-modern')->assertStatus(200);
     $this->get('/agenda')->assertStatus(200)->assertSee('Olimpiade Sains Sekolah');
@@ -269,7 +269,7 @@ test('dewan guru page dynamically reflects updated name and photo from database'
     $res2->assertDontSee('Nama Guru Lama');
 });
 
-test('home page renders dual-row gallery slider with madani photos', function () {
+test('home page renders dual-row gallery slider with rabbani photos', function () {
     $response = $this->get('/smp');
 
     $response->assertStatus(200);

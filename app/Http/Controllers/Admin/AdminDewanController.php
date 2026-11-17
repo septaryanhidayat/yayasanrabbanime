@@ -76,7 +76,7 @@ class AdminDewanController extends Controller
             'fraction' => $validated['fraction'] ?? 'Dewan Guru & GTK SMPS IT Rabbani',
             'profile_summary' => $validated['profile_summary'] ?? '',
             'education' => $validated['education'] ?? '',
-            'photo' => $photoPath ?? '/uploads/logo-madani-square.webp',
+            'photo' => $photoPath ?? '/uploads/logo-rabbani-square.webp',
             'order' => $validated['order'] ?? 0,
         ]);
 

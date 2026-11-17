@@ -95,8 +95,8 @@ if ($action === 'storage_link') {
             'ALTER TABLE `testimonials` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT',
             'ALTER TABLE `videos` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT',
             'ALTER TABLE `visitor_logs` MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT',
-            "UPDATE `settings` SET `value` = '/uploads/og-sitmadani.jpg' WHERE `key` = 'og_image'",
-            "UPDATE `settings` SET `value` = 'sitmadani.sch.id' WHERE `key` = 'site_domain'",
+            "UPDATE `settings` SET `value` = '/uploads/banner-yayasan-rabbani.webp' WHERE `key` = 'og_image'",
+            "UPDATE `settings` SET `value` = 'rabbanime.sch.id' WHERE `key` = 'site_domain'",
         ];
 
         $successCount = 0;

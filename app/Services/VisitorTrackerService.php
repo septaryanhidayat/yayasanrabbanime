@@ -208,7 +208,7 @@ class VisitorTrackerService
 
         $host = strtolower(parse_url($referer, PHP_URL_HOST) ?? '');
 
-        if (empty($host) || $host === strtolower($currentHost) || str_contains($host, 'sitmadani.sch.id') || str_contains($host, 'localhost') || str_contains($host, '127.0.0.1')) {
+        if (empty($host) || $host === strtolower($currentHost) || str_contains($host, 'rabbanime.sch.id') || str_contains($host, 'localhost') || str_contains($host, '127.0.0.1')) {
             return 'Direct / Langsung';
         }
 
@@ -330,7 +330,7 @@ class VisitorTrackerService
             'e-book' => 'Download Modul & E-Book',
             'hymne-mars' => 'Hymne & Mars JSIT',
             'hubungi' => 'Konsultasi & Informasi SPMB',
-            'donasi' => 'Infaq & Beasiswa Madani',
+            'donasi' => 'Infaq & Beasiswa Rabbani',
             'program-unggulan' => 'Program Unggulan Sekolah',
         ];
 

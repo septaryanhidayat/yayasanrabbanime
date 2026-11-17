@@ -32,7 +32,7 @@ class Agenda extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/activities-sit-madani.webp';
+        return '/uploads/activities-sit-rabbani.webp';
     }
 
     public function getPostDateAttribute()

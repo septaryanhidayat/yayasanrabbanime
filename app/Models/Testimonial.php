@@ -25,6 +25,6 @@ class Testimonial extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/logo-madani.png';
+        return '/uploads/logo-rabbani.png';
     }
 }

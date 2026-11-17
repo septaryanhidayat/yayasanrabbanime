@@ -29,6 +29,6 @@ class Dpc extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/tahfidz-sit-madani.webp';
+        return '/uploads/tahfidz-sit-rabbani.webp';
     }
 }

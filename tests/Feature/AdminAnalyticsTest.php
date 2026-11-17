@@ -45,8 +45,8 @@ test('authenticated admin can view analytics dashboard with real metrics', funct
 
     VisitorLog::create([
         'ip_address' => '103.111.20.5',
-        'path' => '/artikel/kegiatan-baksos-madani',
-        'page_title' => 'Kegiatan Baksos Siswa Madani',
+        'path' => '/artikel/kegiatan-baksos-rabbani',
+        'page_title' => 'Kegiatan Baksos Siswa Rabbani',
         'referer' => 'https://www.facebook.com/',
         'referer_source' => 'Facebook',
         'device_type' => 'Desktop',

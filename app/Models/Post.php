@@ -95,7 +95,7 @@ class Post extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/campus-sit-madani.webp';
+        return '/uploads/campus-sit-rabbani.webp';
     }
 
     public function getPostDateAttribute()

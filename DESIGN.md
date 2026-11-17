@@ -86,10 +86,10 @@ spacing:
 ---
 
 # 🏛️ BLUEPRINT DESAIN & DOKUMENTASI UI/UX LENGKAP
-## Website Sekolah Islam Terpadu Modern (Case Study: SMPS IT Madani Kayuagung)
+## Website Sekolah Islam Terpadu Modern (Case Study: Yayasan Generasi Rabbani Muara Enim & SIT Rabbani)
 
 > **Dokumen Panduan & Referensi Desain Resmi**  
-> Dokumen ini memuat seluruh spesifikasi desain visual, arsitektur tata letak (layout), komponen antarmuka (UI), sistem palet warna, tipografi, serta interaksi pengguna (UX) dari website **SMPS IT Madani Kayuagung**. Dokumen ini dirancang sebagai standar acuan (blueprint) untuk pengembangan dan replikasi website sekolah-sekolah unggulan lainnya.
+> Dokumen ini memuat seluruh spesifikasi desain visual, arsitektur tata letak (layout), komponen antarmuka (UI), sistem palet warna, tipografi, serta interaksi pengguna (UX) dari website **Yayasan Generasi Rabbani Muara Enim** dan **SIT Rabbani Muara Enim**. Dokumen ini dirancang sebagai standar acuan (blueprint) untuk pengembangan dan replikasi website sekolah-sekolah unggulan lainnya.
 
 ---
 
@@ -241,9 +241,9 @@ Desain website ini dibangun di atas konsep **"Modern Islamic Institutional Excel
 ### 3.1 Top Notification Mini Bar
 * **Background**: Dark Midnight (`#0f172a`) dengan border tipis bawah indigo (`border-indigo-900/60`).
 * **Komponen**:
-  * Ikon telepon + nomor hotline sekolah (`tel:0858-3817-3417`).
-  * Ikon amplop + email resmi (`smpsislamterpadumadani@gmail.com`).
-  * Lokasi kota ringkas (`Kayuagung, Sumatera Selatan`).
+  * Ikon telepon + nomor hotline sekolah (`tel:0851-5929-3554`).
+  * Ikon amplop + email resmi (`yayasangerabbani@gmail.com`).
+  * Lokasi kota ringkas (`Muara Enim, Sumatera Selatan`).
 * **Tujuan UX**: Memberikan rasa aman instan bagi calon wali murid yang memerlukan kontak darurat cepat tanpa harus *scroll* ke bawah.
 
 ### 3.2 Sticky Main Navigation (Header)
@@ -329,7 +329,7 @@ Halaman depan dirancang menggunakan prinsip **Storytelling & Conversion Funnel**
 
 ### 5.2 Modul Profil Sekolah & Kelembagaan
 * **Sambutan Kepala Sekolah (`/sambutan-kepala-sekolah`)**: Layout editorial seperti majalah dengan tipografi nyaman dibaca dan foto resmi kepala sekolah.
-* **Tentang Kami (`/tentang-kami`)**: Rangkuman profil institusi, sertifikat akreditasi BAN-SM, legalitas SK pendirian, filosofi nama "Madani", dan sarana prasarana.
+* **Tentang Kami (`/tentang-kami`)**: Rangkuman profil institusi, sertifikat akreditasi BAN-SM, legalitas SK pendirian, filosofi nama "Rabbani", dan sarana prasarana.
 * **Visi & Misi (`/visi-dan-misi`)**: Desain kartu bernomor rapi, memuat target lulusan (Hafal minimal 2 Juz Al-Qur'an mutqin, berakhlak mulia, mampu berkomunikasi bahasa Arab & Inggris dasar).
 * **Sejarah (`/sejarah`)**: Desain linimasa vertikal (*vertical timeline*) yang menceritakan tonggak sejarah pendirian sekolah dari awal berdirinya hingga berkembang pesat.
 * **Struktur Organisasi (`/struktur-organisasi`)**: Bagan hirarki manajemen mulai dari Yayasan, Kepala Sekolah, Komite, Wakil Kepala Bidang (Kurikulum, Kesiswaan, Sarpras, Humas), Guru hingga Staf Tata Usaha.
@@ -403,8 +403,8 @@ Bagi pengembang atau pihak yayasan yang ingin mengadaptasi desain ini untuk seko
 ### Langkah 1: Kustomisasi Identitas & Variabel Brand
 Ubah nilai dasar di file konfigurasi atau admin settings:
 * **Nama Sekolah**: Ganti di `.env` (`APP_NAME="Nama Sekolah Anda"`) dan Admin Settings.
-* **Logo**: Ganti file gambar di folder `public/uploads/logo-madani.png` dan `public/uploads/logo-madani-square.webp`.
-* **Favicon**: Ganti di `public/uploads/logo-madani-square.webp`.
+* **Logo**: Ganti file gambar di folder `public/uploads/logo-rabbani.png` dan `public/uploads/logo-rabbani-square.webp`.
+* **Favicon**: Ganti di `public/uploads/logo-rabbani-square.webp`.
 
 ### Langkah 2: Menyesuaikan Skema Warna (Jika Berbeda)
 Jika sekolah target memiliki warna khas lain (misalnya Hijau Pesantren `#059669` atau Biru Langit `#0284c7`), sesuaikan token di `resources/css/app.css`:
@@ -420,10 +420,10 @@ Jika sekolah target memiliki warna khas lain (misalnya Hijau Pesantren `#059669`
 
 ### Langkah 3: Mengganti Aset Gambar Utama
 Ganti gambar berikut dengan foto asli sekolah target (gunakan format WebP agar loading cepat):
-1. `flyer-spmb-sit-madani.png` -> Brosur/flyer penerimaan santri baru tahun ajaran berjalan.
+1. `flyer-spmb-smait-rabbani.webp` -> Brosur/flyer penerimaan santri baru tahun ajaran berjalan.
 2. `dewan/kepala-sekolah.webp` -> Foto resmi kepala sekolah.
-3. `campus-sit-madani.webp` -> Foto gedung / gerbang kampus utama.
-4. `activities-sit-madani.webp` -> Foto santri berprestasi / kegiatan belajar mengajar.
+3. `campus-sit-rabbani.webp` -> Foto gedung / gerbang kampus utama.
+4. `activities-sit-rabbani.webp` -> Foto santri berprestasi / kegiatan belajar mengajar.
 
 ### Langkah 4: Konfigurasi Rekening & Hotline WhatsApp
 * Perbarui nomor rekening di halaman `/spmb` pada view `resources/views/frontend/ppdb/index.blade.php`.
@@ -431,4 +431,4 @@ Ganti gambar berikut dengan foto asli sekolah target (gunakan format WebP agar l
 
 ---
 
-*Dokumen ini dibuat secara komprehensif sebagai dokumentasi arsitektur UI/UX sistem website SMPS IT Madani Kayuagung dan referensi desain portal sekolah berstandar tinggi.*
+*Dokumen ini dibuat secara komprehensif sebagai dokumentasi arsitektur UI/UX sistem website Yayasan Generasi Rabbani Muara Enim dan referensi desain portal sekolah berstandar tinggi.*

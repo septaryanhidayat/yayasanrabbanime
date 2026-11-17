@@ -147,7 +147,7 @@ test('layanan sewa barang form submission creates ServiceSubmission record with 
 
 test('admin can view layanan submissions, filter, update status, and delete', function () {
     $admin = User::factory()->create([
-        'email' => 'admin_layanan@madani.sch.id',
+        'email' => 'admin_layanan@rabbanime.sch.id',
     ]);
 
     $submission = ServiceSubmission::create([
@@ -197,7 +197,7 @@ test('admin can view layanan submissions, filter, update status, and delete', fu
 
 test('admin can manage and customize accordion contents and sentences for all services', function () {
     $admin = User::factory()->create([
-        'email' => 'admin_content@madani.sch.id',
+        'email' => 'admin_content@rabbanime.sch.id',
     ]);
 
     // 1. View content editor
@@ -235,7 +235,7 @@ test('struktur organisasi page does not contain fabricated leader names', functi
 
 test('admin can manage bidang (fasilitas & sarana sekolah) with thumbnail', function () {
     $admin = User::factory()->create([
-        'email' => 'admin_bidang@madani.sch.id',
+        'email' => 'admin_bidang@rabbanime.sch.id',
     ]);
 
     // Create
@@ -279,7 +279,7 @@ test('admin can manage bidang (fasilitas & sarana sekolah) with thumbnail', func
 
 test('admin can manage dpc (program unggulan sekolah) with thumbnail', function () {
     $admin = User::factory()->create([
-        'email' => 'admin_dpc@madani.sch.id',
+        'email' => 'admin_dpc@rabbanime.sch.id',
     ]);
 
     // Create

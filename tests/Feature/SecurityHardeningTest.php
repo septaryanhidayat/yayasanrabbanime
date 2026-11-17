@@ -18,9 +18,9 @@ it('blocks path traversal attempts on legacy uploads route', function () {
 });
 
 it('permanently redirects legacy wp-content image URLs to clean uploads route', function () {
-    $response = $this->get('/wp-content/uploads/logo-madani.png');
+    $response = $this->get('/wp-content/uploads/logo-rabbani.png');
     $response->assertStatus(301);
-    expect($response->headers->get('Location'))->toContain('/uploads/logo-madani.webp');
+    expect($response->headers->get('Location'))->toContain('/uploads/logo-rabbani.webp');
 });
 
 it('blocks legacy wordpress scanner paths with 404', function () {
@@ -100,13 +100,13 @@ it('sanitizes feedback inputs and strips html tags', function () {
         'nama' => '<b>Ahmad</b> <script>alert("xss")</script>',
         'email' => 'ahmad@example.com',
         'whatsapp' => '+62 822-8004-1658',
-        'saran_kritik' => 'Halo <h1>Ustadz Madani</h1>, info pendaftaran siswa baru.',
+        'saran_kritik' => 'Halo <h1>Ustadz Rabbani</h1>, info pendaftaran siswa baru.',
     ]);
 
     $response->assertRedirect(route('hubungi'));
     $saved = Feedback::first();
     expect($saved)->not->toBeNull()
         ->and($saved->name)->toBe('Ahmad alert("xss")')
-        ->and($saved->message)->toBe('Halo Ustadz Madani, info pendaftaran siswa baru.')
+        ->and($saved->message)->toBe('Halo Ustadz Rabbani, info pendaftaran siswa baru.')
         ->and($saved->whatsapp)->toBe('+62 822-8004-1658');
 });

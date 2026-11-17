@@ -76,7 +76,7 @@
     {{-- 3. KPI ANALYTICS GRID (Warna-Warni Vibrant & Modern) --}}
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         
-        {{-- Card 1: Berita & Views (Oranye Madani Luminous) --}}
+        {{-- Card 1: Berita & Views (Oranye Rabbani Luminous) --}}
         <div class="bg-gradient-to-br from-[#059669] via-[#059669] to-[#b91c1c] text-white rounded-3xl p-6 shadow-lg shadow-red-500/20 border border-red-300/30 relative overflow-hidden group hover:scale-[1.02] transition duration-300">
             <div class="absolute -right-6 -bottom-6 w-24 h-24 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
             <div class="flex items-center justify-between mb-4 relative z-10">

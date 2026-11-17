@@ -181,12 +181,12 @@
 
     {{-- KOP SURAT --}}
     <div class="header">
-        <img src="/uploads/logo-rabbani-square.webp" alt="Logo Madani">
+        <img src="/uploads/logo-rabbani-square.webp" alt="Logo Rabbani">
         <div class="header-text">
             <h2>YAYASAN GENERASI RABBANI MUARA ENIM</h2>
-            <h3>SMP ISLAM TERPADU RABBANI MUARA ENIM</h3>
-            <p><strong>TERAKREDITASI BAN-SM (ANGGOTA JSIT INDONESIA)</strong> &bull; NPSN: 70034917</p>
-            <p>Jalan SMA Negeri 4, RT 02 LK III, Tanjung Rancing, Muara Enim, OKI, Sumsel 30618</p>
+            <h3>SEKOLAH ISLAM TERPADU RABBANI MUARA ENIM</h3>
+            <p><strong>TERAKREDITASI BAN-SM (ANGGOTA JSIT INDONESIA)</strong> &bull; NPSN: 69920340</p>
+            <p>Jl. Proklamasi No. 80, Kel. Air Lintang, Kab. Muara Enim, Sumsel 31311</p>
             <p>Telp/WA: 0851-5929-3554 | Email: yayasangerabbani@gmail.com | Web: www.rabbanime.sch.id</p>
         </div>
     </div>
@@ -272,8 +272,8 @@
             <p>Muara Enim, {{ \Carbon\Carbon::now()->translatedFormat('d F Y') }}</p>
             <p><strong>Ketua Panitia SPMB</strong></p>
             <div class="sig-space"></div>
-            <p><strong><u>Panitia SPMB Madani</u></strong></p>
-            <p>SMPS IT Rabbani</p>
+            <p><strong><u>Panitia SPMB SIT Rabbani</u></strong></p>
+            <p>SIT Rabbani Muara Enim</p>
         </div>
     </div>
 

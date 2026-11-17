@@ -24,7 +24,7 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-orange-500 uppercase tracking-wider block">ALBUM Kegiatan Siswa</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Dokumentasi Sekolah Madani
+            Dokumentasi Sekolah Rabbani
         </h2>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>
     </div>

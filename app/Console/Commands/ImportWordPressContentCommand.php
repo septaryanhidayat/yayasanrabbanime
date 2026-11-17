@@ -118,7 +118,7 @@ class ImportWordPressContentCommand extends Command
                 ['email' => $email],
                 [
                     'name' => $displayName ?: $login,
-                    'password' => Hash::make('SitMadani2026!'),
+                    'password' => Hash::make('Rabbani2026!'),
                 ]
             );
             $this->line(" - User imported: {$displayName} ({$email})");
@@ -238,7 +238,7 @@ class ImportWordPressContentCommand extends Command
             if ($guid) {
                 $this->urlMap[$guid] = $finalUrl;
             }
-            $this->urlMap['https://sitmadani.sch.id/wp-content/uploads/'.$attachedFile] = $finalUrl;
+            $this->urlMap['https://rabbanime.sch.id/wp-content/uploads/'.$attachedFile] = $finalUrl;
             $this->urlMap['/wp-content/uploads/'.$attachedFile] = $finalUrl;
 
             $count++;
@@ -493,7 +493,7 @@ class ImportWordPressContentCommand extends Command
                         'address' => $meta['alamat'] ?? 'Jl. Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Muara Enim, Muara Enim, Kab. OKI',
                         'phone' => $meta['telp'] ?? '0858-3817-3417',
                         'email' => $meta['email'] ?? 'yayasangerabbani@gmail.com',
-                        'website' => $meta['website'] ?? 'https://sitmadani.sch.id',
+                        'website' => $meta['website'] ?? 'https://rabbanime.sch.id',
                         'thumbnail' => $featuredImage,
                     ]
                 );
@@ -608,21 +608,21 @@ class ImportWordPressContentCommand extends Command
     protected function populateSettings(): void
     {
         $settings = [
-            'site_name' => 'SMPS IT Rabbani Muara Enim',
+            'site_name' => 'Yayasan Generasi Rabbani Muara Enim',
             'site_tagline' => 'Membina Generasi Qur\'ani, Cerdas, Berakhlak Mulia & Berprestasi Global',
-            'site_description' => 'Official Website SMPS IT Rabbani Muara Enim (SIT Rabbani). Sekolah Menengah Pertama Islam Terpadu berakreditasi di Muara Enim, Kab. OKI.',
+            'site_description' => 'Official Website Yayasan Generasi Rabbani Muara Enim (SIT Rabbani). Sekolah Islam Terpadu berjenjang (TKIT, SDIT, SMPIT, SMAIT) di Muara Enim.',
             'contact_email' => 'yayasangerabbani@gmail.com',
-            'contact_phone' => '0858-3817-3417',
-            'contact_whatsapp' => '0858-3817-3417',
-            'contact_address' => 'Jalan Sadewa No. 45 RT 01 RW 04 Kel. Karang Raja, Kec. Muara Enim, Kabupaten Ogan Komering Ilir, Sumatera Selatan 31113',
-            'social_facebook' => 'https://www.facebook.com/sitmadani.muara enim?locale=sw_KE',
-            'social_instagram' => 'https://www.instagram.com/sitmadani/',
+            'contact_phone' => '0851-5929-3554',
+            'contact_whatsapp' => '0851-5929-3554',
+            'contact_address' => 'Jl. Proklamasi No. 80, Kel. Air Lintang, Kec. Muara Enim, Kabupaten Muara Enim, Sumatera Selatan 31311',
+            'social_facebook' => 'https://web.facebook.com/YayasanGenerasiRabbaniMuaraEnim',
+            'social_instagram' => 'https://www.instagram.com/smpitrabbanimuaraenim/',
             'social_youtube' => 'https://www.youtube.com/@rabbanime',
             'social_tiktok' => 'https://www.tiktok.com/@rabbanime',
-            'social_twitter' => 'https://x.com/sitmadani',
+            'social_twitter' => 'https://x.com/rabbanime',
             'banner_daftar_url' => '/ppdb',
             'banner_donasi_url' => '/donasi',
-            'site_logo' => '/uploads/logo-madani.png',
+            'site_logo' => '/uploads/logo-rabbani.png',
         ];
 
         foreach ($settings as $key => $val) {

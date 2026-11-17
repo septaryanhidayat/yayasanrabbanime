@@ -58,7 +58,7 @@
                             <span class="inline-block bg-emerald-100 text-indigo-600 text-[10px] font-bold px-2 py-0.5 rounded-full mt-1">
                                 {{ $d->position }}
                             </span>
-                            <p class="text-[11px] text-slate-500 mt-2 line-clamp-2">{{ $d->fraction ?? 'Dewan Guru & GTK Madani' }}</p>
+                            <p class="text-[11px] text-slate-500 mt-2 line-clamp-2">{{ $d->fraction ?? 'Dewan Guru & GTK Rabbani' }}</p>
                         </div>
                     </div>
 

@@ -6,15 +6,15 @@
         'yayasan' => [
             'name' => 'Drs. H. Basuki Wiwoho',
             'position' => 'Ketua Yayasan Generasi Rabbani Muara Enim',
-            'photo' => '/uploads/dewan/ust-legianto.webp',
-            'tagline' => 'Menaungi Pendidikan Islam Terpadu Satu Atap (TK • SD • SMP)',
+            'photo' => '/uploads/dewan/ust-basuki-wiwoho.webp',
+            'tagline' => 'Menaungi Pendidikan Islam Terpadu Satu Atap (TK • SD • SMP • SMA)',
             'salutation' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh,',
-            'content' => 'Alhamdulillahirabbil\'alamin, puji dan syukur kami panjatkan ke hadirat Allah Subhanahu Wa Ta\'ala. Yayasan Generasi Rabbani hadir di Muara Enim dengan komitmen kokoh menyelenggarakan pendidikan Islam terpadu satu atap yang berkesinambungan mulai dari jenjang TKS IT Rabbani, SDS IT Rabbani, hingga SMPS IT Rabbani. Kami memadukan keluhuran nilai Al-Qur\'an dan as-Sunnah dengan keunggulan sains teknologi, bahasa global, dan adab islami untuk melahirkan generasi robbani yang cerdas, mandiri, dan berakhlak mulia.',
+            'content' => 'Alhamdulillahirabbil\'alamin, puji dan syukur kami panjatkan ke hadirat Allah Subhanahu Wa Ta\'ala. Yayasan Generasi Rabbani hadir di Muara Enim dengan komitmen kokoh menyelenggarakan pendidikan Islam terpadu satu atap yang berkesinambungan mulai dari jenjang TKS IT Rabbani, SDS IT Rabbani, SMPS IT Rabbani, hingga SMA IT Rabbani. Kami memadukan keluhuran nilai Al-Qur\'an dan as-Sunnah dengan keunggulan sains teknologi, bahasa global, dan adab islami untuk melahirkan generasi robbani yang cerdas, mandiri, dan berakhlak mulia.',
         ],
         'tk' => [
             'name' => 'Ayu Rahmayani, S.Pd.Gr. (Bunda Ayu)',
             'position' => 'Kepala Sekolah TKS IT Rabbani Muara Enim',
-            'photo' => '/uploads/dewan/bunda-ayu.webp',
+            'photo' => '/uploads/dewan/avatar-default.svg',
             'tagline' => 'Membentuk Generasi Rabbani yang Kreatif, Cerdas, dan Mandiri',
             'salutation' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh,',
             'content' => 'Selamat datang di laman resmi TKS IT Rabbani Muara Enim. Kami mendidik anak-anak usia dini dengan pendekatan Deep Learning yang berkesadaran, bermakna, dan menggembirakan. Melalui sentra bermain peran, ibadah harian, tahfidz cilik Juz 30, serta bimbingan penuh kasih sayang dari para ustadzah, kami memfasilitasi setiap ananda agar tumbuh percaya diri, ceria, dan beradab islami sejak dini.',
@@ -22,18 +22,26 @@
         'sd' => [
             'name' => 'Yudhi Arsyandi, S.Pd., Gr.',
             'position' => 'Kepala Sekolah SDS IT Rabbani Muara Enim',
-            'photo' => '/uploads/dewan/ust-andi.webp',
+            'photo' => '/uploads/dewan/avatar-default.svg',
             'tagline' => 'Membentuk Generasi Rabbani yang Berprestasi, Sholeh, Inovatif dan Mandiri',
             'salutation' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh,',
-            'content' => 'Puji syukur kita panjatkan ke hadirat Allah SWT. Selamat datang di SDS IT Rabbani Muara Enim. Kami berkomitmen menyelenggarakan pendidikan dasar terpadu yang memadukan Kurikulum Merdeka dengan kurikulum khas JSIT. Dengan target hafalan 2 Juz Al-Qur\'an (Juz 30 & 29) serta 30 hadits adab, pembiasaan sholat berjamaah, dan penguatan literasi sains serta numerasi, kami mendampingi 293 siswa dalam 13 rombel untuk meraih prestasi gemilang.',
+            'content' => 'Puji syukur kita panjatkan ke hadirat Allah SWT. Selamat datang di SDS IT Rabbani Muara Enim. Kami berkomitmen menyelenggarakan pendidikan dasar terpadu yang memadukan Kurikulum Merdeka dengan kurikulum khas JSIT. Dengan target hafalan 2 Juz Al-Qur\'an (Juz 30 & 29) serta 30 hadits adab, pembiasaan sholat berjamaah, dan penguatan literasi sains serta numerasi, kami mendampingi peserta didik untuk meraih prestasi gemilang.',
         ],
         'smp' => [
             'name' => 'Drs. H. Basuki Wiwoho',
             'position' => 'Kepala Sekolah SMPS IT Rabbani Muara Enim',
-            'photo' => '/uploads/dewan/kepala-sekolah.webp',
+            'photo' => '/uploads/dewan/ust-basuki-wiwoho.webp',
             'tagline' => 'Terbentuknya Generasi Qur\'ani, Mandiri, Inovatif, Visioner, dan Moderat',
             'salutation' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh,',
             'content' => 'Selamat datang di portal resmi SMPS IT Rabbani Muara Enim. Menjawab tantangan global dan era digital, kami menyajikan program Full Day School berkualitas yang memadukan hafalan Al-Qur\'an bersanad, pembinaan adab melalui Bina Pribadi Islam (BPI), sains modern, serta dwibahasa (Arab dan Inggris). Setiap siswa dipersiapkan menjadi pemimpin masa depan yang berwawasan luas dan berakhlakul karimah.',
+        ],
+        'sma' => [
+            'name' => 'Kepala SMA IT Rabbani',
+            'position' => 'Kepala Sekolah SMA IT Rabbani Muara Enim',
+            'photo' => '/uploads/dewan/avatar-default.svg',
+            'tagline' => 'Mencetak Generasi Pemimpin Masa Depan Berkarakter Qur\'ani & Berprestasi Global',
+            'salutation' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh,',
+            'content' => 'Selamat datang di portal resmi SMA IT Rabbani Muara Enim. Kami menyelenggarakan program Boarding School dan Full Day School dengan kurikulum terpadu nasional dan JSIT Indonesia, target hafalan Al-Qur\'an minimal 1 juz mutqin, serta program Bimbel SNBT Gratis yang terbukti menghantarkan 88% lulusan menembus Perguruan Tinggi Negeri favorit.',
         ],
     ];
 
@@ -76,6 +84,9 @@
         </a>
         <a href="{{ route('unit.sambutan', 'smp') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $unitKey === 'smp' ? 'bg-blue-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-blue-50' }}">
             <i class="fa-solid fa-graduation-cap text-blue-500 mr-1.5"></i> SMPS IT Rabbani
+        </a>
+        <a href="{{ route('unit.sambutan', 'sma') }}" class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition {{ $unitKey === 'sma' ? 'bg-purple-600 text-white font-black shadow' : 'bg-gray-50 text-gray-700 hover:bg-purple-50' }}">
+            <i class="fa-solid fa-user-graduate text-purple-500 mr-1.5"></i> SMA IT Rabbani
         </a>
     </div>
 

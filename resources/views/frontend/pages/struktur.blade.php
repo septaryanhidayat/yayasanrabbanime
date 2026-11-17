@@ -216,7 +216,7 @@
                     <h2 class="text-xl sm:text-2xl font-black text-gray-900 tracking-tight mt-1 flex items-center justify-center sm:justify-start">
                         <i class="fa-solid fa-book-open-reader text-emerald-600 mr-2"></i> Struktur Organisasi SDS IT Rabbani Muara Enim
                     </h2>
-                    <p class="text-xs text-gray-500 mt-1">Kepala Sekolah: Yudhi Arsyandi, S.Pd., Gr. &bull; Ketua Komite: Andi Kumaini, M.Pd.</p>
+                    <p class="text-xs text-gray-500 mt-1">Kepala Sekolah: Yudhi Arsyandi, S.Pd., Gr. &bull; Komite Sekolah SDS IT Rabbani</p>
                 </div>
                 <a href="{{ route('unit.dewan', 'sd') }}" class="px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-bold hover:bg-emerald-700 transition flex items-center space-x-1.5 flex-shrink-0">
                     <i class="fa-solid fa-chalkboard-user text-xs"></i>

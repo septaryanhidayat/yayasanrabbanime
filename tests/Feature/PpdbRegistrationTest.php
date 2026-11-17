@@ -85,7 +85,7 @@ test('public can register through ppdb form successfully', function () {
 test('admin can view and manage ppdb registrations', function () {
     $admin = User::create([
         'name' => 'Admin PPDB',
-        'email' => 'admin_ppdb@madani.sch.id',
+        'email' => 'admin_ppdb@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);
@@ -160,7 +160,7 @@ test('admin can view and manage ppdb registrations', function () {
 test('admin can manage ppdb content and form flexibility settings', function () {
     $admin = User::create([
         'name' => 'Admin PPDB',
-        'email' => 'admin_content@madani.sch.id',
+        'email' => 'admin_content@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);

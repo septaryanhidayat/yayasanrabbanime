@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class ConvertImagesToWebpCommand extends Command
 {
-    protected $signature = 'madani:convert-webp {--force : Reconvert even if WebP already exists} {--keep-originals : Keep original image files after conversion}';
+    protected $signature = 'school:convert-webp {--force : Reconvert even if WebP already exists} {--keep-originals : Keep original image files after conversion}';
 
     protected $description = 'Convert all existing JPG, JPEG, and PNG images in public/uploads to WebP format with high quality and compact file size, and update database references';
 
@@ -212,7 +212,7 @@ class ConvertImagesToWebpCommand extends Command
     protected function ensureEssentialFallbackImages(): void
     {
         $fallbacks = [
-            'campus-sit-madani.webp' => ['campus-sit-madani.jpg', 'logo-madani.png'],
+            'campus-sit-rabbani.webp' => ['campus-sit-rabbani.jpg', 'logo-rabbani.png'],
         ];
 
         $uploadsDir = public_path('uploads');

@@ -224,12 +224,12 @@ class AdminPpdbController extends Controller
             'banner_card1_desc' => Setting::get('spmb_banner_card1_desc', 'Hanya 24 Siswa'),
             'banner_card1_color' => Setting::get('spmb_banner_card1_color', '#f59e0b'),
             'banner_card2_title' => Setting::get('spmb_banner_card2_title', 'CASH BACK 1 JUTA'),
-            'banner_card2_desc' => Setting::get('spmb_banner_card2_desc', 'Alumni SDIT Madani 1 & 2'),
+            'banner_card2_desc' => Setting::get('spmb_banner_card2_desc', 'Alumni SDIT Rabbani'),
             'banner_card2_color' => Setting::get('spmb_banner_card2_color', '#f59e0b'),
             'banner_card3_title' => Setting::get('spmb_banner_card3_title', 'CLASS MEETING'),
             'banner_card3_desc' => Setting::get('spmb_banner_card3_desc', 'Mulai Rabu, 17 Juni'),
             'banner_card3_color' => Setting::get('spmb_banner_card3_color', '#f59e0b'),
-            'banner_flyer_image' => Setting::get('spmb_banner_flyer_image', '/uploads/flyer-spmb-sit-madani.webp'),
+            'banner_flyer_image' => Setting::get('spmb_banner_flyer_image', '/uploads/flyer-spmb-smait-rabbani.webp'),
 
             'banner_flyer_label' => Setting::get('spmb_banner_flyer_label', 'Pengumuman Resmi Sekolah'),
             'banner_btn_text' => Setting::get('spmb_banner_btn_text', 'Daftar SPMB Online'),
@@ -366,13 +366,13 @@ class AdminPpdbController extends Controller
             $fileInput = "ppdb_image_{$i}_file";
             if ($request->hasFile($fileInput)) {
                 $file = $request->file($fileInput);
-                $destDir = public_path('uploads/madani');
+                $destDir = public_path('uploads/ppdb');
                 if (! file_exists($destDir)) {
                     mkdir($destDir, 0755, true);
                 }
                 $fileName = "fasilitas_ppdb_{$i}_".time().'.'.$file->getClientOriginalExtension();
                 $file->move($destDir, $fileName);
-                $validated["ppdb_image_{$i}"] = '/uploads/madani/'.$fileName;
+                $validated["ppdb_image_{$i}"] = '/uploads/ppdb/'.$fileName;
             }
         }
 
@@ -650,7 +650,7 @@ class AdminPpdbController extends Controller
     public function exportExcel()
     {
         $registrations = PpdbRegistration::latest()->get();
-        $filename = 'Data_Pendaftar_SPMB_SMPS_IT_Madani_Muara Enim_'.date('Ymd_His').'.csv';
+        $filename = 'Data_Pendaftar_SPMB_SIT_Rabbani_Muara_Enim_'.date('Ymd_His').'.csv';
 
         $headers = [
             'Content-Type' => 'text/csv; charset=UTF-8',

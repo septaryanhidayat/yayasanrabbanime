@@ -26,7 +26,7 @@
     <div class="text-center max-w-2xl mx-auto">
         <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block">Karakter &amp; Keahlian Abad 21</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight mt-1">
-            Program Khusus Siswa Madani
+            Program Khusus Siswa Rabbani
         </h2>
         <p class="text-xs sm:text-sm text-gray-500 mt-1 font-light">Mengasah kecakapan siswa menjadi pribadi cerdas, mandiri, dan berjiwa pelopor.</p>
         <div class="w-16 h-1 bg-indigo-600 mx-auto rounded-full mt-3"></div>

@@ -83,7 +83,7 @@ class Video extends Model
             return "https://img.youtube.com/vi/{$id}/hqdefault.jpg";
         }
 
-        return '/uploads/campus-sit-madani.webp';
+        return '/uploads/campus-sit-rabbani.webp';
     }
 
     /**

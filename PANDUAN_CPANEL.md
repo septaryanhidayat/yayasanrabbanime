@@ -1,6 +1,6 @@
-# 🚀 Panduan Deployment & Konfigurasi cPanel SMPS IT Madani Kayuagung
+# 🚀 Panduan Deployment & Konfigurasi cPanel Yayasan Generasi Rabbani Muara Enim
 
-Panduan lengkap untuk hosting cPanel akun **`berandad`** (Domain: `https://sitmadani.sch.id`).
+Panduan lengkap untuk hosting cPanel akun **`berandad`** (Domain: `https://rabbanime.sch.id`).
 
 ---
 
@@ -34,24 +34,24 @@ Baris berikut sudah dipasang di `.htaccess` (root repositori) dan `public/.htacc
 
 ### 🔍 Cara Cek Versi PHP Aktif Secara Real-Time:
 Buka di browser:
-👉 **`https://sitmadani.sch.id/check.php`**
+👉 **`https://rabbanime.sch.id/check.php`**
 Halaman ini akan menampilkan secara transparan versi PHP yang sedang dieksekusi oleh web server Apache, lokasi document root, serta status koneksi database.
 
 ---
 
 ## 🗄️ 2. Konfigurasi File `.env` Produksi di cPanel
 
-Salin konfigurasi berikut ke file `.env` di folder repositori `/home/berandad/repositories/sitmadani/.env`:
+Salin konfigurasi berikut ke file `.env` di folder repositori `/home/berandad/repositories/yayasanrabbanime/.env`:
 
 ```env
 # ==============================================================================
-# ENVIRONMENT SETTINGS - SMPS IT MADANI KAYUAGUNG (CPANEL PRODUCTION)
+# ENVIRONMENT SETTINGS - YAYASAN GENERASI RABBANI MUARA ENIM (CPANEL PRODUCTION)
 # ==============================================================================
-APP_NAME="SMPS IT Madani Kayuagung"
+APP_NAME="Yayasan Generasi Rabbani Muara Enim"
 APP_ENV=production
 APP_KEY=base64:/pHX1Fa5FrzEUD5baFuzVKajWGQ4oUjuO53ytzrw2ac=
 APP_DEBUG=false
-APP_URL=https://sitmadani.sch.id
+APP_URL=https://rabbanime.sch.id
 
 APP_LOCALE=id
 APP_FALLBACK_LOCALE=en
@@ -72,8 +72,8 @@ LOG_LEVEL=error
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=berandad_db_sitmadani
-DB_USERNAME=berandad_admin_sitmadani
+DB_DATABASE=berandad_db_rabbani
+DB_USERNAME=berandad_admin_rabbani
 DB_PASSWORD=P4l3mb4ng123!
 
 SESSION_DRIVER=database
@@ -102,7 +102,7 @@ MAIL_HOST=127.0.0.1
 MAIL_PORT=2525
 MAIL_USERNAME=null
 MAIL_PASSWORD=null
-MAIL_FROM_ADDRESS="admin@sitmadani.sch.id"
+MAIL_FROM_ADDRESS="admin@rabbanime.sch.id"
 MAIL_FROM_NAME="${APP_NAME}"
 
 AWS_ACCESS_KEY_ID=
@@ -114,7 +114,7 @@ AWS_USE_PATH_STYLE_ENDPOINT=false
 VITE_APP_NAME="${APP_NAME}"
 
 # cPanel Setup Helper Secret Token
-CPANEL_SETUP_TOKEN=SitMadani2026Setup
+CPANEL_SETUP_TOKEN=Rabbani2026Setup
 ```
 
 ---
@@ -122,20 +122,20 @@ CPANEL_SETUP_TOKEN=SitMadani2026Setup
 ## 🚀 3. Git™ Version Control & Deployment di cPanel
 
 Berdasarkan pengaturan Git di cPanel Anda:
-* **Repository Path**: `/home/berandad/repositories/sitmadani`
-* **Remote URL**: `https://github.com/septaryanhidayat/sitmadani.git`
+* **Repository Path**: `/home/berandad/repositories/yayasanrabbanime`
+* **Remote URL**: `https://github.com/septaryanhidayat/yayasanrabbanime.git`
 * **Branch**: `main`
 
 ### Langkah Update & Deploy:
 1. Buka menu **Git™ Version Control** di cPanel.
-2. Klik tombol **Manage** pada repositori `sitmadani`.
+2. Klik tombol **Manage** pada repositori `yayasanrabbanime`.
 3. Buka tab **Pull or Deploy**.
 4. Klik tombol biru **Update from Remote** untuk menarik commit terbaru dari GitHub.
 5. Klik tombol biru **Deploy HEAD Commit** untuk menjalankan proses deployment otomatis yang didefinisikan dalam `.cpanel.yml`.
 
 ### Otomasi File `.cpanel.yml`:
 File `.cpanel.yml` terisolasi penuh dan aman:
-- Hanya beroperasi 100% di dalam direktori repositori: `/home/berandad/repositories/sitmadani/`.
+- Hanya beroperasi 100% di dalam direktori repositori: `/home/berandad/repositories/yayasanrabbanime/`.
 - **SAMA SEKALI TIDAK** menyentuh atau mengganggu folder `public_html` (web utama Anda tetap aman tanpa tersentuh).
 - Mengatur izin akses direktori internal `storage/` dan `bootstrap/cache` ke `0775`.
 - Mengatur direktori internal `public/` ke `0755`.
@@ -147,7 +147,7 @@ File `.cpanel.yml` terisolasi penuh dan aman:
 
 Untuk memudahkan operasional tanpa perlu terminal SSH:
 Akses di browser:
-👉 **`https://sitmadani.sch.id/cpanel_setup.php?token=SitMadani2026Setup&action=status`**
+👉 **`https://rabbanime.sch.id/cpanel_setup.php?token=Rabbani2026Setup&action=status`**
 
 Fitur 1-klik yang tersedia:
 * **Perbaiki Izin Folder Storage** (`action=fix_storage`): Memastikan semua folder cache, session, view, dan log memiliki izin tulis (0775).
@@ -169,7 +169,7 @@ bash cpanel_pull.sh
 Atau langkah manual via terminal:
 ```bash
 # 1. Pindah ke folder repository
-cd /home/berandad/repositories/sitmadani
+cd /home/berandad/repositories/yayasanrabbanime
 
 # 2. Tarik update terbaru dari GitHub
 git fetch origin main
@@ -195,7 +195,7 @@ touch public/index.php
 1. **Via Git™ Version Control di cPanel**:
    - Masuk ke **Git™ Version Control** > **Manage** > **Pull or Deploy** > Klik **Update from Remote**.
 2. **Eksekusi SQL via phpMyAdmin**:
-   - Buka **phpMyAdmin** di cPanel, pilih database `berandad_sitmadani` (atau nama database yang Anda gunakan).
+   - Buka **phpMyAdmin** di cPanel, pilih database `berandad_rabbani` (atau nama database yang Anda gunakan).
    - Klik tab **SQL**, lalu salin dan jalankan query berikut:
    ```sql
    CREATE TABLE IF NOT EXISTS `ppdb_tracks` (
@@ -217,10 +217,10 @@ touch public/index.php
    INSERT IGNORE INTO `ppdb_tracks` (`id`, `name`, `slug`, `quota_percentage`, `discount_info`, `description`, `requirements`, `order_index`, `is_active`, `created_at`, `updated_at`) VALUES
    (1, 'Jalur First Brive', 'jalur-first-brive', 10, 'Cashback & Prioritas', 'Jalur pendaftaran gelombang perdana dengan diskon dan kuota khusus.', 'Fotokopi Raport Terakhir, Mengisi Formulir Online', 1, 1, NOW(), NOW()),
    (2, 'Jalur Mutasi Kerja', 'jalur-mutasi-kerja', 5, 'Keringanan Khusus Mutasi', 'Jalur bagi calon siswa pindahan atau orang tua/wali yang mengalami mutasi dinas/tugas kerja.', 'Surat Keputusan (SK) Mutasi Kerja Orang Tua/Wali, Fotokopi KK & Akta Kelahiran', 2, 1, NOW(), NOW()),
-   (3, 'Jalur Tahfidz', 'jalur-tahfidz', 5, 'Cashback Rp. 750.000 s/d Rp. 1.000.000', 'Jalur khusus penghafal Al-Qur\'an dengan kuota 10 siswa.', 'Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-, Tahfidz >5 Juz Cashback Rp. 1.000.000,-. Mengikuti tes sima\'an tahfidz bersama dewan musyrif Al-Qur\'an Madani.', 3, 1, NOW(), NOW()),
-   (4, 'Jalur Alumni', 'jalur-alumni', 25, 'Potongan Uang Pangkal Rp. 1.000.000', 'Keringanan istimewa bagi lulusan SD IT Madani 1 dan 2 Kayuagung (kuota 50 siswa).', 'Surat keterangan / Ijazah lulusan SD IT Madani', 4, 1, NOW(), NOW()),
+   (3, 'Jalur Tahfidz', 'jalur-tahfidz', 5, 'Cashback Rp. 750.000 s/d Rp. 1.000.000', 'Jalur khusus penghafal Al-Qur\'an dengan kuota 10 siswa.', 'Tahfidz minimal 4-5 Juz Cashback Rp. 750.000,-, Tahfidz >5 Juz Cashback Rp. 1.000.000,-. Mengikuti tes sima\'an tahfidz bersama dewan musyrif Al-Qur\'an Rabbani.', 3, 1, NOW(), NOW()),
+   (4, 'Jalur Alumni', 'jalur-alumni', 25, 'Potongan Uang Pangkal Rp. 1.000.000', 'Keringanan istimewa bagi lulusan SD IT Rabbani Muara Enim (kuota 50 siswa).', 'Surat keterangan / Ijazah lulusan SD IT Rabbani', 4, 1, NOW(), NOW()),
    (5, 'Jalur Prestasi', 'jalur-prestasi', 30, 'Bebas Tes Akademik & Keringanan Biaya', 'Jalur prestasi akademik (Juara Umum/Kelas 1-3 berturut-turut) dan non-akademik (Sains, Olahraga, Seni, Bahasa tingkat Kota/Provinsi/Nasional).', 'Sertifikat/Piagam Kejuaraan asli/legalisir, Nilai Rapor', 5, 1, NOW(), NOW()),
-   (6, 'Jalur Reguler', 'jalur-reguler', 25, 'Biaya Standar SPMB', 'Jalur seleksi tes mandiri masuk SMP IT Madani.', 'Tes Potensi Akademik (Matematika, Bahasa Indonesia, PAI), Tes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid), Wawancara Komitmen Orang Tua & Siswa', 6, 1, NOW(), NOW());
+   (6, 'Jalur Reguler', 'jalur-reguler', 25, 'Biaya Standar SPMB', 'Jalur seleksi tes mandiri masuk SIT Rabbani.', 'Tes Potensi Akademik (Matematika, Bahasa Indonesia, PAI), Tes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid), Wawancara Komitmen Orang Tua & Siswa', 6, 1, NOW(), NOW());
    ```
 3. Atau jalankan via web browser:
-   - Akses: `https://sitmadani.sch.id/cpanel_setup.php?token=SitMadani2026Setup&action=migrate`
+   - Akses: `https://rabbanime.sch.id/cpanel_setup.php?token=Rabbani2026Setup&action=migrate`

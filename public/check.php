@@ -16,9 +16,6 @@ $candidates = [
     dirname(__DIR__).'/repositories/yayasanrabbanime',
     dirname(__DIR__).'/laravel_yayasanrabbanime',
     dirname(__DIR__).'/yayasanrabbanime',
-    dirname(__DIR__).'/repositories/sitmadani',
-    dirname(__DIR__).'/laravel_sitmadani',
-    dirname(__DIR__).'/sitmadani',
     '/home/berandad/repositories/yayasanrabbanime',
 ];
 

@@ -157,7 +157,7 @@
                 Permohonan Sewa Menyewa Barang Sekolah
             </h3>
             <p class="text-xs text-gray-500 leading-relaxed font-light mb-6">
-                Fasilitas Hall Serbaguna Madani, laboratorium komputer, lapangan olahraga, audio sound system, dan tenda kegiatan sekolah.
+                Fasilitas Hall Serbaguna Rabbani, laboratorium komputer, lapangan olahraga, audio sound system, dan tenda kegiatan sekolah.
             </p>
             <span class="mt-auto inline-flex items-center space-x-2 text-xs font-bold text-indigo-600 group-hover:text-emerald-600 transition">
                 <span>Buka Formulir</span>
@@ -209,7 +209,7 @@
                 <span class="font-bold text-sm text-slate-800 block">Butuh bantuan cepat atau konfirmasi darurat?</span>
                 <span class="text-xs text-slate-500">Hubungi Hotline Humas &amp; Sekretariat SMPS IT Rabbani Muara Enim.</span>
             </div>
-            <a href="https://wa.me/6285159293554?text=Assalamu'alaikum%20Humas%20SMP%20IT%20Madani,%20saya%20ingin%20bertanya%20mengenai%20Layanan%20Terpadu%20Sekolah." target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow transition shrink-0">
+            <a href="https://wa.me/6285159293554?text=Assalamu'alaikum%20Humas%20SIT%20Rabbani,%20saya%20ingin%20bertanya%20mengenai%20Layanan%20Terpadu%20Sekolah." target="_blank" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow transition shrink-0">
                 <i class="fa-brands fa-whatsapp text-sm"></i>
                 <span>Chat WhatsApp Humas</span>
             </a>

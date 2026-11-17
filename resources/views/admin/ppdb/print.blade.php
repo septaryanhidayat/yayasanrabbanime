@@ -129,9 +129,9 @@
             <img src="/uploads/logo-rabbani-square.webp" alt="Logo" class="logo">
             <div class="header-text">
                 <h1>Yayasan Generasi Rabbani Muara Enim</h1>
-                <h2>SMPS IT Rabbani Muara Enim</h2>
-                <p>NPSN: 69990882 &bull; Status Akreditasi B (BAN-SM: 074/BAP-SM/TU/XI/2016)</p>
-                <p>Jl. Lingkar Timur, Kel. Gunung Ibul, Kec. Muara Enim, Kabupaten Muara Enim, Sumatera Selatan 31111</p>
+                <h2>SIT Rabbani Muara Enim</h2>
+                <p>NPSN: 69920340 &bull; Status Terakreditasi (BAN-SM)</p>
+                <p>Jl. Proklamasi No. 80, Kel. Air Lintang, Kab. Muara Enim, Sumatera Selatan 31311</p>
                 <p>Email: yayasangerabbani@gmail.com | Website: https://rabbanime.sch.id | WA: 0851-5929-3554</p>
             </div>
         </div>
@@ -254,7 +254,7 @@
                 <p>( {{ $ppdb->full_name }} )</p>
             </div>
             <div class="sig-box">
-                <p>Muara Enim, {{ date('d F Y') }}<br>Panitia SPMB Madani,</p>
+                <p>Muara Enim, {{ date('d F Y') }}<br>Panitia SPMB SIT Rabbani,</p>
                 <div class="sig-space"></div>
                 <p>( Panitia SPMB TP {{ $ppdb->academic_year ?? '2026/2027' }} )</p>
             </div>

@@ -33,7 +33,7 @@ class DownloadSeeder extends Seeder
             ],
             [
                 'title' => 'Panduan Kurikulum Tahfidz Al-Qur\'an SIT Rabbani Muara Enim',
-                'file_path' => '/uploads/downloads/panduan-mutqin-tahfidz-madani.pdf',
+                'file_path' => '/uploads/downloads/panduan-mutqin-tahfidz-rabbani.pdf',
                 'file_type' => 'PDF',
                 'category_type' => 'E-Book',
                 'download_count' => 540,

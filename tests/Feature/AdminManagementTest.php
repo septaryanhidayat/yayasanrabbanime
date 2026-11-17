@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 test('admin can manage users with multi roles', function () {
     $superAdmin = User::create([
-        'name' => 'Super Admin Madani',
+        'name' => 'Super Admin Rabbani',
         'email' => 'superadmin@rabbanime.sch.id',
         'password' => Hash::make('Secret12345!'),
         'role' => 'super_admin',
@@ -17,7 +17,7 @@ test('admin can manage users with multi roles', function () {
     $this->actingAs($superAdmin);
 
     // List users
-    $this->get('/admin/users')->assertStatus(200)->assertSee('Super Admin Madani');
+    $this->get('/admin/users')->assertStatus(200)->assertSee('Super Admin Rabbani');
 
     // Create editor user
     $response = $this->post('/admin/users', [
@@ -43,7 +43,7 @@ test('admin can manage static profile pages with rich content', function () {
     ]);
 
     $page = Post::create([
-        'title' => 'Visi Misi Sekolah Madani',
+        'title' => 'Visi Misi Sekolah Rabbani',
         'slug' => 'visi-misi-sekolah',
         'content' => '<p>Visi dan misi sekolah mencetak generasi Qurani.</p>',
         'type' => 'page',
@@ -52,7 +52,7 @@ test('admin can manage static profile pages with rich content', function () {
 
     $this->actingAs($admin);
 
-    $this->get('/admin/pages')->assertStatus(200)->assertSee('Visi Misi Sekolah Madani');
+    $this->get('/admin/pages')->assertStatus(200)->assertSee('Visi Misi Sekolah Rabbani');
 
     // Edit page
     $response = $this->put("/admin/pages/{$page->id}", [
@@ -127,8 +127,8 @@ test('admin can update seo and opengraph settings', function () {
 
 test('gallery displays uploaded photos on galeri page and home page', function () {
     $photo = Post::create([
-        'title' => 'Dokumentasi Wisuda Tahfidz Madani Terkini',
-        'slug' => 'dokumentasi-wisuda-tahfidz-madani-terkini',
+        'title' => 'Dokumentasi Wisuda Tahfidz Rabbani Terkini',
+        'slug' => 'dokumentasi-wisuda-tahfidz-rabbani-terkini',
         'type' => 'gallery',
         'status' => 'publish',
         'featured_image' => '/uploads/galeri/test_tahfidz.webp',
@@ -139,7 +139,7 @@ test('gallery displays uploaded photos on galeri page and home page', function (
     // Check on /galeri page
     $this->get('/galeri')
         ->assertStatus(200)
-        ->assertSee('Dokumentasi Wisuda Tahfidz Madani Terkini')
+        ->assertSee('Dokumentasi Wisuda Tahfidz Rabbani Terkini')
         ->assertSee('/uploads/galeri/test_tahfidz.webp');
 
     // Check on unit homepage (SMP)

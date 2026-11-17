@@ -13,7 +13,7 @@ uses(RefreshDatabase::class);
 test('admin can add, customize, and delete dynamic fields for ppdb online form', function () {
     $admin = User::create([
         'name' => 'Admin PPDB',
-        'email' => 'admin_dynamic@madani.sch.id',
+        'email' => 'admin_dynamic@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);

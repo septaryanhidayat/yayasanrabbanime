@@ -41,7 +41,7 @@
                 <i class="fa-solid fa-hand-holding-heart mr-2"></i> Infaq & Shadaqah Jariyah
             </span>
             <h1 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
-                {{ $page?->title ?? 'Infaq Pembangunan & Beasiswa Madani' }}
+                {{ $page?->title ?? 'Infaq Pembangunan & Beasiswa Rabbani' }}
             </h1>
             <p class="text-sm sm:text-base text-indigo-100 mt-4 leading-relaxed font-light">
                 {{ $page?->excerpt ?: 'Mari bergotong royong membangun sarana laboratorium riset modern, masjid sekolah, fasilitas ruang kelas terpadu, dan program beasiswa bagi siswa berprestasi di SMPS IT Rabbani Muara Enim.' }}

@@ -138,7 +138,7 @@ test('all admin panel routes require authentication', function () {
 test('authenticated admin can access all admin panel pages', function () {
     $admin = User::create([
         'name' => 'Super Admin',
-        'email' => 'admin_audit@madani.sch.id',
+        'email' => 'admin_audit@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);

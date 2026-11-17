@@ -50,7 +50,7 @@ class AdminBackupController extends Controller
             'status' => 'warning',
         ]);
 
-        $filename = 'sitmadani_database_backup_'.date('Y-m-d_His').'.sql';
+        $filename = 'rabbani_database_backup_'.date('Y-m-d_His').'.sql';
 
         return response()->streamDownload(function () {
             echo "-- ==========================================================\n";

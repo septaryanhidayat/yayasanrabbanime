@@ -18,8 +18,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Web Utama / Portal Yayasan Agung Madani Muara Enim.
-     * Menampilkan profil Yayasan dan 3 Showcase Cards akses ke TKS, SDS, dan SMPS IT Rabbani.
+     * Web Utama / Portal Yayasan Generasi Rabbani Muara Enim.
+     * Menampilkan profil Yayasan dan 4 Showcase Cards akses ke TK, SD, SMP, dan SMA IT Rabbani.
      */
     public function index(Request $request)
     {
@@ -126,9 +126,9 @@ class HomeController extends Controller
         // Popup SPMB Settings
         $popupSettings = [
             'active' => Setting::get('popup_active', '1'),
-            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-sit-madani.webp'),
+            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-smait-rabbani.webp'),
             'title' => Setting::get('popup_title', 'Telah Dibuka SPMB SIT Rabbani (TP 2026/2027)'),
-            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SIT Rabbani Muara Enim (TK • SD • SMP)'),
+            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SIT Rabbani Muara Enim (TK • SD • SMP • SMA)'),
             'link' => Setting::get('popup_link', '/ppdb'),
             'target' => Setting::get('popup_target', '_self'),
             'button_text' => Setting::get('popup_button_text', 'Info & Daftar SPMB Online'),
@@ -195,7 +195,7 @@ class HomeController extends Controller
                     'badge' => strtoupper($currentUnit['name']).' • TERAKREDITASI '.$currentUnit['akreditasi'],
                     'title' => 'Selamat Datang di Website Resmi',
                     'subtitle' => $currentUnit['name'].' ('.$currentUnit['level'].')',
-                    'image' => '/uploads/campus-sit-madani.webp',
+                    'image' => '/uploads/campus-sit-rabbani.webp',
                     'btn_text' => 'Profil Sekolah',
                     'btn_link' => route('unit.page', ['unit' => $unit, 'slug' => 'tentang-kami']),
                     'btn_target' => '_self',
@@ -211,7 +211,7 @@ class HomeController extends Controller
         $sambutan = (object) [
             'title' => 'Sambutan Kepala '.$currentUnit['short_name'],
             'excerpt' => 'Assalamu\'alaikum Warahmatullahi Wabarakatuh. Selamat datang di portal resmi '.$currentUnit['name'].'. Kami berikhtiar mendidik dengan sepenuh hati dan cinta.',
-            'content' => '<p><strong>Assalamu\'alaikum Warahmatullahi Wabarakatuh.</strong></p><p>Puji syukur kita panjatkan ke hadirat Allah Subhanahu Wa Ta\'ala atas limpahan rahmat dan karunia-Nya. Selamat datang di laman resmi <strong>'.$currentUnit['name'].'</strong> di bawah naungan Yayasan Agung Madani Muara Enim.</p><p>Visi kami adalah <em>"'.$currentUnit['visi'].'"</em>. Dengan bimbingan tenaga pendidik yang kompeten dan berdedikasi, kami menanamkan kecintaan pada Al-Qur\'an, pembiasaan adab islami, serta pembelajaran bermakna dan menggembirakan.</p><p>Wassalamu\'alaikum Warahmatullahi Wabarakatuh.</p>',
+            'content' => '<p><strong>Assalamu\'alaikum Warahmatullahi Wabarakatuh.</strong></p><p>Puji syukur kita panjatkan ke hadirat Allah Subhanahu Wa Ta\'ala atas limpahan rahmat dan karunia-Nya. Selamat datang di laman resmi <strong>'.$currentUnit['name'].'</strong> di bawah naungan Yayasan Generasi Rabbani Muara Enim.</p><p>Visi kami adalah <em>"'.$currentUnit['visi'].'"</em>. Dengan bimbingan tenaga pendidik yang kompeten dan berdedikasi, kami menanamkan kecintaan pada Al-Qur\'an, pembiasaan adab islami, serta pembelajaran bermakna dan menggembirakan.</p><p>Wassalamu\'alaikum Warahmatullahi Wabarakatuh.</p>',
             'featured_image' => $currentUnit['leader_photo'],
             'author_name' => $currentUnit['leader_name'],
         ];
@@ -309,16 +309,16 @@ class HomeController extends Controller
 
         // 11. Galeri
         $fallbackRow1 = [
-            ['url' => '/uploads/campus-sit-madani.webp', 'title' => 'Gedung Sekolah '.$currentUnit['short_name']],
-            ['url' => '/uploads/activities-sit-madani.webp', 'title' => 'Aktivitas Belajar & Karakter Terpadu'],
-            ['url' => '/uploads/logo-madani.webp', 'title' => 'Kompleks Kampus SIT Rabbani Muara Enim'],
-            ['url' => '/uploads/tahfidz-sit-madani.webp', 'title' => 'Pembinaan Tahfidz & Tartil Qur\'an'],
+            ['url' => '/uploads/campus-sit-rabbani.webp', 'title' => 'Gedung Sekolah '.$currentUnit['short_name']],
+            ['url' => '/uploads/activities-sit-rabbani.webp', 'title' => 'Aktivitas Belajar & Karakter Terpadu'],
+            ['url' => '/uploads/logo-rabbani.webp', 'title' => 'Kompleks Kampus SIT Rabbani Muara Enim'],
+            ['url' => '/uploads/tahfidz-sit-rabbani.webp', 'title' => 'Pembinaan Tahfidz & Tartil Qur\'an'],
         ];
         $fallbackRow2 = [
-            ['url' => '/uploads/dewan/ust-legianto.webp', 'title' => 'Ketua Yayasan Agung Madani'],
+            ['url' => '/uploads/ust-basuki-wiwoho.webp', 'title' => 'Ketua Yayasan Generasi Rabbani Muara Enim'],
             ['url' => $currentUnit['leader_photo'], 'title' => 'Kepala Sekolah '.$currentUnit['short_name']],
-            ['url' => '/uploads/campus-sit-madani.webp', 'title' => 'Lingkungan Asri & Ramah Anak'],
-            ['url' => '/uploads/activities-sit-madani.webp', 'title' => 'Keceriaan Belajar Bersama'],
+            ['url' => '/uploads/banner-yayasan-rabbani.webp', 'title' => 'Lingkungan Asri & Ramah Anak'],
+            ['url' => '/uploads/flyer-spmb-smait-rabbani.webp', 'title' => 'SPMB SMA IT Rabbani'],
         ];
 
         $dbGallery = Post::where('type', 'gallery')
@@ -327,7 +327,7 @@ class HomeController extends Controller
             ->take(16)
             ->get()
             ->map(fn ($g) => [
-                'url' => $g->featured_image ?? '/uploads/campus-sit-madani.webp',
+                'url' => $g->featured_image ?? '/uploads/campus-sit-rabbani.webp',
                 'title' => $g->title,
             ])->toArray();
 

@@ -30,7 +30,7 @@ class Bidang extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/campus-sit-madani.webp';
+        return '/uploads/campus-sit-rabbani.webp';
     }
 
     public function getIsImageIconAttribute(): bool
@@ -55,6 +55,6 @@ class Bidang extends Model
             return '/'.ltrim($path, '/');
         }
 
-        return '/uploads/logo-madani.png';
+        return '/uploads/logo-rabbani.png';
     }
 }

@@ -15,7 +15,7 @@ uses(RefreshDatabase::class);
 test('admin can create, update, and delete dynamic ppdb tracks', function () {
     $admin = User::create([
         'name' => 'Admin PPDB Track',
-        'email' => 'admin_track@madani.sch.id',
+        'email' => 'admin_track@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);
@@ -68,7 +68,7 @@ test('admin can create, update, and delete dynamic ppdb tracks', function () {
 test('admin can update agenda and pengumuman via PUT request', function () {
     $admin = User::create([
         'name' => 'Admin Agenda',
-        'email' => 'admin_agenda@madani.sch.id',
+        'email' => 'admin_agenda@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);
@@ -85,7 +85,7 @@ test('admin can update agenda and pengumuman via PUT request', function () {
     // Update Agenda
     $updateAgendaResponse = $this->actingAs($admin)->put(route('admin.agenda.update', $agenda), [
         'title' => 'Agenda Updated',
-        'location' => 'Aula Utama Madani',
+        'location' => 'Aula Utama Rabbani',
         'event_date' => now()->addDays(10)->format('Y-m-d\TH:i'),
         'status' => 'publish',
         'content' => 'Deskripsi agenda diperbarui.',
@@ -94,7 +94,7 @@ test('admin can update agenda and pengumuman via PUT request', function () {
     $updateAgendaResponse->assertRedirect(route('admin.agenda.index'));
     $agenda->refresh();
     expect($agenda->title)->toBe('Agenda Updated');
-    expect($agenda->location)->toBe('Aula Utama Madani');
+    expect($agenda->location)->toBe('Aula Utama Rabbani');
 
     // Create Pengumuman
     $pengumuman = Pengumuman::create([
@@ -164,7 +164,7 @@ test('ppdb form automatically pre-selects chosen track from ppdb info page', fun
 test('ekstrakurikuler is visible in navbar, homepage, index and show page', function () {
     $user = User::create([
         'name' => 'Admin User',
-        'email' => 'admin_test_ekskul@madani.sch.id',
+        'email' => 'admin_test_ekskul@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);
@@ -200,7 +200,7 @@ test('ekstrakurikuler is visible in navbar, homepage, index and show page', func
 test('admin can upload photo and file when creating and updating agenda and pengumuman', function () {
     $admin = User::create([
         'name' => 'Admin Media Upload',
-        'email' => 'admin_media_upload@madani.sch.id',
+        'email' => 'admin_media_upload@rabbanime.sch.id',
         'password' => Hash::make('Password123!'),
         'role' => 'admin',
     ]);

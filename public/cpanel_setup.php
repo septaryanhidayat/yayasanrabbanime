@@ -18,9 +18,6 @@ $possibleRoots = [
     dirname(__DIR__).'/repositories/yayasanrabbanime',
     dirname(__DIR__).'/laravel_yayasanrabbanime',
     dirname(__DIR__).'/yayasanrabbanime',
-    dirname(__DIR__).'/repositories/sitmadani',
-    dirname(__DIR__).'/laravel_sitmadani',
-    dirname(__DIR__).'/sitmadani',
     ($_SERVER['HOME'] ?? '').'/repositories/yayasanrabbanime',
     ($_SERVER['HOME'] ?? '').'/laravel_yayasanrabbanime',
     '/home/berandad/repositories/yayasanrabbanime',
@@ -264,11 +261,11 @@ switch ($action) {
                 if ($count === 0) {
                     $pdo->exec("INSERT IGNORE INTO `ppdb_tracks` (`id`, `name`, `slug`, `percentage`, `quota`, `cashback_info`, `description`, `order`, `is_active`, `created_at`, `updated_at`) VALUES
                     (1, 'Jalur First Brive', 'jalur-first-brive', '10%', '10 Siswa', 'Diskon Formulir 50% & Souvenir Eksklusif', 'Jalur pendaftaran gelombang perdana dengan diskon dan kuota khusus untuk pendaftar awal yang menyelesaikan registrasi pada periode pembukaan pertama.', 1, 1, NOW(), NOW()),
-                    (2, 'Jalur Mutasi Kerja', 'jalur-mutasi-kerja', '5%', '5 Siswa', 'Keringanan Khusus Mutasi Tugas', 'Jalur bagi calon siswa pindahan atau anak dari orang tua/wali yang mengalami mutasi tugas kedinasan/pekerjaan ke wilayah Kayuagung dan sekitarnya.', 2, 1, NOW(), NOW()),
-                    (3, 'Jalur Tahfidz Al-Qur\'an', 'jalur-tahfidz-al-quran', '5%', '10 Siswa', 'Cashback Rp. 750.000 s/d Rp. 1.000.000', 'Jalur khusus penghafal Al-Qur\'an:\\n- Tahfidz 4-5 Juz: Cashback Rp 750.000,-\\n- Tahfidz >5 Juz: Cashback Rp 1.000.000,-\\nWajib mengikuti tes sima\'an tahfidz bersama dewan musyrif Al-Qur\'an Madani.', 3, 1, NOW(), NOW()),
-                    (4, 'Jalur Alumni SIT Madani', 'jalur-alumni-sit-madani', '25%', '50 Siswa', 'Potongan Uang Pangkal Rp. 1.000.000,-', 'Keringanan istimewa bagi lulusan SD IT Madani 1 dan SD IT Madani 2 Kayuagung yang melanjutkan jenjang pendidikan ke SMPS IT Madani Kayuagung.', 4, 1, NOW(), NOW()),
+                    (2, 'Jalur Mutasi Kerja', 'jalur-mutasi-kerja', '5%', '5 Siswa', 'Keringanan Khusus Mutasi Tugas', 'Jalur bagi calon siswa pindahan atau anak dari orang tua/wali yang mengalami mutasi tugas kedinasan/pekerjaan ke wilayah Muara Enim dan sekitarnya.', 2, 1, NOW(), NOW()),
+                    (3, 'Jalur Tahfidz Al-Qur\'an', 'jalur-tahfidz-al-quran', '5%', '10 Siswa', 'Cashback Rp. 750.000 s/d Rp. 1.000.000', 'Jalur khusus penghafal Al-Qur\'an:\\n- Tahfidz 4-5 Juz: Cashback Rp 750.000,-\\n- Tahfidz >5 Juz: Cashback Rp 1.000.000,-\\nWajib mengikuti tes sima\'an tahfidz bersama dewan musyrif Al-Qur\'an Rabbani.', 3, 1, NOW(), NOW()),
+                    (4, 'Jalur Alumni SIT Rabbani', 'jalur-alumni-sit-rabbani', '25%', '50 Siswa', 'Potongan Uang Pangkal Rp. 1.000.000,-', 'Keringanan istimewa bagi lulusan SD IT Rabbani Muara Enim yang melanjutkan jenjang pendidikan ke SIT Rabbani Muara Enim.', 4, 1, NOW(), NOW()),
                     (5, 'Jalur Prestasi', 'jalur-prestasi', '30%', '30 Siswa', 'Bebas Tes Akademik & Keringanan Biaya', 'Keringanan biaya khusus bagi siswa berprestasi Akademik (Peringkat 1-3 Paralel) dan Non-Akademik (Juara 1-3 OSN, O2SN, FLS2N, MTQ/MHQ) minimal tingkat Kota/Kabupaten.', 5, 1, NOW(), NOW()),
-                    (6, 'Jalur Reguler / Mandiri', 'jalur-reguler-mandiri', '25%', 'Kuota Reguler', 'Biaya Standar SPMB Berjenjang', 'Jalur seleksi tes mandiri masuk SMP IT Madani melalui tahapan Tes Potensi Akademik (TPA), Tes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid), dan Wawancara Komitmen Orang Tua & Siswa.', 6, 1, NOW(), NOW());");
+                    (6, 'Jalur Reguler / Mandiri', 'jalur-reguler-mandiri', '25%', 'Kuota Reguler', 'Biaya Standar SPMB Berjenjang', 'Jalur seleksi tes mandiri masuk SIT Rabbani melalui tahapan Tes Potensi Akademik (TPA), Tes Kemampuan Membaca Al-Qur\'an (Tahsin & Tajwid), dan Wawancara Komitmen Orang Tua & Siswa.', 6, 1, NOW(), NOW());");
                 }
 
                 // Update default neutral avatar for anggota dewan

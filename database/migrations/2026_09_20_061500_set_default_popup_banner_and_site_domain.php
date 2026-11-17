@@ -11,11 +11,11 @@ return new class extends Migration
     public function up(): void
     {
         $settings = [
-            'site_domain' => ['value' => 'sitmadani.sch.id', 'group' => 'general'],
+            'site_domain' => ['value' => 'rabbanime.sch.id', 'group' => 'general'],
             'popup_active' => ['value' => '1', 'group' => 'popup'],
-            'popup_image' => ['value' => '/uploads/flyer-spmb-sit-madani.webp', 'group' => 'popup'],
-            'popup_title' => ['value' => 'Telah Dibuka SPMB 3T (TP 2027/2028)', 'group' => 'popup'],
-            'popup_subtitle' => ['value' => 'Sistem Penerimaan Murid Baru SMPS IT Rabbani Muara Enim', 'group' => 'popup'],
+            'popup_image' => ['value' => '/uploads/flyer-spmb-smait-rabbani.webp', 'group' => 'popup'],
+            'popup_title' => ['value' => 'Telah Dibuka SPMB SIT Rabbani Muara Enim', 'group' => 'popup'],
+            'popup_subtitle' => ['value' => 'Sistem Penerimaan Murid Baru SIT Rabbani Muara Enim (TKIT, SDIT, SMPIT, SMAIT)', 'group' => 'popup'],
             'popup_link' => ['value' => '/ppdb', 'group' => 'popup'],
             'popup_button_text' => ['value' => 'Info & Syarat SPMB', 'group' => 'popup'],
             'popup_target' => ['value' => '_self', 'group' => 'popup'],

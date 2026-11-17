@@ -16,9 +16,9 @@ class AdminPopupController extends Controller
     {
         $popup = [
             'active' => Setting::get('popup_active', '1'),
-            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-sit-madani.webp'),
-            'title' => Setting::get('popup_title', 'Telah Dibuka SPMB 3T (TP 2027/2028)'),
-            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SMPS IT Rabbani Muara Enim'),
+            'image' => Setting::get('popup_image', '/uploads/flyer-spmb-smait-rabbani.webp'),
+            'title' => Setting::get('popup_title', 'Telah Dibuka SPMB SIT Rabbani Muara Enim'),
+            'subtitle' => Setting::get('popup_subtitle', 'Sistem Penerimaan Murid Baru SIT Rabbani Muara Enim'),
             'link' => Setting::get('popup_link', '/ppdb'),
             'target' => Setting::get('popup_target', '_self'),
             'button_text' => Setting::get('popup_button_text', 'Info & Daftar SPMB'),

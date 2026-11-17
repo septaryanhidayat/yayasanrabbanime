@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\Hash;
 
 test('login page renders and allows user authentication', function () {
     $user = User::create([
-        'name' => 'Admin Madani',
+        'name' => 'Admin Rabbani',
         'email' => 'admin@rabbanime.sch.id',
-        'password' => Hash::make('SitMadani2026!'),
+        'password' => Hash::make('Rabbani2026!'),
     ]);
 
     $this->get('/login')->assertStatus(200)->assertSee('Panel Administrator');
@@ -26,7 +26,7 @@ test('login page renders and allows user authentication', function () {
     // Correct password succeeds
     $successResponse = $this->post('/login', [
         'email' => 'admin@rabbanime.sch.id',
-        'password' => 'SitMadani2026!',
+        'password' => 'Rabbani2026!',
     ]);
     $successResponse->assertRedirect('/admin');
     $this->assertAuthenticatedAs($user);
@@ -41,9 +41,9 @@ test('unauthenticated users are redirected from admin routes', function () {
 
 test('admin can manage posts and convert images to webp on upload', function () {
     $admin = User::create([
-        'name' => 'Admin Madani',
+        'name' => 'Admin Rabbani',
         'email' => 'admin@rabbanime.sch.id',
-        'password' => Hash::make('SitMadani2026!'),
+        'password' => Hash::make('Rabbani2026!'),
     ]);
 
     $this->actingAs($admin);
@@ -56,7 +56,7 @@ test('admin can manage posts and convert images to webp on upload', function () 
 
     // Create post
     $response = $this->post('/admin/posts', [
-        'title' => 'Prestasi Siswa Madani Juara Sains',
+        'title' => 'Prestasi Siswa Rabbani Juara Sains',
         'content' => '<p>Konten artikel pengujian baru.</p>',
         'excerpt' => 'Ringkasan artikel pengujian',
         'status' => 'publish',
@@ -66,7 +66,7 @@ test('admin can manage posts and convert images to webp on upload', function () 
     $response->assertRedirect('/admin/posts');
     $response->assertSessionHas('success');
 
-    $post = Post::where('title', 'Prestasi Siswa Madani Juara Sains')->first();
+    $post = Post::where('title', 'Prestasi Siswa Rabbani Juara Sains')->first();
     expect($post)->not->toBeNull();
     expect($post->featured_image)->toEndWith('.webp');
 
@@ -79,14 +79,14 @@ test('admin can manage posts and convert images to webp on upload', function () 
     $this->get("/admin/posts/{$post->id}/edit")->assertStatus(200);
 
     $updateResponse = $this->put("/admin/posts/{$post->id}", [
-        'title' => 'Prestasi Siswa Madani Juara Sains Diperbarui',
+        'title' => 'Prestasi Siswa Rabbani Juara Sains Diperbarui',
         'content' => '<p>Konten yang sudah diedit.</p>',
         'status' => 'publish',
     ]);
     $updateResponse->assertRedirect('/admin/posts');
 
     $post->refresh();
-    expect($post->title)->toBe('Prestasi Siswa Madani Juara Sains Diperbarui');
+    expect($post->title)->toBe('Prestasi Siswa Rabbani Juara Sains Diperbarui');
 
     // Delete post
     $this->delete("/admin/posts/{$post->id}")->assertRedirect('/admin/posts');
@@ -95,9 +95,9 @@ test('admin can manage posts and convert images to webp on upload', function () 
 
 test('admin can manage feedbacks and settings', function () {
     $admin = User::create([
-        'name' => 'Admin Madani',
+        'name' => 'Admin Rabbani',
         'email' => 'admin@rabbanime.sch.id',
-        'password' => Hash::make('SitMadani2026!'),
+        'password' => Hash::make('Rabbani2026!'),
     ]);
 
     $feedback = Feedback::create([

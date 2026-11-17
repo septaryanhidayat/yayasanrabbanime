@@ -71,7 +71,7 @@ test('halaman download ebook memuat tombol unduh modul', function () {
     Download::create([
         'title' => 'Panduan Mutqin Tahfidz & Ziyadah Qur\'an',
         'category_type' => 'E-Book',
-        'file_path' => '/uploads/downloads/panduan-mutqin-tahfidz-madani.pdf',
+        'file_path' => '/uploads/downloads/panduan-mutqin-tahfidz-rabbani.pdf',
         'file_type' => 'PDF',
         'file_size' => '2.4 MB',
         'download_count' => 120,
@@ -90,7 +90,7 @@ test('footer memuat live counter pengunjung dan copyright sekolah', function () 
     $response = $this->get(route('home'));
 
     $response->assertStatus(200);
-    $response->assertSee('SMPS IT Rabbani Muara Enim');
+    $response->assertSee('Yayasan Generasi Rabbani Muara Enim');
     $response->assertSee('Pengunjung');
     $response->assertSee('Galeri');
     $response->assertSee('Kabar Sekolah');
@@ -115,23 +115,23 @@ test('galeri video dan beranda menampilkan video resmi youtube smp it rabbani', 
     $responseEmpty->assertStatus(200);
     $responseEmpty->assertSee('https://www.youtube.com/@rabbanimuaraenim');
 
-    // Buat data video resmi SIT Rabbani
+    // Buat data video resmi SIT Rabbani (11 karakter ID YouTube)
     Video::create([
         'title' => 'Profil dan Visi Misi SIT Rabbani',
-        'slug' => 'profil-dan-visi-misi-sit-madani',
-        'youtube_url' => 'https://www.youtube.com/watch?v=madani12345',
-        'youtube_id' => 'madani12345',
+        'slug' => 'profil-dan-visi-misi-sit-rabbani',
+        'youtube_url' => 'https://www.youtube.com/watch?v=rabbani1234',
+        'youtube_id' => 'rabbani1234',
         'description' => 'Video dokumentasi resmi SIT Rabbani Muara Enim',
     ]);
 
     $responseVideo = $this->get(route('video.index'));
     $responseVideo->assertStatus(200);
-    $responseVideo->assertSee('madani12345');
+    $responseVideo->assertSee('rabbani1234');
     $responseVideo->assertSee('Profil dan Visi Misi SIT Rabbani');
     $responseVideo->assertSee('https://www.youtube.com/@rabbanimuaraenim');
 
     $responseHome = $this->get('/smp');
     $responseHome->assertStatus(200);
     $responseHome->assertSee('Galeri Video');
-    $responseHome->assertSee('madani12345');
+    $responseHome->assertSee('rabbani1234');
 });

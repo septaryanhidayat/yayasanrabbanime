@@ -20,17 +20,17 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
     $payload = [
         'cards' => [
             'tk' => [
-                'title' => 'TKS Islam Terpadu Madani Muara Enim',
+                'title' => 'TKS Islam Terpadu Rabbani Muara Enim',
                 'level_badge' => 'PAUD / TK ISLAM TERPADU',
                 'accreditation' => 'AKREDITASI B',
                 'info_badge' => 'Karakter Rabbani',
-                'subtitle' => 'Muara Enim, Kab. OKI',
+                'subtitle' => 'Muara Enim, Sumatera Selatan',
                 'leader_title' => 'Kepala Sekolah',
-                'leader_name' => 'Bunda Ayu Rahmayani',
-                'leader_sub' => 'NIY 01012021',
+                'leader_name' => 'Kepala TKS IT Rabbani',
+                'leader_sub' => 'Ustadzah Rabbani',
                 'slogan' => 'Membentuk Generasi Ceria & Mandiri',
                 'features' => ['Tahfidz Juz 30', 'Sentra Ibadah'],
-                'meta_left' => 'NPSN: 69915461',
+                'meta_left' => 'NPSN: 10647514',
                 'meta_right' => 'Berdiri 2014',
                 'btn_site_text' => 'Kunjungi Website TKS IT',
                 'btn_site_url' => '/tk',
@@ -38,17 +38,17 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
                 'btn_spmb_url' => '/tk/ppdb',
             ],
             'sd' => [
-                'title' => 'SDS Islam Terpadu Madani Muara Enim',
+                'title' => 'SDS Islam Terpadu Rabbani Muara Enim',
                 'level_badge' => 'SEKOLAH DASAR ISLAM TERPADU',
                 'accreditation' => 'AKREDITASI B',
                 'info_badge' => '13 Rombel',
-                'subtitle' => 'Muara Enim, Kab. OKI',
+                'subtitle' => 'Muara Enim, Sumatera Selatan',
                 'leader_title' => 'Pimpinan & Komite',
-                'leader_name' => 'Yudhi Arsyandi, S.Pd., Gr.',
-                'leader_sub' => 'Komite: Ust Andi',
+                'leader_name' => 'Kepala SDS IT Rabbani',
+                'leader_sub' => 'Ustadz Rabbani',
                 'slogan' => 'Generasi Rabbani Berprestasi',
                 'features' => ['Target 2 Juz Al-Qur\'an', '30 Hadits Harian'],
-                'meta_left' => 'NPSN: 69881529',
+                'meta_left' => 'NPSN: 10648045',
                 'meta_right' => '293 Siswa',
                 'btn_site_text' => 'Kunjungi Website SDS IT',
                 'btn_site_url' => '/sd',
@@ -56,18 +56,18 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
                 'btn_spmb_url' => '/sd/ppdb',
             ],
             'smp' => [
-                'title' => 'SMPS Islam Terpadu Madani Muara Enim',
+                'title' => 'SMPS Islam Terpadu Rabbani Muara Enim',
                 'level_badge' => 'SEKOLAH MENENGAH PERTAMA IT',
                 'accreditation' => 'AKREDITASI B',
                 'info_badge' => 'Full Day School',
-                'subtitle' => 'Muara Enim, Kab. OKI',
+                'subtitle' => 'Muara Enim, Sumatera Selatan',
                 'leader_title' => 'Kepala Sekolah',
-                'leader_name' => 'Ribang Imam Satria, S.Pi., Gr.',
-                'leader_sub' => 'Ust. Ribang',
+                'leader_name' => 'Kepala SMPS IT Rabbani',
+                'leader_sub' => 'Ustadz Rabbani',
                 'slogan' => 'Generasi Qur\'ani & Moderat',
                 'features' => ['Tahfidz Qur\'an', 'Tasmi\' Bersanad'],
-                'meta_left' => 'NPSN: 70034917',
-                'meta_right' => 'NSS: 202110234917',
+                'meta_left' => 'NPSN: 69920340',
+                'meta_right' => 'JSIT Indonesia',
                 'btn_site_text' => 'Kunjungi Website SMPS IT',
                 'btn_site_url' => '/smp',
                 'btn_spmb_text' => 'SPMB Online',
@@ -83,7 +83,7 @@ test('admin dapat memperbarui 3 kartu showcase unit', function () {
     // Cek di beranda yayasan tampil
     $homeResponse = $this->get(route('home'));
     $homeResponse->assertStatus(200);
-    $homeResponse->assertSee('TKS Islam Terpadu Madani Muara Enim');
+    $homeResponse->assertSee('TKS Islam Terpadu Rabbani Muara Enim');
     $homeResponse->assertSee('Membentuk Generasi Ceria &amp; Mandiri', false);
 });
 
